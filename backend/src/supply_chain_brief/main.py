@@ -1,11 +1,15 @@
 from __future__ import annotations
 
+import os
 from datetime import date, datetime, timezone
+from pathlib import Path
 from typing import Literal
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
+
+from .housing_signals import build_fallback_heatmap, build_real_estate_heatmap, load_scored_heatmap_from_csv
 
 
 class BriefSKU(BaseModel):
@@ -48,6 +52,38 @@ class HealthResponse(BaseModel):
     model_version: str
     database_ready: bool
     cache_ready: bool
+
+
+class RealEstateHeatmapPoint(BaseModel):
+    id: str
+    hub: str
+    zipPrefix: str
+    zcta: str
+    state: str
+    position: list[float]
+    risk: Literal["STOCKOUT_RISK", "OVERSTOCK_RISK", "WATCH", "OK"]
+    volume: int
+    delay: str
+    demand_index: float
+    owner_households: int
+    renter_households: int
+    owner_share_pct: float
+    renter_share_pct: float
+    owner_yoy_pct: float
+    renter_yoy_pct: float
+    housing_units_yoy_pct: float
+    median_rent_usd: float
+    source: str
+
+
+class RealEstateHeatmapResponse(BaseModel):
+    generated_at: datetime
+    year: int
+    compare_year: int
+    point_count: int
+    mode: Literal["live", "fallback"]
+    notes: list[str]
+    points: list[RealEstateHeatmapPoint]
 
 
 app = FastAPI(title="Supply Chain Brief Backend", version="0.1.0")
@@ -158,3 +194,74 @@ def weekly_brief() -> BriefResponse:
 @app.post("/api/briefs/weekly", response_model=BriefResponse)
 def weekly_brief_post() -> BriefResponse:
     return _build_response()
+
+
+@app.get("/api/signals/real-estate-heatmap", response_model=RealEstateHeatmapResponse)
+def real_estate_heatmap(year: int | None = None, compare_year: int | None = None, limit: int = 30) -> RealEstateHeatmapResponse:
+    target_year = year or (date.today().year - 2)
+    baseline_year = compare_year or (target_year - 1)
+    requested_limit = max(1, min(limit, 100))
+
+    api_key = os.getenv("CENSUS_API_KEY")
+    points, warnings = build_real_estate_heatmap(
+        year=target_year,
+        compare_year=baseline_year,
+        api_key=api_key,
+        limit=requested_limit,
+    )
+
+    mode: Literal["live", "fallback"] = "live"
+    notes = [
+        "Primary source: Census ACS DP04 tenure fields with ACS5 enrichments.",
+        "Geography: ZIP Code Tabulation Areas (ZCTAs), not USPS ZIP delivery routes.",
+    ]
+
+    if not points:
+        points = build_fallback_heatmap(year=target_year, limit=requested_limit)
+        mode = "fallback"
+        notes.append("Live Census fetch unavailable; deterministic fallback has been served.")
+
+    if warnings:
+        notes.append(f"Partial fetch warnings: {', '.join(warnings[:6])}")
+
+    return RealEstateHeatmapResponse(
+        generated_at=datetime.now(timezone.utc),
+        year=target_year,
+        compare_year=baseline_year,
+        point_count=len(points),
+        mode=mode,
+        notes=notes,
+        points=[RealEstateHeatmapPoint(**point) for point in points],
+    )
+
+
+@app.get("/api/signals/scored-real-estate-heatmap", response_model=RealEstateHeatmapResponse)
+def scored_real_estate_heatmap(limit: int = 40) -> RealEstateHeatmapResponse:
+    requested_limit = max(1, min(limit, 100))
+    workspace_root = Path(__file__).resolve().parents[3]
+    csv_path = workspace_root / "data" / "scored_real_estate_demand.csv"
+
+    points, warnings = load_scored_heatmap_from_csv(csv_path=csv_path, limit=requested_limit)
+    mode: Literal["live", "fallback"] = "live"
+    notes = [
+        "Primary source: scored model output from scored_real_estate_demand.csv.",
+        "Geography: ZIP Code Tabulation Areas (ZCTAs), mapped to curated seed coordinates.",
+    ]
+
+    if not points:
+        points = build_fallback_heatmap(year=date.today().year, limit=requested_limit)
+        mode = "fallback"
+        notes.append("Scored CSV unavailable; deterministic fallback has been served.")
+
+    if warnings:
+        notes.append(f"CSV parse warnings: {', '.join(warnings[:6])}")
+
+    return RealEstateHeatmapResponse(
+        generated_at=datetime.now(timezone.utc),
+        year=date.today().year,
+        compare_year=date.today().year - 1,
+        point_count=len(points),
+        mode=mode,
+        notes=notes,
+        points=[RealEstateHeatmapPoint(**point) for point in points],
+    )
