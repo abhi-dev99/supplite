@@ -82,17 +82,29 @@ export const geoClusters = Array.from({ length: 2500 }).map(() => {
   };
 });
 
-export const wsStores = [
-  { name: 'Williams Sonoma Columbus Circle', coordinates: [-73.9822, 40.7681], type: 'STORE', status: 'Operational' },
-  { name: 'Williams Sonoma Beverly Hills', coordinates: [-118.4021, 34.0689], type: 'STORE', status: 'Operational' },
-  { name: 'Williams Sonoma Union Square SF', coordinates: [-122.4075, 37.7876], type: 'STORE', status: 'Operational' },
-  { name: 'Williams Sonoma NorthPark Center Dallas', coordinates: [-96.7730, 32.8687], type: 'STORE', status: 'Operational' },
-  { name: 'Williams Sonoma Lincoln Park Chicago', coordinates: [-87.6534, 41.9137], type: 'STORE', status: 'Operational' },
-  { name: 'Williams Sonoma Lenox Square Atlanta', coordinates: [-84.3608, 33.8463], type: 'STORE', status: 'Operational' },
-  { name: 'Williams Sonoma King of Prussia', coordinates: [-75.3888, 40.0894], type: 'STORE', status: 'Operational' },
-  { name: 'Williams Sonoma Seattle U-Village', coordinates: [-122.2985, 47.6625], type: 'STORE', status: 'Operational' },
-  { name: 'Williams Sonoma Coral Gables', coordinates: [-80.2600, 25.7335], type: 'STORE', status: 'Operational' },
-  { name: 'Williams Sonoma Boston Copley Place', coordinates: [-71.0772, 42.3475], type: 'STORE', status: 'Operational' },
-  { name: 'Williams Sonoma Denver Cherry Creek', coordinates: [-104.9536, 39.7169], type: 'STORE', status: 'Operational' },
-  { name: 'Williams Sonoma Short Hills NJ', coordinates: [-74.3214, 40.7410], type: 'STORE', status: 'Operational' },
+export const distributionCenters = [
+  { name: 'City of Industry DC', coordinates: [-117.9654, 34.0200], region: 'West Coast', radiusMiles: 600, status: 'Active' },
+  { name: 'Arlington DC', coordinates: [-97.1081, 32.7357], region: 'South Central', radiusMiles: 500, status: 'Active' },
+  { name: 'Memphis DC', coordinates: [-90.0490, 35.1495], region: 'Mid-West', radiusMiles: 400, status: 'Active' },
+  { name: 'Olive Branch DC', coordinates: [-89.8295, 34.9618], region: 'South', radiusMiles: 400, status: 'Active' },
+  { name: 'Braselton DC', coordinates: [-83.7627, 34.1084], region: 'Southeast', radiusMiles: 350, status: 'Active' },
+  { name: 'South Brunswick DC', coordinates: [-74.5204, 40.3846], region: 'Northeast', radiusMiles: 300, status: 'Active' }
 ];
+
+export const wsStores = Array.from({ length: 180 }).map((_, i) => {
+  // Tie each store to a specific distribution center territory
+  const dc = distributionCenters[Math.floor(Math.random() * distributionCenters.length)];
+  // 1 degree coordinates roughly = 69 miles. We spread them within the DC's operating radius.
+  const spreadRadius = dc.radiusMiles / 69; 
+  const offX = (Math.random() - 0.5) * spreadRadius * 1.5; 
+  const offY = (Math.random() - 0.5) * spreadRadius;
+  
+  return {
+    id: `WS-Node-${i}`,
+    name: 'Williams Sonoma Hub',
+    coordinates: [dc.coordinates[0] + offX, dc.coordinates[1] + offY],
+    type: 'STORE',
+    status: 'Operational',
+    suppliedBy: dc.name
+  };
+});
