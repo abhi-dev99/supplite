@@ -82,15 +82,17 @@ export const geoClusters = Array.from({ length: 2500 }).map(() => {
   };
 });
 
-export const storeLocations = [
-  { name: "Williams Sonoma - Beverly Hills, CA", position: [-118.4004, 34.0736] },
-  { name: "Pottery Barn - San Francisco, CA", position: [-122.4194, 37.7749] },
-  { name: "West Elm - Austin, TX", position: [-97.7431, 30.2672] },
-  { name: "Williams Sonoma - Chicago, IL", position: [-87.6298, 41.8781] },
-  { name: "Pottery Barn - Miami, FL", position: [-80.1918, 25.7617] },
-  { name: "West Elm - Brooklyn, NY", position: [-73.9442, 40.6782] },
-  { name: "Williams Sonoma - Boston, MA", position: [-71.0589, 42.3601] },
-  { name: "Pottery Barn - Seattle, WA", position: [-122.3321, 47.6062] },
-  { name: "West Elm - Denver, CO", position: [-104.9903, 39.7392] },
-  { name: "Williams Sonoma - Atlanta, GA", position: [-84.3880, 33.7490] }
+export const wsStores = [
+  { name: 'Williams Sonoma Columbus Circle', coordinates: [-73.9822, 40.7681], type: 'STORE', status: 'Operational' },
+  { name: 'Williams Sonoma Beverly Hills', coordinates: [-118.4021, 34.0689], type: 'STORE', status: 'Operational' },
+  { name: 'Williams Sonoma Union Square SF', coordinates: [-122.4075, 37.7876], type: 'STORE', status: 'Operational' },
+  { name: 'Williams Sonoma NorthPark Center Dallas', coordinates: [-96.7730, 32.8687], type: 'STORE', status: 'Operational' },
+  { name: 'Williams Sonoma Lincoln Park Chicago', coordinates: [-87.6534, 41.9137], type: 'STORE', status: 'Operational' },
+  { name: 'Williams Sonoma Lenox Square Atlanta', coordinates: [-84.3608, 33.8463], type: 'STORE', status: 'Operational' },
+  { name: 'Williams Sonoma King of Prussia', coordinates: [-75.3888, 40.0894], type: 'STORE', status: 'Operational' },
+  { name: 'Williams Sonoma Seattle U-Village', coordinates: [-122.2985, 47.6625], type: 'STORE', status: 'Operational' },
+  { name: 'Williams Sonoma Coral Gables', coordinates: [-80.2600, 25.7335], type: 'STORE', status: 'Operational' },
+  { name: 'Williams Sonoma Boston Copley Place', coordinates: [-71.0772, 42.3475], type: 'STORE', status: 'Operational' },
+  { name: 'Williams Sonoma Denver Cherry Creek', coordinates: [-104.9536, 39.7169], type: 'STORE', status: 'Operational' },
+  { name: 'Williams Sonoma Short Hills NJ', coordinates: [-74.3214, 40.7410], type: 'STORE', status: 'Operational' },
 ];
