@@ -1,0 +1,1850 @@
+[
+  {
+    "id": "WSI-1000",
+    "name": "217 Summit Blvd",
+    "city": "Birmingham, AL",
+    "coordinates": [
+      -86.8024326,
+      33.5206824
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1001",
+    "name": "9 Du Rhu Dr Ste 340",
+    "city": "Mobile, AL",
+    "coordinates": [
+      -88.0437509,
+      30.6913462
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1002",
+    "name": "7131 W. Ray Road",
+    "city": "Chandler, AZ",
+    "coordinates": [
+      -111.841185,
+      33.3062031
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1003",
+    "name": "2450 E. Camelback Road",
+    "city": "Phoenix, AZ",
+    "coordinates": [
+      -112.074141,
+      33.4484367
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1004",
+    "name": "15279 N Scottsdale Rd.",
+    "city": "Scottsdale, AZ",
+    "coordinates": [
+      -111.926018,
+      33.4942189
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1005",
+    "name": "2905 East Skyline Drive",
+    "city": "Tucson, AZ",
+    "coordinates": [
+      -110.974847,
+      32.2228765
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1006",
+    "name": "2203 Promenade Blvd",
+    "city": "Rogers, AR",
+    "coordinates": [
+      -94.1193816,
+      36.334857
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1007",
+    "name": "1712 Redwood Hwy. Suite A029",
+    "city": "Corte Madera, CA",
+    "coordinates": [
+      -122.527475,
+      37.9254806
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1008",
+    "name": "3333 Bear Street Ste 155",
+    "city": "Costa Mesa, CA",
+    "coordinates": [
+      -117.903317,
+      33.6633386
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1009",
+    "name": "734 West Shaw Avenue",
+    "city": "Fresno, CA",
+    "coordinates": [
+      -119.78483,
+      36.7394421
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1010",
+    "name": "6333 W 3Rd St",
+    "city": "Los Angeles, CA",
+    "coordinates": [
+      -118.242766,
+      34.0536909
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1011",
+    "name": "3200 North Sepulveda Blvd",
+    "city": "Manhattan Beach, CA",
+    "coordinates": [
+      -118.4104324,
+      33.8872777
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1012",
+    "name": "555 Shops At Mission Viejo",
+    "city": "Mission Viejo, CA",
+    "coordinates": [
+      -117.659405,
+      33.5965685
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1013",
+    "name": "1210 Del Monte Center",
+    "city": "Monterey, CA",
+    "coordinates": [
+      -121.387742,
+      36.2231079
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1014",
+    "name": "8032 East Coast Highway",
+    "city": "Newport Coast, CA",
+    "coordinates": [
+      -117.826821,
+      33.5963719
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1015",
+    "name": "73505 El Paseo",
+    "city": "Palm Desert, CA",
+    "coordinates": [
+      -116.382571,
+      33.7288179
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1016",
+    "name": "180 El Camino Real",
+    "city": "Palo Alto, CA",
+    "coordinates": [
+      -122.1598465,
+      37.4443293
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1017",
+    "name": "142 S. Lake Avenue",
+    "city": "Pasadena, CA",
+    "coordinates": [
+      -118.144155,
+      34.1476507
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1018",
+    "name": "12514 South Mainstreet",
+    "city": "Rancho Cucamonga, CA",
+    "coordinates": [
+      -117.575173,
+      34.1033192
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1019",
+    "name": "1151 Galleria Blvd",
+    "city": "Roseville, CA",
+    "coordinates": [
+      -121.2880059,
+      38.7521235
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1020",
+    "name": "525 Pavilions Lane",
+    "city": "Sacramento, CA",
+    "coordinates": [
+      -121.493895,
+      38.5810606
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1021",
+    "name": "7007 Friars Road",
+    "city": "San Diego, CA",
+    "coordinates": [
+      -117.162772,
+      32.7174202
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1022",
+    "name": "4575 La Jolla Village Dr",
+    "city": "San Diego, CA",
+    "coordinates": [
+      -117.162772,
+      32.7174202
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1023",
+    "name": "864 Monterey Street",
+    "city": "San Luis Obispo, CA",
+    "coordinates": [
+      -120.375716,
+      35.3540209
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1024",
+    "name": "113 Hillsdale Mall",
+    "city": "San Mateo, CA",
+    "coordinates": [
+      -122.3330573,
+      37.496904
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1025",
+    "name": "6000 Bollinger Canyon Road",
+    "city": "San Ramon, CA",
+    "coordinates": [
+      -121.9544387,
+      37.7648021
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1026",
+    "name": "3835 State Street",
+    "city": "Santa Barbara, CA",
+    "coordinates": [
+      -119.702667,
+      34.4221319
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1027",
+    "name": "2855 Stevens Creek Blvd",
+    "city": "Santa Clara, CA",
+    "coordinates": [
+      -121.955174,
+      37.3541132
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1028",
+    "name": "1600 Montana Avenue",
+    "city": "Santa Monica, CA",
+    "coordinates": [
+      -118.491227,
+      34.0194704
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1029",
+    "name": "605 Broadway",
+    "city": "Sonoma, CA",
+    "coordinates": [
+      -122.8473388,
+      38.5110803
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1030",
+    "name": "Ot Ws Vacaville",
+    "city": "Vacaville, CA",
+    "coordinates": [
+      -121.9877444,
+      38.3565773
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1031",
+    "name": "1470 Mount Diablo Blvd.",
+    "city": "Walnut Creek, CA",
+    "coordinates": [
+      -122.0618702,
+      37.9020731
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1032",
+    "name": "120 S. Westlake Blvd.",
+    "city": "Westlake Village, CA",
+    "coordinates": [
+      -118.8061794,
+      34.1460234
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1033",
+    "name": "1 W Flatiron Crossing Dr",
+    "city": "Broomfield, CO",
+    "coordinates": [
+      -105.05208,
+      39.9403995
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1034",
+    "name": "1885 Briargate Parkway",
+    "city": "Colorado Springs, CO",
+    "coordinates": [
+      -104.825348,
+      38.8339578
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1035",
+    "name": "3000 East First Ave",
+    "city": "Denver, CO",
+    "coordinates": [
+      -104.984862,
+      39.7392364
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1036",
+    "name": "7301 South Santa Fe Dr.",
+    "city": "Littleton, CO",
+    "coordinates": [
+      -105.016649,
+      39.613321
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1037",
+    "name": "8405 Park Meadows Center Drive",
+    "city": "Littleton, CO",
+    "coordinates": [
+      -105.016649,
+      39.613321
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1038",
+    "name": "7 Backus Avenue",
+    "city": "Danbury, CT",
+    "coordinates": [
+      -73.4540111,
+      41.394817
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1039",
+    "name": "200 Evergreeen Way",
+    "city": "South Windsor, CT",
+    "coordinates": [
+      -72.5562712,
+      41.8352395
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1040",
+    "name": "25 Church Ln",
+    "city": "Westport, CT",
+    "coordinates": [
+      -73.3578955,
+      41.1414855
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1041",
+    "name": "6000 Glades Rd",
+    "city": "Boca Raton, FL",
+    "coordinates": [
+      -80.0830984,
+      26.3586885
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1042",
+    "name": "350 San Lorenzo Avenue",
+    "city": "Coral Gables, FL",
+    "coordinates": [
+      -80.2585107,
+      25.7331105
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1043",
+    "name": "800 Silks Run",
+    "city": "Hallandale Beach, FL",
+    "coordinates": [
+      -80.148379,
+      25.9812025
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1044",
+    "name": "1691 Michigan Ave Ste 116",
+    "city": "Miami, FL",
+    "coordinates": [
+      -80.1935973,
+      25.7741566
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1045",
+    "name": "560 Grand Boulevard",
+    "city": "Miramar Beach, FL",
+    "coordinates": [
+      -86.3616979,
+      30.377985
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1046",
+    "name": "5377 Tamiami Trail N",
+    "city": "Naples, FL",
+    "coordinates": [
+      -81.7942944,
+      26.1421976
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1047",
+    "name": "3101 Pga Blvd",
+    "city": "Palm Beach Gardens, FL",
+    "coordinates": [
+      -80.1386547,
+      26.8233946
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1048",
+    "name": "140 University Town Center Dr",
+    "city": "Sarasota, FL",
+    "coordinates": [
+      -82.5308545,
+      27.3365805
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1049",
+    "name": "2223 North West Shore Blvd.",
+    "city": "Tampa, FL",
+    "coordinates": [
+      -82.4583107,
+      27.9449854
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1050",
+    "name": "142 Park Avenue",
+    "city": "Winter Park, FL",
+    "coordinates": [
+      -81.3510264,
+      28.5977707
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1051",
+    "name": "8180 Avalon Blvd Ste 8180",
+    "city": "Alpharetta, GA",
+    "coordinates": [
+      -84.2945964,
+      34.0755962
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1052",
+    "name": "675 Ponce De Leon Ave Ne",
+    "city": "Atlanta, GA",
+    "coordinates": [
+      -84.3898151,
+      33.7544657
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1053",
+    "name": "800 Highway 400 South",
+    "city": "Dawsonville, GA",
+    "coordinates": [
+      -84.1190804,
+      34.4212053
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1054",
+    "name": "4475 Roswell Road",
+    "city": "Marietta, GA",
+    "coordinates": [
+      -84.5496148,
+      33.9528472
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1055",
+    "name": "350 N Milwaukee Ave",
+    "city": "Boise, ID",
+    "coordinates": [
+      -116.200886,
+      43.6166163
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1056",
+    "name": "1550 N Fremont St",
+    "city": "Chicago, IL",
+    "coordinates": [
+      -87.6244212,
+      41.8755616
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1057",
+    "name": "20530 N. Rand Road",
+    "city": "Deer Park, IL",
+    "coordinates": [
+      -88.0814651,
+      42.1608585
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1058",
+    "name": "322 Commons Drive",
+    "city": "Geneva, IL",
+    "coordinates": [
+      -88.3053525,
+      41.8875281
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1059",
+    "name": "271 Market Square",
+    "city": "Lake Forest, IL",
+    "coordinates": [
+      -87.8407055,
+      42.2586461
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1060",
+    "name": "142 Oakbrook Center",
+    "city": "Oak Brook, IL",
+    "coordinates": [
+      -87.9289504,
+      41.8328085
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1061",
+    "name": "1300 E. 86Th Street",
+    "city": "INDIANAPOLIS, IN",
+    "coordinates": [
+      -86.1583502,
+      39.7683331
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1062",
+    "name": "101 Jordan Creek Parkway",
+    "city": "West Des Moines, IA",
+    "coordinates": [
+      -93.7594059,
+      41.5644476
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1063",
+    "name": "5204 West 119Th Street",
+    "city": "Leawood, KS",
+    "coordinates": [
+      -94.6169012,
+      38.966673
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1064",
+    "name": "151 Larue",
+    "city": "Lexington, KY",
+    "coordinates": [
+      -84.4970393,
+      38.0464066
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1065",
+    "name": "4240 Summit Plaza Dr",
+    "city": "Louisville, KY",
+    "coordinates": [
+      -85.759407,
+      38.2542376
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1066",
+    "name": "200 Harker Place",
+    "city": "Annapolis, MD",
+    "coordinates": [
+      -76.492786,
+      38.9786401
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1067",
+    "name": "70 Village Square",
+    "city": "Baltimore, MD",
+    "coordinates": [
+      -76.610759,
+      39.2908816
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1068",
+    "name": "4824 Bethesda Avenue",
+    "city": "Bethesda, MD",
+    "coordinates": [
+      -77.1233587,
+      38.9812726
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1069",
+    "name": "520 Legacy Place",
+    "city": "Dedham, MA",
+    "coordinates": [
+      -71.1755732,
+      42.2489143
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1070",
+    "name": "96 Derby Street",
+    "city": "Hingham, MA",
+    "coordinates": [
+      -70.8897676,
+      42.2417669
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1071",
+    "name": "1310 Market Street",
+    "city": "Lynnfield, MA",
+    "coordinates": [
+      -71.0481084,
+      42.5389836
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1072",
+    "name": "38 Nathan Ellis Highway",
+    "city": "Mashpee, MA",
+    "coordinates": [
+      -70.4811383,
+      41.6484421
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1073",
+    "name": "3195 28Th St Se",
+    "city": "Grand Rapids, MI",
+    "coordinates": [
+      -85.6678639,
+      42.9632425
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1074",
+    "name": "3040 Towne Centre Blvd",
+    "city": "Lansing, MI",
+    "coordinates": [
+      -84.5546295,
+      42.7338254
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1075",
+    "name": "27710B Novi Rd",
+    "city": "Novi, MI",
+    "coordinates": [
+      -83.4754913,
+      42.48059
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1076",
+    "name": "352 North Adams Road",
+    "city": "Rochester Hills, MI",
+    "coordinates": [
+      -83.1499322,
+      42.6583661
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1077",
+    "name": "2801 West Big Beaver Road",
+    "city": "Troy, MI",
+    "coordinates": [
+      -83.1499304,
+      42.6055893
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1078",
+    "name": "3512 Galleria",
+    "city": "Edina, MN",
+    "coordinates": [
+      -93.3501222,
+      44.8897027
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1079",
+    "name": "12251 Wayzata Blvd",
+    "city": "Minnetonka, MN",
+    "coordinates": [
+      -93.4638936,
+      44.9405086
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1080",
+    "name": "1595 Highway 36 W",
+    "city": "Roseville, MN",
+    "coordinates": [
+      -93.1566107,
+      45.0060767
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1081",
+    "name": "260 Plaza Frontenac",
+    "city": "St. Louis, MO",
+    "coordinates": [
+      -90.190009,
+      38.6254063
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1082",
+    "name": "120 Regency Pkwy",
+    "city": "Omaha, NE",
+    "coordinates": [
+      -95.9383758,
+      41.2587459
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1083",
+    "name": "2255 Village Walk Drive",
+    "city": "Henderson, NV",
+    "coordinates": [
+      -114.9822716,
+      36.0319602
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1084",
+    "name": "1001 South Rampart Blvd",
+    "city": "Las Vegas, NV",
+    "coordinates": [
+      -115.1484131,
+      36.1674263
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1085",
+    "name": "13945 S. Viriginia Street",
+    "city": "Reno, NV",
+    "coordinates": [
+      -119.812658,
+      39.5261788
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1086",
+    "name": "9 Via Toscana Suite #620",
+    "city": "Salem, NH",
+    "coordinates": [
+      -71.2009035,
+      42.7884957
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1087",
+    "name": "400 Commons Way",
+    "city": "Bridgewater, NJ",
+    "coordinates": [
+      -74.5517146,
+      40.5598127
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1088",
+    "name": "390 Hackensack Ave",
+    "city": "Hackensack, NJ",
+    "coordinates": [
+      -74.0410667,
+      40.8870781
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1089",
+    "name": "630 Valley Rd",
+    "city": "Montclair, NJ",
+    "coordinates": [
+      -74.2210643,
+      40.8164458
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1090",
+    "name": "410 Market Street",
+    "city": "Montvale, NJ",
+    "coordinates": [
+      -74.0229173,
+      41.0467635
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1091",
+    "name": "Triangle/Ltl Express (C/O Wsi)",
+    "city": "North Brunswick, NJ",
+    "coordinates": [
+      -74.476545,
+      40.4539249
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1092",
+    "name": "3535 Us Highway 1",
+    "city": "Princeton, NJ",
+    "coordinates": [
+      -74.6597376,
+      40.3496953
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1093",
+    "name": "1200 Morris Turnpike",
+    "city": "Short Hills, NJ",
+    "coordinates": [
+      -74.3377392,
+      40.7381585
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1094",
+    "name": "579 Route 35",
+    "city": "Shrewsbury, NJ",
+    "coordinates": [
+      -74.0615285,
+      40.3295547
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1095",
+    "name": "2261 Q Street Northeast",
+    "city": "Albuquerque, NM",
+    "coordinates": [
+      -106.650985,
+      35.0841034
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1096",
+    "name": "2044 Montauk Hwy",
+    "city": "Bridgehampton, NY",
+    "coordinates": [
+      -72.3103724,
+      40.9312839
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1097",
+    "name": "Roosevelt Field Shopping Ctr",
+    "city": "Garden City, NY",
+    "coordinates": [
+      -73.6343052,
+      40.7266477
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1098",
+    "name": "350 Walt Whitman Rd. Space 12C",
+    "city": "Huntington Station, NY",
+    "coordinates": [
+      -73.4036319,
+      40.8472369
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1099",
+    "name": "110 7Th Avenue",
+    "city": "New York, NY",
+    "coordinates": [
+      -74.0060152,
+      40.7127281
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1100",
+    "name": "10 Columbus Circle",
+    "city": "New York, NY",
+    "coordinates": [
+      -74.0060152,
+      40.7127281
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1101",
+    "name": "1770 West Main Street",
+    "city": "Riverhead, NY",
+    "coordinates": [
+      -72.6624189,
+      40.9168692
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1102",
+    "name": "280 Eastview Mall Dr",
+    "city": "Victor, NY",
+    "coordinates": [
+      -77.4088794,
+      42.9825634
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1103",
+    "name": "125 Westchester Avenue",
+    "city": "White Plains, NY",
+    "coordinates": [
+      -73.7629097,
+      41.0339862
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1104",
+    "name": "10 Brook Street",
+    "city": "Asheville, NC",
+    "coordinates": [
+      -82.5508407,
+      35.595363
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1105",
+    "name": "1 Fenton Main Street",
+    "city": "Cary, NC",
+    "coordinates": [
+      -78.7812081,
+      35.7882893
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1106",
+    "name": "6401 Carnegie Blvd",
+    "city": "Charlotte, NC",
+    "coordinates": [
+      -80.8430827,
+      35.2272086
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1107",
+    "name": "6910 Fayetteville Road",
+    "city": "Durham, NC",
+    "coordinates": [
+      -78.9018053,
+      35.996653
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1108",
+    "name": "3320 W. Friendly Avenue",
+    "city": "Greensboro, NC",
+    "coordinates": [
+      -79.7919754,
+      36.0726355
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1109",
+    "name": "16740 Birkdale Commons Pkwy",
+    "city": "Huntersville, NC",
+    "coordinates": [
+      -80.8429304,
+      35.4108278
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1110",
+    "name": "6852 Main Street",
+    "city": "Wilmington, NC",
+    "coordinates": [
+      -77.9487284,
+      34.2352853
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1111",
+    "name": "211 Park Ave. Suite 113",
+    "city": "Beachwood, OH",
+    "coordinates": [
+      -81.508732,
+      41.464498
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1112",
+    "name": "7875 Montgomery Road",
+    "city": "Cincinnati, OH",
+    "coordinates": [
+      -84.5124602,
+      39.1014537
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1113",
+    "name": "1500 Polaris Parkway",
+    "city": "Columbus, OH",
+    "coordinates": [
+      -83.0007065,
+      39.9622601
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1114",
+    "name": "5001 N Pennsylvania Ave",
+    "city": "Oklahoma City, OK",
+    "coordinates": [
+      -97.5170536,
+      35.4729886
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1115",
+    "name": "2016 Utica Square",
+    "city": "Tulsa, OK",
+    "coordinates": [
+      -95.9927516,
+      36.1563122
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1116",
+    "name": "1202 Nw Davis St.",
+    "city": "Portland, OR",
+    "coordinates": [
+      -122.674194,
+      45.5202471
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1117",
+    "name": "9367 Sw Washington Square Road",
+    "city": "Tigard, OR",
+    "coordinates": [
+      -122.771933,
+      45.4307473
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1118",
+    "name": "937 Baltimore Pike",
+    "city": "Glen Mills, PA",
+    "coordinates": [
+      -75.4904323,
+      39.919698
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1119",
+    "name": "2571 Brindle Drive",
+    "city": "Harrisburg, PA",
+    "coordinates": [
+      -76.8861122,
+      40.2663107
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1120",
+    "name": "101 Main Street",
+    "city": "King of Prussia, PA",
+    "coordinates": [
+      -75.3851334,
+      40.0947625
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1121",
+    "name": "The Galleria Of Mt. Lebanon",
+    "city": "Pittsburgh, PA",
+    "coordinates": [
+      -80.0025666,
+      40.4406968
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1122",
+    "name": "1000 Ross Park Mall Dr",
+    "city": "Pittsburgh, PA",
+    "coordinates": [
+      -80.0025666,
+      40.4406968
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1123",
+    "name": "1000 Mall Of San Juan Blvd",
+    "city": "San Juan, PR",
+    "coordinates": [
+      -66.116666,
+      18.465299
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1124",
+    "name": "41 Hillside Rd #134",
+    "city": "Cranston, RI",
+    "coordinates": [
+      -71.4366813,
+      41.779588
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1125",
+    "name": "359 King Street",
+    "city": "Charleston, SC",
+    "coordinates": [
+      -79.9399309,
+      32.7884363
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1126",
+    "name": "1800 Galleria Boulevard",
+    "city": "Franklin, TN",
+    "coordinates": [
+      -86.8689419,
+      35.925206
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1127",
+    "name": "7600 Kingston Pike",
+    "city": "Knoxville, TN",
+    "coordinates": [
+      -83.9210261,
+      35.9603948
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1128",
+    "name": "4011 Hillsboro Pike #501",
+    "city": "Nashville, TN",
+    "coordinates": [
+      -86.7742984,
+      36.1622767
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1129",
+    "name": "4001 North Lamar Blvd",
+    "city": "Austin, TX",
+    "coordinates": [
+      -97.7436995,
+      30.2711286
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1130",
+    "name": "8687 N Central Expressway",
+    "city": "Dallas, TX",
+    "coordinates": [
+      -96.7968559,
+      32.7762719
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1131",
+    "name": "1620 South University Drive",
+    "city": "Fort Worth, TX",
+    "coordinates": [
+      -97.3327459,
+      32.753177
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1132",
+    "name": "4060 Westheimer Rd",
+    "city": "Houston, TX",
+    "coordinates": [
+      -95.3676974,
+      29.7589382
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1133",
+    "name": "12850 Memorial Drive",
+    "city": "Houston, TX",
+    "coordinates": [
+      -95.3676974,
+      29.7589382
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1134",
+    "name": "2201 Preston Road",
+    "city": "Plano, TX",
+    "coordinates": [
+      -96.6925096,
+      33.0136764
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1135",
+    "name": "255 E Basse Rd",
+    "city": "San Antonio, TX",
+    "coordinates": [
+      -98.4951405,
+      29.4246002
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1136",
+    "name": "172 State Street",
+    "city": "Southlake, TX",
+    "coordinates": [
+      -97.1341783,
+      32.9412363
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1137",
+    "name": "602 E. 500 S",
+    "city": "Salt Lake City, UT",
+    "coordinates": [
+      -111.886797,
+      40.7596198
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1138",
+    "name": "2700 Clarendon Blvd.",
+    "city": "Arlington, VA",
+    "coordinates": [
+      -77.0893094,
+      38.8769326
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1139",
+    "name": "11818-L Fair Oaks",
+    "city": "Fairfax, VA",
+    "coordinates": [
+      -77.3063733,
+      38.8462236
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1140",
+    "name": "2920 District Ave Ste 115",
+    "city": "Fairfax, VA",
+    "coordinates": [
+      -77.3063733,
+      38.8462236
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1141",
+    "name": "241 Fort Evans Rd., Sp. 1001",
+    "city": "Leesburg, VA",
+    "coordinates": [
+      -77.5645607,
+      39.1154506
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1142",
+    "name": "11800 West Broad Street",
+    "city": "Richmond, VA",
+    "coordinates": [
+      -77.43428,
+      37.5385087
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1143",
+    "name": "173 Central Park Ave.",
+    "city": "Virginia Beach, VA",
+    "coordinates": [
+      -75.9760751,
+      36.8496579
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1144",
+    "name": "216 Bellevue Square",
+    "city": "Bellevue, WA",
+    "coordinates": [
+      -122.192337,
+      47.6144219
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1145",
+    "name": "4619 26Th Ave Ne",
+    "city": "Seattle, WA",
+    "coordinates": [
+      -122.330062,
+      47.6038321
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1146",
+    "name": "808 W. Main Ave",
+    "city": "Spokane, WA",
+    "coordinates": [
+      -117.42351,
+      47.6571934
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1147",
+    "name": "2500 N Mayfair Rd",
+    "city": "Wauwatosa, WI",
+    "coordinates": [
+      -88.0079271,
+      43.0494122
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1148",
+    "name": "6455 Macleod Trail South",
+    "city": "Calgary, AB",
+    "coordinates": [
+      -94.1193622,
+      31.6174004
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1149",
+    "name": "2903 Granville Street",
+    "city": "Vancouver, BC",
+    "coordinates": [
+      -122.6744557,
+      45.6306954
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1150",
+    "name": "3401 Dufferin St",
+    "city": "North York, ON",
+    "coordinates": [
+      -87.5455553,
+      37.9965132
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1151",
+    "name": "466 Oxford Street",
+    "city": "Bondi Junction NSW 2022",
+    "coordinates": [
+      151.2491973,
+      -33.8935462
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1152",
+    "name": "Level 1",
+    "city": "Chatswood NSW 2067",
+    "coordinates": [
+      -121.3116404,
+      38.7692745
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  },
+  {
+    "id": "WSI-1153",
+    "name": "Lower Level, Near David Jones",
+    "city": "Chadstone VIC 3148",
+    "coordinates": [
+      -78.5747609,
+      35.89372
+    ],
+    "type": "STORE",
+    "status": "Operational",
+    "suppliedBy": "WSI Routing AI"
+  }
+]

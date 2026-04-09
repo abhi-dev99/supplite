@@ -1,97 +1,4 @@
-export const mockSkus = [
-  {
-    id: "PB-BLANKET-42",
-    name: "Pottery Barn Throw Blanket Cognac",
-    brand: "Pottery Barn",
-    category: "Bedding",
-    stock: 6200,
-    daysOfSupply: 34,
-    riskLevel: "STOCKOUT_RISK",
-    signal: "Search spike +840%",
-    action: "Expedite Order"
-  },
-  {
-    id: "PB-PILLOW-71",
-    name: "Decorative Pillow Sage",
-    brand: "Pottery Barn",
-    category: "Decor",
-    stock: 4200,
-    daysOfSupply: 89,
-    riskLevel: "OVERSTOCK_RISK",
-    signal: "Search decline -23%",
-    action: "Markdown Variant"
-  },
-  {
-    id: "PB-BED-FRAME-33",
-    name: "Bedroom Set King",
-    brand: "Pottery Barn",
-    category: "Furniture",
-    stock: 800,
-    daysOfSupply: 65,
-    riskLevel: "WATCH",
-    signal: "Housing permits +34%",
-    action: "Pre-position 400"
-  },
-  {
-    id: "WE-LAMP-19",
-    name: "West Elm Table Lamp",
-    brand: "West Elm",
-    category: "Lighting",
-    stock: 890,
-    daysOfSupply: 65,
-    riskLevel: "OK",
-    signal: "Baseline",
-    action: "None"
-  }
-];
-
-export const mockChartData = [
-  { name: 'Week -8', sales: 120, search: 12, permits: 100 },
-  { name: 'Week -7', sales: 118, search: 11, permits: 102 },
-  { name: 'Week -6', sales: 122, search: 13, permits: 105 },
-  { name: 'Week -5', sales: 119, search: 10, permits: 101 },
-  { name: 'Week -4', sales: 125, search: 14, permits: 110 },
-  { name: 'Week -3', sales: 130, search: 15, permits: 115 },
-  { name: 'Week -2', sales: 128, search: 22, permits: 114 },
-  { name: 'Week -1', sales: 160, search: 45, permits: 120 },
-  { name: 'Week 0', sales: 412, search: 89, permits: 121 },
-];
-
-export const geoClusters = Array.from({ length: 2500 }).map(() => {
-  // Center roughly around massive logistics hubs/metros
-  const centers = [
-     { name: 'LA Port Authority', lng: -118.24, lat: 34.05, weight: 4.5, type: 'STOCKOUT_RISK' },
-     { name: 'Northeast Corridor', lng: -74.00, lat: 40.71, weight: 5.2, type: 'WATCH' },
-     { name: 'Dallas DC', lng: -96.79, lat: 32.77, weight: 3.8, type: 'OVERSTOCK_RISK' },
-     { name: 'Chicago Rail Hub', lng: -87.62, lat: 41.87, weight: 3.0, type: 'STOCKOUT_RISK' },
-     { name: 'Seattle Port', lng: -122.33, lat: 47.60, weight: 2.0, type: 'WATCH' }
-  ];
-  const c = centers[Math.floor(Math.random() * centers.length)];
-  
-  // Create normally distributed spread
-  const lngOff = (Math.random() - 0.5) * c.weight + (Math.random() - 0.5) * c.weight;
-  const latOff = (Math.random() - 0.5) * (c.weight/1.5) + (Math.random() - 0.5) * (c.weight/1.5);
-  
-  return {
-     hub: c.name,
-     zipPrefix: String(Math.floor(Math.random() * 90000) + 10000),
-     position: [c.lng + lngOff, c.lat + latOff],
-     risk: c.type === 'STOCKOUT_RISK' ? 'STOCKOUT_RISK' : (Math.random() > 0.5 ? 'OVERSTOCK_RISK' : 'WATCH'),
-     volume: Math.floor(Math.random() * 1200) + 50,
-     delay: Math.floor(Math.random() * 14) + ' Days'
-  };
-});
-
-export const distributionCenters = [
-  { name: 'City of Industry DC', coordinates: [-117.9654, 34.0200], region: 'West Coast', radiusMiles: 600, status: 'Active' },
-  { name: 'Arlington DC', coordinates: [-97.1081, 32.7357], region: 'South Central', radiusMiles: 500, status: 'Active' },
-  { name: 'Memphis DC', coordinates: [-90.0490, 35.1495], region: 'Mid-West', radiusMiles: 400, status: 'Active' },
-  { name: 'Olive Branch DC', coordinates: [-89.8295, 34.9618], region: 'South', radiusMiles: 400, status: 'Active' },
-  { name: 'Braselton DC', coordinates: [-83.7627, 34.1084], region: 'Southeast', radiusMiles: 350, status: 'Active' },
-  { name: 'South Brunswick DC', coordinates: [-74.5204, 40.3846], region: 'Northeast', radiusMiles: 300, status: 'Active' }
-];
-
-export const wsStores = [
+[
   {
     "name": "WSI Birmingham",
     "city": "Birmingham",
@@ -103,8 +10,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Birmingham"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Mobile",
@@ -117,8 +23,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Mobile"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Chandler",
@@ -131,8 +36,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Chandler"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Phoenix",
@@ -145,8 +49,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Phoenix"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Scottsdale",
@@ -159,8 +62,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Scottsdale"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Tucson",
@@ -173,8 +75,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Tucson"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Rogers",
@@ -187,8 +88,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Rogers"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Corte Madera",
@@ -201,8 +101,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Corte Madera"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Costa Mesa",
@@ -215,8 +114,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Costa Mesa"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Fresno",
@@ -229,8 +127,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Fresno"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Los Angeles",
@@ -243,8 +140,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Los Angeles"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Manhattan Beach",
@@ -257,8 +153,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Manhattan Beach"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Mission Viejo",
@@ -271,8 +166,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Mission Viejo"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Monterey",
@@ -285,8 +179,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Monterey"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Newport Coast",
@@ -299,8 +192,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Newport Coast"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Palm Desert",
@@ -313,8 +205,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Palm Desert"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Palo Alto",
@@ -327,8 +218,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Palo Alto"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Pasadena",
@@ -341,8 +231,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Pasadena"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Rancho Cucamonga",
@@ -355,8 +244,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Rancho Cucamonga"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Roseville",
@@ -369,8 +257,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Roseville"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Sacramento",
@@ -383,8 +270,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Sacramento"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI San Diego",
@@ -397,8 +283,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI San Diego"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI San Luis Obispo",
@@ -411,8 +296,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI San Luis Obispo"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI San Mateo",
@@ -425,8 +309,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI San Mateo"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI San Ramon",
@@ -439,8 +322,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI San Ramon"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Santa Barbara",
@@ -453,8 +335,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Santa Barbara"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Santa Clara",
@@ -467,8 +348,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Santa Clara"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Santa Monica",
@@ -481,8 +361,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Santa Monica"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Sonoma",
@@ -495,8 +374,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Sonoma"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Vacaville",
@@ -509,8 +387,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Vacaville"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Walnut Creek",
@@ -523,8 +400,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Walnut Creek"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Westlake Village",
@@ -537,8 +413,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Westlake Village"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Broomfield",
@@ -551,8 +426,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Broomfield"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Colorado Springs",
@@ -565,8 +439,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Colorado Springs"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Denver",
@@ -579,8 +452,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Denver"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Littleton",
@@ -593,8 +465,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Littleton"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Danbury",
@@ -607,8 +478,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Danbury"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI South Windsor",
@@ -621,8 +491,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI South Windsor"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Westport",
@@ -635,8 +504,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Westport"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Boca Raton",
@@ -649,8 +517,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Boca Raton"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Coral Gables",
@@ -663,8 +530,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Coral Gables"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Hallandale Beach",
@@ -677,8 +543,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Hallandale Beach"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Miami",
@@ -691,8 +556,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Miami"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Miramar Beach",
@@ -705,8 +569,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Miramar Beach"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Naples",
@@ -719,8 +582,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Naples"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Palm Beach Gardens",
@@ -733,8 +595,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Palm Beach Gardens"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Sarasota",
@@ -747,8 +608,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Sarasota"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Tampa",
@@ -761,8 +621,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Tampa"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Winter Park",
@@ -775,8 +634,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Winter Park"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Alpharetta",
@@ -789,8 +647,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Alpharetta"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Atlanta",
@@ -803,8 +660,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Atlanta"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Dawsonville",
@@ -817,8 +673,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Dawsonville"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Marietta",
@@ -831,8 +686,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Marietta"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Boise",
@@ -845,8 +699,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Boise"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Chicago",
@@ -859,8 +712,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Chicago"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Deer Park",
@@ -873,8 +725,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Deer Park"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Geneva",
@@ -887,8 +738,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Geneva"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Lake Forest",
@@ -901,8 +751,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Lake Forest"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Oak Brook",
@@ -915,8 +764,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Oak Brook"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI INDIANAPOLIS",
@@ -929,8 +777,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI INDIANAPOLIS"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI West Des Moines",
@@ -943,8 +790,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI West Des Moines"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Leawood",
@@ -957,8 +803,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Leawood"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Lexington",
@@ -971,8 +816,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Lexington"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Louisville",
@@ -985,8 +829,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Louisville"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Annapolis",
@@ -999,8 +842,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Annapolis"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Baltimore",
@@ -1013,8 +855,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Baltimore"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Bethesda",
@@ -1027,8 +868,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Bethesda"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Dedham",
@@ -1041,8 +881,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Dedham"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Hingham",
@@ -1055,8 +894,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Hingham"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Lynnfield",
@@ -1069,8 +907,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Lynnfield"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Mashpee",
@@ -1083,8 +920,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Mashpee"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Grand Rapids",
@@ -1097,8 +933,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Grand Rapids"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Lansing",
@@ -1111,8 +946,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Lansing"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Novi",
@@ -1125,8 +959,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Novi"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Rochester Hills",
@@ -1139,8 +972,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Rochester Hills"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Troy",
@@ -1153,8 +985,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Troy"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Edina",
@@ -1167,8 +998,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Edina"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Minnetonka",
@@ -1181,8 +1011,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Minnetonka"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Roseville",
@@ -1195,8 +1024,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Roseville"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI St. Louis",
@@ -1209,8 +1037,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI St. Louis"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Omaha",
@@ -1223,8 +1050,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Omaha"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Henderson",
@@ -1237,8 +1063,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Henderson"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Las Vegas",
@@ -1251,8 +1076,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Las Vegas"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Reno",
@@ -1265,8 +1089,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Reno"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Salem",
@@ -1279,8 +1102,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Salem"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Bridgewater",
@@ -1293,8 +1115,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Bridgewater"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Hackensack",
@@ -1307,8 +1128,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Hackensack"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Montclair",
@@ -1321,8 +1141,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Montclair"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Montvale",
@@ -1335,8 +1154,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Montvale"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI North Brunswick",
@@ -1349,8 +1167,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI North Brunswick"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Princeton",
@@ -1363,8 +1180,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Princeton"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Short Hills",
@@ -1377,8 +1193,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Short Hills"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Shrewsbury",
@@ -1391,8 +1206,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Shrewsbury"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Albuquerque",
@@ -1405,8 +1219,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Albuquerque"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Bridgehampton",
@@ -1419,8 +1232,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Bridgehampton"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Garden City",
@@ -1433,8 +1245,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Garden City"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Huntington Station",
@@ -1447,8 +1258,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Huntington Station"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI New York",
@@ -1461,8 +1271,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI New York"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Riverhead",
@@ -1475,8 +1284,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Riverhead"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Victor",
@@ -1489,8 +1297,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Victor"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI White Plains",
@@ -1503,8 +1310,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI White Plains"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Asheville",
@@ -1517,8 +1323,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Asheville"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Cary",
@@ -1531,8 +1336,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Cary"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Charlotte",
@@ -1545,8 +1349,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Charlotte"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Durham",
@@ -1559,8 +1362,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Durham"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Greensboro",
@@ -1573,8 +1375,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Greensboro"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Huntersville",
@@ -1587,8 +1388,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Huntersville"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Wilmington",
@@ -1601,8 +1401,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Wilmington"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Beachwood",
@@ -1615,8 +1414,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Beachwood"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Cincinnati",
@@ -1629,8 +1427,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Cincinnati"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Columbus",
@@ -1643,8 +1440,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Columbus"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Oklahoma City",
@@ -1657,8 +1453,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Oklahoma City"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Tulsa",
@@ -1671,8 +1466,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Tulsa"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Portland",
@@ -1685,8 +1479,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Portland"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Tigard",
@@ -1699,8 +1492,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Tigard"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Glen Mills",
@@ -1713,8 +1505,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Glen Mills"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Harrisburg",
@@ -1727,8 +1518,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Harrisburg"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI King of Prussia",
@@ -1741,8 +1531,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI King of Prussia"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Pittsburgh",
@@ -1755,8 +1544,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Pittsburgh"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI San Juan",
@@ -1769,8 +1557,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI San Juan"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Cranston",
@@ -1783,8 +1570,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Cranston"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Charleston",
@@ -1797,8 +1583,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Charleston"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Franklin",
@@ -1811,8 +1596,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Franklin"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Knoxville",
@@ -1825,8 +1609,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Knoxville"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Nashville",
@@ -1839,8 +1622,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Nashville"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Austin",
@@ -1853,8 +1635,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Austin"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Dallas",
@@ -1867,8 +1648,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Dallas"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Fort Worth",
@@ -1881,8 +1661,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Fort Worth"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Houston",
@@ -1895,8 +1674,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Houston"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Plano",
@@ -1909,8 +1687,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Plano"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI San Antonio",
@@ -1923,8 +1700,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI San Antonio"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Southlake",
@@ -1937,8 +1713,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Southlake"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Salt Lake City",
@@ -1951,8 +1726,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Salt Lake City"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Arlington",
@@ -1965,8 +1739,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Arlington"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Fairfax",
@@ -1979,8 +1752,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Fairfax"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Leesburg",
@@ -1993,8 +1765,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Leesburg"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Richmond",
@@ -2007,8 +1778,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Richmond"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Virginia Beach",
@@ -2021,8 +1791,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Virginia Beach"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Bellevue",
@@ -2035,8 +1804,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Bellevue"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Seattle",
@@ -2049,8 +1817,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Seattle"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Spokane",
@@ -2063,8 +1830,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Spokane"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Wauwatosa",
@@ -2077,8 +1843,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Wauwatosa"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Calgary",
@@ -2091,8 +1856,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Calgary"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI Vancouver",
@@ -2105,8 +1869,7 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI Vancouver"
+    "suppliedBy": "Regional Hub"
   },
   {
     "name": "WSI North York",
@@ -2119,7 +1882,6 @@ export const wsStores = [
     ],
     "type": "STORE",
     "status": "Operational",
-    "suppliedBy": "Regional Hub",
-    "id": "WSI North York"
+    "suppliedBy": "Regional Hub"
   }
-];
+]
