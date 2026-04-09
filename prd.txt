@@ -1,0 +1,643 @@
+================================================================================
+PRODUCT REQUIREMENTS DOCUMENT (PRD)
+Project: Multi-Signal Demand Intelligence System
+Hackathon PS: "Supply Chain: The Supply Chain Sees the Future"
+Event: Cummins CCOEW AI-Thon powered by Williams-Sonoma (Innovation 2026)
+================================================================================
+Version: 1.0
+Date: April 09, 2026
+Status: Pre-build (ideation round active, final round April 09-11)
+Build window: 56 hours (offline, on-site)
+================================================================================
+
+
+--------------------------------------------------------------------------------
+SECTION 1: EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+
+This system solves WSI's peak-season inventory blindspot: replenishment decisions
+must be made 8-12 weeks before demand arrives, but current forecasting tools are
+backward-looking and cannot detect demand signals until it is too late to act.
+
+The solution fuses three signal types — historical sales, real-time search virality
+(Google Trends), and real estate activity (US Census building permits) — into a
+unified demand forecast model that flags SKU-level risk 4–12 weeks in advance.
+A large language model then converts model output into plain-language buyer briefs
+with specific action recommendations and dollar-impact framing.
+
+Key differentiator: No other system in this hackathon uses housing permit data
+as a demand signal. The WSI PS document itself names this signal in Scenario 4.
+This is the innovation the judges wrote into the problem statement.
+
+Core value proposition:
+"Every other forecasting system sees demand after it happens.
+ This one sees it 60 days before — and tells buyers exactly what to do about it."
+
+
+--------------------------------------------------------------------------------
+SECTION 2: PROBLEM STATEMENT
+--------------------------------------------------------------------------------
+
+2.1 The Core Problem
+  WSI places furniture orders with 8-12 week lead times from overseas vendors.
+  Demand can spike suddenly (viral social trends) or gradually (housing market activity).
+  There is no system that detects these demand signals early enough for buyers to act
+  within the lead time window.
+
+2.2 Simultaneous Failure Modes
+  Failure Mode A — Stockout: A product goes viral, demand 3x's in 2 weeks.
+    The buyer's last order was placed based on historical averages. Stockout arrives
+    in 4 weeks. Reorder lead time is 10 weeks. Nothing can be done.
+
+  Failure Mode B — Overstock: A trend peaks undetected. Slow search decline signals
+    demand has dropped, but no system alerts the buyer. 4,000+ units pile up, requiring
+    markdown and consuming warehouse space and working capital.
+
+  Both failures occur simultaneously across different SKUs in the same company
+  because there is no unified view and no forward-looking signal layer.
+
+2.3 Root Causes
+  1. Demand forecasting uses only historical sales — a lagging indicator
+  2. Social virality signals are unstructured and not integrated into any model
+  3. Real estate activity (a 60-day leading indicator for furniture demand) is
+     not tracked by any retail forecasting system
+  4. Buyers receive raw model output (numbers) rather than plain-language guidance
+  5. Overstock and stockout risk are tracked in separate systems with no unified view
+
+2.4 Scope of Impact
+  - WSI peak season (Oct-Dec) represents approximately 35% of annual revenue (~$6.8B/yr)
+  - Out-of-market emergency shipments are a documented margin erosion factor (earnings calls)
+  - A 10-week lead time means October decisions determine December outcomes
+
+
+--------------------------------------------------------------------------------
+SECTION 3: GOALS AND NON-GOALS
+--------------------------------------------------------------------------------
+
+3.1 Goals (Must Have)
+  G1: Detect demand velocity anomalies (upward: viral spike; downward: trend fade)
+      2-12 weeks before they manifest in sales data
+  G2: Integrate housing permit data as a 60-day leading indicator for furniture demand
+  G3: Integrate Google Trends data as a 2-3 week leading indicator for virality
+  G4: Produce a SKU-level risk classification: STOCKOUT_RISK / OVERSTOCK_RISK / OK
+  G5: Generate plain-language AI buyer briefs with specific action recommendations
+  G6: Provide a functional dashboard showing SKU risk overview and signal timelines
+  G7: Include a simulation mode showing system value (with vs. without comparison)
+
+3.2 Goals (Should Have)
+  G8: Multi-axis signal timeline chart (sales + search + permits on one chart)
+  G9: Forecast confidence intervals (not just point forecasts)
+  G10: Dollar-impact framing in buyer briefs (lost revenue at risk, markdown cost)
+  G11: Brand affinity overlay (income + home price → which WSI brand captures demand)
+
+3.3 Goals (Nice to Have — build if time permits)
+  G14: PDF export of buyer brief
+  G15: Streamlit selectbox for different forecast horizons (30/60/90 days)
+  G16: Inventory-to-DC pre-positioning recommendation (PuLP linear program)
+  G17: Model explainability (SHAP values per SKU showing which signal is driving forecast)
+
+3.4 Non-Goals
+  NG1: Real-time streaming data ingestion (batch/periodic is sufficient for demo)
+  NG2: Integration with WSI's actual ERP or WMS systems (demo uses synthetic data)
+  NG3: Social media API access (Instagram, TikTok, Twitter) — Google Trends is the proxy
+  NG4: Mobile application — web dashboard (Streamlit) is sufficient
+  NG5: User authentication or multi-user access control
+  NG6: Production-grade infrastructure (no Docker, Kubernetes, or cloud deployment needed)
+  NG7: Automated retraining pipeline — model is trained once for the demo
+
+
+--------------------------------------------------------------------------------
+SECTION 4: USER STORIES
+--------------------------------------------------------------------------------
+
+US1 (Primary): As a WSI supply chain buyer, I want to see which SKUs are at risk of
+  stockout or overstock in the next 60-90 days, so that I can make replenishment
+  decisions while I still have time to act within the vendor lead time window.
+  Acceptance: Dashboard shows SKU risk table sorted by urgency; I can click any SKU
+  to see the signals driving the forecast.
+
+US2: As a WSI buyer, I want to receive a weekly plain-language summary of the most
+  critical SKUs to act on and exactly what action to take, so that I don't have to
+  interpret raw model output or build my own analysis.
+  Acceptance: "Generate Brief" button produces a formatted recommendation within 30 seconds,
+  naming specific SKUs, current inventory vs. forecast, and recommended action.
+
+US3: As a WSI buyer, I want to understand WHY a SKU is flagged — which signal is driving
+  the forecast — so that I can make a judgment call on whether to trust the recommendation.
+  Acceptance: Each flagged SKU shows signal breakdown (e.g., "search volume +840% WoW,
+  housing permits +34% MoM in Phoenix metro").
+
+US4: As a WSI supply chain analyst, I want to simulate what would have happened if
+  this system existed 6 weeks ago, so that I can validate its value before proposing
+  organizational adoption.
+  Acceptance: Simulation mode lets user select a past date; system shows what signals
+  were present, what risk flags would have been raised, vs. what actually happened.
+
+US5: As a WSI planning manager, I want to see overstock and stockout risks in the same
+  dashboard so that I can understand the full inventory picture at once.
+  Acceptance: Single table showing all SKUs with both risk types; color-coded status.
+
+US6: As a WSI buyer, I want to understand how rising housing activity in a specific
+  metro area affects demand for furniture categories in that region, so that I can
+  pre-position inventory to the right distribution center.
+  Acceptance: Signal timeline shows permit trend for relevant metro alongside
+  SKU demand forecast; LLM brief explicitly names the housing signal when relevant.
+
+
+--------------------------------------------------------------------------------
+SECTION 5: FUNCTIONAL REQUIREMENTS
+--------------------------------------------------------------------------------
+
+5.1 Data Ingestion
+
+FR-D1: The system SHALL ingest historical sales data from sales.csv
+  Fields: sku_id, date, units_sold, store_id, category, price
+  Format: CSV, pandas DataFrame
+  Frequency: Load once at startup; refresh on demand via UI button
+
+FR-D2: The system SHALL fetch Google Trends search index for product keywords
+  Tool: pytrends Python library
+  Granularity: Weekly (52 data points per year)
+  Geography: US national; optionally state-level
+  Keywords: Derived from SKU category and product name
+    - Bedding: ["pottery barn throw blanket", "cozy throw blanket", "plaid blanket"]
+    - Furniture: ["pottery barn sofa", "west elm sofa", "couch"]
+    - Decor: ["decorative pillow", "throw pillow set"]
+  Rate limiting: 1 second sleep between requests; cache to SQLite on first fetch
+  Fallback: If pytrends fails, use pre-cached CSV of trends data
+
+FR-D3: The system SHALL ingest US Census Building Permits data
+  Source: census.gov/construction/bps — download monthly CSV
+  Fallback: census.gov API with free API key
+  Fields: month, metro_area, new_single_family_permits, new_multi_family_permits,
+          renovation_permits
+  Geographic mapping: Census metro areas → WSI DC service regions
+    (Phoenix metro → AZ DC; Charlotte metro → NC DC; etc.)
+  Update frequency: Monthly
+
+FR-D4: The system SHALL ingest FRED mortgage application data
+  Tool: fredapi Python library
+  Series: MBAVCH (MBA Purchase Applications Index), MORTGAGE30US
+  API key: Required (free FRED registration)
+  Fallback: Pre-downloaded CSV of historical data
+  Update frequency: Weekly
+
+FR-D5: The system SHALL integrate all signals into a unified signals DataFrame
+  Schema: date | sku_id | signal_type | value | source
+  Signal types: 'sales_history' | 'google_trends' | 'housing_permit' | 'mortgage_apps'
+  This extends the PS-provided signals.csv schema — housing_permit is a new signal_type
+
+FR-D6: The system SHALL compute inventory metrics from inventory.csv
+  Key derived fields:
+    - rolling_7day_avg_sales = mean(units_sold, last 7 days)
+    - days_of_supply = stock_on_hand / rolling_7day_avg_sales
+    - stockout_days_until = days_of_supply (if < lead_time_days, stockout risk is active)
+    - inventory_coverage_ratio = days_of_supply / lead_time_days
+
+5.2 Feature Engineering
+
+FR-F1: The system SHALL compute lag features for all signals
+  Lags: 1 week, 2 weeks, 4 weeks, 6 weeks, 8 weeks, 12 weeks
+  For each signal type: [signal]_lag_1w, [signal]_lag_4w, [signal]_lag_8w, etc.
+  Purpose: Model learns which lag distance is most predictive per signal
+
+FR-F2: The system SHALL compute velocity features (rate of change)
+  search_velocity_1w = (search_index_now - search_index_1w_ago) / search_index_1w_ago
+  permit_velocity_4w = (permits_now - permits_4w_ago) / permits_4w_ago
+  sales_velocity_2w = (avg_sales_this_2w - avg_sales_prior_2w) / avg_sales_prior_2w
+  These are the KEY features for anomaly detection
+
+FR-F3: The system SHALL compute seasonal features
+  is_peak_season: Boolean flag (True for weeks 44-52, Oct-Dec)
+  week_of_year: Integer 1-52
+  month: Integer 1-12
+  quarter: Integer 1-4
+
+FR-F4: The system SHALL compute inventory risk pre-flags
+  stockout_risk_pre: 1 if days_of_supply < lead_time_days * 1.2, else 0
+  overstock_risk_pre: 1 if days_of_supply > lead_time_days * 3, else 0
+
+FR-F5: The system SHALL encode categorical features
+  brand: Label-encoded (Pottery Barn=0, West Elm=1, Williams Sonoma=2, etc.)
+  category: Label-encoded (Bedding=0, Furniture=1, Decor=2, etc.)
+
+5.3 Machine Learning Models
+
+FR-M1: Demand Forecast Model (LightGBM Regressor)
+  Target variable: units_sold, 30/60/90 days forward
+  Train/test split: TimeSeriesSplit with n_splits=5 (no data leakage)
+  Features: All lag features + velocity features + seasonal features + category + brand
+  Hyperparameters (reasonable defaults for 56-hour build):
+    n_estimators=500, learning_rate=0.05, num_leaves=31, min_child_samples=20
+  Output: Point forecast per SKU per time horizon
+  Model persistence: Save with joblib to /models/demand_forecast.pkl
+
+FR-M2: Anomaly Detector (Isolation Forest + statistical z-score)
+  Purpose: Detect sudden demand velocity changes in EITHER direction (spike or collapse)
+  Isolation Forest configuration:
+    contamination=0.05 (expect ~5% anomalous observations)
+    n_estimators=100, max_samples='auto', random_state=42
+  Input features: search_velocity_1w, search_velocity_2w, sales_velocity_2w,
+                  permit_velocity_4w (when available)
+  Z-score fallback: flag if |z_score| > 2.5 on any velocity feature
+  Output: anomaly_score (-1 = anomaly, 1 = normal), anomaly_flag (Boolean)
+  Trigger condition: anomaly_flag=True AND stockout_risk_pre=1 → STOCKOUT_RISK
+                     anomaly_flag=True AND overstock_risk_pre=1 → OVERSTOCK_RISK
+
+FR-M3: Risk Classifier (Rule-based, deterministic)
+  Output: 'STOCKOUT_RISK' | 'OVERSTOCK_RISK' | 'OK' | 'WATCH'
+  Rules (apply in order):
+    STOCKOUT_RISK: days_of_supply < lead_time_days AND forecast_demand > stock_on_hand + on_order
+    OVERSTOCK_RISK: days_of_supply > lead_time_days * 3 AND sales_velocity_2w < -0.15
+    WATCH: anomaly_flag=True AND NOT (STOCKOUT_RISK or OVERSTOCK_RISK)
+    OK: all other cases
+
+5.4 LLM Buyer Brief Generator
+
+FR-L1: The system SHALL generate a weekly plain-language buyer brief via LLM API
+  Supported LLMs: Claude API (primary), OpenAI API (fallback), Ollama/Llama 3 (offline fallback)
+  API client: anthropic Python library (pip install anthropic)
+  Model: claude-sonnet-4-6 (or claude-haiku-4-5-20251001 for cost/speed)
+
+FR-L2: Input to LLM SHALL be a structured JSON context object
+  Required fields:
+    brief_date: str (YYYY-MM-DD)
+    urgent_skus: list of {
+      sku_id, product_name, brand, category,
+      current_stock: int, on_order: int, lead_time_days: int,
+      days_of_supply: float, risk_level: str,
+      forecast_demand_60d: int, demand_shortfall: int (if stockout),
+      primary_signal: str (which signal is driving this),
+      signal_detail: str (e.g., "search volume +840% WoW", "permits +34% MoM Phoenix")
+    }
+    overstock_skus: list of same structure
+    watch_skus: list of same structure
+    week_summary: str (brief context on market conditions this week)
+
+FR-L3: The LLM prompt SHALL follow this structure (prompt engineering spec):
+  System prompt:
+    "You are a demand intelligence analyst for Williams-Sonoma, Inc. You write concise,
+    actionable weekly inventory briefs for supply chain buyers. Every recommendation
+    must be specific (name the SKU, name the action, name the dollar impact where possible).
+    Buyers are experienced professionals — no preamble, no generic advice.
+    Format: URGENT ACTION → OVERSTOCK WARNING → WATCH LIST.
+    Keep the entire brief under 400 words. Use clear section headers."
+
+  User prompt:
+    "Generate this week's demand intelligence brief based on the following data:
+    [JSON context object]
+
+    For each urgent SKU: state the risk, cite the signal that caught it, give a
+    specific recommended action (e.g., 'expedite supplementary order for X units',
+    'consider markdown trigger at Y% discount', 'monitor for 2 more weeks before acting').
+    Where possible, estimate the financial stakes (e.g., 'shortfall of 12,200 units
+    at $[price] = $[revenue at risk]')."
+
+FR-L4: The system SHALL handle LLM API errors gracefully
+  Retry: 3 attempts with exponential backoff (2s, 4s, 8s)
+  Fallback: If all retries fail, display pre-templated brief with model outputs injected
+  Cache: Save generated briefs to SQLite with (date, model_version) as key
+  Rate limiting: Implement token-aware throttling
+
+FR-L5: The brief output SHALL be displayed in the dashboard with streaming
+  Use: st.write_stream() or character-by-character display simulation
+  Goal: Judges see the AI generating the brief in real time — high visual impact
+
+5.5 Dashboard (Streamlit)
+
+FR-UI1: Panel 1 — SKU Risk Overview Table (default landing page)
+  Columns: SKU ID | Product Name | Brand | Category | Stock | Days of Supply |
+           Risk Status (color-coded) | Primary Signal | Action Required
+  Sorting: STOCKOUT_RISK first, then OVERSTOCK_RISK, then WATCH, then OK
+  Filtering: sidebar filters for brand, category, risk level
+  Interaction: clicking a row opens Panel 2 for that SKU
+  Color coding:
+    STOCKOUT_RISK → red background on status cell
+    OVERSTOCK_RISK → amber background
+    WATCH → blue background
+    OK → green background
+
+FR-UI2: Panel 2 — SKU Signal Timeline (drill-down)
+  Chart type: Multi-axis line chart (plotly)
+  Primary y-axis: units_sold (actuals) + units_forecast (with confidence band)
+  Secondary y-axis: Google Trends search index (normalized 0-100)
+  Tertiary y-axis: building permit count for relevant metro (if housing signal is relevant)
+  X-axis: date (weekly)
+  Visual markers:
+    - Vertical red dashed line: "signal detected" date
+    - Vertical amber line: "stockout date" (when days_of_supply hits 0)
+    - Horizontal gray line: lead_time_days (how far back buyer needed to act)
+  Show: "Action window" shaded region (from signal detection to lead time cutoff)
+  Bottom of panel: Signal detail cards showing:
+    - Search: "[keyword] search volume +840% WoW as of [date] (pytrends)"
+    - Permits: "Phoenix metro SFH permits: +34% MoM as of [month] (Census BPS)"
+    - Sales: "Demand velocity: +127% WoW vs prior 4-week average"
+
+FR-UI3: Panel 3 — Weekly LLM Buyer Brief
+  Layout: Full-width text panel
+  Button: "Generate This Week's Brief" (triggers LLM API call)
+  Loading state: Spinner with text "Analyzing 847 SKUs across 4 signal layers..."
+  Output: Streamed LLM output displayed in monospace-style text block
+  Below output: Expandable "AI Reasoning" section showing the JSON context fed to LLM
+  Bottom: "Download as .txt" button
+
+FR-UI4: Panel 4 — Simulation Mode
+  Purpose: Show "what would have happened" — validates system value to skeptical judges
+  Controls:
+    - Date picker: "Replay from this date" (select a past date)
+    - SKU selector (or show all)
+  Display:
+    Left column: "With System" — what signals were present, what would have been flagged,
+                 what action would have been recommended, what that action would have cost
+    Right column: "What Actually Happened" — actual sales, stockout/overstock event,
+                 actual financial impact
+  Key metric displayed: "Cost of Not Having This System: $X,XXX in lost revenue / markdowns"
+
+FR-UI5: Sidebar (always visible)
+  - Navigation: Overview | Signal Timeline | Buyer Brief | Simulation
+  - Data freshness indicator: "Signals last updated: [date]"
+  - Model info: "Forecast model: LightGBM, trained on [N] weeks of history"
+  - "Refresh Data" button (re-fetches Google Trends, re-runs pipeline)
+
+FR-UI6: Dashboard must function offline after initial data fetch
+  Rationale: Hackathon WiFi may be unreliable; all data cached to SQLite
+  All charts use local data only after initial fetch
+
+
+--------------------------------------------------------------------------------
+SECTION 6: DATA REQUIREMENTS
+--------------------------------------------------------------------------------
+
+6.1 Synthetic Data Generation Spec
+  Since WSI real sales data is not available, generate realistic synthetic data.
+  The synthetic data MUST include the following scenario types for demo purposes:
+
+  Scenario Type A — Viral Spike (for STOCKOUT_RISK demo):
+    SKU: PB-BLANKET-42 (Pottery Barn Throw Blanket, Cognac)
+    Baseline sales: 118-130 units/week for 6 months
+    Search index: steady at 8-12 for 5 months, then rapid rise to 89 in week 47
+    Event: simulated influencer post March 12
+    Sales response: 412 units week 48, 680 week 49, 540 week 50
+    Inventory: 6,200 units in stock, 0 on order, lead_time = 70 days
+    Expected outcome: system flags STOCKOUT_RISK in week 47 when search spikes
+
+  Scenario Type B — Silent Overstock (for OVERSTOCK_RISK demo):
+    SKU: PB-PILLOW-71 (Decorative Pillow, Sage Green)
+    Peak sales: 210 units/week in February (seasonal + trend peak)
+    Current sales: 47 units/week (week 47)
+    Search index: declining 4-6% WoW for 8 consecutive weeks
+    Inventory: 4,200 units in stock, 800 on order (placed 3 months ago), lead_time = 56 days
+    Expected outcome: system flags OVERSTOCK_RISK; on_order should have been cancelled
+
+  Scenario Type C — Real Estate Leading Indicator (key differentiator):
+    SKU: PB-BED-FRAME-33 (Pottery Barn Bedroom Set, King)
+    Baseline sales: 34 units/week, steady
+    Search index: flat, no unusual activity
+    Housing permits: Phoenix metro SFH permits +34% MoM (pulled from Census data)
+    Expected outcome: system predicts demand spike in 8-10 weeks BEFORE search confirms it
+    Note: This scenario demonstrates the 60-day lead time advantage
+
+  Scenario Type D — OK SKU (for contrast):
+    SKU: WE-LAMP-19 (West Elm Table Lamp)
+    Steady sales: 67 units/week, consistent for 12 months
+    No unusual search activity
+    Inventory: 890 units, lead_time = 42 days, days_of_supply = 65
+    Expected outcome: system shows OK, no action needed
+
+6.2 Data Volume for Demo
+  SKUs in dataset: 50-100 (enough to make the risk table non-trivial)
+  Date range: 104 weeks (2 years of weekly data)
+  Scenario SKUs: 4-6 with manually crafted patterns (above)
+  Remaining SKUs: programmatically generated with random realistic patterns
+
+6.3 Data Storage
+  All data: SQLite database at /data/demand_intelligence.db
+  Tables: sales, signals, inventory, features, predictions, briefs_cache
+  Reason: Lightweight, file-based, no server needed, survives hackathon WiFi failures
+
+
+--------------------------------------------------------------------------------
+SECTION 7: TECHNICAL ARCHITECTURE
+--------------------------------------------------------------------------------
+
+7.1 Directory Structure
+  /project_root
+  ├── /data
+  │   ├── demand_intelligence.db    (SQLite — all data)
+  │   ├── sales.csv                 (generated)
+  │   ├── signals.csv               (generated + enriched with Google Trends + permits)
+  │   ├── inventory.csv             (generated)
+  │   └── /cache                    (cached API responses)
+  ├── /models
+  │   ├── demand_forecast.pkl       (trained LightGBM model)
+  │   ├── anomaly_detector.pkl      (trained Isolation Forest)
+  │   └── feature_columns.pkl      (saved feature list for inference)
+  ├── /src
+  │   ├── data_ingestion.py         (fetch Google Trends, Census, FRED)
+  │   ├── feature_engineering.py    (compute all features)
+  │   ├── model_training.py         (train + save LightGBM, Isolation Forest)
+  │   ├── risk_classifier.py        (rule-based risk classification)
+  │   ├── llm_brief.py              (LLM API calls + prompt engineering)
+  │   ├── synthetic_data.py         (generate demo data)
+  │   └── db_utils.py               (SQLite read/write helpers)
+  ├── /app
+  │   └── dashboard.py              (Streamlit app — all 4 panels)
+  ├── requirements.txt
+  ├── .env                          (API keys — never commit this)
+  ├── .env.example                  (template without real keys)
+  └── README.md
+
+7.2 Key Dependencies (requirements.txt)
+  pandas>=2.0
+  numpy>=1.24
+  lightgbm>=4.0
+  scikit-learn>=1.3
+  prophet>=1.1         (optional — for seasonal decomposition)
+  statsmodels>=0.14    (for STL decomposition as Prophet alternative)
+  pytrends>=4.9
+  fredapi>=0.5
+  requests>=2.31
+  anthropic>=0.25      (Claude API)
+  openai>=1.0          (fallback LLM)
+  streamlit>=1.30
+  plotly>=5.18
+  altair>=5.0
+  joblib>=1.3
+  python-dotenv>=1.0
+  shap>=0.44           (optional feature importance)
+  pulp>=2.7            (optional DC optimization)
+  geopandas>=0.14      (optional geographic joins)
+
+7.3 API Keys Required
+  FRED API key: Register free at fred.stlouisfed.org/docs/api/api_key.html
+                Store in .env as FRED_API_KEY=xxxxx
+  Anthropic API key: Register at console.anthropic.com
+                     Store in .env as ANTHROPIC_API_KEY=sk-ant-xxxxx
+                     Free tier sufficient for hackathon demo volume
+  Census API key (optional): Register at api.census.gov
+                              Store in .env as CENSUS_API_KEY=xxxxx
+                              Fallback: download CSVs manually from census.gov/construction/bps
+
+7.4 Environment Setup
+  # Register for API keys before hackathon starts (instant)
+  pip install -r requirements.txt
+  cp .env.example .env
+  # Fill in .env with real API keys
+  python src/synthetic_data.py  # generate demo data
+  python src/data_ingestion.py  # fetch real signals (Google Trends, Census, FRED)
+  python src/feature_engineering.py  # compute features
+  python src/model_training.py  # train models
+  streamlit run app/dashboard.py  # launch dashboard
+
+
+--------------------------------------------------------------------------------
+SECTION 8: BUILD PRIORITY AND 56-HOUR SCHEDULE
+--------------------------------------------------------------------------------
+
+Hour 0-2: Environment setup, synthetic data generation, SQLite schema
+Hour 2-6: Data ingestion scripts (pytrends, Census CSV, FRED API, inventory)
+Hour 6-10: Feature engineering pipeline (lags, velocities, risk pre-flags)
+Hour 10-14: LightGBM model training + Isolation Forest + rule-based classifier
+Hour 14-20: LLM buyer brief (HIGHEST PRIORITY — build and polish the prompt)
+            - Design prompt, test outputs, iterate until brief is genuinely impressive
+            - Handle API errors, implement caching
+Hour 20-28: Streamlit dashboard — Panel 1 (risk table) + Panel 2 (signal timeline)
+Hour 28-34: Panel 3 (LLM brief with streaming) + Panel 4 (simulation mode)
+Hour 34-40: Real estate integration (Census permit data → features → model update)
+            - This is the differentiator; ensure it shows up clearly in Panel 2
+Hour 40-46: Polish, demo data refinement, UI styling
+Hour 46-52: Demo dry-run with 3 scenarios; Q&A prep
+Hour 52-56: Buffer for bugs, final fixes
+
+
+--------------------------------------------------------------------------------
+SECTION 9: DEMO SCENARIOS (EXACT SCRIPT FOR JUDGES)
+--------------------------------------------------------------------------------
+
+SCENARIO 1: The Viral Spike (matches PS narrative directly)
+  Step 1: "Let's start with SKU PB-BLANKET-42 — this is the Pottery Barn throw blanket
+           from the PS story."
+  Step 2: Click it in the risk table → opens signal timeline
+  Step 3: "On March 12, a creator with 2.4M followers posted this exact blanket.
+           Watch what happens to the Google Trends line."
+           [Point to search index spike: 12 → 89 in 7 days]
+  Step 4: "The model detects a demand velocity anomaly and projects 18,400 units of demand.
+           Current stock: 6,200. Lead time: 70 days. The action window is closing."
+           [Point to shaded action window — it narrows as demo proceeds]
+  Step 5: "Here's what the AI tells the buyer."
+           [Click Generate Brief, let it stream live]
+  Key line: "We caught this 3 weeks before sales data showed it — 3 weeks before the
+             stockout was inevitable. The 10-week window was still open. The buyer could act."
+
+SCENARIO 2: The Overstock (Silent Problem)
+  Step 1: "Now let's look at PB-PILLOW-71 — 4,200 units. Look at the search trend."
+           [Show 8-week declining search index]
+  Step 2: "Sales velocity is -38% WoW. The trend peaked in February. No one caught it.
+           The reorder went through anyway."
+  Step 3: "The system flags OVERSTOCK_RISK and recommends a markdown trigger before
+           the Q4 holding cost compounds further."
+  Key line: "Both of these — the stockout and the overstock — are happening simultaneously.
+             In the same company. For the first time, one dashboard sees both problems."
+
+SCENARIO 3: The Real Estate Signal (The Differentiator — save for last)
+  Step 1: "Now here's the part no other system in this room has."
+           [Navigate to PB-BED-FRAME-33, Phoenix metro]
+  Step 2: "Search trends: flat. Sales: normal. Everything looks fine."
+  Step 3: "But look at this."
+           [Point to the housing permit trendline — Phoenix SFH permits up 34% MoM]
+  Step 4: "A family signed a purchase agreement on a new home in Scottsdale last month.
+           They won't search for bedroom furniture for another 5-6 weeks.
+           Google Trends won't show anything for 6 weeks. Sales won't spike for 9 weeks.
+           But the permit was filed 4 weeks ago."
+  Step 5: "The model sees it now. 60 days before any other system would."
+           [Show WATCH flag → projected to flip STOCKOUT_RISK in 2 weeks]
+  Step 6: Show LLM brief referencing the housing signal.
+  Key line: "We read WSI's own problem statement — Scenario 4 says 'rising housing permits
+             + social trend together predict blanket demand — neither alone is enough.'
+             We built exactly that. Directly from the signal your own team wrote into the PS."
+
+
+--------------------------------------------------------------------------------
+SECTION 10: ACCEPTANCE CRITERIA
+--------------------------------------------------------------------------------
+
+AC1: Dashboard loads in under 5 seconds (after data is pre-fetched)
+AC2: Risk table shows all 50+ SKUs with correct color-coded risk status
+AC3: Signal timeline shows at least 2 y-axes (sales + search) for any SKU
+AC4: For the viral spike SKU (PB-BLANKET-42), the anomaly detector MUST flag
+     STOCKOUT_RISK at least 2 weeks before the stock would actually run out
+AC5: For the overstock SKU (PB-PILLOW-71), the classifier MUST flag
+     OVERSTOCK_RISK when days_of_supply > 89 and search declining
+AC6: LLM buyer brief generates successfully in under 60 seconds
+AC7: Buyer brief names at least 3 specific SKUs with specific action recommendations
+AC8: Simulation mode shows the correct date of signal detection vs. stockout event
+AC9: Housing permit data appears in Panel 2 signal timeline for the Phoenix metro SKU
+AC10: Dashboard functions offline (from cached data) after initial fetch
+AC11: No unhandled exceptions during the 10-minute judge demo
+AC12: Code structure is clean and documented — judges may look at it (20% tech impl weight)
+
+
+--------------------------------------------------------------------------------
+SECTION 11: JUDGING CRITERIA ALIGNMENT
+--------------------------------------------------------------------------------
+
+Criteria                    | Weight | How we score high
+----------------------------|--------|---------------------------------------------------
+AI Engineering / tooling    | 20%    | LightGBM + Isolation Forest + LLM API with
+                            |        | structured prompt engineering + pytrends + FRED API.
+                            |        | 5 distinct AI/ML components, all justified.
+                            |        | Show prompt design in the "AI Reasoning" expandable.
+Technical implementation    | 20%    | Clean 5-layer architecture, SQLite for persistence,
+                            |        | TimeSeriesSplit for proper ML eval, error handling,
+                            |        | .env for API key security, modular codebase.
+Problem Solution Fit        | 15%    | Official PS. Addresses all 5 stated challenges.
+                            |        | Scenario 4 naming housing permits = pre-validated fit.
+Business impact             | 15%    | Peak season = 35% of revenue. Dollar-impact framing
+                            |        | in buyer brief. Before/after metrics on slide 5.
+AI-assisted thinking        | 10%    | During Q&A: explain how AI tools (Claude, Cursor)
+                            |        | were used to design the prompt, write the pipeline,
+                            |        | and debug the model. Show the AI-in-the-loop workflow.
+Innovation & Creativity     | 10%    | Housing permit signal = no other team has this.
+                            |        | Validated by the PS itself.
+UX / demo effectiveness     | 10%    | 3-scenario demo script. Streaming LLM output.
+                            |        | Color-coded risk table. Multi-axis signal chart.
+
+
+--------------------------------------------------------------------------------
+SECTION 12: RISKS AND MITIGATIONS
+--------------------------------------------------------------------------------
+
+Risk | Probability | Impact | Mitigation
+-----|-------------|--------|------------------------------------------------------------
+pytrends 429 rate limit | Medium | High | time.sleep(2), pre-fetch all data on Day 1, cache to SQLite
+FRED API registration slow | Low | Medium | Register BEFORE hackathon; fallback to pre-downloaded CSV
+LLM API credit exhausted | Low | High | Cache all briefs; use haiku model (cheaper); offline Ollama fallback
+SQLite file corruption | Very Low | High | Take backups every 4 hours: cp demand_intelligence.db demand_intelligence_bak.db
+LightGBM model poor on synthetic data | Medium | Medium | Validate with held-out weeks; if performance poor, use simpler rule-based forecast and still win on LLM brief + real estate signal
+WiFi at venue fails | Medium | Medium | Dashboard runs fully offline after initial data fetch (FR-UI6)
+Team runs out of time | Medium | High | Priority order enforced: LLM brief → forecast → dashboard → real estate. Simulation mode is cut first.
+Another team uses Google Trends | Medium | Low | Our differentiator is housing permits, not Google Trends. Even if others use Trends, no one will have permits.
+Judges don't understand permit signal | Low | Medium | Scenario 3 script is specifically designed to build intuition step by step before showing the model output.
+
+
+--------------------------------------------------------------------------------
+SECTION 13: SUCCESS DEFINITION
+--------------------------------------------------------------------------------
+
+Minimum: Top 25 in ideation round → advance to final. Build a working MVP in 56 hours
+         that demonstrates all 3 scenarios to judges without crashing.
+
+Target: Place in top 3. Judges specifically mention the housing permit signal as the
+        differentiating insight. The LLM buyer brief is referenced in feedback as
+        "production-ready" or "genuinely useful."
+
+Stretch: Pre-placement interview offer from WSI. Judges ask for a demo after the event.
+
+
+================================================================================
+END OF PRD
+Project: Multi-Signal Demand Intelligence System
+Hackathon: Cummins CCOEW AI-Thon powered by Williams-Sonoma
+PS: Supply Chain — The Supply Chain Sees the Future
+Core innovation: Real estate housing permits as 60-day leading demand signal
+================================================================================
