@@ -20,11 +20,11 @@ function App() {
 
   const renderView = () => {
     switch (currentView) {
-      case 'overview': return <SkuRiskOverview />;
-      case 'timeline': return <SignalTimeline />;
-      case 'brief': return <BuyerBrief />;
-      case 'simulation': return <Simulation />;
-      default: return <SkuRiskOverview />;
+      case 'overview': return <SkuRiskOverview theme={theme} />;
+      case 'timeline': return <SignalTimeline theme={theme} />;
+      case 'brief': return <BuyerBrief theme={theme} />;
+      case 'simulation': return <Simulation theme={theme} />;
+      default: return <SkuRiskOverview theme={theme} />;
     }
   };
 

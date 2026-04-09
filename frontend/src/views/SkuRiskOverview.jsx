@@ -4,7 +4,7 @@ import { mockSkus } from '../data';
 import SciFiMap from '../components/SciFiMap';
 import BrandLogo from '../components/BrandLogo';
 
-export default function SkuRiskOverview() {
+export default function SkuRiskOverview({ theme }) {
   const [activeTab, setActiveTab] = useState('ALL');
   const [isMapExpanded, setIsMapExpanded] = useState(false);
   const [isMapHovered, setIsMapHovered] = useState(false);
@@ -104,10 +104,10 @@ export default function SkuRiskOverview() {
             onMouseLeave={() => setIsMapHovered(false)}
           >
             <div style={{ padding: '0 8px', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '16px' }}>
-              Tactical US Hub Grid
+              North American Logistics Grid
             </div>
             <div style={{ position: 'relative', flex: 1, borderRadius: '8px', overflow: 'hidden' }}>
-              <SciFiMap />
+              <SciFiMap theme={theme} />
               <div style={{
                 position: 'absolute',
                 top: 0, left: 0, right: 0, bottom: 0,
@@ -235,11 +235,11 @@ export default function SkuRiskOverview() {
           >
             <X size={24} />
           </button>
-          <div style={{ position: 'absolute', top: '32px', left: '32px', zIndex: 10000, color: '#fff' }}>
-            <h1 style={{ fontSize: '2.5rem', margin: 0, fontFamily: 'var(--font-serif)' }}>Immersive US Tactical Grid</h1>
-            <p style={{ opacity: 0.7, margin: 0 }}>Showing 2,500 active transit nodes down to ZIP level resolution.</p>
+          <div style={{ position: 'absolute', top: '32px', left: '32px', zIndex: 10000, color: 'var(--color-text-primary)' }}>
+            <h1 style={{ fontSize: '2.5rem', margin: 0, fontFamily: 'var(--font-serif)' }}>Immersive Logistics Grid</h1>
+            <p style={{ opacity: 0.7, margin: 0 }}>Showing 2,500 active transit nodes across NA down to ZIP level resolution.</p>
           </div>
-          <SciFiMap isFullscreen={true} />
+          <SciFiMap isFullscreen={true} theme={theme} />
         </div>
       )}
     </>

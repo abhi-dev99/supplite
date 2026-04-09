@@ -84,12 +84,246 @@ export const geoClusters = Array.from({ length: 1800 }).map(() => {
 });
 
 export const distributionCenters = [
-  { name: 'City of Industry DC', coordinates: [-117.9654, 34.0200], region: 'West Coast', radiusMiles: 600, status: 'Active' },
-  { name: 'Dallas DC', coordinates: [-96.7970, 32.7767], region: 'South Central', radiusMiles: 500, status: 'Active' },
-  { name: 'Memphis DC', coordinates: [-90.0490, 35.1495], region: 'Mid-West', radiusMiles: 400, status: 'Active' },
-  { name: 'Olive Branch DC', coordinates: [-89.8295, 34.9618], region: 'South', radiusMiles: 400, status: 'Active' },
-  { name: 'Braselton DC', coordinates: [-83.7627, 34.1084], region: 'Southeast', radiusMiles: 350, status: 'Active' },
-  { name: 'South Brunswick DC', coordinates: [-74.5204, 40.3846], region: 'Northeast', radiusMiles: 300, status: 'Active' }
+  {
+    "name": "Oakland, CA",
+    "coordinates": [
+      -122.271356,
+      37.8044557
+    ],
+    "type": "HUB",
+    "radiusMiles": 200,
+    "status": "Active"
+  },
+  {
+    "name": "Denver, CO",
+    "coordinates": [
+      -104.984862,
+      39.7392364
+    ],
+    "type": "HUB",
+    "radiusMiles": 200,
+    "status": "Active"
+  },
+  {
+    "name": "Lakeland, FL",
+    "coordinates": [
+      -81.9498042,
+      28.0394654
+    ],
+    "type": "HUB",
+    "radiusMiles": 200,
+    "status": "Active"
+  },
+  {
+    "name": "Pompano Beach, FL",
+    "coordinates": [
+      -80.1247667,
+      26.2378597
+    ],
+    "type": "HUB",
+    "radiusMiles": 200,
+    "status": "Active"
+  },
+  {
+    "name": "Boston, MA",
+    "coordinates": [
+      -71.0578303,
+      42.3588336
+    ],
+    "type": "HUB",
+    "radiusMiles": 200,
+    "status": "Active"
+  },
+  {
+    "name": "Columbus, OH",
+    "coordinates": [
+      -83.0007065,
+      39.9622601
+    ],
+    "type": "HUB",
+    "radiusMiles": 200,
+    "status": "Active"
+  },
+  {
+    "name": "Global HQ - San Francisco",
+    "coordinates": [
+      -122.4075201,
+      37.7879363
+    ],
+    "type": "HQ",
+    "radiusMiles": 800,
+    "status": "Active"
+  },
+  {
+    "name": "City of Industry DC",
+    "coordinates": [
+      -117.9593061,
+      34.0182252
+    ],
+    "type": "DC",
+    "radiusMiles": 400,
+    "status": "Active"
+  },
+  {
+    "name": "Olive Branch DC",
+    "coordinates": [
+      -89.8295315,
+      34.9617605
+    ],
+    "type": "DC",
+    "radiusMiles": 400,
+    "status": "Active"
+  },
+  {
+    "name": "South Brunswick DC",
+    "coordinates": [
+      -74.5317663,
+      40.3818728
+    ],
+    "type": "DC",
+    "radiusMiles": 400,
+    "status": "Active"
+  },
+  {
+    "name": "Memphis DC",
+    "coordinates": [
+      -90.0517638,
+      35.1460249
+    ],
+    "type": "DC",
+    "radiusMiles": 400,
+    "status": "Active"
+  },
+  {
+    "name": "Dallas DC",
+    "coordinates": [
+      -96.7968559,
+      32.7762719
+    ],
+    "type": "DC",
+    "radiusMiles": 400,
+    "status": "Active"
+  },
+  {
+    "name": "Braselton DC",
+    "coordinates": [
+      -83.7626729,
+      34.1092735
+    ],
+    "type": "DC",
+    "radiusMiles": 400,
+    "status": "Active"
+  },
+  {
+    "name": "Litchfield Park DC",
+    "coordinates": [
+      -112.358124,
+      33.4933796
+    ],
+    "type": "DC",
+    "radiusMiles": 400,
+    "status": "Active"
+  },
+  {
+    "name": "Fontana DC",
+    "coordinates": [
+      -117.43433,
+      34.0922947
+    ],
+    "type": "DC",
+    "radiusMiles": 400,
+    "status": "Active"
+  },
+  {
+    "name": "Tracy DC",
+    "coordinates": [
+      -121.420139,
+      37.7385507
+    ],
+    "type": "DC",
+    "radiusMiles": 400,
+    "status": "Active"
+  },
+  {
+    "name": "Tupelo Mfg",
+    "coordinates": [
+      -88.7033859,
+      34.2576067
+    ],
+    "type": "MFG",
+    "radiusMiles": 150,
+    "status": "Active"
+  },
+  {
+    "name": "Claremont Mfg",
+    "coordinates": [
+      -81.1461917,
+      35.7145776
+    ],
+    "type": "MFG",
+    "radiusMiles": 150,
+    "status": "Active"
+  },
+  {
+    "name": "Columbus Care Center",
+    "coordinates": [
+      -83.0007065,
+      39.9622601
+    ],
+    "type": "CARE",
+    "radiusMiles": 0,
+    "status": "Active"
+  },
+  {
+    "name": "Braselton Care Center",
+    "coordinates": [
+      -83.7626729,
+      34.1092735
+    ],
+    "type": "CARE",
+    "radiusMiles": 0,
+    "status": "Active"
+  },
+  {
+    "name": "Shafter Care Center",
+    "coordinates": [
+      -119.273682,
+      35.501461
+    ],
+    "type": "CARE",
+    "radiusMiles": 0,
+    "status": "Active"
+  },
+  {
+    "name": "Oklahoma City Care Center",
+    "coordinates": [
+      -97.5170536,
+      35.4729886
+    ],
+    "type": "CARE",
+    "radiusMiles": 0,
+    "status": "Active"
+  },
+  {
+    "name": "Las Vegas Care Center",
+    "coordinates": [
+      -115.1484131,
+      36.1674263
+    ],
+    "type": "CARE",
+    "radiusMiles": 0,
+    "status": "Active"
+  },
+  {
+    "name": "The Colony Care Center",
+    "coordinates": [
+      -96.8863922,
+      33.0890094
+    ],
+    "type": "CARE",
+    "radiusMiles": 0,
+    "status": "Active"
+  }
 ];
 
 export const wsStores = [

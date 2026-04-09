@@ -1,4 +1,17 @@
+distribution hubs
+
+Oakland, CA
+Denver, CO
+Lakeland, FL
+Pompano Beach, FL
+Boston, MA
+Columbus, OH
+
+Headquarters
+San Francisco
+
 supply chain locations
+
 distribution centers.
 City of Industry, CA
 Olive Branch, MS
@@ -6,27 +19,10 @@ South Brunswick, NJ
 Memphis, TN
 Dallas, TX
 Braselton, GA
-manufacturing.
-City of Industry, CA
-Claremont, NC
+*Litchfield Park, AZ
+*Fontana, CA
+*Tracy, CA
 
-distribution hubs.
-Braselton, GA
-​City of Industry, CA
-Denver, CO
-Ft. Lauderdale, FL
-Lakeland, FL
-Dallas, TX
-Boston, MA
-Olive Branch, MS
-Jamesburg, NJ
-Hickory, NC
-Columbus, OH
-Houston, TX
-customer care centers.
-Columbus, OH
-Braselton, GA
-​Shafter, CA
-Oklahoma City, OK
-Las Vegas, NV
-The Colony, TX
+manufacturing
+Tupelo, MS
+Claremont, NC
