@@ -41,8 +41,8 @@ export default function SciFiMap({ isFullscreen = false }) {
       lineWidthMinPixels: 2,
       getPosition: d => d.coordinates,
       getRadius: d => d.radiusMiles, // This makes it massive
-      getFillColor: [255, 60, 60], // Transparent red threat rings
-      getLineColor: [255, 60, 60, 150], 
+      getFillColor: [40, 160, 255], // Gentle cool blue logistics ring instead of red threat
+      getLineColor: [40, 160, 255, 120], 
     }),
 
     // 3. The 6 Main Distribution Center Nodes (Bright large dots)
@@ -151,7 +151,7 @@ export default function SciFiMap({ isFullscreen = false }) {
                  WSI Retail Terminal
                </div>
                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                 <div style={{ fontWeight: 600 }}>{hoverInfo.object.id}</div>
+                 <div style={{ fontWeight: 600 }}>{hoverInfo.object.name}</div>
                  <div style={{ display: 'flex', justifyContent: 'space-between', color: 'rgba(255,255,255,0.5)' }}>
                     <span>Supplied By:</span>
                     <span>{hoverInfo.object.suppliedBy}</span>

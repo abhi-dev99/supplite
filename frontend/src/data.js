@@ -57,26 +57,27 @@ export const mockChartData = [
   { name: 'Week 0', sales: 412, search: 89, permits: 121 },
 ];
 
-export const geoClusters = Array.from({ length: 2500 }).map(() => {
+export const geoClusters = Array.from({ length: 1800 }).map(() => {
   // Center roughly around massive logistics hubs/metros
   const centers = [
-     { name: 'LA Port Authority', lng: -118.24, lat: 34.05, weight: 4.5, type: 'STOCKOUT_RISK' },
-     { name: 'Northeast Corridor', lng: -74.00, lat: 40.71, weight: 5.2, type: 'WATCH' },
-     { name: 'Dallas DC', lng: -96.79, lat: 32.77, weight: 3.8, type: 'OVERSTOCK_RISK' },
-     { name: 'Chicago Rail Hub', lng: -87.62, lat: 41.87, weight: 3.0, type: 'STOCKOUT_RISK' },
-     { name: 'Seattle Port', lng: -122.33, lat: 47.60, weight: 2.0, type: 'WATCH' }
+     { name: 'LA Port Authority', lng: -118.24, lat: 34.05, weight: 0.8, type: 'STOCKOUT_RISK' },
+     { name: 'Northeast Corridor', lng: -74.00, lat: 40.71, weight: 1.2, type: 'WATCH' },
+     { name: 'Dallas DC', lng: -96.79, lat: 32.77, weight: 1.5, type: 'OVERSTOCK_RISK' },
+     { name: 'Chicago Rail Hub', lng: -87.62, lat: 41.87, weight: 1.0, type: 'WATCH' },
+     { name: 'Seattle Port', lng: -122.33, lat: 47.60, weight: 0.5, type: 'WATCH' }
   ];
   const c = centers[Math.floor(Math.random() * centers.length)];
   
-  // Create normally distributed spread
+  // Create normally distributed spread tightly packed (no ocean spilling)
   const lngOff = (Math.random() - 0.5) * c.weight + (Math.random() - 0.5) * c.weight;
-  const latOff = (Math.random() - 0.5) * (c.weight/1.5) + (Math.random() - 0.5) * (c.weight/1.5);
+  const latOff = (Math.random() - 0.5) * (c.weight/1.2) + (Math.random() - 0.5) * (c.weight/1.2);
   
   return {
      hub: c.name,
      zipPrefix: String(Math.floor(Math.random() * 90000) + 10000),
      position: [c.lng + lngOff, c.lat + latOff],
-     risk: c.type === 'STOCKOUT_RISK' ? 'STOCKOUT_RISK' : (Math.random() > 0.5 ? 'OVERSTOCK_RISK' : 'WATCH'),
+     // Only 15% of nodes show extreme red alert
+     risk: Math.random() < 0.15 ? 'STOCKOUT_RISK' : (Math.random() > 0.6 ? 'OVERSTOCK_RISK' : 'WATCH'),
      volume: Math.floor(Math.random() * 1200) + 50,
      delay: Math.floor(Math.random() * 14) + ' Days'
   };
@@ -84,7 +85,7 @@ export const geoClusters = Array.from({ length: 2500 }).map(() => {
 
 export const distributionCenters = [
   { name: 'City of Industry DC', coordinates: [-117.9654, 34.0200], region: 'West Coast', radiusMiles: 600, status: 'Active' },
-  { name: 'Arlington DC', coordinates: [-97.1081, 32.7357], region: 'South Central', radiusMiles: 500, status: 'Active' },
+  { name: 'Dallas DC', coordinates: [-96.7970, 32.7767], region: 'South Central', radiusMiles: 500, status: 'Active' },
   { name: 'Memphis DC', coordinates: [-90.0490, 35.1495], region: 'Mid-West', radiusMiles: 400, status: 'Active' },
   { name: 'Olive Branch DC', coordinates: [-89.8295, 34.9618], region: 'South', radiusMiles: 400, status: 'Active' },
   { name: 'Braselton DC', coordinates: [-83.7627, 34.1084], region: 'Southeast', radiusMiles: 350, status: 'Active' },
