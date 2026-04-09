@@ -66,3 +66,82 @@ tr:hover td {
 .badge.amber { background: var(--color-overstock-bg); color: var(--color-overstock-text); }
 .badge.blue { background: var(--color-watch-bg); color: var(--color-watch-text); }
 .badge.green { background: var(--color-ok-bg); color: var(--color-ok-text); }
+
+/* --- New UI Flourish Elements --- */
+
+.metric-card {
+  background-color: var(--color-surface-floating);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow-diffused);
+  border: 1px solid rgba(0,0,0,0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme='dark'] .metric-card {
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+.metric-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.metric-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.metric-value {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--color-text-primary);
+}
+
+.metric-trend {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.table-row-hover {
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+}
+
+.action-btn {
+  background-color: var(--color-primary);
+  color: var(--color-primary-on);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+.action-btn:hover {
+  opacity: 0.9;
+}
+
+.secondary-btn {
+  background-color: var(--color-surface-hover);
+  color: var(--color-text-primary);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--color-background);
+  transition: background-color 0.2s ease;
+}
+.secondary-btn:hover {
+  background-color: var(--color-surface);
+}
