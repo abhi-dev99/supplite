@@ -1,5 +1,7 @@
-import { AlertCircle, DollarSign, PackageX, TrendingUp } from 'lucide-react';
+import { Filter, Search } from 'lucide-react';
 import { mockSkus } from '../data';
+import RiskHeatmap from '../components/RiskHeatmap';
+import BrandLogo from '../components/BrandLogo';
 
 export default function SkuRiskOverview() {
   const getBadgeClass = (risk) => {
@@ -11,116 +13,153 @@ export default function SkuRiskOverview() {
     }
   };
 
-  const getSupplyWidth = (days) => {
-    const max = 120;
-    return `${Math.min((days / max) * 100, 100)}%`;
-  };
-
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-        <div>
-          <h1 style={{ fontSize: '2.5rem', marginBottom: '8px', letterSpacing: '-0.02em' }}>Demand Intelligence</h1>
-          <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.05rem', margin: 0 }}>
-            Real-time multi-signal fusion across 847 SKUs
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+      
+      {/* Header Section */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+        <div style={{ maxWidth: '600px' }}>
+          <h1 style={{ fontSize: '2.5rem', marginBottom: '12px', letterSpacing: '-0.02em', fontFamily: 'var(--font-serif)' }}>
+            Risk Overview
+          </h1>
+          <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.05rem', lineHeight: 1.5, margin: 0 }}>
+            Inventory exposure analysis across the primary product ecosystem. Strategic oversight for high-velocity SKUs.
           </p>
         </div>
+        <div style={{ display: 'flex', gap: '12px' }}>
+          <button className="secondary-btn">Export Report</button>
+          <button className="action-btn">Initiate Simulation</button>
+        </div>
       </div>
 
-      {/* KPI Metric Cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '24px' }}>
-        <div className="metric-card">
-          <div className="metric-header">
-            <span className="metric-title">Critical Stockouts</span>
-            <PackageX size={18} color="var(--color-stockout-text)" />
+      {/* Hero Metrics Row */}
+      <div style={{ display: 'flex', gap: '24px' }}>
+        
+        {/* Core Exposure Box */}
+        <div className="metric-card" style={{ flex: 1.5, display: 'flex', flexDirection: 'column', gap: '32px' }}>
+          <div>
+            <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '12px' }}>
+              Core Exposure Metric
+            </div>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+              <div style={{ fontSize: '3.5rem', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-text-primary)', lineHeight: 1 }}>
+                $12.4M
+              </div>
+              <div style={{ color: 'var(--color-stockout-text)', fontWeight: 600, fontSize: '0.875rem' }}>
+                ↗ +12.4% vs LY
+              </div>
+            </div>
           </div>
-          <div className="metric-value">12</div>
-          <div className="metric-trend"><span style={{color: 'var(--color-stockout-text)'}}>+3</span> since last week</div>
+          
+          <div style={{ display: 'flex', gap: '48px' }}>
+            <div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Critical Stockouts</div>
+              <div style={{ fontSize: '1.25rem', fontWeight: 600 }}>14 SKUs</div>
+            </div>
+            <div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Overstock Surplus</div>
+              <div style={{ fontSize: '1.25rem', fontWeight: 600 }}>$4.1M</div>
+            </div>
+            <div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Active Signals</div>
+              <div style={{ fontSize: '1.25rem', fontWeight: 600 }}>128</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Heatmap Box */}
+        <div className="metric-card" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+          <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '16px' }}>
+            Regional Risk Heatmap
+          </div>
+          <div style={{ flex: 1, display: 'flex', gap: '16px', alignItems: 'center' }}>
+            <div style={{ flex: 1 }}>
+              <RiskHeatmap />
+            </div>
+            <div style={{ width: '140px', fontSize: '0.75rem', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
+              Concentrated risk detected in <strong>Northeast Hubs</strong>. Port congestion affecting 14% of transit volume.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Table Section */}
+      <div className="table-container">
+        <div style={{ padding: '24px', borderBottom: '1px solid var(--color-background)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <h2 style={{ fontSize: '1.25rem', margin: 0, fontFamily: 'var(--font-serif)' }}>Managed Portfolio Inventory</h2>
+          
+          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+            <div style={{ 
+              display: 'flex', alignItems: 'center', backgroundColor: 'var(--color-surface)', 
+              padding: '6px 12px', borderRadius: '6px', gap: '8px', width: '200px'
+            }}>
+              <Search size={14} color="var(--color-text-secondary)" />
+              <input 
+                type="text" 
+                placeholder="Search portfolio..." 
+                style={{ border: 'none', background: 'transparent', outline: 'none', fontSize: '0.875rem', width: '100%', color: 'var(--color-text-primary)' }}
+              />
+            </div>
+            <button style={{ padding: '8px', color: 'var(--color-text-secondary)' }}>
+              <Filter size={18} />
+            </button>
+          </div>
         </div>
         
-        <div className="metric-card">
-          <div className="metric-header">
-            <span className="metric-title">Capital at Risk</span>
-            <DollarSign size={18} color="var(--color-overstock-text)" />
-          </div>
-          <div className="metric-value">$4.2M</div>
-          <div className="metric-trend"><span style={{color: 'var(--color-text-secondary)'}}>Across 45 overstocked SKUs</span></div>
-        </div>
-
-        <div className="metric-card">
-          <div className="metric-header">
-            <span className="metric-title">Signals Detected</span>
-            <TrendingUp size={18} color="var(--color-watch-text)" />
-          </div>
-          <div className="metric-value">8</div>
-          <div className="metric-trend"><span style={{color: 'var(--color-watch-text)'}}>+14%</span> vs 30-day avg</div>
-        </div>
-
-        <div className="metric-card">
-          <div className="metric-header">
-            <span className="metric-title">Actionable Alerts</span>
-            <AlertCircle size={18} color="var(--color-text-primary)" />
-          </div>
-          <div className="metric-value">24</div>
-          <div className="metric-trend">Requiring buyer review today</div>
-        </div>
-      </div>
-
-      <div className="table-container">
-        <div style={{ padding: '24px', borderBottom: '1px solid var(--color-background)', display: 'flex', justifyContent: 'space-between' }}>
-          <h2 style={{ fontSize: '1.25rem', margin: 0 }}>SKU Risk Matrix</h2>
-          <div style={{ display: 'flex', gap: '8px' }}>
-             <button className="secondary-btn">Filter</button>
-             <button className="secondary-btn">Export Data</button>
-          </div>
-        </div>
         <table>
           <thead>
             <tr>
               <th>SKU ID</th>
-              <th>Product Details</th>
-              <th style={{ width: '200px' }}>Current Supply</th>
+              <th>Product Name</th>
+              <th>Brand</th>
+              <th>Stock</th>
+              <th>Supply</th>
               <th>Risk Status</th>
               <th>Primary Signal</th>
-              <th style={{ textAlign: 'right' }}>Action Required</th>
+              <th style={{ textAlign: 'right' }}>Action</th>
             </tr>
           </thead>
           <tbody>
             {mockSkus.map(sku => (
               <tr key={sku.id} className="table-row-hover">
-                <td style={{ fontWeight: 600 }}>{sku.id}</td>
-                <td>
-                  <div style={{ fontWeight: 500, marginBottom: '4px' }}>{sku.name}</div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>{sku.brand} • {sku.category}</div>
+                <td style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>{sku.id}</td>
+                <td style={{ maxWidth: '200px' }}>
+                  <div style={{ fontWeight: 600, fontSize: '0.875rem' }}>{sku.name}</div>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>Category: {sku.category}</div>
                 </td>
+                <td><BrandLogo brand={sku.brand} /></td>
+                <td>{sku.stock.toLocaleString()}</td>
                 <td>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '6px' }}>
-                    <span style={{ fontWeight: 600 }}>{sku.daysOfSupply} Days</span>
-                    <span style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>({sku.stock.toLocaleString()} units)</span>
-                  </div>
-                  <div style={{ width: '100%', height: '6px', backgroundColor: 'var(--color-background)', borderRadius: '3px', overflow: 'hidden' }}>
-                    <div style={{ 
-                      width: getSupplyWidth(sku.daysOfSupply), 
-                      height: '100%', 
-                      backgroundColor: sku.riskLevel === 'STOCKOUT_RISK' ? 'var(--color-stockout-text)' : 
-                                       sku.riskLevel === 'OVERSTOCK_RISK' ? 'var(--color-overstock-text)' : 'var(--color-text-secondary)',
-                      borderRadius: '3px'
-                    }} />
-                  </div>
+                  <div style={{ fontWeight: 600 }}>{sku.daysOfSupply}</div>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>Days</div>
                 </td>
                 <td>
                   <span className={getBadgeClass(sku.riskLevel)}>
                     {sku.riskLevel.replace('_', ' ')}
                   </span>
                 </td>
-                <td style={{ color: 'var(--color-text-secondary)', fontWeight: 500 }}>{sku.signal}</td>
+                <td style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>{sku.signal}</td>
                 <td style={{ textAlign: 'right' }}>
-                   <button className="action-btn">{sku.action}</button>
+                   <div style={{ fontWeight: 600, fontSize: '0.875rem', cursor: 'pointer' }}>{sku.action}</div>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
+        
+        <div style={{ padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>
+          <div>Showing 4 of 129 Critical SKUs</div>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+            <span style={{ cursor: 'pointer' }}>Previous</span>
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <span style={{ width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--color-primary)', color: 'var(--color-primary-on)', borderRadius: '4px', fontWeight: 600 }}>1</span>
+              <span style={{ width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>2</span>
+              <span style={{ width: '24px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>3</span>
+            </div>
+            <span style={{ cursor: 'pointer' }}>Next</span>
+          </div>
+        </div>
+
       </div>
     </div>
   );
