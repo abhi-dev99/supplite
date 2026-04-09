@@ -1,6 +1,6 @@
-import { LayoutDashboard, TrendingUp, FileText, SplitSquareHorizontal } from 'lucide-react';
+import { LayoutDashboard, TrendingUp, FileText, SplitSquareHorizontal, Sun, Moon } from 'lucide-react';
 
-export default function Sidebar({ currentView, setCurrentView }) {
+export default function Sidebar({ currentView, setCurrentView, theme, toggleTheme }) {
   const navItems = [
     { id: 'overview', label: 'Overview', icon: LayoutDashboard },
     { id: 'timeline', label: 'Signal Timeline', icon: TrendingUp },
@@ -53,14 +53,36 @@ export default function Sidebar({ currentView, setCurrentView }) {
 
       <div style={{
         marginTop: 'auto',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
         paddingTop: '24px',
-        borderTop: '2px solid var(--color-background)',
-        fontSize: '0.75rem',
-        color: 'var(--color-text-secondary)'
+        borderTop: '2px solid var(--color-background)'
       }}>
-        <div style={{ fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '4px' }}>Data Freshness</div>
-        <div>Signals last updated:</div>
-        <div>April 09, 2026 09:00 AM</div>
+        <div style={{
+          fontSize: '0.75rem',
+          color: 'var(--color-text-secondary)'
+        }}>
+          <div style={{ fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '4px' }}>Data Freshness</div>
+          <div>Signals updated: </div>
+          <div>April 09, 2026</div>
+        </div>
+        
+        <button 
+          onClick={toggleTheme}
+          style={{
+            padding: '8px',
+            borderRadius: '50%',
+            backgroundColor: 'var(--color-surface-hover)',
+            color: 'var(--color-text-primary)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+          title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+        >
+          {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+        </button>
       </div>
     </div>
   );

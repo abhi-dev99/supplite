@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&display=swap');
 
 :root {
+  /* Default Light Mode */
   --color-background: #f9f9fb;
   --color-surface: #f3f3f5;
   --color-surface-hover: #e8e8ea;
@@ -28,6 +29,33 @@
   --font-sans: 'Inter', sans-serif;
   
   --shadow-diffused: 0 12px 40px rgba(26, 28, 29, 0.06);
+}
+
+[data-theme='dark'] {
+  --color-background: #121212;
+  --color-surface: #1a1a1a;
+  --color-surface-hover: #262626;
+  --color-surface-floating: #202020;
+  
+  --color-text-primary: #f0f0f2;
+  --color-text-secondary: #a0a0a0;
+  
+  --color-primary: #ffffff;
+  --color-primary-on: #000000;
+  
+  --color-stockout-bg: #4a0004;
+  --color-stockout-text: #ffb4ab;
+  
+  --color-overstock-bg: #4d3300;
+  --color-overstock-text: #ffdc96;
+  
+  --color-watch-bg: #00255c;
+  --color-watch-text: #adc6ff;
+
+  --color-ok-bg: #003b15;
+  --color-ok-text: #86efac;
+  
+  --shadow-diffused: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 * {
