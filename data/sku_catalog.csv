@@ -1,0 +1,61 @@
+sku_id,product_name,brand,category,price,lead_time_days,metro,dc,scenario_type,scenario_label
+PB-BLANKET-42,"Throw Blanket, Cognac",Pottery Barn,Bedding,89.0,70,Los Angeles,City of Industry DC,A,viral_spike
+PB-PILLOW-71,"Decorative Pillow, Sage Green",Pottery Barn,Decor,65.0,56,New York,South Brunswick DC,B,silent_overstock
+PB-BED-FRAME-33,"Bedroom Set, King",Pottery Barn,Furniture,1899.0,68,Phoenix,Litchfield Park DC,C,housing_leading
+WE-LAMP-19,"Table Lamp, Brass",West Elm,Lighting,179.0,42,Chicago,Olive Branch DC,D,steady_ok
+WS-MIXER-05,"Stand Mixer, Red",Williams Sonoma,Kitchen,449.0,49,Dallas,Dallas DC,E,seasonal_surge
+PB-SOFA-88,"Sectional Sofa, Ivory",Pottery Barn,Furniture,3499.0,84,Phoenix,Litchfield Park DC,F,multi_signal
+WE-RUG-15,"Area Rug, Geometric",West Elm,Decor,299.0,42,Atlanta,Braselton DC,G,post_peak_overstock
+PBK-BUNK-22,"Bunk Bed, White",Pottery Barn Kids,Furniture,1299.0,56,Charlotte,Braselton DC,H,sudden_collapse
+RJ-PENDANT-11,"Industrial Pendant, Matte Black",Rejuvenation,Lighting,329.0,42,Portland,Tracy DC,I,slow_burn
+MG-TOTE-07,"Monogram Tote, Navy",Mark & Graham,Accessories,129.0,35,New York,South Brunswick DC,J,flash_pan
+PB-BED-20,Throw Blanket,Pottery Barn,Bedding,1899,42,Los Angeles,City of Industry DC,R,random_20
+PB-BED-21,Duvet Cover,Pottery Barn,Bedding,1299,28,Los Angeles,City of Industry DC,R,random_21
+PB-BED-22,Quilt Set,Pottery Barn,Bedding,349,28,Charlotte,Braselton DC,R,random_22
+PB-BED-23,Sheet Set,Pottery Barn,Bedding,349,28,Houston,Dallas DC,R,random_23
+PB-BED-24,Comforter,Pottery Barn,Bedding,1299,70,Phoenix,Litchfield Park DC,R,random_24
+PB-FUR-25,Bed Frame King,Pottery Barn,Furniture,89,35,Dallas,Dallas DC,R,random_25
+PB-FUR-26,Sectional Sofa,Pottery Barn,Furniture,1899,35,Nashville,Memphis DC,R,random_26
+PB-FUR-27,Dining Table,Pottery Barn,Furniture,129,28,New York,South Brunswick DC,R,random_27
+PB-FUR-28,Bookcase,Pottery Barn,Furniture,499,42,Portland,Tracy DC,R,random_28
+PB-FUR-29,Nightstand,Pottery Barn,Furniture,499,35,New York,South Brunswick DC,R,random_29
+PB-DEC-30,Decorative Pillow,Pottery Barn,Decor,89,84,Los Angeles,City of Industry DC,R,random_30
+PB-DEC-31,Table Centerpiece,Pottery Barn,Decor,49,56,Houston,Dallas DC,R,random_31
+PB-DEC-32,Wall Mirror,Pottery Barn,Decor,49,49,San Francisco,Tracy DC,R,random_32
+PB-DEC-33,Candle Set,Pottery Barn,Decor,249,42,Houston,Dallas DC,R,random_33
+PB-DEC-34,Vase,Pottery Barn,Decor,69,56,Portland,Tracy DC,R,random_34
+PB-LIG-35,Table Lamp,Pottery Barn,Lighting,179,84,Phoenix,Litchfield Park DC,R,random_35
+PB-LIG-36,Floor Lamp,Pottery Barn,Lighting,249,70,Phoenix,Litchfield Park DC,R,random_36
+PB-LIG-37,Pendant Light,Pottery Barn,Lighting,1899,35,Portland,Tracy DC,R,random_37
+PB-LIG-38,Chandelier,Pottery Barn,Lighting,899,70,San Francisco,Tracy DC,R,random_38
+PB-LIG-39,Sconce,Pottery Barn,Lighting,49,28,Dallas,Dallas DC,R,random_39
+PB-OUT-40,Patio Chair,Pottery Barn,Outdoor,2499,56,Charlotte,Braselton DC,R,random_40
+PB-OUT-41,Outdoor Rug,Pottery Barn,Outdoor,129,35,Houston,Dallas DC,R,random_41
+PB-OUT-42,Planter,Pottery Barn,Outdoor,129,56,Portland,Tracy DC,R,random_42
+PB-OUT-43,Fire Pit,Pottery Barn,Outdoor,249,28,Chicago,Olive Branch DC,R,random_43
+PB-OUT-44,Umbrella,Pottery Barn,Outdoor,899,63,Boston,Boston Hub,R,random_44
+WE-FUR-45,Mid-Century Sofa,West Elm,Furniture,2499,70,Charlotte,Braselton DC,R,random_45
+WE-FUR-46,Coffee Table,West Elm,Furniture,2499,70,Los Angeles,City of Industry DC,R,random_46
+WE-FUR-47,TV Stand,West Elm,Furniture,249,84,Dallas,Dallas DC,R,random_47
+WE-FUR-48,Side Table,West Elm,Furniture,899,70,Atlanta,Braselton DC,R,random_48
+WE-FUR-49,Storage Bench,West Elm,Furniture,129,49,Miami,Pompano Beach Hub,R,random_49
+WE-DEC-50,Art Print,West Elm,Decor,899,28,Portland,Tracy DC,R,random_50
+WE-DEC-51,Decorative Bowl,West Elm,Decor,69,28,Miami,Pompano Beach Hub,R,random_51
+WE-DEC-52,Throw Pillow,West Elm,Decor,499,70,San Francisco,Tracy DC,R,random_52
+WE-DEC-53,Area Rug,West Elm,Decor,89,70,Charlotte,Braselton DC,R,random_53
+WE-DEC-54,Wall Shelf,West Elm,Decor,699,63,New York,South Brunswick DC,R,random_54
+WE-LIG-55,Table Lamp,West Elm,Lighting,249,35,Denver,Denver Hub,R,random_55
+WE-LIG-56,Arc Floor Lamp,West Elm,Lighting,69,56,Phoenix,Litchfield Park DC,R,random_56
+WE-LIG-57,Desk Lamp,West Elm,Lighting,89,28,Dallas,Dallas DC,R,random_57
+WE-LIG-58,String Lights,West Elm,Lighting,2499,63,Chicago,Olive Branch DC,R,random_58
+WE-LIG-59,LED Panel,West Elm,Lighting,249,42,Los Angeles,City of Industry DC,R,random_59
+WS-KIT-60,Chef Knife Set,Williams Sonoma,Kitchen,249,35,Phoenix,Litchfield Park DC,R,random_60
+WS-KIT-61,Copper Cookware,Williams Sonoma,Kitchen,49,35,Seattle,Tracy DC,R,random_61
+WS-KIT-62,Stand Mixer,Williams Sonoma,Kitchen,249,49,Seattle,Tracy DC,R,random_62
+WS-KIT-63,Cutting Board,Williams Sonoma,Kitchen,699,56,New York,South Brunswick DC,R,random_63
+WS-KIT-64,Dutch Oven,Williams Sonoma,Kitchen,49,42,New York,South Brunswick DC,R,random_64
+WS-ENT-65,Wine Glasses Set,Williams Sonoma,Entertaining,899,56,Charlotte,Braselton DC,R,random_65
+WS-ENT-66,Serving Platter,Williams Sonoma,Entertaining,1299,42,Chicago,Olive Branch DC,R,random_66
+WS-ENT-67,Cocktail Shaker,Williams Sonoma,Entertaining,699,49,Denver,Denver Hub,R,random_67
+WS-ENT-68,Cheese Board,Williams Sonoma,Entertaining,1899,63,Dallas,Dallas DC,R,random_68
+WS-ENT-69,Ice Bucket,Williams Sonoma,Entertaining,89,49,Houston,Dallas DC,R,random_69
