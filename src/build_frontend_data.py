@@ -2,14 +2,14 @@
 import json
 from pathlib import Path
 
-data_dir = Path(__file__).resolve().parent.parent / "data"
+data_dir = Path(__file__).resolve().parent.parent / "data" / "new"
 
 with open(data_dir / "frontend_data.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 lines = []
-lines.append("// Auto-generated from src/generate_synthetic_data.py")
-lines.append("// 84 SKUs across 5 WSI brands, 8 categories, 104 weeks of history")
+lines.append("// Auto-generated from src/generate_synthetic_data_v2.py")
+lines.append("// 30 SKUs across 5 WSI brands, 11 metro cities, 365 days of daily data")
 lines.append("")
 lines.append("export const mockSkus = " + json.dumps(data["skuTable"], indent=2) + ";")
 lines.append("")

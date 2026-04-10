@@ -2,7 +2,7 @@
 from pathlib import Path
 
 root = Path(__file__).resolve().parent.parent
-data_dir = root / "data"
+data_dir = root / "data" / "new"
 frontend_src = root / "frontend" / "src"
 
 # Read the generated SKU exports
