@@ -1,0 +1,11 @@
+id,hub,zcta,state,latitude,longitude,risk,volume,demand_index,owner_households,renter_households,owner_share_pct,renter_share_pct,owner_yoy_pct,renter_yoy_pct,housing_units_yoy_pct,median_rent_usd,source
+10001-2024-fallback,"New York, Manhattan",10001,NY,40.7506,-73.9972,WATCH,470,116.68,0,0,0.0,0.0,0.0,0.0,0.0,0.0,deterministic-fallback
+11201-2024-fallback,Brooklyn Heights,11201,NY,40.6943,-73.9928,WATCH,735,122.52,0,0,0.0,0.0,0.0,0.0,0.0,0.0,deterministic-fallback
+90012-2024-fallback,Los Angeles Downtown,90012,CA,34.0614,-118.2385,STOCKOUT_RISK,881,125.28,0,0,0.0,0.0,0.0,0.0,0.0,0.0,deterministic-fallback
+90210-2024-fallback,Beverly Hills,90210,CA,34.0901,-118.4065,WATCH,880,124.3,0,0,0.0,0.0,0.0,0.0,0.0,0.0,deterministic-fallback
+94103-2024-fallback,San Francisco SoMa,94103,CA,37.7725,-122.4091,WATCH,731,119.6,0,0,0.0,0.0,0.0,0.0,0.0,0.0,deterministic-fallback
+94301-2024-fallback,Palo Alto,94301,CA,37.4443,-122.1598,WATCH,464,111.93,0,0,0.0,0.0,0.0,0.0,0.0,0.0,deterministic-fallback
+92660-2024-fallback,Newport Beach,92660,CA,33.6221,-117.893,OK,146,102.6,0,0,0.0,0.0,0.0,0.0,0.0,0.0,deterministic-fallback
+98101-2024-fallback,Seattle Downtown,98101,WA,47.6101,-122.3344,OK,476,93.21,0,0,0.0,0.0,0.0,0.0,0.0,0.0,deterministic-fallback
+98004-2024-fallback,Bellevue,98004,WA,47.6104,-122.2015,OVERSTOCK_RISK,739,85.36,0,0,0.0,0.0,0.0,0.0,0.0,0.0,deterministic-fallback
+60611-2024-fallback,Chicago Near North Side,60611,IL,41.8945,-87.62,OVERSTOCK_RISK,882,80.36,0,0,0.0,0.0,0.0,0.0,0.0,0.0,deterministic-fallback
