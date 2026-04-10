@@ -542,15 +542,30 @@ def generate_housing_permits(
     rng: random.Random,
     metro: dict,
     dates: list[date],
-    sku: dict,
 ) -> list[int]:
-    """Housing permits for a metro, with scenario-driven spikes."""
-    permits = []
-    is_housing_scenario = sku["scenario"] == "C" and metro["name"] == sku["home_metro"]
-    is_multi = sku["scenario"] == "F"
+    """
+    Housing permits for a metro — pure metro-level economic indicator.
+
+    Returns one value per day, but values repeat (are constant) within each
+    calendar month.  This matches real Census Building Permits Survey cadence
+    (monthly release, not daily).
+
+    Scenario-specific effects (C, F) are NOT applied here; they live in the
+    scoring layer so that raw permit data stays identical for every SKU in the
+    same metro.
+    """
+    # --- Step 1: compute one permit value per calendar month ---------------
+    from collections import OrderedDict
+    monthly_permits: OrderedDict[tuple[int, int], int] = OrderedDict()
 
     for i, d in enumerate(dates):
-        month_offset = i / 30.44
+        key = (d.year, d.month)
+        if key in monthly_permits:
+            continue  # already computed for this month
+
+        # Use mid-month day index for trend calculation
+        mid_month_day = i + 14  # approximate mid-month
+        month_offset = mid_month_day / 30.44
         base_trend = 1.0 + metro["permit_growth"] * month_offset
 
         # Construction seasonality
@@ -560,23 +575,14 @@ def generate_housing_permits(
             11: 0.75, 12: 0.60,
         }.get(d.month, 1.0)
 
-        # Scenario C: housing spike in home metro
-        if is_housing_scenario:
-            spike_day = 250
-            if i >= spike_day and i < spike_day + 90:
-                progress = min(1.0, (i - spike_day) / 30)
-                base_trend *= 1.0 + 0.34 * progress
-            elif i >= spike_day + 90:
-                base_trend *= 1.34
-
-        # Scenario F: permits also rise
-        if is_multi and i >= 280:
-            progress = min(1.0, (i - 280) / 60)
-            base_trend *= 1.0 + 0.2 * progress
-
         noise = rng.gauss(1.0, 0.05)
         val = metro["baseline_permits"] * base_trend * cs * noise
-        permits.append(max(0, round(val)))
+        monthly_permits[key] = max(0, round(val))
+
+    # --- Step 2: repeat monthly value for every day in that month ---------
+    permits = []
+    for d in dates:
+        permits.append(monthly_permits[(d.year, d.month)])
 
     return permits
 
@@ -592,6 +598,8 @@ def compute_composite_score(
     dates: list[date],
     category: str,
     day_idx: int,
+    scenario: str = "R",
+    is_home_metro: bool = False,
 ) -> dict:
     """
     Compute the composite demand risk score for a given day.
@@ -601,6 +609,9 @@ def compute_composite_score(
       income + RE:     25%
       holiday_search:  20%
       base_search:     15%
+
+    Scenario C/F get an RE boost at scoring level (not in raw data) so
+    that the raw housing_permits stay identical for every SKU in the metro.
 
     Returns dict with sub-scores and composite.
     """
@@ -642,6 +653,18 @@ def compute_composite_score(
         re_component = 25
         permit_vel_30d = 0.0
 
+    # Scenario-aware RE boost (applied at scoring, not raw data)
+    # Scenario C (housing_leading) in home metro: permits are THE signal
+    scenario_re_boost = 0
+    if scenario == "C" and is_home_metro and day_idx >= 250:
+        # Progressive boost as the housing leading indicator fires
+        progress = min(1.0, (day_idx - 250) / 60)
+        scenario_re_boost = 20 * progress  # up to +20 pts on RE score
+    # Scenario F (multi_signal): convergence includes RE
+    elif scenario == "F" and day_idx >= 280:
+        progress = min(1.0, (day_idx - 280) / 60)
+        scenario_re_boost = 12 * progress  # up to +12 pts
+
     # Correlation bonus: if BOTH income > threshold AND permits rising, extra boost
     if metro_income >= INCOME_PREMIUM_THRESHOLD and day_idx >= 30:
         if permit_vel_30d > 5:
@@ -651,7 +674,7 @@ def compute_composite_score(
     else:
         correlation_bonus = 0
 
-    income_re_score = min(100, income_component + re_component + correlation_bonus)
+    income_re_score = min(100, income_component + re_component + correlation_bonus + scenario_re_boost)
 
     # --- Holiday search sub-score (0-100) ---
     holiday_mult, holiday_name = get_holiday_effect(dates[day_idx], category)
@@ -1046,6 +1069,13 @@ def main():
     print(f"  Scoring: sales {W_SALES_VELOCITY:.0%} | income+RE {W_INCOME_RE:.0%} | holiday {W_HOLIDAY_SEARCH:.0%} | search {W_BASE_SEARCH:.0%}")
     print()
 
+    # --- Pre-generate housing permits per metro (metro-level, not SKU-level)
+    metro_permits = {}  # key: metro_name -> list[int] (365 daily values)
+    for mi, metro in enumerate(METROS):
+        metro_rng = random.Random(SEED + 9000 + mi)  # stable per-metro seed
+        metro_permits[metro["name"]] = generate_housing_permits(metro_rng, metro, dates)
+    print("  Housing permits generated (metro-level, monthly-repeated)")
+
     # Generate all data
     all_data = {}  # key: (sku_id, metro_name)
     inventory_rows = []
@@ -1057,15 +1087,18 @@ def main():
 
             sales = generate_daily_sales(pair_rng, sku, metro, dates)
             search = generate_search_index(pair_rng, sales, dates, sku, metro)
-            permits = generate_housing_permits(pair_rng, metro, dates, sku)
+            permits = metro_permits[metro["name"]]  # reuse metro-level permits
 
             # Composite scores for every day
+            is_home = metro["name"] == sku["home_metro"]
             composites = []
             for day_idx in range(NUM_DAYS):
                 cs = compute_composite_score(
                     sales, search, permits,
                     metro["median_income"], dates,
                     sku["category"], day_idx,
+                    scenario=sku["scenario"],
+                    is_home_metro=is_home,
                 )
                 composites.append(cs)
 
@@ -1086,7 +1119,7 @@ def main():
         print(f"  [{si + 1}/{len(SKUS)}] {sku['id']} ({sku['scenario']}: {SCENARIO_LABELS[sku['scenario']]})")
 
     # Write output files
-    data_dir = Path(__file__).resolve().parent.parent / "data"
+    data_dir = Path(__file__).resolve().parent.parent / "data" / "new"
     data_dir.mkdir(exist_ok=True)
 
     print("\nWriting output files...")
