@@ -1,5 +1,6 @@
 const DEFAULT_BASE_URL = "http://localhost:8000";
-const REQUEST_TIMEOUT_MS = 15000;
+const PREVIEW_TIMEOUT_MS = 15000;
+const GENERATE_TIMEOUT_MS = 90000;
 
 function resolveBaseUrl() {
   const configured = import.meta.env.VITE_BACKEND_BASE_URL;
@@ -12,14 +13,21 @@ function createTimeoutSignal(timeoutMs) {
   return { signal: controller.signal, cleanup: () => clearTimeout(timeoutId) };
 }
 
-export async function fetchWeeklyBrief({ forceRefresh = false } = {}) {
+export async function fetchWeeklyBrief({ metro = "Dallas", forceRefresh = false, generateBrief = false } = {}) {
   const baseUrl = resolveBaseUrl();
   const url = new URL("/api/briefs/weekly", baseUrl);
+  if (metro && String(metro).trim()) {
+    url.searchParams.set("metro", String(metro).trim());
+  }
+  if (generateBrief) {
+    url.searchParams.set("generate_brief", "true");
+  }
   if (forceRefresh) {
     url.searchParams.set("force_refresh", "true");
   }
 
-  const { signal, cleanup } = createTimeoutSignal(REQUEST_TIMEOUT_MS);
+  const timeoutMs = generateBrief ? GENERATE_TIMEOUT_MS : PREVIEW_TIMEOUT_MS;
+  const { signal, cleanup } = createTimeoutSignal(timeoutMs);
   try {
     const response = await fetch(url.toString(), {
       method: "GET",
