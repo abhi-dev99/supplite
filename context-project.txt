@@ -1,24 +1,52 @@
-Project Context Log - Supplite
-Date: 2026-04-10
+Supplite project log
 
-Technical Change Log
-- Implemented national-scope real estate heatmap pipeline using Census ACS endpoints with ZCTA geography in backend heatmap services.
-- Added ACS year auto-resolution logic to gracefully fallback when requested latest year (for example 2025) is not fully published; current resolved pair is 2024 vs 2023.
-- Added full export workflow for training data generation at national scale via backend/scripts/export_real_estate_training_data.py.
-- Fixed Gazetteer centroid ingestion for nationwide mapping by using modern Census path format and delimiter-aware parsing.
-- Added model training/scoring script backend/scripts/train_real_estate_model.py to generate scored_real_estate_demand_full.csv from full training export.
-- Updated scored heatmap API behavior to prefer full scored CSV output when available.
-- Updated frontend heatmap fetch strategy and limits to support national/full-US rendering; map layers kept toggleable (Heatmap, Stores, DC Radius) for clarity.
-- Updated backend README with full pipeline commands and operational notes.
+Keep this append-only.
+Put newest entry at the top.
+Use UTC timestamps like: 2026-04-10T12:34:56Z
 
-English Summary
-- We upgraded the map from a small sample to a large, US-wide data pipeline.
-- The backend now tries to use the newest years you ask for, and if Census has not published them yet, it automatically uses the closest available years.
-- We added scripts so you can export the full dataset, train a model, and generate a scored file used directly by the map.
-- The map can now show broader US coverage while still letting you hide noisy layers.
-- Documentation was updated so setup and reruns are straightforward.
+---
+2026-04-10T00:00:00Z | data-pipeline | completed
+Files: backend/src/supply_chain_brief/housing_signals.py, backend/scripts/export_real_estate_training_data.py
+Technical:
+- Fixed national ZCTA centroid loading using Census Gazetteer yearly directory path.
+- Added delimiter-aware parsing for centroid ingestion.
+- Verified national export path with ACS year fallback.
+Plain English:
+- Nationwide location loading now works, so full-US points can be exported.
+Validation:
+- Exported 33772 rows to data/real_estate_training_data_full.csv
+Security:
+- No secrets added; generated CSV stays local and ignored by git rules.
+Next:
+- Retrain model after future data refresh.
 
-Safety / Sensitive Data Notes
-- No new environment files were added.
-- CSV/parquet/data exports are ignored by .gitignore and are not intended to be committed.
-- Virtual environment and cache artifacts are excluded from commit scope.
+---
+2026-04-10T00:00:00Z | backend | completed
+Files: backend/src/supply_chain_brief/main.py, backend/scripts/train_real_estate_model.py, backend/README.md
+Technical:
+- Added full-dataset training script outputting scored_real_estate_demand_full.csv.
+- Updated scored heatmap API notes to use lat/lon from scored CSV.
+- Added runbook commands for full-US export and training.
+Plain English:
+- You can now train and score the nationwide dataset in one flow.
+Validation:
+- Trained rows: 33772; scored file generated.
+Security:
+- No credential changes.
+Next:
+- Add optional model version metadata.
+
+---
+2026-04-10T00:00:00Z | frontend | completed
+Files: frontend/src/api/realEstateApi.js, frontend/src/components/SciFiMap.jsx
+Technical:
+- Increased national heatmap fetch limit.
+- Kept layer toggles (Heatmap, Stores, DC Radius) for less clutter.
+Plain English:
+- Map now requests broader US data and still allows clean layer control.
+Validation:
+- Frontend build passed.
+Security:
+- No sensitive runtime values exposed.
+Next:
+- Add viewport-based fetch for large-scale performance.
