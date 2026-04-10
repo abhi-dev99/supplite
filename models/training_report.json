@@ -1,0 +1,207 @@
+{
+  "generated_at": "2026-04-11T00:07:22.781459",
+  "dataset": {
+    "total_rows": 120450,
+    "features": 42,
+    "skus": 30,
+    "metros": 11,
+    "days": 365
+  },
+  "models": {
+    "lightgbm_30d": {
+      "horizon_days": 30,
+      "train_rows": 91080,
+      "folds": [
+        {
+          "fold": 1,
+          "mae": 24.89832524685012,
+          "rmse": 40.70174343337717,
+          "mape": 8.521480441396498
+        },
+        {
+          "fold": 2,
+          "mae": 38.10480608465277,
+          "rmse": 76.41941852051023,
+          "mape": 9.289274628692334
+        },
+        {
+          "fold": 3,
+          "mae": 89.23790125676418,
+          "rmse": 152.08632528043162,
+          "mape": 14.00736684765903
+        },
+        {
+          "fold": 4,
+          "mae": 189.81954319932424,
+          "rmse": 322.2178865636308,
+          "mape": 62.40024347550198
+        },
+        {
+          "fold": 5,
+          "mae": 39.47733234339983,
+          "rmse": 98.84468299164571,
+          "mape": 27.045899063717172
+        }
+      ],
+      "avg_mae": 76.31,
+      "avg_rmse": 138.05,
+      "avg_mape": 24.25,
+      "target_mean": 350.41,
+      "feature_importance_top10": {
+        "sales_roll_7d_mean": 1149,
+        "sales_vel_30d": 900,
+        "units_sold": 885,
+        "search_vel_7d": 848,
+        "search_roll_30d_mean": 771,
+        "search_vel_14d": 661,
+        "price": 643,
+        "sales_roll_30d_mean": 568,
+        "sales_vel_14d": 555,
+        "permit_vel_60d": 549
+      }
+    },
+    "lightgbm_60d": {
+      "horizon_days": 60,
+      "train_rows": 81180,
+      "folds": [
+        {
+          "fold": 1,
+          "mae": 61.20053731542969,
+          "rmse": 96.21242533808238,
+          "mape": 10.009835926871004
+        },
+        {
+          "fold": 2,
+          "mae": 106.564308514394,
+          "rmse": 190.93932902761046,
+          "mape": 12.643141823973664
+        },
+        {
+          "fold": 3,
+          "mae": 157.06234262711692,
+          "rmse": 295.65723394949333,
+          "mape": 13.139168716186783
+        },
+        {
+          "fold": 4,
+          "mae": 635.6923445472448,
+          "rmse": 936.3639176827746,
+          "mape": 96.39218867260506
+        },
+        {
+          "fold": 5,
+          "mae": 134.86408865140254,
+          "rmse": 247.7273679457792,
+          "mape": 35.99655163778659
+        }
+      ],
+      "avg_mae": 219.08,
+      "avg_rmse": 353.38,
+      "avg_mape": 33.64,
+      "target_mean": 718.09,
+      "feature_importance_top10": {
+        "sales_roll_7d_mean": 988,
+        "search_roll_30d_mean": 883,
+        "sales_vel_30d": 880,
+        "price": 845,
+        "permit_vel_60d": 814,
+        "units_sold": 683,
+        "sales_roll_30d_mean": 633,
+        "permit_vel_30d": 578,
+        "lead_time_days": 539,
+        "sales_lag_60d": 505
+      }
+    },
+    "lightgbm_90d": {
+      "horizon_days": 90,
+      "train_rows": 71280,
+      "folds": [
+        {
+          "fold": 1,
+          "mae": 121.10038935381982,
+          "rmse": 179.09602516971827,
+          "mape": 12.577835267598733
+        },
+        {
+          "fold": 2,
+          "mae": 196.63218215424803,
+          "rmse": 324.5632985287152,
+          "mape": 14.929409348744263
+        },
+        {
+          "fold": 3,
+          "mae": 157.4500499088001,
+          "rmse": 287.49608283672427,
+          "mape": 12.869970434165868
+        },
+        {
+          "fold": 4,
+          "mae": 554.2043015839172,
+          "rmse": 882.6200078655702,
+          "mape": 44.116984000015705
+        },
+        {
+          "fold": 5,
+          "mae": 474.58147677386035,
+          "rmse": 695.9146684957167,
+          "mape": 63.44003739867432
+        }
+      ],
+      "avg_mae": 300.79,
+      "avg_rmse": 473.94,
+      "avg_mape": 29.59,
+      "target_mean": 1115.31,
+      "feature_importance_top10": {
+        "search_roll_30d_mean": 1010,
+        "permit_vel_60d": 954,
+        "sales_roll_30d_mean": 923,
+        "price": 895,
+        "sales_roll_7d_mean": 857,
+        "sales_vel_30d": 841,
+        "permit_vel_30d": 679,
+        "sales_lag_60d": 668,
+        "lead_time_days": 501,
+        "category_encoded": 489
+      }
+    },
+    "isolation_forest": {
+      "train_rows": 110550,
+      "features": [
+        "sales_vel_7d",
+        "sales_vel_14d",
+        "search_vel_7d",
+        "search_vel_14d",
+        "permit_vel_30d"
+      ],
+      "contamination": 0.05,
+      "anomalies_detected": 5528,
+      "anomaly_pct": 5.0,
+      "decision_score_mean": 0.1367,
+      "decision_score_std": 0.063,
+      "zscore_means": {
+        "sales_vel_7d": 1.2327,
+        "sales_vel_14d": 2.0464,
+        "search_vel_7d": 2.9863,
+        "search_vel_14d": 3.9442,
+        "permit_vel_30d": 0.1614
+      },
+      "zscore_stds": {
+        "sales_vel_7d": 16.7999,
+        "sales_vel_14d": 21.8603,
+        "search_vel_7d": 32.3237,
+        "search_vel_14d": 28.7094,
+        "permit_vel_30d": 13.787
+      }
+    }
+  },
+  "predictions_summary": {
+    "total": 330,
+    "risk_distribution": {
+      "OK": 315,
+      "STOCKOUT_RISK": 1,
+      "WATCH": 12,
+      "OVERSTOCK_RISK": 2
+    },
+    "anomalies_flagged": 13
+  }
+}
