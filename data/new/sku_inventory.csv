@@ -1,0 +1,331 @@
+sku_id,product_name,brand,category,price,stock_on_hand,on_order,lead_time_days,days_of_supply,avg_daily_sales,risk_level,surge_score,surge_flag,surge_delta_7d,primary_signal,recommended_action,forecast_demand_60d,metro,dc,scenario_type,median_income
+PB-BED-FRAME-33,"Bedroom Set, King",Pottery Barn,Furniture,1899.0,455,151,68,127,4.8,OK,12.5,STEADY,12.5,Stable demand pattern,Maintain current replenishment,286,Atlanta,Braselton DC,C,82100
+PB-BED-FRAME-33,"Bedroom Set, King",Pottery Barn,Furniture,1899.0,561,144,68,134,5.3,OK,2.6,STEADY,2.6,Stable demand pattern,Maintain current replenishment,316,Chicago,Olive Branch DC,C,78300
+PB-BED-FRAME-33,"Bedroom Set, King",Pottery Barn,Furniture,1899.0,689,150,68,172,4.9,OK,2.9,STEADY,-2.9,Stable demand pattern,Maintain current replenishment,292,Dallas,Dallas DC,C,74600
+PB-BED-FRAME-33,"Bedroom Set, King",Pottery Barn,Furniture,1899.0,657,142,68,151,5.3,OK,5.3,STEADY,5.3,Stable demand pattern,Maintain current replenishment,318,Denver,Denver Hub,C,105200
+PB-BED-FRAME-33,"Bedroom Set, King",Pottery Barn,Furniture,1899.0,584,193,68,190,4.1,OK,3.4,STEADY,3.4,Stable demand pattern,Maintain current replenishment,246,Houston,Dallas DC,C,67200
+PB-BED-FRAME-33,"Bedroom Set, King",Pottery Barn,Furniture,1899.0,462,198,68,101,6.6,OK,4.3,STEADY,4.3,Stable demand pattern,Maintain current replenishment,394,Los Angeles,City of Industry DC,C,83400
+PB-BED-FRAME-33,"Bedroom Set, King",Pottery Barn,Furniture,1899.0,242,50,68,87,3.4,OK,4.2,STEADY,4.2,Stable demand pattern,Maintain current replenishment,202,Miami,Pompano Beach Hub,C,59600
+PB-BED-FRAME-33,"Bedroom Set, King",Pottery Barn,Furniture,1899.0,836,339,68,121,9.7,OK,17.7,STEADY,17.7,Stable demand pattern,Maintain current replenishment,582,New York,South Brunswick DC,C,117400
+PB-BED-FRAME-33,"Bedroom Set, King",Pottery Barn,Furniture,1899.0,878,181,68,135,7.8,WATCH,0.0,STEADY,0.0,Housing permits +34% in Phoenix,Pre-position to Litchfield Park DC,470,Phoenix,Litchfield Park DC,C,72800
+PB-BED-FRAME-33,"Bedroom Set, King",Pottery Barn,Furniture,1899.0,1479,444,68,192,10.0,OK,13.0,STEADY,13.0,Stable demand pattern,Maintain current replenishment,602,San Francisco,Tracy DC,C,136700
+PB-BED-FRAME-33,"Bedroom Set, King",Pottery Barn,Furniture,1899.0,757,100,68,118,7.2,OK,12.0,STEADY,12.0,Stable demand pattern,Maintain current replenishment,434,Seattle,Tracy DC,C,120600
+PB-BLANKET-42,"Throw Blanket, Cognac",Pottery Barn,Bedding,89.0,3175,1039,70,183,23.0,OK,7.3,STEADY,-7.3,Stable demand pattern,Maintain current replenishment,1382,Atlanta,Braselton DC,A,82100
+PB-BLANKET-42,"Throw Blanket, Cognac",Pottery Barn,Bedding,89.0,3702,985,70,182,25.8,OK,7.8,STEADY,-7.8,Stable demand pattern,Maintain current replenishment,1548,Chicago,Olive Branch DC,A,78300
+PB-BLANKET-42,"Throw Blanket, Cognac",Pottery Barn,Bedding,89.0,2024,353,70,104,22.9,OK,4.6,STEADY,-4.6,Stable demand pattern,Maintain current replenishment,1376,Dallas,Dallas DC,A,74600
+PB-BLANKET-42,"Throw Blanket, Cognac",Pottery Barn,Bedding,89.0,2708,512,70,149,21.6,OK,15.7,STEADY,-15.7,Stable demand pattern,Maintain current replenishment,1296,Denver,Denver Hub,A,105200
+PB-BLANKET-42,"Throw Blanket, Cognac",Pottery Barn,Bedding,89.0,2799,858,70,177,20.6,OK,11.5,STEADY,-11.5,Stable demand pattern,Maintain current replenishment,1238,Houston,Dallas DC,A,67200
+PB-BLANKET-42,"Throw Blanket, Cognac",Pottery Barn,Bedding,89.0,1505,0,70,28,53.7,STOCKOUT_RISK,4.0,STEADY,-4.0,Search spike +35%,Expedite supplementary order,3224,Los Angeles,City of Industry DC,A,83400
+PB-BLANKET-42,"Throw Blanket, Cognac",Pottery Barn,Bedding,89.0,2388,257,70,145,18.2,OK,3.4,STEADY,-3.4,Stable demand pattern,Maintain current replenishment,1092,Miami,Pompano Beach Hub,A,59600
+PB-BLANKET-42,"Throw Blanket, Cognac",Pottery Barn,Bedding,89.0,3042,793,70,106,36.3,OK,2.1,STEADY,-2.1,Stable demand pattern,Maintain current replenishment,2178,New York,South Brunswick DC,A,117400
+PB-BLANKET-42,"Throw Blanket, Cognac",Pottery Barn,Bedding,89.0,2946,281,70,162,20.0,OK,13.3,STEADY,-13.3,Stable demand pattern,Maintain current replenishment,1198,Phoenix,Litchfield Park DC,A,72800
+PB-BLANKET-42,"Throw Blanket, Cognac",Pottery Barn,Bedding,89.0,3808,1333,70,175,29.4,OK,10.1,STEADY,-10.1,Stable demand pattern,Maintain current replenishment,1764,San Francisco,Tracy DC,A,136700
+PB-BLANKET-42,"Throw Blanket, Cognac",Pottery Barn,Bedding,89.0,3945,601,70,173,26.3,OK,3.7,STEADY,3.7,Stable demand pattern,Maintain current replenishment,1576,Seattle,Tracy DC,A,120600
+PB-CANDLE-77,"Luxury Candle Set, Cedar",Pottery Barn,Decor,79.0,886,215,35,78,14.2,OK,14.2,STEADY,14.2,Stable demand pattern,Maintain current replenishment,852,Atlanta,Braselton DC,K,82100
+PB-CANDLE-77,"Luxury Candle Set, Cedar",Pottery Barn,Decor,79.0,594,343,35,59,16.0,OK,2.4,STEADY,2.4,Stable demand pattern,Maintain current replenishment,960,Chicago,Olive Branch DC,K,78300
+PB-CANDLE-77,"Luxury Candle Set, Cedar",Pottery Barn,Decor,79.0,1085,110,35,83,14.5,OK,1.8,STEADY,1.8,Stable demand pattern,Maintain current replenishment,868,Dallas,Dallas DC,K,74600
+PB-CANDLE-77,"Luxury Candle Set, Cedar",Pottery Barn,Decor,79.0,883,220,35,78,14.1,OK,10.5,STEADY,10.5,Stable demand pattern,Maintain current replenishment,848,Denver,Denver Hub,K,105200
+PB-CANDLE-77,"Luxury Candle Set, Cedar",Pottery Barn,Decor,79.0,985,271,35,98,12.9,OK,8.3,STEADY,-8.3,Stable demand pattern,Maintain current replenishment,772,Houston,Dallas DC,K,67200
+PB-CANDLE-77,"Luxury Candle Set, Cedar",Pottery Barn,Decor,79.0,775,227,35,50,19.9,OK,3.9,STEADY,3.9,Stable demand pattern,Maintain current replenishment,1192,Los Angeles,City of Industry DC,K,83400
+PB-CANDLE-77,"Luxury Candle Set, Cedar",Pottery Barn,Decor,79.0,703,188,35,76,11.7,OK,1.1,STEADY,1.1,Stable demand pattern,Maintain current replenishment,700,Miami,Pompano Beach Hub,K,59600
+PB-CANDLE-77,"Luxury Candle Set, Cedar",Pottery Barn,Decor,79.0,2363,643,35,89,33.8,OK,9.9,STEADY,9.9,Stable demand pattern,Maintain current replenishment,2028,New York,South Brunswick DC,K,117400
+PB-CANDLE-77,"Luxury Candle Set, Cedar",Pottery Barn,Decor,79.0,935,183,35,86,12.9,OK,1.0,STEADY,1.0,Stable demand pattern,Maintain current replenishment,776,Phoenix,Litchfield Park DC,K,72800
+PB-CANDLE-77,"Luxury Candle Set, Cedar",Pottery Barn,Decor,79.0,1236,375,35,87,18.5,OK,7.9,STEADY,-7.9,Stable demand pattern,Maintain current replenishment,1112,San Francisco,Tracy DC,K,136700
+PB-CANDLE-77,"Luxury Candle Set, Cedar",Pottery Barn,Decor,79.0,623,310,35,58,16.2,OK,1.6,STEADY,1.6,Stable demand pattern,Maintain current replenishment,970,Seattle,Tracy DC,K,120600
+PB-DINSET-09,"Farmhouse Dining Table, Oak",Pottery Barn,Furniture,2299.0,495,130,77,128,4.9,OK,5.7,STEADY,-5.7,Stable demand pattern,Maintain current replenishment,292,Atlanta,Braselton DC,R,82100
+PB-DINSET-09,"Farmhouse Dining Table, Oak",Pottery Barn,Furniture,2299.0,394,131,77,150,3.5,OK,3.8,STEADY,-3.8,Stable demand pattern,Maintain current replenishment,210,Chicago,Olive Branch DC,R,78300
+PB-DINSET-09,"Farmhouse Dining Table, Oak",Pottery Barn,Furniture,2299.0,387,108,77,153,3.2,OK,9.1,STEADY,9.1,Stable demand pattern,Maintain current replenishment,194,Dallas,Dallas DC,R,74600
+PB-DINSET-09,"Farmhouse Dining Table, Oak",Pottery Barn,Furniture,2299.0,398,201,77,160,3.7,OK,3.7,STEADY,-3.7,Stable demand pattern,Maintain current replenishment,224,Denver,Denver Hub,R,105200
+PB-DINSET-09,"Farmhouse Dining Table, Oak",Pottery Barn,Furniture,2299.0,470,123,77,212,2.8,OK,10.5,STEADY,10.5,Stable demand pattern,Maintain current replenishment,168,Houston,Dallas DC,R,67200
+PB-DINSET-09,"Farmhouse Dining Table, Oak",Pottery Barn,Furniture,2299.0,382,186,77,131,4.3,OK,6.5,STEADY,-6.5,Stable demand pattern,Maintain current replenishment,260,Los Angeles,City of Industry DC,R,83400
+PB-DINSET-09,"Farmhouse Dining Table, Oak",Pottery Barn,Furniture,2299.0,207,113,77,143,2.2,OK,5.9,STEADY,-5.9,Stable demand pattern,Maintain current replenishment,134,Miami,Pompano Beach Hub,R,59600
+PB-DINSET-09,"Farmhouse Dining Table, Oak",Pottery Barn,Furniture,2299.0,528,279,77,122,6.6,OK,4.3,STEADY,4.3,Stable demand pattern,Maintain current replenishment,396,New York,South Brunswick DC,R,117400
+PB-DINSET-09,"Farmhouse Dining Table, Oak",Pottery Barn,Furniture,2299.0,381,108,77,165,3.0,OK,4.8,STEADY,4.8,Stable demand pattern,Maintain current replenishment,178,Phoenix,Litchfield Park DC,R,72800
+PB-DINSET-09,"Farmhouse Dining Table, Oak",Pottery Barn,Furniture,2299.0,880,264,77,173,6.6,OK,2.1,STEADY,2.1,Stable demand pattern,Maintain current replenishment,396,San Francisco,Tracy DC,R,136700
+PB-DINSET-09,"Farmhouse Dining Table, Oak",Pottery Barn,Furniture,2299.0,481,240,77,149,4.8,OK,15.6,STEADY,15.6,Stable demand pattern,Maintain current replenishment,290,Seattle,Tracy DC,R,120600
+PB-LAMP-61,"Ceramic Table Lamp, White",Pottery Barn,Lighting,189.0,932,137,42,102,10.5,OK,1.4,STEADY,1.4,Stable demand pattern,Maintain current replenishment,628,Atlanta,Braselton DC,R,82100
+PB-LAMP-61,"Ceramic Table Lamp, White",Pottery Barn,Lighting,189.0,1035,263,42,110,11.8,OK,1.2,STEADY,1.2,Stable demand pattern,Maintain current replenishment,710,Chicago,Olive Branch DC,R,78300
+PB-LAMP-61,"Ceramic Table Lamp, White",Pottery Barn,Lighting,189.0,833,280,42,105,10.6,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,636,Dallas,Dallas DC,R,74600
+PB-LAMP-61,"Ceramic Table Lamp, White",Pottery Barn,Lighting,189.0,718,159,42,72,12.2,OK,3.4,STEADY,-3.4,Stable demand pattern,Maintain current replenishment,732,Denver,Denver Hub,R,105200
+PB-LAMP-61,"Ceramic Table Lamp, White",Pottery Barn,Lighting,189.0,1200,165,42,100,13.6,OK,10.8,STEADY,10.8,Stable demand pattern,Maintain current replenishment,818,Houston,Dallas DC,R,67200
+PB-LAMP-61,"Ceramic Table Lamp, White",Pottery Barn,Lighting,189.0,629,294,42,63,14.7,OK,5.7,STEADY,5.7,Stable demand pattern,Maintain current replenishment,880,Los Angeles,City of Industry DC,R,83400
+PB-LAMP-61,"Ceramic Table Lamp, White",Pottery Barn,Lighting,189.0,369,166,42,68,7.9,OK,5.6,STEADY,5.6,Stable demand pattern,Maintain current replenishment,474,Miami,Pompano Beach Hub,R,59600
+PB-LAMP-61,"Ceramic Table Lamp, White",Pottery Barn,Lighting,189.0,1200,259,42,72,20.1,OK,1.4,STEADY,1.4,Stable demand pattern,Maintain current replenishment,1208,New York,South Brunswick DC,R,117400
+PB-LAMP-61,"Ceramic Table Lamp, White",Pottery Barn,Lighting,189.0,812,256,42,117,9.2,OK,3.0,STEADY,-3.0,Stable demand pattern,Maintain current replenishment,550,Phoenix,Litchfield Park DC,R,72800
+PB-LAMP-61,"Ceramic Table Lamp, White",Pottery Barn,Lighting,189.0,1088,412,42,90,16.6,OK,2.5,STEADY,2.5,Stable demand pattern,Maintain current replenishment,998,San Francisco,Tracy DC,R,136700
+PB-LAMP-61,"Ceramic Table Lamp, White",Pottery Barn,Lighting,189.0,1108,199,42,88,14.9,OK,1.9,STEADY,1.9,Stable demand pattern,Maintain current replenishment,894,Seattle,Tracy DC,R,120600
+PB-MIRROR-22,"Oversized Wall Mirror, Gold",Pottery Barn,Decor,449.0,1324,225,63,154,10.0,OK,5.6,STEADY,5.6,Stable demand pattern,Maintain current replenishment,602,Atlanta,Braselton DC,I,82100
+PB-MIRROR-22,"Oversized Wall Mirror, Gold",Pottery Barn,Decor,449.0,1394,349,63,158,11.1,OK,8.8,STEADY,8.8,Stable demand pattern,Maintain current replenishment,664,Chicago,Olive Branch DC,I,78300
+PB-MIRROR-22,"Oversized Wall Mirror, Gold",Pottery Barn,Decor,449.0,2000,279,63,149,15.3,OK,6.1,STEADY,6.1,Stable demand pattern,Maintain current replenishment,916,Dallas,Dallas DC,I,74600
+PB-MIRROR-22,"Oversized Wall Mirror, Gold",Pottery Barn,Decor,449.0,1411,395,63,158,11.4,OK,6.0,STEADY,6.0,Stable demand pattern,Maintain current replenishment,686,Denver,Denver Hub,I,105200
+PB-MIRROR-22,"Oversized Wall Mirror, Gold",Pottery Barn,Decor,449.0,1081,382,63,167,8.8,OK,4.5,STEADY,4.5,Stable demand pattern,Maintain current replenishment,526,Houston,Dallas DC,I,67200
+PB-MIRROR-22,"Oversized Wall Mirror, Gold",Pottery Barn,Decor,449.0,1902,258,63,152,14.2,OK,4.7,STEADY,4.7,Stable demand pattern,Maintain current replenishment,852,Los Angeles,City of Industry DC,I,83400
+PB-MIRROR-22,"Oversized Wall Mirror, Gold",Pottery Barn,Decor,449.0,593,206,63,107,7.5,OK,1.7,STEADY,1.7,Stable demand pattern,Maintain current replenishment,450,Miami,Pompano Beach Hub,I,59600
+PB-MIRROR-22,"Oversized Wall Mirror, Gold",Pottery Barn,Decor,449.0,2321,410,63,138,19.7,OK,8.4,STEADY,8.4,Stable demand pattern,Maintain current replenishment,1184,New York,South Brunswick DC,I,117400
+PB-MIRROR-22,"Oversized Wall Mirror, Gold",Pottery Barn,Decor,449.0,882,233,63,121,9.2,OK,1.4,STEADY,-1.4,Stable demand pattern,Maintain current replenishment,554,Phoenix,Litchfield Park DC,I,72800
+PB-MIRROR-22,"Oversized Wall Mirror, Gold",Pottery Barn,Decor,449.0,1379,713,63,128,16.4,OK,5.0,STEADY,5.0,Stable demand pattern,Maintain current replenishment,982,San Francisco,Tracy DC,I,136700
+PB-MIRROR-22,"Oversized Wall Mirror, Gold",Pottery Barn,Decor,449.0,1320,528,63,126,14.7,OK,4.5,STEADY,4.5,Stable demand pattern,Maintain current replenishment,882,Seattle,Tracy DC,I,120600
+PB-PILLOW-71,"Decorative Pillow, Sage Green",Pottery Barn,Decor,65.0,1415,563,56,120,16.5,OK,10.5,STEADY,-10.5,Stable demand pattern,Maintain current replenishment,992,Atlanta,Braselton DC,B,82100
+PB-PILLOW-71,"Decorative Pillow, Sage Green",Pottery Barn,Decor,65.0,1493,416,56,111,17.3,OK,12.4,STEADY,12.4,Stable demand pattern,Maintain current replenishment,1036,Chicago,Olive Branch DC,B,78300
+PB-PILLOW-71,"Decorative Pillow, Sage Green",Pottery Barn,Decor,65.0,1564,602,56,138,15.7,OK,9.3,STEADY,-9.3,Stable demand pattern,Maintain current replenishment,940,Dallas,Dallas DC,B,74600
+PB-PILLOW-71,"Decorative Pillow, Sage Green",Pottery Barn,Decor,65.0,956,462,56,89,15.9,OK,0.9,STEADY,-0.9,Stable demand pattern,Maintain current replenishment,954,Denver,Denver Hub,B,105200
+PB-PILLOW-71,"Decorative Pillow, Sage Green",Pottery Barn,Decor,65.0,1157,509,56,119,14.0,OK,12.5,STEADY,-12.5,Stable demand pattern,Maintain current replenishment,840,Houston,Dallas DC,B,67200
+PB-PILLOW-71,"Decorative Pillow, Sage Green",Pottery Barn,Decor,65.0,2599,452,56,141,21.7,OK,5.4,STEADY,5.4,Stable demand pattern,Maintain current replenishment,1302,Los Angeles,City of Industry DC,B,83400
+PB-PILLOW-71,"Decorative Pillow, Sage Green",Pottery Barn,Decor,65.0,1416,377,56,138,13.0,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,778,Miami,Pompano Beach Hub,B,59600
+PB-PILLOW-71,"Decorative Pillow, Sage Green",Pottery Barn,Decor,65.0,9769,1737,56,297,38.8,OVERSTOCK_RISK,0.0,STEADY,0.0,"Demand declining, excess inventory",Pause replenishment; evaluate markdown,2326,New York,South Brunswick DC,B,117400
+PB-PILLOW-71,"Decorative Pillow, Sage Green",Pottery Barn,Decor,65.0,1509,545,56,137,15.0,OK,3.8,STEADY,-3.8,Stable demand pattern,Maintain current replenishment,898,Phoenix,Litchfield Park DC,B,72800
+PB-PILLOW-71,"Decorative Pillow, Sage Green",Pottery Barn,Decor,65.0,2150,464,56,127,20.6,OK,3.3,STEADY,-3.3,Stable demand pattern,Maintain current replenishment,1238,San Francisco,Tracy DC,B,136700
+PB-PILLOW-71,"Decorative Pillow, Sage Green",Pottery Barn,Decor,65.0,1112,569,56,93,18.2,OK,4.7,STEADY,4.7,Stable demand pattern,Maintain current replenishment,1090,Seattle,Tracy DC,B,120600
+PB-PLANTER-30,"Indoor Planter, Terracotta",Pottery Barn,Outdoor,129.0,1023,126,42,98,11.8,OK,9.4,STEADY,9.4,Stable demand pattern,Maintain current replenishment,706,Atlanta,Braselton DC,R,82100
+PB-PLANTER-30,"Indoor Planter, Terracotta",Pottery Barn,Outdoor,129.0,1065,139,42,92,13.1,OK,2.1,STEADY,2.1,Stable demand pattern,Maintain current replenishment,784,Chicago,Olive Branch DC,R,78300
+PB-PLANTER-30,"Indoor Planter, Terracotta",Pottery Barn,Outdoor,129.0,1061,151,42,101,12.0,OK,16.0,STEADY,16.0,Stable demand pattern,Maintain current replenishment,718,Dallas,Dallas DC,R,74600
+PB-PLANTER-30,"Indoor Planter, Terracotta",Pottery Barn,Outdoor,129.0,950,183,42,100,11.3,OK,7.5,STEADY,7.5,Stable demand pattern,Maintain current replenishment,680,Denver,Denver Hub,R,105200
+PB-PLANTER-30,"Indoor Planter, Terracotta",Pottery Barn,Outdoor,129.0,585,185,42,75,10.3,OK,3.8,STEADY,-3.8,Stable demand pattern,Maintain current replenishment,618,Houston,Dallas DC,R,67200
+PB-PLANTER-30,"Indoor Planter, Terracotta",Pottery Barn,Outdoor,129.0,1467,292,42,106,16.5,OK,10.5,STEADY,10.5,Stable demand pattern,Maintain current replenishment,992,Los Angeles,City of Industry DC,R,83400
+PB-PLANTER-30,"Indoor Planter, Terracotta",Pottery Barn,Outdoor,129.0,980,208,42,87,13.6,OK,8.2,STEADY,8.2,Stable demand pattern,Maintain current replenishment,816,Miami,Pompano Beach Hub,R,59600
+PB-PLANTER-30,"Indoor Planter, Terracotta",Pottery Barn,Outdoor,129.0,921,512,42,76,18.7,OK,10.8,STEADY,10.8,Stable demand pattern,Maintain current replenishment,1124,New York,South Brunswick DC,R,117400
+PB-PLANTER-30,"Indoor Planter, Terracotta",Pottery Barn,Outdoor,129.0,736,151,42,86,10.3,OK,14.9,STEADY,14.9,Stable demand pattern,Maintain current replenishment,618,Phoenix,Litchfield Park DC,R,72800
+PB-PLANTER-30,"Indoor Planter, Terracotta",Pottery Barn,Outdoor,129.0,1222,267,42,97,15.3,OK,11.8,STEADY,11.8,Stable demand pattern,Maintain current replenishment,918,San Francisco,Tracy DC,R,136700
+PB-PLANTER-30,"Indoor Planter, Terracotta",Pottery Barn,Outdoor,129.0,636,160,42,61,13.0,OK,16.3,STEADY,16.3,Stable demand pattern,Maintain current replenishment,782,Seattle,Tracy DC,R,120600
+PB-QUILT-15,"Handstitched Quilt, Ivory",Pottery Barn,Bedding,299.0,1326,189,56,224,6.8,OVERSTOCK_RISK,8.2,STEADY,-8.2,Post-holiday demand decline,Cancel pending orders; markdown 15%,406,Atlanta,Braselton DC,G,82100
+PB-QUILT-15,"Handstitched Quilt, Ivory",Pottery Barn,Bedding,299.0,2208,315,56,224,11.3,OVERSTOCK_RISK,7.3,STEADY,-7.3,Post-holiday demand decline,Cancel pending orders; markdown 15%,676,Chicago,Olive Branch DC,G,78300
+PB-QUILT-15,"Handstitched Quilt, Ivory",Pottery Barn,Bedding,299.0,1359,194,56,224,6.9,OVERSTOCK_RISK,0.0,STEADY,0.0,Post-holiday demand decline,Cancel pending orders; markdown 15%,416,Dallas,Dallas DC,G,74600
+PB-QUILT-15,"Handstitched Quilt, Ivory",Pottery Barn,Bedding,299.0,1555,222,56,224,7.9,OVERSTOCK_RISK,5.8,STEADY,5.8,Post-holiday demand decline,Cancel pending orders; markdown 15%,476,Denver,Denver Hub,G,105200
+PB-QUILT-15,"Handstitched Quilt, Ivory",Pottery Barn,Bedding,299.0,1150,164,56,224,5.9,OVERSTOCK_RISK,13.6,STEADY,-13.6,Post-holiday demand decline,Cancel pending orders; markdown 15%,352,Houston,Dallas DC,G,67200
+PB-QUILT-15,"Handstitched Quilt, Ivory",Pottery Barn,Bedding,299.0,1790,256,56,224,9.1,OVERSTOCK_RISK,9.4,STEADY,-9.4,Post-holiday demand decline,Cancel pending orders; markdown 15%,548,Los Angeles,City of Industry DC,G,83400
+PB-QUILT-15,"Handstitched Quilt, Ivory",Pottery Barn,Bedding,299.0,934,133,56,224,4.8,OVERSTOCK_RISK,6.5,STEADY,6.5,Post-holiday demand decline,Cancel pending orders; markdown 15%,286,Miami,Pompano Beach Hub,G,59600
+PB-QUILT-15,"Handstitched Quilt, Ivory",Pottery Barn,Bedding,299.0,2574,368,56,224,13.1,OVERSTOCK_RISK,2.2,STEADY,2.2,Post-holiday demand decline,Cancel pending orders; markdown 15%,788,New York,South Brunswick DC,G,117400
+PB-QUILT-15,"Handstitched Quilt, Ivory",Pottery Barn,Bedding,299.0,1202,172,56,224,6.1,OVERSTOCK_RISK,4.8,STEADY,-4.8,Post-holiday demand decline,Cancel pending orders; markdown 15%,368,Phoenix,Litchfield Park DC,G,72800
+PB-QUILT-15,"Handstitched Quilt, Ivory",Pottery Barn,Bedding,299.0,2123,303,56,224,10.8,OVERSTOCK_RISK,0.0,STEADY,0.0,Post-holiday demand decline,Cancel pending orders; markdown 15%,650,San Francisco,Tracy DC,G,136700
+PB-QUILT-15,"Handstitched Quilt, Ivory",Pottery Barn,Bedding,299.0,1849,264,56,224,9.4,OVERSTOCK_RISK,1.5,STEADY,1.5,Post-holiday demand decline,Cancel pending orders; markdown 15%,566,Seattle,Tracy DC,G,120600
+PB-RUG-44,"Hand-Knotted Area Rug, 8x10",Pottery Barn,Decor,1299.0,194,96,70,123,2.4,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,142,Atlanta,Braselton DC,R,82100
+PB-RUG-44,"Hand-Knotted Area Rug, 8x10",Pottery Barn,Decor,1299.0,268,52,70,114,2.8,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,168,Chicago,Olive Branch DC,R,78300
+PB-RUG-44,"Hand-Knotted Area Rug, 8x10",Pottery Barn,Decor,1299.0,353,77,70,182,2.4,OK,11.8,STEADY,11.8,Stable demand pattern,Maintain current replenishment,142,Dallas,Dallas DC,R,74600
+PB-RUG-44,"Hand-Knotted Area Rug, 8x10",Pottery Barn,Decor,1299.0,372,88,70,106,4.3,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,260,Denver,Denver Hub,R,105200
+PB-RUG-44,"Hand-Knotted Area Rug, 8x10",Pottery Barn,Decor,1299.0,323,77,70,188,2.1,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,128,Houston,Dallas DC,R,67200
+PB-RUG-44,"Hand-Knotted Area Rug, 8x10",Pottery Barn,Decor,1299.0,502,55,70,161,3.5,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,208,Los Angeles,City of Industry DC,R,83400
+PB-RUG-44,"Hand-Knotted Area Rug, 8x10",Pottery Barn,Decor,1299.0,187,79,70,153,1.7,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,104,Miami,Pompano Beach Hub,R,59600
+PB-RUG-44,"Hand-Knotted Area Rug, 8x10",Pottery Barn,Decor,1299.0,593,199,70,150,5.3,OK,5.3,STEADY,5.3,Stable demand pattern,Maintain current replenishment,316,New York,South Brunswick DC,R,117400
+PB-RUG-44,"Hand-Knotted Area Rug, 8x10",Pottery Barn,Decor,1299.0,292,96,70,191,2.0,OK,7.1,STEADY,7.1,Stable demand pattern,Maintain current replenishment,122,Phoenix,Litchfield Park DC,R,72800
+PB-RUG-44,"Hand-Knotted Area Rug, 8x10",Pottery Barn,Decor,1299.0,374,86,70,95,4.8,OK,5.9,STEADY,5.9,Stable demand pattern,Maintain current replenishment,290,San Francisco,Tracy DC,R,136700
+PB-RUG-44,"Hand-Knotted Area Rug, 8x10",Pottery Barn,Decor,1299.0,557,58,70,158,3.9,OK,7.1,STEADY,7.1,Stable demand pattern,Maintain current replenishment,234,Seattle,Tracy DC,R,120600
+PB-SOFA-88,"Sectional Sofa, Ivory",Pottery Barn,Furniture,3499.0,411,181,84,189,3.1,OK,8.7,STEADY,8.7,Stable demand pattern,Maintain current replenishment,188,Atlanta,Braselton DC,F,82100
+PB-SOFA-88,"Sectional Sofa, Ivory",Pottery Barn,Furniture,3499.0,353,104,84,136,3.4,OK,8.0,STEADY,-8.0,Stable demand pattern,Maintain current replenishment,202,Chicago,Olive Branch DC,F,78300
+PB-SOFA-88,"Sectional Sofa, Ivory",Pottery Barn,Furniture,3499.0,534,140,84,217,3.1,OK,4.8,STEADY,4.8,Stable demand pattern,Maintain current replenishment,186,Dallas,Dallas DC,F,74600
+PB-SOFA-88,"Sectional Sofa, Ivory",Pottery Barn,Furniture,3499.0,522,173,84,200,3.5,OK,8.3,STEADY,8.3,Stable demand pattern,Maintain current replenishment,208,Denver,Denver Hub,F,105200
+PB-SOFA-88,"Sectional Sofa, Ivory",Pottery Barn,Furniture,3499.0,445,99,84,212,2.6,OK,5.6,STEADY,5.6,Stable demand pattern,Maintain current replenishment,154,Houston,Dallas DC,F,67200
+PB-SOFA-88,"Sectional Sofa, Ivory",Pottery Barn,Furniture,3499.0,778,76,84,194,4.4,OK,10.0,STEADY,10.0,Stable demand pattern,Maintain current replenishment,264,Los Angeles,City of Industry DC,F,83400
+PB-SOFA-88,"Sectional Sofa, Ivory",Pottery Barn,Furniture,3499.0,271,103,84,173,2.2,OK,11.8,STEADY,-11.8,Stable demand pattern,Maintain current replenishment,130,Miami,Pompano Beach Hub,F,59600
+PB-SOFA-88,"Sectional Sofa, Ivory",Pottery Barn,Furniture,3499.0,1158,196,84,204,6.6,OK,4.4,STEADY,4.4,Stable demand pattern,Maintain current replenishment,398,New York,South Brunswick DC,F,117400
+PB-SOFA-88,"Sectional Sofa, Ivory",Pottery Barn,Furniture,3499.0,267,148,84,158,2.6,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,158,Phoenix,Litchfield Park DC,F,72800
+PB-SOFA-88,"Sectional Sofa, Ivory",Pottery Barn,Furniture,3499.0,1131,609,84,154,11.3,WATCH,9.1,STEADY,9.1,Multi-signal convergence detected,Increase order quantity 20%,678,San Francisco,Tracy DC,F,136700
+PB-SOFA-88,"Sectional Sofa, Ivory",Pottery Barn,Furniture,3499.0,810,258,84,182,5.9,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,352,Seattle,Tracy DC,F,120600
+PB-THROW-55,"Cashmere Throw, Oatmeal",Pottery Barn,Bedding,249.0,816,239,56,150,7.0,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,422,Atlanta,Braselton DC,D,82100
+PB-THROW-55,"Cashmere Throw, Oatmeal",Pottery Barn,Bedding,249.0,624,183,56,101,8.0,OK,1.8,STEADY,1.8,Stable demand pattern,Maintain current replenishment,478,Chicago,Olive Branch DC,D,78300
+PB-THROW-55,"Cashmere Throw, Oatmeal",Pottery Barn,Bedding,249.0,585,246,56,116,7.2,OK,3.8,STEADY,-3.8,Stable demand pattern,Maintain current replenishment,430,Dallas,Dallas DC,D,74600
+PB-THROW-55,"Cashmere Throw, Oatmeal",Pottery Barn,Bedding,249.0,628,119,56,94,8.0,OK,5.2,STEADY,-5.2,Stable demand pattern,Maintain current replenishment,478,Denver,Denver Hub,D,105200
+PB-THROW-55,"Cashmere Throw, Oatmeal",Pottery Barn,Bedding,249.0,585,175,56,121,6.3,OK,4.3,STEADY,-4.3,Stable demand pattern,Maintain current replenishment,378,Houston,Dallas DC,D,67200
+PB-THROW-55,"Cashmere Throw, Oatmeal",Pottery Barn,Bedding,249.0,986,181,56,118,9.9,OK,4.3,STEADY,4.3,Stable demand pattern,Maintain current replenishment,594,Los Angeles,City of Industry DC,D,83400
+PB-THROW-55,"Cashmere Throw, Oatmeal",Pottery Barn,Bedding,249.0,536,188,56,141,5.1,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,308,Miami,Pompano Beach Hub,D,59600
+PB-THROW-55,"Cashmere Throw, Oatmeal",Pottery Barn,Bedding,249.0,900,481,56,100,13.9,OK,3.9,STEADY,-3.9,Stable demand pattern,Maintain current replenishment,832,New York,South Brunswick DC,D,117400
+PB-THROW-55,"Cashmere Throw, Oatmeal",Pottery Barn,Bedding,249.0,623,224,56,136,6.2,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,374,Phoenix,Litchfield Park DC,D,72800
+PB-THROW-55,"Cashmere Throw, Oatmeal",Pottery Barn,Bedding,249.0,642,298,56,83,11.3,OK,2.5,STEADY,2.5,Stable demand pattern,Maintain current replenishment,678,San Francisco,Tracy DC,D,136700
+PB-THROW-55,"Cashmere Throw, Oatmeal",Pottery Barn,Bedding,249.0,1379,358,56,118,14.8,OK,3.8,STEADY,3.8,Stable demand pattern,Maintain current replenishment,886,Seattle,Tracy DC,D,120600
+PBK-BUNK-22,"Bunk Bed, Natural Wood",Pottery Barn Kids,Furniture,1299.0,8,3,63,110,0.1,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,6,Atlanta,Braselton DC,H,82100
+PBK-BUNK-22,"Bunk Bed, Natural Wood",Pottery Barn Kids,Furniture,1299.0,9,4,63,130,0.1,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,6,Chicago,Olive Branch DC,H,78300
+PBK-BUNK-22,"Bunk Bed, Natural Wood",Pottery Barn Kids,Furniture,1299.0,14,2,63,160,0.1,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,6,Dallas,Dallas DC,H,74600
+PBK-BUNK-22,"Bunk Bed, Natural Wood",Pottery Barn Kids,Furniture,1299.0,13,4,63,170,0.1,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,6,Denver,Denver Hub,H,105200
+PBK-BUNK-22,"Bunk Bed, Natural Wood",Pottery Barn Kids,Furniture,1299.0,13,2,63,150,0.1,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,6,Houston,Dallas DC,H,67200
+PBK-BUNK-22,"Bunk Bed, Natural Wood",Pottery Barn Kids,Furniture,1299.0,9,3,63,120,0.1,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,6,Los Angeles,City of Industry DC,H,83400
+PBK-BUNK-22,"Bunk Bed, Natural Wood",Pottery Barn Kids,Furniture,1299.0,8,4,63,120,0.1,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,6,Miami,Pompano Beach Hub,H,59600
+PBK-BUNK-22,"Bunk Bed, Natural Wood",Pottery Barn Kids,Furniture,1299.0,40,15,63,118,0.5,OK,25.0,FADING,-25.0,Stable demand pattern,Maintain current replenishment,28,New York,South Brunswick DC,H,117400
+PBK-BUNK-22,"Bunk Bed, Natural Wood",Pottery Barn Kids,Furniture,1299.0,16,6,63,220,0.1,STOCKOUT_RISK,142.9,SURGING,142.9,Sudden demand collapse,Halt all replenishment,6,Phoenix,Litchfield Park DC,H,72800
+PBK-BUNK-22,"Bunk Bed, Natural Wood",Pottery Barn Kids,Furniture,1299.0,24,5,63,79,0.4,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,22,San Francisco,Tracy DC,H,136700
+PBK-BUNK-22,"Bunk Bed, Natural Wood",Pottery Barn Kids,Furniture,1299.0,13,4,63,170,0.1,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,6,Seattle,Tracy DC,H,120600
+PBK-CRIB-12,"Convertible Crib, White",Pottery Barn Kids,Furniture,699.0,204,104,56,104,3.0,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,178,Atlanta,Braselton DC,C,82100
+PBK-CRIB-12,"Convertible Crib, White",Pottery Barn Kids,Furniture,699.0,342,46,56,116,3.3,OK,4.2,STEADY,4.2,Stable demand pattern,Maintain current replenishment,200,Chicago,Olive Branch DC,C,78300
+PBK-CRIB-12,"Convertible Crib, White",Pottery Barn Kids,Furniture,699.0,201,97,56,104,2.9,OK,4.8,STEADY,-4.8,Stable demand pattern,Maintain current replenishment,172,Dallas,Dallas DC,C,74600
+PBK-CRIB-12,"Convertible Crib, White",Pottery Barn Kids,Furniture,699.0,721,166,56,149,6.0,WATCH,4.7,STEADY,4.7,Housing permits +34% in Denver,Pre-position to Denver Hub,358,Denver,Denver Hub,C,105200
+PBK-CRIB-12,"Convertible Crib, White",Pottery Barn Kids,Furniture,699.0,220,82,56,122,2.5,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,148,Houston,Dallas DC,C,67200
+PBK-CRIB-12,"Convertible Crib, White",Pottery Barn Kids,Furniture,699.0,318,65,56,92,4.2,OK,3.2,STEADY,-3.2,Stable demand pattern,Maintain current replenishment,250,Los Angeles,City of Industry DC,C,83400
+PBK-CRIB-12,"Convertible Crib, White",Pottery Barn Kids,Furniture,699.0,129,41,56,85,2.0,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,120,Miami,Pompano Beach Hub,C,59600
+PBK-CRIB-12,"Convertible Crib, White",Pottery Barn Kids,Furniture,699.0,446,81,56,89,5.9,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,356,New York,South Brunswick DC,C,117400
+PBK-CRIB-12,"Convertible Crib, White",Pottery Barn Kids,Furniture,699.0,288,36,56,131,2.5,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,148,Phoenix,Litchfield Park DC,C,72800
+PBK-CRIB-12,"Convertible Crib, White",Pottery Barn Kids,Furniture,699.0,693,69,56,128,5.9,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,356,San Francisco,Tracy DC,C,136700
+PBK-CRIB-12,"Convertible Crib, White",Pottery Barn Kids,Furniture,699.0,536,132,56,147,4.5,OK,9.7,STEADY,9.7,Stable demand pattern,Maintain current replenishment,272,Seattle,Tracy DC,C,120600
+PBK-QUILT-08,"Kids Quilt Set, Rainbow",Pottery Barn Kids,Bedding,149.0,653,216,42,107,8.1,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,486,Atlanta,Braselton DC,R,82100
+PBK-QUILT-08,"Kids Quilt Set, Rainbow",Pottery Barn Kids,Bedding,149.0,378,145,42,61,8.6,OK,6.8,STEADY,6.8,Stable demand pattern,Maintain current replenishment,518,Chicago,Olive Branch DC,R,78300
+PBK-QUILT-08,"Kids Quilt Set, Rainbow",Pottery Barn Kids,Bedding,149.0,609,137,42,63,11.9,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,714,Dallas,Dallas DC,R,74600
+PBK-QUILT-08,"Kids Quilt Set, Rainbow",Pottery Barn Kids,Bedding,149.0,580,137,42,94,7.6,OK,5.7,STEADY,5.7,Stable demand pattern,Maintain current replenishment,456,Denver,Denver Hub,R,105200
+PBK-QUILT-08,"Kids Quilt Set, Rainbow",Pottery Barn Kids,Bedding,149.0,435,135,42,82,6.9,OK,10.9,STEADY,10.9,Stable demand pattern,Maintain current replenishment,416,Houston,Dallas DC,R,67200
+PBK-QUILT-08,"Kids Quilt Set, Rainbow",Pottery Barn Kids,Bedding,149.0,918,233,42,105,10.9,OK,2.7,STEADY,2.7,Stable demand pattern,Maintain current replenishment,656,Los Angeles,City of Industry DC,R,83400
+PBK-QUILT-08,"Kids Quilt Set, Rainbow",Pottery Barn Kids,Bedding,149.0,322,77,42,65,6.1,OK,2.3,STEADY,2.3,Stable demand pattern,Maintain current replenishment,366,Miami,Pompano Beach Hub,R,59600
+PBK-QUILT-08,"Kids Quilt Set, Rainbow",Pottery Barn Kids,Bedding,149.0,986,358,42,105,12.8,OK,5.2,STEADY,-5.2,Stable demand pattern,Maintain current replenishment,766,New York,South Brunswick DC,R,117400
+PBK-QUILT-08,"Kids Quilt Set, Rainbow",Pottery Barn Kids,Bedding,149.0,561,200,42,104,7.3,OK,7.7,STEADY,7.7,Stable demand pattern,Maintain current replenishment,440,Phoenix,Litchfield Park DC,R,72800
+PBK-QUILT-08,"Kids Quilt Set, Rainbow",Pottery Barn Kids,Bedding,149.0,604,181,42,78,10.0,OK,1.4,STEADY,-1.4,Stable demand pattern,Maintain current replenishment,602,San Francisco,Tracy DC,R,136700
+PBK-QUILT-08,"Kids Quilt Set, Rainbow",Pottery Barn Kids,Bedding,149.0,395,243,42,69,9.2,OK,3.0,STEADY,3.0,Stable demand pattern,Maintain current replenishment,552,Seattle,Tracy DC,R,120600
+RJ-PENDANT-11,"Industrial Pendant, Matte Black",Rejuvenation,Lighting,329.0,532,142,49,96,7.0,OK,10.6,STEADY,10.6,Stable demand pattern,Maintain current replenishment,420,Atlanta,Braselton DC,I,82100
+RJ-PENDANT-11,"Industrial Pendant, Matte Black",Rejuvenation,Lighting,329.0,752,225,49,126,7.8,OK,5.6,STEADY,5.6,Stable demand pattern,Maintain current replenishment,466,Chicago,Olive Branch DC,I,78300
+RJ-PENDANT-11,"Industrial Pendant, Matte Black",Rejuvenation,Lighting,329.0,396,221,49,85,7.3,OK,7.7,STEADY,7.7,Stable demand pattern,Maintain current replenishment,438,Dallas,Dallas DC,I,74600
+RJ-PENDANT-11,"Industrial Pendant, Matte Black",Rejuvenation,Lighting,329.0,775,164,49,120,7.8,OK,1.7,STEADY,1.7,Stable demand pattern,Maintain current replenishment,468,Denver,Denver Hub,I,105200
+RJ-PENDANT-11,"Industrial Pendant, Matte Black",Rejuvenation,Lighting,329.0,548,69,49,108,5.7,OK,7.7,STEADY,7.7,Stable demand pattern,Maintain current replenishment,344,Houston,Dallas DC,I,67200
+RJ-PENDANT-11,"Industrial Pendant, Matte Black",Rejuvenation,Lighting,329.0,981,96,49,111,9.7,OK,7.6,STEADY,7.6,Stable demand pattern,Maintain current replenishment,580,Los Angeles,City of Industry DC,I,83400
+RJ-PENDANT-11,"Industrial Pendant, Matte Black",Rejuvenation,Lighting,329.0,296,120,49,83,5.0,OK,17.6,STEADY,17.6,Stable demand pattern,Maintain current replenishment,302,Miami,Pompano Beach Hub,I,59600
+RJ-PENDANT-11,"Industrial Pendant, Matte Black",Rejuvenation,Lighting,329.0,883,310,49,89,13.5,OK,5.4,STEADY,5.4,Stable demand pattern,Maintain current replenishment,808,New York,South Brunswick DC,I,117400
+RJ-PENDANT-11,"Industrial Pendant, Matte Black",Rejuvenation,Lighting,329.0,495,192,49,109,6.3,OK,6.8,STEADY,6.8,Stable demand pattern,Maintain current replenishment,378,Phoenix,Litchfield Park DC,I,72800
+RJ-PENDANT-11,"Industrial Pendant, Matte Black",Rejuvenation,Lighting,329.0,1126,341,49,134,11.0,OK,5.3,STEADY,-5.3,Stable demand pattern,Maintain current replenishment,658,San Francisco,Tracy DC,I,136700
+RJ-PENDANT-11,"Industrial Pendant, Matte Black",Rejuvenation,Lighting,329.0,1182,253,49,99,14.5,OK,5.1,STEADY,5.1,Stable demand pattern,Maintain current replenishment,872,Seattle,Tracy DC,I,120600
+RJ-SCONCE-04,"Brass Wall Sconce, Pair",Rejuvenation,Lighting,249.0,332,170,42,82,6.1,OK,6.7,STEADY,-6.7,Stable demand pattern,Maintain current replenishment,366,Atlanta,Braselton DC,R,82100
+RJ-SCONCE-04,"Brass Wall Sconce, Pair",Rejuvenation,Lighting,249.0,467,89,42,81,6.9,OK,15.2,STEADY,15.2,Stable demand pattern,Maintain current replenishment,412,Chicago,Olive Branch DC,R,78300
+RJ-SCONCE-04,"Brass Wall Sconce, Pair",Rejuvenation,Lighting,249.0,515,99,42,100,6.2,OK,2.2,STEADY,-2.2,Stable demand pattern,Maintain current replenishment,370,Dallas,Dallas DC,R,74600
+RJ-SCONCE-04,"Brass Wall Sconce, Pair",Rejuvenation,Lighting,249.0,391,122,42,74,6.9,OK,8.2,STEADY,8.2,Stable demand pattern,Maintain current replenishment,416,Denver,Denver Hub,R,105200
+RJ-SCONCE-04,"Brass Wall Sconce, Pair",Rejuvenation,Lighting,249.0,395,114,42,93,5.5,OK,7.7,STEADY,7.7,Stable demand pattern,Maintain current replenishment,328,Houston,Dallas DC,R,67200
+RJ-SCONCE-04,"Brass Wall Sconce, Pair",Rejuvenation,Lighting,249.0,904,254,42,93,12.5,OK,1.1,STEADY,1.1,Stable demand pattern,Maintain current replenishment,748,Los Angeles,City of Industry DC,R,83400
+RJ-SCONCE-04,"Brass Wall Sconce, Pair",Rejuvenation,Lighting,249.0,187,86,42,63,4.3,OK,6.5,STEADY,6.5,Stable demand pattern,Maintain current replenishment,260,Miami,Pompano Beach Hub,R,59600
+RJ-SCONCE-04,"Brass Wall Sconce, Pair",Rejuvenation,Lighting,249.0,641,296,42,79,11.9,OK,7.3,STEADY,7.3,Stable demand pattern,Maintain current replenishment,716,New York,South Brunswick DC,R,117400
+RJ-SCONCE-04,"Brass Wall Sconce, Pair",Rejuvenation,Lighting,249.0,372,156,42,98,5.4,OK,5.4,STEADY,5.4,Stable demand pattern,Maintain current replenishment,322,Phoenix,Litchfield Park DC,R,72800
+RJ-SCONCE-04,"Brass Wall Sconce, Pair",Rejuvenation,Lighting,249.0,706,198,42,91,10.0,OK,2.9,STEADY,2.9,Stable demand pattern,Maintain current replenishment,598,San Francisco,Tracy DC,R,136700
+RJ-SCONCE-04,"Brass Wall Sconce, Pair",Rejuvenation,Lighting,249.0,485,98,42,68,8.6,OK,1.6,STEADY,1.6,Stable demand pattern,Maintain current replenishment,516,Seattle,Tracy DC,R,120600
+WE-CHAIR-52,"Accent Chair, Boucle",West Elm,Furniture,799.0,346,163,63,124,4.1,OK,3.3,STEADY,-3.3,Stable demand pattern,Maintain current replenishment,246,Atlanta,Braselton DC,R,82100
+WE-CHAIR-52,"Accent Chair, Boucle",West Elm,Furniture,799.0,458,185,63,146,4.4,OK,3.1,STEADY,3.1,Stable demand pattern,Maintain current replenishment,264,Chicago,Olive Branch DC,R,78300
+WE-CHAIR-52,"Accent Chair, Boucle",West Elm,Furniture,799.0,420,69,63,117,4.2,OK,18.5,STEADY,18.5,Stable demand pattern,Maintain current replenishment,250,Dallas,Dallas DC,R,74600
+WE-CHAIR-52,"Accent Chair, Boucle",West Elm,Furniture,799.0,467,184,63,140,4.7,OK,5.9,STEADY,5.9,Stable demand pattern,Maintain current replenishment,280,Denver,Denver Hub,R,105200
+WE-CHAIR-52,"Accent Chair, Boucle",West Elm,Furniture,799.0,223,131,63,103,3.4,OK,14.8,STEADY,-14.8,Stable demand pattern,Maintain current replenishment,206,Houston,Dallas DC,R,67200
+WE-CHAIR-52,"Accent Chair, Boucle",West Elm,Furniture,799.0,659,155,63,144,5.7,OK,7.7,STEADY,7.7,Stable demand pattern,Maintain current replenishment,340,Los Angeles,City of Industry DC,R,83400
+WE-CHAIR-52,"Accent Chair, Boucle",West Elm,Furniture,799.0,266,60,63,114,2.9,OK,4.8,STEADY,4.8,Stable demand pattern,Maintain current replenishment,172,Miami,Pompano Beach Hub,R,59600
+WE-CHAIR-52,"Accent Chair, Boucle",West Elm,Furniture,799.0,1575,322,63,151,12.5,OK,10.3,STEADY,10.3,Stable demand pattern,Maintain current replenishment,752,New York,South Brunswick DC,R,117400
+WE-CHAIR-52,"Accent Chair, Boucle",West Elm,Furniture,799.0,414,76,63,143,3.4,OK,13.6,STEADY,13.6,Stable demand pattern,Maintain current replenishment,206,Phoenix,Litchfield Park DC,R,72800
+WE-CHAIR-52,"Accent Chair, Boucle",West Elm,Furniture,799.0,1001,313,63,162,8.1,OK,10.9,STEADY,10.9,Stable demand pattern,Maintain current replenishment,488,San Francisco,Tracy DC,R,136700
+WE-CHAIR-52,"Accent Chair, Boucle",West Elm,Furniture,799.0,665,126,63,126,6.3,OK,6.8,STEADY,6.8,Stable demand pattern,Maintain current replenishment,376,Seattle,Tracy DC,R,120600
+WE-CLOCK-66,"Oversized Wall Clock, Black",West Elm,Decor,129.0,392,119,35,50,10.2,OK,9.9,STEADY,9.9,Stable demand pattern,Maintain current replenishment,612,Atlanta,Braselton DC,R,82100
+WE-CLOCK-66,"Oversized Wall Clock, Black",West Elm,Decor,129.0,689,170,35,74,11.5,OK,9.1,STEADY,-9.1,Stable demand pattern,Maintain current replenishment,692,Chicago,Olive Branch DC,R,78300
+WE-CLOCK-66,"Oversized Wall Clock, Black",West Elm,Decor,129.0,653,188,35,80,10.5,OK,5.1,STEADY,-5.1,Stable demand pattern,Maintain current replenishment,632,Dallas,Dallas DC,R,74600
+WE-CLOCK-66,"Oversized Wall Clock, Black",West Elm,Decor,129.0,533,228,35,77,9.9,OK,10.0,STEADY,10.0,Stable demand pattern,Maintain current replenishment,596,Denver,Denver Hub,R,105200
+WE-CLOCK-66,"Oversized Wall Clock, Black",West Elm,Decor,129.0,470,142,35,70,8.7,OK,6.3,STEADY,6.3,Stable demand pattern,Maintain current replenishment,524,Houston,Dallas DC,R,67200
+WE-CLOCK-66,"Oversized Wall Clock, Black",West Elm,Decor,129.0,706,200,35,62,14.5,OK,1.9,STEADY,1.9,Stable demand pattern,Maintain current replenishment,870,Los Angeles,City of Industry DC,R,83400
+WE-CLOCK-66,"Oversized Wall Clock, Black",West Elm,Decor,129.0,562,89,35,80,8.1,OK,6.8,STEADY,6.8,Stable demand pattern,Maintain current replenishment,488,Miami,Pompano Beach Hub,R,59600
+WE-CLOCK-66,"Oversized Wall Clock, Black",West Elm,Decor,129.0,926,229,35,70,16.4,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,986,New York,South Brunswick DC,R,117400
+WE-CLOCK-66,"Oversized Wall Clock, Black",West Elm,Decor,129.0,984,227,35,84,14.4,OK,0.9,STEADY,-0.9,Stable demand pattern,Maintain current replenishment,864,Phoenix,Litchfield Park DC,R,72800
+WE-CLOCK-66,"Oversized Wall Clock, Black",West Elm,Decor,129.0,913,233,35,85,13.4,OK,4.0,STEADY,-4.0,Stable demand pattern,Maintain current replenishment,806,San Francisco,Tracy DC,R,136700
+WE-CLOCK-66,"Oversized Wall Clock, Black",West Elm,Decor,129.0,429,163,35,50,11.8,OK,3.4,STEADY,3.4,Stable demand pattern,Maintain current replenishment,708,Seattle,Tracy DC,R,120600
+WE-DUVET-40,"Linen Duvet Cover, Sand",West Elm,Bedding,199.0,1022,98,49,116,9.6,OK,9.0,STEADY,9.0,Stable demand pattern,Maintain current replenishment,578,Atlanta,Braselton DC,R,82100
+WE-DUVET-40,"Linen Duvet Cover, Sand",West Elm,Bedding,199.0,1126,375,49,137,11.0,OK,1.3,STEADY,-1.3,Stable demand pattern,Maintain current replenishment,658,Chicago,Olive Branch DC,R,78300
+WE-DUVET-40,"Linen Duvet Cover, Sand",West Elm,Bedding,199.0,646,190,49,87,9.6,OK,1.4,STEADY,-1.4,Stable demand pattern,Maintain current replenishment,576,Dallas,Dallas DC,R,74600
+WE-DUVET-40,"Linen Duvet Cover, Sand",West Elm,Bedding,199.0,727,219,49,86,11.0,OK,4.9,STEADY,-4.9,Stable demand pattern,Maintain current replenishment,658,Denver,Denver Hub,R,105200
+WE-DUVET-40,"Linen Duvet Cover, Sand",West Elm,Bedding,199.0,525,107,49,74,8.6,OK,8.1,STEADY,8.1,Stable demand pattern,Maintain current replenishment,514,Houston,Dallas DC,R,67200
+WE-DUVET-40,"Linen Duvet Cover, Sand",West Elm,Bedding,199.0,1183,231,49,104,13.6,OK,1.0,STEADY,1.0,Stable demand pattern,Maintain current replenishment,816,Los Angeles,City of Industry DC,R,83400
+WE-DUVET-40,"Linen Duvet Cover, Sand",West Elm,Bedding,199.0,423,215,49,90,7.1,OK,8.5,STEADY,8.5,Stable demand pattern,Maintain current replenishment,426,Miami,Pompano Beach Hub,R,59600
+WE-DUVET-40,"Linen Duvet Cover, Sand",West Elm,Bedding,199.0,1719,275,49,104,19.2,OK,5.0,STEADY,5.0,Stable demand pattern,Maintain current replenishment,1150,New York,South Brunswick DC,R,117400
+WE-DUVET-40,"Linen Duvet Cover, Sand",West Elm,Bedding,199.0,648,90,49,87,8.5,OK,7.8,STEADY,-7.8,Stable demand pattern,Maintain current replenishment,510,Phoenix,Litchfield Park DC,R,72800
+WE-DUVET-40,"Linen Duvet Cover, Sand",West Elm,Bedding,199.0,1414,345,49,78,22.6,OK,4.5,STEADY,4.5,Stable demand pattern,Maintain current replenishment,1358,San Francisco,Tracy DC,R,136700
+WE-DUVET-40,"Linen Duvet Cover, Sand",West Elm,Bedding,199.0,1379,278,49,124,13.4,OK,6.5,STEADY,6.5,Stable demand pattern,Maintain current replenishment,802,Seattle,Tracy DC,R,120600
+WE-LAMP-19,"Arc Floor Lamp, Brass",West Elm,Lighting,399.0,402,160,49,80,7.1,OK,1.9,STEADY,1.9,Stable demand pattern,Maintain current replenishment,424,Atlanta,Braselton DC,D,82100
+WE-LAMP-19,"Arc Floor Lamp, Brass",West Elm,Lighting,399.0,933,234,49,98,11.9,OK,1.2,STEADY,-1.2,Stable demand pattern,Maintain current replenishment,716,Chicago,Olive Branch DC,D,78300
+WE-LAMP-19,"Arc Floor Lamp, Brass",West Elm,Lighting,399.0,583,106,49,98,7.1,OK,2.0,STEADY,2.0,Stable demand pattern,Maintain current replenishment,424,Dallas,Dallas DC,D,74600
+WE-LAMP-19,"Arc Floor Lamp, Brass",West Elm,Lighting,399.0,503,94,49,76,7.9,OK,5.5,STEADY,5.5,Stable demand pattern,Maintain current replenishment,472,Denver,Denver Hub,D,105200
+WE-LAMP-19,"Arc Floor Lamp, Brass",West Elm,Lighting,399.0,645,166,49,132,6.1,OK,2.3,STEADY,2.3,Stable demand pattern,Maintain current replenishment,368,Houston,Dallas DC,D,67200
+WE-LAMP-19,"Arc Floor Lamp, Brass",West Elm,Lighting,399.0,917,233,49,115,10.0,OK,4.4,STEADY,4.4,Stable demand pattern,Maintain current replenishment,600,Los Angeles,City of Industry DC,D,83400
+WE-LAMP-19,"Arc Floor Lamp, Brass",West Elm,Lighting,399.0,489,136,49,119,5.3,OK,2.7,STEADY,2.7,Stable demand pattern,Maintain current replenishment,316,Miami,Pompano Beach Hub,D,59600
+WE-LAMP-19,"Arc Floor Lamp, Brass",West Elm,Lighting,399.0,969,405,49,101,13.6,OK,4.3,STEADY,4.3,Stable demand pattern,Maintain current replenishment,816,New York,South Brunswick DC,D,117400
+WE-LAMP-19,"Arc Floor Lamp, Brass",West Elm,Lighting,399.0,522,98,49,99,6.2,OK,6.4,STEADY,-6.4,Stable demand pattern,Maintain current replenishment,374,Phoenix,Litchfield Park DC,D,72800
+WE-LAMP-19,"Arc Floor Lamp, Brass",West Elm,Lighting,399.0,748,128,49,80,11.0,OK,3.8,STEADY,-3.8,Stable demand pattern,Maintain current replenishment,660,San Francisco,Tracy DC,D,136700
+WE-LAMP-19,"Arc Floor Lamp, Brass",West Elm,Lighting,399.0,1060,245,49,130,10.0,OK,2.9,STEADY,2.9,Stable demand pattern,Maintain current replenishment,602,Seattle,Tracy DC,D,120600
+WE-PLNTR-18,"Ceramic Planter Set, Speckled",West Elm,Outdoor,89.0,685,380,28,46,23.0,OK,22.9,SURGING,22.9,Stable demand pattern,Maintain current replenishment,1378,Atlanta,Braselton DC,E,82100
+WE-PLNTR-18,"Ceramic Planter Set, Speckled",West Elm,Outdoor,89.0,1160,435,28,64,24.8,OK,11.8,STEADY,11.8,Stable demand pattern,Maintain current replenishment,1486,Chicago,Olive Branch DC,E,78300
+WE-PLNTR-18,"Ceramic Planter Set, Speckled",West Elm,Outdoor,89.0,660,170,28,35,23.4,OK,16.1,STEADY,16.1,Stable demand pattern,Maintain current replenishment,1404,Dallas,Dallas DC,E,74600
+WE-PLNTR-18,"Ceramic Planter Set, Speckled",West Elm,Outdoor,89.0,1007,406,28,64,22.2,OK,16.8,STEADY,16.8,Stable demand pattern,Maintain current replenishment,1330,Denver,Denver Hub,E,105200
+WE-PLNTR-18,"Ceramic Planter Set, Speckled",West Elm,Outdoor,89.0,1133,138,28,65,19.7,OK,21.5,SURGING,21.5,Stable demand pattern,Maintain current replenishment,1180,Houston,Dallas DC,E,67200
+WE-PLNTR-18,"Ceramic Planter Set, Speckled",West Elm,Outdoor,89.0,1073,536,28,49,33.0,OK,15.3,STEADY,15.3,Stable demand pattern,Maintain current replenishment,1982,Los Angeles,City of Industry DC,E,83400
+WE-PLNTR-18,"Ceramic Planter Set, Speckled",West Elm,Outdoor,89.0,916,277,28,44,27.2,OK,16.4,STEADY,16.4,Stable demand pattern,Maintain current replenishment,1632,Miami,Pompano Beach Hub,E,59600
+WE-PLNTR-18,"Ceramic Planter Set, Speckled",West Elm,Outdoor,89.0,1700,425,28,58,36.8,OK,11.2,STEADY,11.2,Stable demand pattern,Maintain current replenishment,2206,New York,South Brunswick DC,E,117400
+WE-PLNTR-18,"Ceramic Planter Set, Speckled",West Elm,Outdoor,89.0,732,339,28,53,20.4,OK,17.7,STEADY,17.7,Stable demand pattern,Maintain current replenishment,1224,Phoenix,Litchfield Park DC,E,72800
+WE-PLNTR-18,"Ceramic Planter Set, Speckled",West Elm,Outdoor,89.0,1411,191,28,54,29.9,OK,0.4,STEADY,-0.4,Stable demand pattern,Maintain current replenishment,1792,San Francisco,Tracy DC,E,136700
+WE-PLNTR-18,"Ceramic Planter Set, Speckled",West Elm,Outdoor,89.0,1522,475,28,74,27.2,OK,4.7,STEADY,4.7,Stable demand pattern,Maintain current replenishment,1630,Seattle,Tracy DC,E,120600
+WE-RUG-15,"Geometric Area Rug, 6x9",West Elm,Decor,299.0,936,134,42,168,6.4,OVERSTOCK_RISK,12.0,STEADY,-12.0,Post-holiday demand decline,Cancel pending orders; markdown 15%,382,Atlanta,Braselton DC,G,82100
+WE-RUG-15,"Geometric Area Rug, 6x9",West Elm,Decor,299.0,706,101,42,168,4.8,OVERSTOCK_RISK,10.5,STEADY,-10.5,Post-holiday demand decline,Cancel pending orders; markdown 15%,288,Chicago,Olive Branch DC,G,78300
+WE-RUG-15,"Geometric Area Rug, 6x9",West Elm,Decor,299.0,627,90,42,168,4.3,OVERSTOCK_RISK,3.3,STEADY,3.3,Post-holiday demand decline,Cancel pending orders; markdown 15%,256,Dallas,Dallas DC,G,74600
+WE-RUG-15,"Geometric Area Rug, 6x9",West Elm,Decor,299.0,706,101,42,168,4.8,OVERSTOCK_RISK,2.9,STEADY,-2.9,Post-holiday demand decline,Cancel pending orders; markdown 15%,288,Denver,Denver Hub,G,105200
+WE-RUG-15,"Geometric Area Rug, 6x9",West Elm,Decor,299.0,519,74,42,168,3.5,OVERSTOCK_RISK,14.8,STEADY,-14.8,Post-holiday demand decline,Cancel pending orders; markdown 15%,212,Houston,Dallas DC,G,67200
+WE-RUG-15,"Geometric Area Rug, 6x9",West Elm,Decor,299.0,887,127,42,168,6.0,OVERSTOCK_RISK,2.2,STEADY,-2.2,Post-holiday demand decline,Cancel pending orders; markdown 15%,362,Los Angeles,City of Industry DC,G,83400
+WE-RUG-15,"Geometric Area Rug, 6x9",West Elm,Decor,299.0,461,66,42,168,3.1,OVERSTOCK_RISK,8.3,STEADY,-8.3,Post-holiday demand decline,Cancel pending orders; markdown 15%,188,Miami,Pompano Beach Hub,G,59600
+WE-RUG-15,"Geometric Area Rug, 6x9",West Elm,Decor,299.0,1240,177,42,168,8.4,OVERSTOCK_RISK,4.6,STEADY,-4.6,Post-holiday demand decline,Cancel pending orders; markdown 15%,506,New York,South Brunswick DC,G,117400
+WE-RUG-15,"Geometric Area Rug, 6x9",West Elm,Decor,299.0,539,77,42,168,3.7,OVERSTOCK_RISK,3.8,STEADY,3.8,Post-holiday demand decline,Cancel pending orders; markdown 15%,220,Phoenix,Litchfield Park DC,G,72800
+WE-RUG-15,"Geometric Area Rug, 6x9",West Elm,Decor,299.0,1034,148,42,168,7.0,OVERSTOCK_RISK,5.5,STEADY,-5.5,Post-holiday demand decline,Cancel pending orders; markdown 15%,422,San Francisco,Tracy DC,G,136700
+WE-RUG-15,"Geometric Area Rug, 6x9",West Elm,Decor,299.0,843,120,42,168,5.7,OVERSTOCK_RISK,4.9,STEADY,4.9,Post-holiday demand decline,Cancel pending orders; markdown 15%,344,Seattle,Tracy DC,G,120600
+WE-SHELF-31,"Floating Wall Shelf, Walnut",West Elm,Furniture,149.0,635,246,35,59,15.0,OK,2.8,STEADY,2.8,Stable demand pattern,Maintain current replenishment,898,Atlanta,Braselton DC,J,82100
+WE-SHELF-31,"Floating Wall Shelf, Walnut",West Elm,Furniture,149.0,1017,190,35,72,16.7,OK,10.2,STEADY,10.2,Stable demand pattern,Maintain current replenishment,1004,Chicago,Olive Branch DC,J,78300
+WE-SHELF-31,"Floating Wall Shelf, Walnut",West Elm,Furniture,149.0,823,113,35,62,15.1,OK,9.5,STEADY,9.5,Stable demand pattern,Maintain current replenishment,908,Dallas,Dallas DC,J,74600
+WE-SHELF-31,"Floating Wall Shelf, Walnut",West Elm,Furniture,149.0,1268,197,35,68,21.7,OK,2.5,STEADY,-2.5,Stable demand pattern,Maintain current replenishment,1300,Denver,Denver Hub,J,105200
+WE-SHELF-31,"Floating Wall Shelf, Walnut",West Elm,Furniture,149.0,742,174,35,69,13.3,OK,2.1,STEADY,2.1,Stable demand pattern,Maintain current replenishment,800,Houston,Dallas DC,J,67200
+WE-SHELF-31,"Floating Wall Shelf, Walnut",West Elm,Furniture,149.0,1130,348,35,71,20.8,OK,10.6,STEADY,10.6,Stable demand pattern,Maintain current replenishment,1246,Los Angeles,City of Industry DC,J,83400
+WE-SHELF-31,"Floating Wall Shelf, Walnut",West Elm,Furniture,149.0,647,238,35,77,11.5,OK,7.1,STEADY,-7.1,Stable demand pattern,Maintain current replenishment,690,Miami,Pompano Beach Hub,J,59600
+WE-SHELF-31,"Floating Wall Shelf, Walnut",West Elm,Furniture,149.0,1258,212,35,63,23.5,OK,3.0,STEADY,3.0,Stable demand pattern,Maintain current replenishment,1410,New York,South Brunswick DC,J,117400
+WE-SHELF-31,"Floating Wall Shelf, Walnut",West Elm,Furniture,149.0,724,231,35,72,13.3,OK,10.1,STEADY,10.1,Stable demand pattern,Maintain current replenishment,800,Phoenix,Litchfield Park DC,J,72800
+WE-SHELF-31,"Floating Wall Shelf, Walnut",West Elm,Furniture,149.0,1264,144,35,72,19.6,OK,4.2,STEADY,-4.2,Stable demand pattern,Maintain current replenishment,1178,San Francisco,Tracy DC,J,136700
+WE-SHELF-31,"Floating Wall Shelf, Walnut",West Elm,Furniture,149.0,999,137,35,69,16.4,OK,4.2,STEADY,-4.2,Stable demand pattern,Maintain current replenishment,984,Seattle,Tracy DC,J,120600
+WE-SOFA-23,"Mid-Century Sofa, Velvet Blue",West Elm,Furniture,1899.0,248,79,70,104,3.1,OK,4.5,STEADY,4.5,Stable demand pattern,Maintain current replenishment,188,Atlanta,Braselton DC,R,82100
+WE-SOFA-23,"Mid-Century Sofa, Velvet Blue",West Elm,Furniture,1899.0,360,147,70,148,3.4,OK,8.7,STEADY,8.7,Stable demand pattern,Maintain current replenishment,206,Chicago,Olive Branch DC,R,78300
+WE-SOFA-23,"Mid-Century Sofa, Velvet Blue",West Elm,Furniture,1899.0,253,78,70,99,3.3,OK,18.2,STEADY,18.2,Stable demand pattern,Maintain current replenishment,200,Dallas,Dallas DC,R,74600
+WE-SOFA-23,"Mid-Century Sofa, Velvet Blue",West Elm,Furniture,1899.0,429,80,70,145,3.5,OK,8.3,STEADY,8.3,Stable demand pattern,Maintain current replenishment,210,Denver,Denver Hub,R,105200
+WE-SOFA-23,"Mid-Century Sofa, Velvet Blue",West Elm,Furniture,1899.0,267,111,70,133,2.8,OK,5.0,STEADY,-5.0,Stable demand pattern,Maintain current replenishment,170,Houston,Dallas DC,R,67200
+WE-SOFA-23,"Mid-Century Sofa, Velvet Blue",West Elm,Furniture,1899.0,769,239,70,159,6.3,OK,4.4,STEADY,4.4,Stable demand pattern,Maintain current replenishment,380,Los Angeles,City of Industry DC,R,83400
+WE-SOFA-23,"Mid-Century Sofa, Velvet Blue",West Elm,Furniture,1899.0,306,54,70,166,2.2,OK,6.7,STEADY,6.7,Stable demand pattern,Maintain current replenishment,130,Miami,Pompano Beach Hub,R,59600
+WE-SOFA-23,"Mid-Century Sofa, Velvet Blue",West Elm,Furniture,1899.0,651,154,70,124,6.5,OK,6.8,STEADY,6.8,Stable demand pattern,Maintain current replenishment,390,New York,South Brunswick DC,R,117400
+WE-SOFA-23,"Mid-Century Sofa, Velvet Blue",West Elm,Furniture,1899.0,217,125,70,124,2.8,OK,10.5,STEADY,10.5,Stable demand pattern,Maintain current replenishment,166,Phoenix,Litchfield Park DC,R,72800
+WE-SOFA-23,"Mid-Century Sofa, Velvet Blue",West Elm,Furniture,1899.0,658,165,70,128,6.4,OK,2.1,STEADY,-2.1,Stable demand pattern,Maintain current replenishment,386,San Francisco,Tracy DC,R,136700
+WE-SOFA-23,"Mid-Century Sofa, Velvet Blue",West Elm,Furniture,1899.0,656,203,70,173,5.0,OK,8.1,STEADY,-8.1,Stable demand pattern,Maintain current replenishment,298,Seattle,Tracy DC,R,120600
+WS-BOARD-68,"Artisan Cheese Board, Olive",Williams Sonoma,Entertaining,89.0,259,104,28,98,3.7,WATCH,28.0,SURGING,28.0,Sudden demand collapse,Halt all replenishment,222,Atlanta,Braselton DC,H,82100
+WS-BOARD-68,"Artisan Cheese Board, Olive",Williams Sonoma,Entertaining,89.0,85,29,28,43,2.7,OK,9.5,STEADY,-9.5,Stable demand pattern,Maintain current replenishment,160,Chicago,Olive Branch DC,H,78300
+WS-BOARD-68,"Artisan Cheese Board, Olive",Williams Sonoma,Entertaining,89.0,73,21,28,41,2.3,OK,5.9,STEADY,5.9,Stable demand pattern,Maintain current replenishment,138,Dallas,Dallas DC,H,74600
+WS-BOARD-68,"Artisan Cheese Board, Olive",Williams Sonoma,Entertaining,89.0,80,43,28,53,2.3,OK,11.8,STEADY,-11.8,Stable demand pattern,Maintain current replenishment,138,Denver,Denver Hub,H,105200
+WS-BOARD-68,"Artisan Cheese Board, Olive",Williams Sonoma,Entertaining,89.0,83,40,28,59,2.1,OK,5.9,STEADY,-5.9,Stable demand pattern,Maintain current replenishment,126,Houston,Dallas DC,H,67200
+WS-BOARD-68,"Artisan Cheese Board, Olive",Williams Sonoma,Entertaining,89.0,164,40,28,61,3.3,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,200,Los Angeles,City of Industry DC,H,83400
+WS-BOARD-68,"Artisan Cheese Board, Olive",Williams Sonoma,Entertaining,89.0,76,13,28,44,2.0,OK,11.8,STEADY,-11.8,Stable demand pattern,Maintain current replenishment,122,Miami,Pompano Beach Hub,H,59600
+WS-BOARD-68,"Artisan Cheese Board, Olive",Williams Sonoma,Entertaining,89.0,180,32,28,54,3.9,OK,12.5,STEADY,-12.5,Stable demand pattern,Maintain current replenishment,236,New York,South Brunswick DC,H,117400
+WS-BOARD-68,"Artisan Cheese Board, Olive",Williams Sonoma,Entertaining,89.0,102,37,28,65,2.1,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,128,Phoenix,Litchfield Park DC,H,72800
+WS-BOARD-68,"Artisan Cheese Board, Olive",Williams Sonoma,Entertaining,89.0,98,44,28,44,3.2,OK,12.0,STEADY,-12.0,Stable demand pattern,Maintain current replenishment,194,San Francisco,Tracy DC,H,136700
+WS-BOARD-68,"Artisan Cheese Board, Olive",Williams Sonoma,Entertaining,89.0,104,43,28,54,2.7,OK,13.6,STEADY,-13.6,Stable demand pattern,Maintain current replenishment,162,Seattle,Tracy DC,H,120600
+WS-DUTCH-64,"Dutch Oven, Le Creuset Blue",Williams Sonoma,Kitchen,399.0,499,59,42,102,5.5,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,328,Atlanta,Braselton DC,R,82100
+WS-DUTCH-64,"Dutch Oven, Le Creuset Blue",Williams Sonoma,Kitchen,399.0,365,76,42,72,6.1,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,366,Chicago,Olive Branch DC,R,78300
+WS-DUTCH-64,"Dutch Oven, Le Creuset Blue",Williams Sonoma,Kitchen,399.0,383,160,42,98,5.6,OK,4.8,STEADY,4.8,Stable demand pattern,Maintain current replenishment,334,Dallas,Dallas DC,R,74600
+WS-DUTCH-64,"Dutch Oven, Le Creuset Blue",Williams Sonoma,Kitchen,399.0,286,131,42,63,6.6,OK,5.8,STEADY,-5.8,Stable demand pattern,Maintain current replenishment,398,Denver,Denver Hub,R,105200
+WS-DUTCH-64,"Dutch Oven, Le Creuset Blue",Williams Sonoma,Kitchen,399.0,255,43,42,63,4.8,OK,5.4,STEADY,-5.4,Stable demand pattern,Maintain current replenishment,286,Houston,Dallas DC,R,67200
+WS-DUTCH-64,"Dutch Oven, Le Creuset Blue",Williams Sonoma,Kitchen,399.0,400,203,42,77,7.9,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,472,Los Angeles,City of Industry DC,R,83400
+WS-DUTCH-64,"Dutch Oven, Le Creuset Blue",Williams Sonoma,Kitchen,399.0,276,79,42,89,4.0,OK,6.9,STEADY,6.9,Stable demand pattern,Maintain current replenishment,240,Miami,Pompano Beach Hub,R,59600
+WS-DUTCH-64,"Dutch Oven, Le Creuset Blue",Williams Sonoma,Kitchen,399.0,557,267,42,79,10.4,OK,3.8,STEADY,3.8,Stable demand pattern,Maintain current replenishment,622,New York,South Brunswick DC,R,117400
+WS-DUTCH-64,"Dutch Oven, Le Creuset Blue",Williams Sonoma,Kitchen,399.0,428,70,42,98,5.1,OK,8.3,STEADY,8.3,Stable demand pattern,Maintain current replenishment,304,Phoenix,Litchfield Park DC,R,72800
+WS-DUTCH-64,"Dutch Oven, Le Creuset Blue",Williams Sonoma,Kitchen,399.0,584,195,42,87,9.0,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,538,San Francisco,Tracy DC,R,136700
+WS-DUTCH-64,"Dutch Oven, Le Creuset Blue",Williams Sonoma,Kitchen,399.0,845,132,42,84,11.6,OK,3.5,STEADY,3.5,Stable demand pattern,Maintain current replenishment,694,Seattle,Tracy DC,R,120600
+WS-KNIFE-60,"Chef Knife Set, Damascus",Williams Sonoma,Kitchen,349.0,286,45,42,81,4.1,OK,13.3,STEADY,13.3,Stable demand pattern,Maintain current replenishment,246,Atlanta,Braselton DC,K,82100
+WS-KNIFE-60,"Chef Knife Set, Damascus",Williams Sonoma,Kitchen,349.0,361,51,42,92,4.5,OK,9.1,STEADY,9.1,Stable demand pattern,Maintain current replenishment,268,Chicago,Olive Branch DC,K,78300
+WS-KNIFE-60,"Chef Knife Set, Damascus",Williams Sonoma,Kitchen,349.0,267,55,42,77,4.2,OK,6.1,STEADY,6.1,Stable demand pattern,Maintain current replenishment,250,Dallas,Dallas DC,K,74600
+WS-KNIFE-60,"Chef Knife Set, Damascus",Williams Sonoma,Kitchen,349.0,211,81,42,61,4.8,OK,2.6,STEADY,2.6,Stable demand pattern,Maintain current replenishment,286,Denver,Denver Hub,K,105200
+WS-KNIFE-60,"Chef Knife Set, Damascus",Williams Sonoma,Kitchen,349.0,264,89,42,99,3.6,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,214,Houston,Dallas DC,K,67200
+WS-KNIFE-60,"Chef Knife Set, Damascus",Williams Sonoma,Kitchen,349.0,474,135,42,109,5.6,OK,6.4,STEADY,-6.4,Stable demand pattern,Maintain current replenishment,336,Los Angeles,City of Industry DC,K,83400
+WS-KNIFE-60,"Chef Knife Set, Damascus",Williams Sonoma,Kitchen,349.0,238,44,42,88,3.2,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,192,Miami,Pompano Beach Hub,K,59600
+WS-KNIFE-60,"Chef Knife Set, Damascus",Williams Sonoma,Kitchen,349.0,448,218,42,85,7.9,OK,3.2,STEADY,3.2,Stable demand pattern,Maintain current replenishment,472,New York,South Brunswick DC,K,117400
+WS-KNIFE-60,"Chef Knife Set, Damascus",Williams Sonoma,Kitchen,349.0,295,40,42,91,3.7,OK,3.2,STEADY,-3.2,Stable demand pattern,Maintain current replenishment,222,Phoenix,Litchfield Park DC,K,72800
+WS-KNIFE-60,"Chef Knife Set, Damascus",Williams Sonoma,Kitchen,349.0,541,265,42,81,10.0,OK,9.1,STEADY,9.1,Stable demand pattern,Maintain current replenishment,598,San Francisco,Tracy DC,K,136700
+WS-KNIFE-60,"Chef Knife Set, Damascus",Williams Sonoma,Kitchen,349.0,409,148,42,98,5.7,OK,11.6,STEADY,11.6,Stable demand pattern,Maintain current replenishment,340,Seattle,Tracy DC,K,120600
+WS-MIXER-05,"Stand Mixer, Heritage Red",Williams Sonoma,Kitchen,449.0,729,94,49,96,8.6,OK,4.6,STEADY,4.6,Stable demand pattern,Maintain current replenishment,514,Atlanta,Braselton DC,E,82100
+WS-MIXER-05,"Stand Mixer, Heritage Red",Williams Sonoma,Kitchen,449.0,987,120,49,112,9.9,OK,2.5,STEADY,-2.5,Stable demand pattern,Maintain current replenishment,594,Chicago,Olive Branch DC,E,78300
+WS-MIXER-05,"Stand Mixer, Heritage Red",Williams Sonoma,Kitchen,449.0,712,309,49,74,13.8,OK,9.5,STEADY,-9.5,Stable demand pattern,Maintain current replenishment,826,Dallas,Dallas DC,E,74600
+WS-MIXER-05,"Stand Mixer, Heritage Red",Williams Sonoma,Kitchen,449.0,525,122,49,64,10.0,OK,10.5,STEADY,10.5,Stable demand pattern,Maintain current replenishment,602,Denver,Denver Hub,E,105200
+WS-MIXER-05,"Stand Mixer, Heritage Red",Williams Sonoma,Kitchen,449.0,745,165,49,114,8.0,OK,1.6,STEADY,1.6,Stable demand pattern,Maintain current replenishment,478,Houston,Dallas DC,E,67200
+WS-MIXER-05,"Stand Mixer, Heritage Red",Williams Sonoma,Kitchen,449.0,632,221,49,69,12.3,OK,14.1,STEADY,14.1,Stable demand pattern,Maintain current replenishment,738,Los Angeles,City of Industry DC,E,83400
+WS-MIXER-05,"Stand Mixer, Heritage Red",Williams Sonoma,Kitchen,449.0,469,103,49,87,6.6,OK,14.0,STEADY,14.0,Stable demand pattern,Maintain current replenishment,394,Miami,Pompano Beach Hub,E,59600
+WS-MIXER-05,"Stand Mixer, Heritage Red",Williams Sonoma,Kitchen,449.0,1321,174,49,87,17.2,OK,4.2,STEADY,-4.2,Stable demand pattern,Maintain current replenishment,1030,New York,South Brunswick DC,E,117400
+WS-MIXER-05,"Stand Mixer, Heritage Red",Williams Sonoma,Kitchen,449.0,472,166,49,79,8.1,OK,11.5,STEADY,11.5,Stable demand pattern,Maintain current replenishment,486,Phoenix,Litchfield Park DC,E,72800
+WS-MIXER-05,"Stand Mixer, Heritage Red",Williams Sonoma,Kitchen,449.0,1381,151,49,103,14.9,OK,2.6,STEADY,2.6,Stable demand pattern,Maintain current replenishment,896,San Francisco,Tracy DC,E,136700
+WS-MIXER-05,"Stand Mixer, Heritage Red",Williams Sonoma,Kitchen,449.0,629,431,49,84,12.6,OK,6.3,STEADY,6.3,Stable demand pattern,Maintain current replenishment,756,Seattle,Tracy DC,E,120600
+WS-WINE-65,Crystal Wine Glass Set,Williams Sonoma,Entertaining,129.0,485,157,35,53,12.1,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,724,Atlanta,Braselton DC,R,82100
+WS-WINE-65,Crystal Wine Glass Set,Williams Sonoma,Entertaining,129.0,956,198,35,84,13.8,OK,5.9,STEADY,5.9,Stable demand pattern,Maintain current replenishment,828,Chicago,Olive Branch DC,R,78300
+WS-WINE-65,Crystal Wine Glass Set,Williams Sonoma,Entertaining,129.0,671,122,35,62,12.8,OK,8.6,STEADY,8.6,Stable demand pattern,Maintain current replenishment,768,Dallas,Dallas DC,R,74600
+WS-WINE-65,Crystal Wine Glass Set,Williams Sonoma,Entertaining,129.0,576,190,35,63,12.1,OK,4.3,STEADY,4.3,Stable demand pattern,Maintain current replenishment,728,Denver,Denver Hub,R,105200
+WS-WINE-65,Crystal Wine Glass Set,Williams Sonoma,Entertaining,129.0,955,177,35,69,16.3,OK,0.0,STEADY,0.0,Stable demand pattern,Maintain current replenishment,980,Houston,Dallas DC,R,67200
+WS-WINE-65,Crystal Wine Glass Set,Williams Sonoma,Entertaining,129.0,854,300,35,65,17.7,OK,2.8,STEADY,-2.8,Stable demand pattern,Maintain current replenishment,1062,Los Angeles,City of Industry DC,R,83400
+WS-WINE-65,Crystal Wine Glass Set,Williams Sonoma,Entertaining,129.0,487,128,35,62,9.9,OK,5.3,STEADY,5.3,Stable demand pattern,Maintain current replenishment,596,Miami,Pompano Beach Hub,R,59600
+WS-WINE-65,Crystal Wine Glass Set,Williams Sonoma,Entertaining,129.0,1510,150,35,84,19.7,OK,18.5,STEADY,18.5,Stable demand pattern,Maintain current replenishment,1180,New York,South Brunswick DC,R,117400
+WS-WINE-65,Crystal Wine Glass Set,Williams Sonoma,Entertaining,129.0,880,174,35,89,11.8,OK,9.3,STEADY,9.3,Stable demand pattern,Maintain current replenishment,710,Phoenix,Litchfield Park DC,R,72800
+WS-WINE-65,Crystal Wine Glass Set,Williams Sonoma,Entertaining,129.0,823,385,35,74,16.2,OK,11.0,STEADY,11.0,Stable demand pattern,Maintain current replenishment,974,San Francisco,Tracy DC,R,136700
+WS-WINE-65,Crystal Wine Glass Set,Williams Sonoma,Entertaining,129.0,769,128,35,64,14.1,OK,3.9,STEADY,3.9,Stable demand pattern,Maintain current replenishment,844,Seattle,Tracy DC,R,120600

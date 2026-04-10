@@ -1,0 +1,31 @@
+sku_id,product_name,brand,category,price,cost_price,lead_time_days,home_metro,scenario_type,scenario_label
+PB-BLANKET-42,"Throw Blanket, Cognac",Pottery Barn,Bedding,89.0,38.5,70,Los Angeles,A,viral_spike
+PB-PILLOW-71,"Decorative Pillow, Sage Green",Pottery Barn,Decor,65.0,24.0,56,New York,B,silent_overstock
+PB-BED-FRAME-33,"Bedroom Set, King",Pottery Barn,Furniture,1899.0,820.0,68,Phoenix,C,housing_leading
+PB-SOFA-88,"Sectional Sofa, Ivory",Pottery Barn,Furniture,3499.0,1450.0,84,San Francisco,F,multi_signal
+PB-QUILT-15,"Handstitched Quilt, Ivory",Pottery Barn,Bedding,299.0,125.0,56,Chicago,G,post_peak_overstock
+PB-MIRROR-22,"Oversized Wall Mirror, Gold",Pottery Barn,Decor,449.0,185.0,63,Dallas,I,slow_burn
+PB-DINSET-09,"Farmhouse Dining Table, Oak",Pottery Barn,Furniture,2299.0,980.0,77,Atlanta,R,routine
+PB-RUG-44,"Hand-Knotted Area Rug, 8x10",Pottery Barn,Decor,1299.0,540.0,70,Denver,R,routine
+PB-LAMP-61,"Ceramic Table Lamp, White",Pottery Barn,Lighting,189.0,78.0,42,Houston,R,routine
+PB-CANDLE-77,"Luxury Candle Set, Cedar",Pottery Barn,Decor,79.0,28.0,35,New York,K,holiday_gifting
+PB-PLANTER-30,"Indoor Planter, Terracotta",Pottery Barn,Outdoor,129.0,48.0,42,Miami,R,routine
+PB-THROW-55,"Cashmere Throw, Oatmeal",Pottery Barn,Bedding,249.0,105.0,56,Seattle,D,steady_ok
+WE-LAMP-19,"Arc Floor Lamp, Brass",West Elm,Lighting,399.0,165.0,49,Chicago,D,steady_ok
+WE-SOFA-23,"Mid-Century Sofa, Velvet Blue",West Elm,Furniture,1899.0,780.0,70,Los Angeles,R,routine
+WE-RUG-15,"Geometric Area Rug, 6x9",West Elm,Decor,299.0,120.0,42,Atlanta,G,post_peak_overstock
+WE-SHELF-31,"Floating Wall Shelf, Walnut",West Elm,Furniture,149.0,58.0,35,Denver,J,flash_pan
+WE-DUVET-40,"Linen Duvet Cover, Sand",West Elm,Bedding,199.0,82.0,49,San Francisco,R,routine
+WE-CHAIR-52,"Accent Chair, Boucle",West Elm,Furniture,799.0,330.0,63,New York,R,routine
+WE-PLNTR-18,"Ceramic Planter Set, Speckled",West Elm,Outdoor,89.0,32.0,28,Miami,E,seasonal_surge
+WE-CLOCK-66,"Oversized Wall Clock, Black",West Elm,Decor,129.0,48.0,35,Phoenix,R,routine
+WS-MIXER-05,"Stand Mixer, Heritage Red",Williams Sonoma,Kitchen,449.0,185.0,49,Dallas,E,seasonal_surge
+WS-KNIFE-60,"Chef Knife Set, Damascus",Williams Sonoma,Kitchen,349.0,145.0,42,San Francisco,K,holiday_gifting
+WS-DUTCH-64,"Dutch Oven, Le Creuset Blue",Williams Sonoma,Kitchen,399.0,200.0,42,Seattle,R,routine
+WS-WINE-65,Crystal Wine Glass Set,Williams Sonoma,Entertaining,129.0,45.0,35,Houston,R,routine
+WS-BOARD-68,"Artisan Cheese Board, Olive",Williams Sonoma,Entertaining,89.0,32.0,28,Atlanta,H,sudden_collapse
+PBK-CRIB-12,"Convertible Crib, White",Pottery Barn Kids,Furniture,699.0,295.0,56,Denver,C,housing_leading
+PBK-BUNK-22,"Bunk Bed, Natural Wood",Pottery Barn Kids,Furniture,1299.0,540.0,63,Phoenix,H,sudden_collapse
+PBK-QUILT-08,"Kids Quilt Set, Rainbow",Pottery Barn Kids,Bedding,149.0,58.0,42,Dallas,R,routine
+RJ-PENDANT-11,"Industrial Pendant, Matte Black",Rejuvenation,Lighting,329.0,135.0,49,Seattle,I,slow_burn
+RJ-SCONCE-04,"Brass Wall Sconce, Pair",Rejuvenation,Lighting,249.0,98.0,42,Los Angeles,R,routine

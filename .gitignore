@@ -51,6 +51,7 @@ package-lock.json
 
 # Data files (local training/export)
 *.csv
+!data/**/*.csv
 *.parquet
 
 # Notebooks (except source)
