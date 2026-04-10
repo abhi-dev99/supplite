@@ -3,6 +3,7 @@ from __future__ import annotations
 import os
 from datetime import date, datetime, timezone
 from pathlib import Path
+from threading import Lock
 from typing import Literal
 
 from fastapi import FastAPI
@@ -92,6 +93,9 @@ class RealEstateHeatmapResponse(BaseModel):
 
 
 app = FastAPI(title="Supply Chain Brief Backend", version="0.1.0")
+
+_LIVE_HEATMAP_CACHE: dict[str, dict[str, object]] = {}
+_LIVE_HEATMAP_CACHE_LOCK = Lock()
 
 app.add_middleware(
     CORSMiddleware,
@@ -186,27 +190,12 @@ def _build_response() -> BriefResponse:
     )
 
 
-@app.get("/health", response_model=HealthResponse)
-def health() -> HealthResponse:
-    return HealthResponse(status="ok", model_version="brief-v1", database_ready=True, cache_ready=True)
-
-
-@app.get("/api/briefs/weekly", response_model=BriefResponse)
-def weekly_brief() -> BriefResponse:
-    return _build_response()
-
-
-@app.post("/api/briefs/weekly", response_model=BriefResponse)
-def weekly_brief_post() -> BriefResponse:
-    return _build_response()
-
-
-@app.get("/api/signals/real-estate-heatmap", response_model=RealEstateHeatmapResponse)
-def real_estate_heatmap(
-    year: int | None = None,
-    compare_year: int | None = None,
-    limit: int = 500,
-    scope: Literal["seed", "national"] = "seed",
+def _compute_real_estate_heatmap(
+    *,
+    year: int | None,
+    compare_year: int | None,
+    limit: int,
+    scope: Literal["seed", "national"],
 ) -> RealEstateHeatmapResponse:
     target_year = year or (date.today().year - 2)
     baseline_year = compare_year or (target_year - 1)
@@ -265,6 +254,81 @@ def real_estate_heatmap(
         notes=notes,
         points=[RealEstateHeatmapPoint(**point) for point in points],
     )
+
+
+@app.get("/health", response_model=HealthResponse)
+def health() -> HealthResponse:
+    return HealthResponse(status="ok", model_version="brief-v1", database_ready=True, cache_ready=True)
+
+
+@app.get("/api/briefs/weekly", response_model=BriefResponse)
+def weekly_brief() -> BriefResponse:
+    return _build_response()
+
+
+@app.post("/api/briefs/weekly", response_model=BriefResponse)
+def weekly_brief_post() -> BriefResponse:
+    return _build_response()
+
+
+@app.get("/api/signals/real-estate-heatmap", response_model=RealEstateHeatmapResponse)
+def real_estate_heatmap(
+    year: int | None = None,
+    compare_year: int | None = None,
+    limit: int = 500,
+    scope: Literal["seed", "national"] = "seed",
+) -> RealEstateHeatmapResponse:
+    return _compute_real_estate_heatmap(
+        year=year,
+        compare_year=compare_year,
+        limit=limit,
+        scope=scope,
+    )
+
+
+@app.get("/api/signals/real-estate-heatmap/live", response_model=RealEstateHeatmapResponse)
+def real_estate_heatmap_live(
+    year: int | None = None,
+    compare_year: int | None = None,
+    limit: int = 5000,
+    scope: Literal["seed", "national"] = "national",
+    cache_ttl_minutes: int = 60,
+    force_refresh: bool = False,
+) -> RealEstateHeatmapResponse:
+    # ACS updates on a scheduled release cadence; this endpoint keeps polling live data
+    # while shielding clients from expensive full fetches on every request.
+    ttl_seconds = max(0, min(cache_ttl_minutes, 1440)) * 60
+    cache_key = f"{scope}:{year}:{compare_year}:{limit}"
+    now = datetime.now(timezone.utc)
+
+    if not force_refresh and ttl_seconds > 0:
+        with _LIVE_HEATMAP_CACHE_LOCK:
+            cached = _LIVE_HEATMAP_CACHE.get(cache_key)
+        if cached:
+            cached_at = cached.get("cached_at")
+            payload = cached.get("payload")
+            if isinstance(cached_at, datetime) and isinstance(payload, RealEstateHeatmapResponse):
+                age_seconds = max(0, int((now - cached_at).total_seconds()))
+                if age_seconds <= ttl_seconds:
+                    result = payload.model_copy(deep=True)
+                    result.notes.append(f"Live cache hit ({age_seconds}s old).")
+                    return result
+
+    result = _compute_real_estate_heatmap(
+        year=year,
+        compare_year=compare_year,
+        limit=limit,
+        scope=scope,
+    )
+    result.notes.append("Live Census refresh executed.")
+
+    with _LIVE_HEATMAP_CACHE_LOCK:
+        _LIVE_HEATMAP_CACHE[cache_key] = {
+            "cached_at": now,
+            "payload": result.model_copy(deep=True),
+        }
+
+    return result
 
 
 @app.get("/api/signals/scored-real-estate-heatmap", response_model=RealEstateHeatmapResponse)

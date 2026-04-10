@@ -42,30 +42,38 @@ async function fetchHeatmapJson(url) {
 
 export async function fetchRealEstateHeatmap({ year, compareYear, limit = 45000, scope = "national" } = {}) {
   const baseUrl = resolveBaseUrl();
+  const liveManagedUrl = new URL("/api/signals/real-estate-heatmap/live", baseUrl);
   const scoredUrl = new URL("/api/signals/scored-real-estate-heatmap", baseUrl);
   const liveUrl = new URL("/api/signals/real-estate-heatmap", baseUrl);
 
   if (Number.isInteger(year)) {
+    liveManagedUrl.searchParams.set("year", String(year));
     liveUrl.searchParams.set("year", String(year));
   }
   if (Number.isInteger(compareYear)) {
+    liveManagedUrl.searchParams.set("compare_year", String(compareYear));
     liveUrl.searchParams.set("compare_year", String(compareYear));
   }
   if (Number.isInteger(limit)) {
+    liveManagedUrl.searchParams.set("limit", String(limit));
     scoredUrl.searchParams.set("limit", String(limit));
     liveUrl.searchParams.set("limit", String(limit));
   }
   if (scope) {
+    liveManagedUrl.searchParams.set("scope", scope);
     liveUrl.searchParams.set("scope", scope);
   }
 
+  // Tune live polling cache behavior server-side.
+  liveManagedUrl.searchParams.set("cache_ttl_minutes", "60");
+
   try {
-    return await fetchHeatmapJson(scoredUrl);
-  } catch (error) {
+    return await fetchHeatmapJson(liveManagedUrl);
+  } catch {
     try {
-      return await fetchHeatmapJson(liveUrl);
+      return await fetchHeatmapJson(scoredUrl);
     } catch {
-      throw error;
+      return await fetchHeatmapJson(liveUrl);
     }
   }
 }
