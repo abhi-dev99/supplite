@@ -1,8 +1,9 @@
-import { LayoutDashboard, TrendingUp, FileText, SplitSquareHorizontal, Sun, Moon } from 'lucide-react';
+import { LayoutDashboard, TrendingUp, FileText, SplitSquareHorizontal, Sun, Moon, MapPin } from 'lucide-react';
+import { useMemo } from 'react';
 
-export default function Sidebar({ currentView, setCurrentView, theme, toggleTheme }) {
+export default function Sidebar({ currentView, setCurrentView, theme, toggleTheme, distributionCenters, selectedDC, setSelectedDC }) {
   const navItems = [
-    { id: 'overview', label: 'Overview', icon: LayoutDashboard },
+    { id: 'overview', label: 'Intelligence Hub', icon: LayoutDashboard },
     { id: 'timeline', label: 'Signal Timeline', icon: TrendingUp },
     { id: 'brief', label: 'Buyer Brief', icon: FileText },
     { id: 'simulation', label: 'Simulation', icon: SplitSquareHorizontal },
@@ -18,9 +19,38 @@ export default function Sidebar({ currentView, setCurrentView, theme, toggleThem
       padding: '32px 24px',
       height: '100%'
     }}>
-      <h2 style={{ fontSize: '1.25rem', marginBottom: '48px', color: 'var(--color-text-primary)' }}>
+      <h2 style={{ fontSize: '1.25rem', marginBottom: '32px', color: 'var(--color-text-primary)' }}>
         Demand Intelligence
       </h2>
+
+      <div style={{ marginBottom: '32px' }}>
+        <label style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--color-text-secondary)', textTransform: 'uppercase', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+           <MapPin size={14} /> Active Node
+        </label>
+        <select 
+          value={selectedDC} 
+          onChange={(e) => setSelectedDC(e.target.value)}
+          style={{
+            width: '100%',
+            padding: '10px 12px',
+            borderRadius: '6px',
+            backgroundColor: 'var(--color-surface-floating)',
+            color: 'var(--color-text-primary)',
+            border: '1px solid var(--color-border)',
+            fontSize: '0.875rem',
+            fontFamily: 'var(--font-sans)',
+            cursor: 'pointer',
+            outline: 'none'
+          }}
+        >
+          <option value="ALL">North America (Global View)</option>
+          {distributionCenters && distributionCenters
+            .filter(dc => ['City of Industry DC', 'Braselton DC', 'Dallas DC', 'Litchfield Park DC', 'Oakland, CA', 'Lakeland, FL', 'Denver, CO', 'South Brunswick DC'].includes(dc.name))
+            .map(dc => (
+            <option key={dc.name} value={dc.name}>{dc.name} ({dc.type})</option>
+          ))}
+        </select>
+      </div>
       
       <nav style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
         {navItems.map(item => {

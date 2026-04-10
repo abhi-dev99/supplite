@@ -145,3 +145,69 @@ tr:hover td {
 .secondary-btn:hover {
   background-color: var(--color-surface);
 }
+
+.brief-analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 16px;
+}
+
+.brief-chart-card {
+  min-height: 420px;
+}
+
+.brief-markdown {
+  color: var(--color-text-primary);
+}
+
+.brief-markdown p {
+  margin: 0 0 10px;
+}
+
+.brief-markdown h1,
+.brief-markdown h2,
+.brief-markdown h3,
+.brief-markdown h4 {
+  margin: 14px 0 10px;
+  color: var(--color-text-primary);
+}
+
+.brief-markdown ul,
+.brief-markdown ol {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+
+.brief-markdown code {
+  background: var(--color-surface);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.brief-markdown pre {
+  background: var(--color-surface);
+  padding: 12px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.brief-markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 14px;
+}
+
+.brief-markdown th,
+.brief-markdown td {
+  border-bottom: 1px solid var(--color-surface-hover);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.brief-markdown th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+}
