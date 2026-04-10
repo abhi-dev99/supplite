@@ -29,7 +29,7 @@ export default function SignalTimeline() {
             />
             <Legend wrapperStyle={{ paddingTop: '20px' }} />
             
-            <ReferenceLine yAxisId="left" x="Week 0" stroke="var(--color-stockout-text)" strokeDasharray="3 3" label="Signal Event" />
+            <ReferenceLine yAxisId="left" x="Current" stroke="var(--color-stockout-text)" strokeDasharray="3 3" label="Signal Event" />
             
             <Line yAxisId="left" type="monotone" dataKey="sales" name="Sales History" stroke="#1a1c1d" strokeWidth={3} dot={{r: 4}} activeDot={{r: 8}} />
             <Line yAxisId="right" type="monotone" dataKey="search" name="Google Trends Index" stroke="#ba1a1a" strokeWidth={3} dot={false} />

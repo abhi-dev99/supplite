@@ -1,0 +1,7398 @@
+{
+  "skuTable": [
+    {
+      "id": "PB-BAT-01",
+      "name": "Waffle Robe, Oak",
+      "brand": "Pottery Barn",
+      "category": "Bath",
+      "stock": 1004,
+      "onOrder": 223,
+      "daysOfSupply": 73,
+      "leadTimeDays": 49,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +34%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 64.95
+    },
+    {
+      "id": "PB-BAT-02",
+      "name": "Stone Bath Accessories, Oatmeal",
+      "brand": "Pottery Barn",
+      "category": "Bath",
+      "stock": 714,
+      "onOrder": 171,
+      "daysOfSupply": 89,
+      "leadTimeDays": 56,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 164.95
+    },
+    {
+      "id": "PB-BED-01",
+      "name": "Chunky Knit Throw, Natural",
+      "brand": "Pottery Barn",
+      "category": "Bedding",
+      "stock": 1181,
+      "onOrder": 154,
+      "daysOfSupply": 275,
+      "leadTimeDays": 77,
+      "riskLevel": "OVERSTOCK_RISK",
+      "signal": "Excess inventory vs. demand rate",
+      "action": "Review replenishment cadence",
+      "price": 114.95
+    },
+    {
+      "id": "PB-BED-02",
+      "name": "Waffle Weave Blanket, Terracotta",
+      "brand": "Pottery Barn",
+      "category": "Bedding",
+      "stock": 2239,
+      "onOrder": 640,
+      "daysOfSupply": 123,
+      "leadTimeDays": 84,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +22%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 149.95
+    },
+    {
+      "id": "PB-BED-03",
+      "name": "Flannel Sheet Set, Ivory",
+      "brand": "Pottery Barn",
+      "category": "Bedding",
+      "stock": 1007,
+      "onOrder": 490,
+      "daysOfSupply": 157,
+      "leadTimeDays": 77,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 289.95
+    },
+    {
+      "id": "PB-BED-04",
+      "name": "Quilted Coverlet, Cloud",
+      "brand": "Pottery Barn",
+      "category": "Bedding",
+      "stock": 4301,
+      "onOrder": 1340,
+      "daysOfSupply": 187,
+      "leadTimeDays": 77,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 309.95
+    },
+    {
+      "id": "PB-BED-05",
+      "name": "Waffle Weave Blanket, Stone",
+      "brand": "Pottery Barn",
+      "category": "Bedding",
+      "stock": 1666,
+      "onOrder": 1575,
+      "daysOfSupply": 109,
+      "leadTimeDays": 63,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 154.95
+    },
+    {
+      "id": "PB-BED-FRAME-33",
+      "name": "Bedroom Set, King",
+      "brand": "Pottery Barn",
+      "category": "Furniture",
+      "stock": 860,
+      "onOrder": 240,
+      "daysOfSupply": 212,
+      "leadTimeDays": 84,
+      "riskLevel": "WATCH",
+      "signal": "Housing permits +34%",
+      "action": "Pre-position 400",
+      "price": 1899.0
+    },
+    {
+      "id": "PB-BLANKET-42",
+      "name": "Throw Blanket, Cognac",
+      "brand": "Pottery Barn",
+      "category": "Bedding",
+      "stock": 6200,
+      "onOrder": 0,
+      "daysOfSupply": 92,
+      "leadTimeDays": 70,
+      "riskLevel": "STOCKOUT_RISK",
+      "signal": "Search spike +840%",
+      "action": "Expedite Order",
+      "price": 89.0
+    },
+    {
+      "id": "PB-DEC-01",
+      "name": "Embroidered Throw Pillow, Navy",
+      "brand": "Pottery Barn",
+      "category": "Decor",
+      "stock": 1644,
+      "onOrder": 676,
+      "daysOfSupply": 134,
+      "leadTimeDays": 63,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 229.95
+    },
+    {
+      "id": "PB-DEC-02",
+      "name": "Embroidered Throw Pillow, Driftwood",
+      "brand": "Pottery Barn",
+      "category": "Decor",
+      "stock": 1196,
+      "onOrder": 896,
+      "daysOfSupply": 62,
+      "leadTimeDays": 42,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +13%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 89.95
+    },
+    {
+      "id": "PB-DEC-03",
+      "name": "Textured Table Clock, Cream",
+      "brand": "Pottery Barn",
+      "category": "Decor",
+      "stock": 383,
+      "onOrder": 124,
+      "daysOfSupply": 45,
+      "leadTimeDays": 42,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 249.95
+    },
+    {
+      "id": "PB-DEC-04",
+      "name": "Terracotta Planter, Cognac",
+      "brand": "Pottery Barn",
+      "category": "Decor",
+      "stock": 586,
+      "onOrder": 120,
+      "daysOfSupply": 181,
+      "leadTimeDays": 42,
+      "riskLevel": "OVERSTOCK_RISK",
+      "signal": "Excess inventory vs. demand rate",
+      "action": "Review replenishment cadence",
+      "price": 40.68
+    },
+    {
+      "id": "PB-DEC-05",
+      "name": "Brass Picture Frame Set, Driftwood",
+      "brand": "Pottery Barn",
+      "category": "Decor",
+      "stock": 910,
+      "onOrder": 698,
+      "daysOfSupply": 96,
+      "leadTimeDays": 56,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 94.95
+    },
+    {
+      "id": "PB-FUR-01",
+      "name": "Accent Bench, Cognac",
+      "brand": "Pottery Barn",
+      "category": "Furniture",
+      "stock": 642,
+      "onOrder": 173,
+      "daysOfSupply": 272,
+      "leadTimeDays": 84,
+      "riskLevel": "OVERSTOCK_RISK",
+      "signal": "Excess inventory vs. demand rate",
+      "action": "Review replenishment cadence",
+      "price": 2434.95
+    },
+    {
+      "id": "PB-FUR-02",
+      "name": "Rattan Bookcase, Cream",
+      "brand": "Pottery Barn",
+      "category": "Furniture",
+      "stock": 970,
+      "onOrder": 337,
+      "daysOfSupply": 179,
+      "leadTimeDays": 70,
+      "riskLevel": "OVERSTOCK_RISK",
+      "signal": "Excess inventory vs. demand rate",
+      "action": "Review replenishment cadence",
+      "price": 914.95
+    },
+    {
+      "id": "PB-FUR-03",
+      "name": "Spindle Back Chair, Cloud",
+      "brand": "Pottery Barn",
+      "category": "Furniture",
+      "stock": 410,
+      "onOrder": 85,
+      "daysOfSupply": 154,
+      "leadTimeDays": 77,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 819.95
+    },
+    {
+      "id": "PB-FUR-04",
+      "name": "Floating Shelf Unit, Terracotta",
+      "brand": "Pottery Barn",
+      "category": "Furniture",
+      "stock": 867,
+      "onOrder": 150,
+      "daysOfSupply": 186,
+      "leadTimeDays": 84,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 1044.95
+    },
+    {
+      "id": "PB-FUR-05",
+      "name": "Loft Bed with Desk, White",
+      "brand": "Pottery Barn",
+      "category": "Furniture",
+      "stock": 424,
+      "onOrder": 174,
+      "daysOfSupply": 161,
+      "leadTimeDays": 56,
+      "riskLevel": "OVERSTOCK_RISK",
+      "signal": "Excess inventory vs. demand rate",
+      "action": "Review replenishment cadence",
+      "price": 1964.95
+    },
+    {
+      "id": "PB-FUR-06",
+      "name": "Farmhouse Dining Table, Matte Black",
+      "brand": "Pottery Barn",
+      "category": "Furniture",
+      "stock": 348,
+      "onOrder": 126,
+      "daysOfSupply": 112,
+      "leadTimeDays": 77,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +24%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 2129.95
+    },
+    {
+      "id": "PB-LIG-01",
+      "name": "Flush Mount Ceiling Light, Walnut",
+      "brand": "Pottery Barn",
+      "category": "Lighting",
+      "stock": 773,
+      "onOrder": 312,
+      "daysOfSupply": 103,
+      "leadTimeDays": 63,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 514.95
+    },
+    {
+      "id": "PB-LIG-02",
+      "name": "Flush Mount Ceiling Light, White",
+      "brand": "Pottery Barn",
+      "category": "Lighting",
+      "stock": 1527,
+      "onOrder": 498,
+      "daysOfSupply": 134,
+      "leadTimeDays": 70,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +54%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 489.95
+    },
+    {
+      "id": "PB-LIG-03",
+      "name": "Wall Sconce Duo, Cognac",
+      "brand": "Pottery Barn",
+      "category": "Lighting",
+      "stock": 423,
+      "onOrder": 202,
+      "daysOfSupply": 72,
+      "leadTimeDays": 42,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 439.95
+    },
+    {
+      "id": "PB-OUT-01",
+      "name": "All-Weather Wicker Sofa, Charcoal",
+      "brand": "Pottery Barn",
+      "category": "Outdoor",
+      "stock": 178,
+      "onOrder": 86,
+      "daysOfSupply": 96,
+      "leadTimeDays": 56,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +43%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 1584.95
+    },
+    {
+      "id": "PB-OUT-02",
+      "name": "Adirondack Chair Set, Walnut",
+      "brand": "Pottery Barn",
+      "category": "Outdoor",
+      "stock": 262,
+      "onOrder": 73,
+      "daysOfSupply": 110,
+      "leadTimeDays": 63,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +35%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 569.95
+    },
+    {
+      "id": "PB-PILLOW-71",
+      "name": "Decorative Pillow, Sage",
+      "brand": "Pottery Barn",
+      "category": "Decor",
+      "stock": 4200,
+      "onOrder": 800,
+      "daysOfSupply": 256,
+      "leadTimeDays": 56,
+      "riskLevel": "OVERSTOCK_RISK",
+      "signal": "Search decline -23%",
+      "action": "Markdown Trigger",
+      "price": 59.5
+    },
+    {
+      "id": "PB-RUG-01",
+      "name": "Flatweave Cotton Rug, Stone",
+      "brand": "Pottery Barn",
+      "category": "Rugs",
+      "stock": 363,
+      "onOrder": 554,
+      "daysOfSupply": 107,
+      "leadTimeDays": 70,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 804.95
+    },
+    {
+      "id": "PB-RUG-02",
+      "name": "Flatweave Cotton Rug, Natural",
+      "brand": "Pottery Barn",
+      "category": "Rugs",
+      "stock": 290,
+      "onOrder": 244,
+      "daysOfSupply": 66,
+      "leadTimeDays": 56,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 154.95
+    },
+    {
+      "id": "PBK-BAT-01",
+      "name": "Stone Bath Accessories, Navy",
+      "brand": "Pottery Barn Kids",
+      "category": "Bath",
+      "stock": 302,
+      "onOrder": 94,
+      "daysOfSupply": 80,
+      "leadTimeDays": 35,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 74.95
+    },
+    {
+      "id": "PBK-BAT-02",
+      "name": "Organic Turkish Towel Set, Fog",
+      "brand": "Pottery Barn Kids",
+      "category": "Bath",
+      "stock": 533,
+      "onOrder": 73,
+      "daysOfSupply": 104,
+      "leadTimeDays": 35,
+      "riskLevel": "OVERSTOCK_RISK",
+      "signal": "Excess inventory vs. demand rate",
+      "action": "Review replenishment cadence",
+      "price": 44.75
+    },
+    {
+      "id": "PBK-BED-01",
+      "name": "Velvet Quilt, Walnut",
+      "brand": "Pottery Barn Kids",
+      "category": "Bedding",
+      "stock": 639,
+      "onOrder": 183,
+      "daysOfSupply": 73,
+      "leadTimeDays": 56,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +13%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 129.95
+    },
+    {
+      "id": "PBK-BED-02",
+      "name": "Linen Duvet Cover, Walnut",
+      "brand": "Pottery Barn Kids",
+      "category": "Bedding",
+      "stock": 672,
+      "onOrder": 411,
+      "daysOfSupply": 95,
+      "leadTimeDays": 49,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 54.95
+    },
+    {
+      "id": "PBK-BED-03",
+      "name": "Velvet Quilt, Navy",
+      "brand": "Pottery Barn Kids",
+      "category": "Bedding",
+      "stock": 418,
+      "onOrder": 262,
+      "daysOfSupply": 78,
+      "leadTimeDays": 42,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 69.95
+    },
+    {
+      "id": "PBK-CRIB-12",
+      "name": "Convertible Crib, White",
+      "brand": "Pottery Barn Kids",
+      "category": "Furniture",
+      "stock": 340,
+      "onOrder": 80,
+      "daysOfSupply": 96,
+      "leadTimeDays": 56,
+      "riskLevel": "WATCH",
+      "signal": "Housing permits Denver",
+      "action": "Pre-position to Denver",
+      "price": 699.0
+    },
+    {
+      "id": "PBK-DEC-01",
+      "name": "Mercury Glass Candle, Navy",
+      "brand": "Pottery Barn Kids",
+      "category": "Decor",
+      "stock": 432,
+      "onOrder": 280,
+      "daysOfSupply": 92,
+      "leadTimeDays": 49,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 74.95
+    },
+    {
+      "id": "PBK-DEC-02",
+      "name": "Stoneware Sculpture, Cognac",
+      "brand": "Pottery Barn Kids",
+      "category": "Decor",
+      "stock": 1500,
+      "onOrder": 513,
+      "daysOfSupply": 130,
+      "leadTimeDays": 56,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 54.95
+    },
+    {
+      "id": "PBK-DEC-03",
+      "name": "Faux Olive Tree 72\", White",
+      "brand": "Pottery Barn Kids",
+      "category": "Decor",
+      "stock": 753,
+      "onOrder": 347,
+      "daysOfSupply": 70,
+      "leadTimeDays": 42,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 29.59
+    },
+    {
+      "id": "PBK-FUR-01",
+      "name": "Mid-Century Nightstand, White",
+      "brand": "Pottery Barn Kids",
+      "category": "Furniture",
+      "stock": 171,
+      "onOrder": 63,
+      "daysOfSupply": 70,
+      "leadTimeDays": 42,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 634.95
+    },
+    {
+      "id": "PBK-FUR-02",
+      "name": "Leather Club Armchair, Sage",
+      "brand": "Pottery Barn Kids",
+      "category": "Furniture",
+      "stock": 315,
+      "onOrder": 61,
+      "daysOfSupply": 101,
+      "leadTimeDays": 49,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 664.95
+    },
+    {
+      "id": "PBK-FUR-03",
+      "name": "Rattan Bookcase, Terracotta",
+      "brand": "Pottery Barn Kids",
+      "category": "Furniture",
+      "stock": 122,
+      "onOrder": 78,
+      "daysOfSupply": 65,
+      "leadTimeDays": 42,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 1254.95
+    },
+    {
+      "id": "RJ-BAT-01",
+      "name": "Stone Bath Accessories, Terracotta",
+      "brand": "Rejuvenation",
+      "category": "Bath",
+      "stock": 253,
+      "onOrder": 105,
+      "daysOfSupply": 81,
+      "leadTimeDays": 63,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 294.95
+    },
+    {
+      "id": "RJ-BAT-02",
+      "name": "Stone Bath Accessories, Cloud",
+      "brand": "Rejuvenation",
+      "category": "Bath",
+      "stock": 332,
+      "onOrder": 205,
+      "daysOfSupply": 110,
+      "leadTimeDays": 56,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 254.95
+    },
+    {
+      "id": "RJ-BAT-03",
+      "name": "Stone Bath Accessories, Sage",
+      "brand": "Rejuvenation",
+      "category": "Bath",
+      "stock": 403,
+      "onOrder": 92,
+      "daysOfSupply": 103,
+      "leadTimeDays": 63,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 364.95
+    },
+    {
+      "id": "RJ-FUR-01",
+      "name": "Upholstered Platform Bed, Cloud",
+      "brand": "Rejuvenation",
+      "category": "Furniture",
+      "stock": 199,
+      "onOrder": 90,
+      "daysOfSupply": 131,
+      "leadTimeDays": 84,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 1184.95
+    },
+    {
+      "id": "RJ-FUR-02",
+      "name": "Extendable Dining Table, Cream",
+      "brand": "Rejuvenation",
+      "category": "Furniture",
+      "stock": 118,
+      "onOrder": 27,
+      "daysOfSupply": 80,
+      "leadTimeDays": 63,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 859.95
+    },
+    {
+      "id": "RJ-FUR-03",
+      "name": "Accent Bench, Sage",
+      "brand": "Rejuvenation",
+      "category": "Furniture",
+      "stock": 196,
+      "onOrder": 96,
+      "daysOfSupply": 128,
+      "leadTimeDays": 70,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 1359.95
+    },
+    {
+      "id": "RJ-LIG-01",
+      "name": "Rattan Pendant Shade, Matte Black",
+      "brand": "Rejuvenation",
+      "category": "Lighting",
+      "stock": 319,
+      "onOrder": 72,
+      "daysOfSupply": 182,
+      "leadTimeDays": 84,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 234.95
+    },
+    {
+      "id": "RJ-LIG-02",
+      "name": "Desk Lamp with USB, White",
+      "brand": "Rejuvenation",
+      "category": "Lighting",
+      "stock": 266,
+      "onOrder": 165,
+      "daysOfSupply": 110,
+      "leadTimeDays": 63,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 1399.95
+    },
+    {
+      "id": "RJ-LIG-03",
+      "name": "Globe String Lights, Fog",
+      "brand": "Rejuvenation",
+      "category": "Lighting",
+      "stock": 60,
+      "onOrder": 38,
+      "daysOfSupply": 83,
+      "leadTimeDays": 49,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 2159.95
+    },
+    {
+      "id": "RJ-LIG-04",
+      "name": "Flush Mount Ceiling Light, Stone",
+      "brand": "Rejuvenation",
+      "category": "Lighting",
+      "stock": 405,
+      "onOrder": 97,
+      "daysOfSupply": 123,
+      "leadTimeDays": 77,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 94.95
+    },
+    {
+      "id": "RJ-LIG-05",
+      "name": "Flush Mount Ceiling Light, Ivory",
+      "brand": "Rejuvenation",
+      "category": "Lighting",
+      "stock": 216,
+      "onOrder": 101,
+      "daysOfSupply": 137,
+      "leadTimeDays": 63,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 304.95
+    },
+    {
+      "id": "WE-BED-01",
+      "name": "Organic Percale Sheet Set, Ivory",
+      "brand": "West Elm",
+      "category": "Bedding",
+      "stock": 881,
+      "onOrder": 255,
+      "daysOfSupply": 108,
+      "leadTimeDays": 49,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 234.95
+    },
+    {
+      "id": "WE-BED-02",
+      "name": "Chunky Knit Throw, Navy",
+      "brand": "West Elm",
+      "category": "Bedding",
+      "stock": 682,
+      "onOrder": 88,
+      "daysOfSupply": 180,
+      "leadTimeDays": 56,
+      "riskLevel": "OVERSTOCK_RISK",
+      "signal": "Excess inventory vs. demand rate",
+      "action": "Review replenishment cadence",
+      "price": 114.95
+    },
+    {
+      "id": "WE-BED-03",
+      "name": "Cashmere Throw, Natural",
+      "brand": "West Elm",
+      "category": "Bedding",
+      "stock": 443,
+      "onOrder": 157,
+      "daysOfSupply": 63,
+      "leadTimeDays": 42,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +11%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 159.95
+    },
+    {
+      "id": "WE-BED-04",
+      "name": "Cashmere Throw, Driftwood",
+      "brand": "West Elm",
+      "category": "Bedding",
+      "stock": 1001,
+      "onOrder": 626,
+      "daysOfSupply": 83,
+      "leadTimeDays": 49,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 254.95
+    },
+    {
+      "id": "WE-DEC-01",
+      "name": "Framed Abstract Print, Walnut",
+      "brand": "West Elm",
+      "category": "Decor",
+      "stock": 1535,
+      "onOrder": 717,
+      "daysOfSupply": 82,
+      "leadTimeDays": 49,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 64.95
+    },
+    {
+      "id": "WE-DEC-02",
+      "name": "Embroidered Throw Pillow, Natural",
+      "brand": "West Elm",
+      "category": "Decor",
+      "stock": 1533,
+      "onOrder": 330,
+      "daysOfSupply": 58,
+      "leadTimeDays": 35,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 25.71
+    },
+    {
+      "id": "WE-DEC-03",
+      "name": "Textured Table Clock, Cloud",
+      "brand": "West Elm",
+      "category": "Decor",
+      "stock": 2793,
+      "onOrder": 813,
+      "daysOfSupply": 109,
+      "leadTimeDays": 49,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +22%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 144.95
+    },
+    {
+      "id": "WE-DEC-04",
+      "name": "Wood Bead Garland, Cognac",
+      "brand": "West Elm",
+      "category": "Decor",
+      "stock": 735,
+      "onOrder": 176,
+      "daysOfSupply": 80,
+      "leadTimeDays": 35,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 169.95
+    },
+    {
+      "id": "WE-DEC-05",
+      "name": "Woven Wall Basket Set, Ivory",
+      "brand": "West Elm",
+      "category": "Decor",
+      "stock": 1158,
+      "onOrder": 555,
+      "daysOfSupply": 77,
+      "leadTimeDays": 42,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 49.95
+    },
+    {
+      "id": "WE-FUR-01",
+      "name": "Spindle Back Chair, Oatmeal",
+      "brand": "West Elm",
+      "category": "Furniture",
+      "stock": 333,
+      "onOrder": 99,
+      "daysOfSupply": 87,
+      "leadTimeDays": 63,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 1074.95
+    },
+    {
+      "id": "WE-FUR-02",
+      "name": "Corner Writing Desk, Stone",
+      "brand": "West Elm",
+      "category": "Furniture",
+      "stock": 253,
+      "onOrder": 169,
+      "daysOfSupply": 80,
+      "leadTimeDays": 49,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +22%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 1419.95
+    },
+    {
+      "id": "WE-FUR-03",
+      "name": "Modular Sectional Sofa, Walnut",
+      "brand": "West Elm",
+      "category": "Furniture",
+      "stock": 117,
+      "onOrder": 37,
+      "daysOfSupply": 60,
+      "leadTimeDays": 42,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 884.95
+    },
+    {
+      "id": "WE-FUR-04",
+      "name": "Accent Bench, Oak",
+      "brand": "West Elm",
+      "category": "Furniture",
+      "stock": 401,
+      "onOrder": 479,
+      "daysOfSupply": 103,
+      "leadTimeDays": 63,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 859.95
+    },
+    {
+      "id": "WE-FUR-05",
+      "name": "Storage Media Console, Slate",
+      "brand": "West Elm",
+      "category": "Furniture",
+      "stock": 217,
+      "onOrder": 62,
+      "daysOfSupply": 98,
+      "leadTimeDays": 49,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 1699.95
+    },
+    {
+      "id": "WE-LAMP-19",
+      "name": "Table Lamp, Brass",
+      "brand": "West Elm",
+      "category": "Lighting",
+      "stock": 890,
+      "onOrder": 120,
+      "daysOfSupply": 105,
+      "leadTimeDays": 42,
+      "riskLevel": "OK",
+      "signal": "Baseline",
+      "action": "None",
+      "price": 149.0
+    },
+    {
+      "id": "WE-LIG-01",
+      "name": "Wall Sconce Duo, Ivory",
+      "brand": "West Elm",
+      "category": "Lighting",
+      "stock": 713,
+      "onOrder": 149,
+      "daysOfSupply": 98,
+      "leadTimeDays": 56,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +24%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 109.95
+    },
+    {
+      "id": "WE-LIG-02",
+      "name": "Table Lamp, Brass, Walnut",
+      "brand": "West Elm",
+      "category": "Lighting",
+      "stock": 365,
+      "onOrder": 168,
+      "daysOfSupply": 61,
+      "leadTimeDays": 42,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +15%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 264.95
+    },
+    {
+      "id": "WE-LIG-03",
+      "name": "Arc Floor Lamp, Driftwood",
+      "brand": "West Elm",
+      "category": "Lighting",
+      "stock": 389,
+      "onOrder": 109,
+      "daysOfSupply": 103,
+      "leadTimeDays": 49,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 54.95
+    },
+    {
+      "id": "WE-RUG-01",
+      "name": "Persian Style Runner, Stone",
+      "brand": "West Elm",
+      "category": "Rugs",
+      "stock": 701,
+      "onOrder": 238,
+      "daysOfSupply": 159,
+      "leadTimeDays": 63,
+      "riskLevel": "OVERSTOCK_RISK",
+      "signal": "Excess inventory vs. demand rate",
+      "action": "Review replenishment cadence",
+      "price": 684.95
+    },
+    {
+      "id": "WE-RUG-02",
+      "name": "Indoor/Outdoor Rug, Ivory",
+      "brand": "West Elm",
+      "category": "Rugs",
+      "stock": 213,
+      "onOrder": 74,
+      "daysOfSupply": 85,
+      "leadTimeDays": 49,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +53%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 519.95
+    },
+    {
+      "id": "WS-DEC-01",
+      "name": "Decorative Book Box, Natural",
+      "brand": "Williams Sonoma",
+      "category": "Decor",
+      "stock": 390,
+      "onOrder": 244,
+      "daysOfSupply": 80,
+      "leadTimeDays": 42,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 64.95
+    },
+    {
+      "id": "WS-DEC-02",
+      "name": "Mercury Glass Candle, Brass",
+      "brand": "Williams Sonoma",
+      "category": "Decor",
+      "stock": 384,
+      "onOrder": 169,
+      "daysOfSupply": 78,
+      "leadTimeDays": 35,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 149.95
+    },
+    {
+      "id": "WS-DEC-03",
+      "name": "Decorative Book Box, Navy",
+      "brand": "Williams Sonoma",
+      "category": "Decor",
+      "stock": 984,
+      "onOrder": 336,
+      "daysOfSupply": 99,
+      "leadTimeDays": 42,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 79.95
+    },
+    {
+      "id": "WS-KIT-01",
+      "name": "Pizza Stone Kit, Sage",
+      "brand": "Williams Sonoma",
+      "category": "Kitchen",
+      "stock": 1485,
+      "onOrder": 614,
+      "daysOfSupply": 120,
+      "leadTimeDays": 56,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 359.95
+    },
+    {
+      "id": "WS-KIT-02",
+      "name": "Stand Mixer Heritage, Stone",
+      "brand": "Williams Sonoma",
+      "category": "Kitchen",
+      "stock": 1023,
+      "onOrder": 635,
+      "daysOfSupply": 77,
+      "leadTimeDays": 49,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 749.95
+    },
+    {
+      "id": "WS-KIT-03",
+      "name": "Dutch Oven 7-Qt Enameled, Charcoal",
+      "brand": "Williams Sonoma",
+      "category": "Kitchen",
+      "stock": 986,
+      "onOrder": 245,
+      "daysOfSupply": 63,
+      "leadTimeDays": 42,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 634.95
+    },
+    {
+      "id": "WS-KIT-04",
+      "name": "Espresso Machine, Cognac",
+      "brand": "Williams Sonoma",
+      "category": "Kitchen",
+      "stock": 1339,
+      "onOrder": 210,
+      "daysOfSupply": 177,
+      "leadTimeDays": 49,
+      "riskLevel": "OVERSTOCK_RISK",
+      "signal": "Excess inventory vs. demand rate",
+      "action": "Review replenishment cadence",
+      "price": 529.95
+    },
+    {
+      "id": "WS-KIT-05",
+      "name": "Professional Blender, Oak",
+      "brand": "Williams Sonoma",
+      "category": "Kitchen",
+      "stock": 650,
+      "onOrder": 111,
+      "daysOfSupply": 105,
+      "leadTimeDays": 49,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 74.95
+    },
+    {
+      "id": "WS-KIT-06",
+      "name": "Professional Blender, Cream",
+      "brand": "Williams Sonoma",
+      "category": "Kitchen",
+      "stock": 345,
+      "onOrder": 142,
+      "daysOfSupply": 35,
+      "leadTimeDays": 28,
+      "riskLevel": "STOCKOUT_RISK",
+      "signal": "Acceleration +57% WoW",
+      "action": "Expedite order or source alternate vendor",
+      "price": 94.95
+    },
+    {
+      "id": "WS-KIT-07",
+      "name": "Cutting Board Set, Brass",
+      "brand": "Williams Sonoma",
+      "category": "Kitchen",
+      "stock": 1209,
+      "onOrder": 432,
+      "daysOfSupply": 71,
+      "leadTimeDays": 35,
+      "riskLevel": "OK",
+      "signal": "Stable demand pattern",
+      "action": "Maintain current replenishment",
+      "price": 279.95
+    },
+    {
+      "id": "WS-MIXER-55",
+      "name": "Stand Mixer, Heritage",
+      "brand": "Williams Sonoma",
+      "category": "Kitchen",
+      "stock": 1450,
+      "onOrder": 600,
+      "daysOfSupply": 197,
+      "leadTimeDays": 42,
+      "riskLevel": "WATCH",
+      "signal": "Holiday search rising",
+      "action": "Increase Order +20%",
+      "price": 449.95
+    },
+    {
+      "id": "WS-OUT-01",
+      "name": "Outdoor Rug 8x10, Cognac",
+      "brand": "Williams Sonoma",
+      "category": "Outdoor",
+      "stock": 546,
+      "onOrder": 349,
+      "daysOfSupply": 55,
+      "leadTimeDays": 35,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +51%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 104.95
+    },
+    {
+      "id": "WS-OUT-02",
+      "name": "All-Weather Wicker Sofa, Matte Black",
+      "brand": "Williams Sonoma",
+      "category": "Outdoor",
+      "stock": 302,
+      "onOrder": 234,
+      "daysOfSupply": 53,
+      "leadTimeDays": 35,
+      "riskLevel": "WATCH",
+      "signal": "Velocity shift +44%",
+      "action": "Monitor for 2 weeks before acting",
+      "price": 359.95
+    }
+  ],
+  "chartData": {
+    "PB-BAT-01": [
+      {
+        "name": "Week -11",
+        "sales": 40,
+        "search": 28.0,
+        "permits": 2581
+      },
+      {
+        "name": "Week -10",
+        "sales": 41,
+        "search": 22.3,
+        "permits": 2601
+      },
+      {
+        "name": "Week -9",
+        "sales": 61,
+        "search": 24.3,
+        "permits": 2626
+      },
+      {
+        "name": "Week -8",
+        "sales": 49,
+        "search": 26.7,
+        "permits": 2474
+      },
+      {
+        "name": "Week -7",
+        "sales": 60,
+        "search": 59.8,
+        "permits": 2680
+      },
+      {
+        "name": "Week -6",
+        "sales": 54,
+        "search": 47.7,
+        "permits": 2366
+      },
+      {
+        "name": "Week -5",
+        "sales": 105,
+        "search": 63.0,
+        "permits": 3108
+      },
+      {
+        "name": "Week -4",
+        "sales": 131,
+        "search": 39.5,
+        "permits": 3301
+      },
+      {
+        "name": "Week -3",
+        "sales": 117,
+        "search": 49.3,
+        "permits": 3524
+      },
+      {
+        "name": "Week -2",
+        "sales": 102,
+        "search": 48.2,
+        "permits": 3491
+      },
+      {
+        "name": "Week -1",
+        "sales": 129,
+        "search": 56.7,
+        "permits": 3438
+      },
+      {
+        "name": "Current",
+        "sales": 122,
+        "search": 54.1,
+        "permits": 4620
+      }
+    ],
+    "PB-BAT-02": [
+      {
+        "name": "Week -11",
+        "sales": 55,
+        "search": 44.3,
+        "permits": 1960
+      },
+      {
+        "name": "Week -10",
+        "sales": 56,
+        "search": 32.2,
+        "permits": 1975
+      },
+      {
+        "name": "Week -9",
+        "sales": 54,
+        "search": 38.4,
+        "permits": 2157
+      },
+      {
+        "name": "Week -8",
+        "sales": 57,
+        "search": 45.2,
+        "permits": 1952
+      },
+      {
+        "name": "Week -7",
+        "sales": 57,
+        "search": 59.6,
+        "permits": 2134
+      },
+      {
+        "name": "Week -6",
+        "sales": 66,
+        "search": 45.5,
+        "permits": 2349
+      },
+      {
+        "name": "Week -5",
+        "sales": 68,
+        "search": 54.1,
+        "permits": 2674
+      },
+      {
+        "name": "Week -4",
+        "sales": 59,
+        "search": 35.9,
+        "permits": 2273
+      },
+      {
+        "name": "Week -3",
+        "sales": 71,
+        "search": 47.9,
+        "permits": 2808
+      },
+      {
+        "name": "Week -2",
+        "sales": 68,
+        "search": 36.7,
+        "permits": 2809
+      },
+      {
+        "name": "Week -1",
+        "sales": 67,
+        "search": 51.6,
+        "permits": 2617
+      },
+      {
+        "name": "Current",
+        "sales": 71,
+        "search": 43.5,
+        "permits": 3615
+      }
+    ],
+    "PB-BED-01": [
+      {
+        "name": "Week -11",
+        "sales": 30,
+        "search": 6.2,
+        "permits": 1344
+      },
+      {
+        "name": "Week -10",
+        "sales": 32,
+        "search": 13.9,
+        "permits": 1323
+      },
+      {
+        "name": "Week -9",
+        "sales": 26,
+        "search": 11.0,
+        "permits": 1491
+      },
+      {
+        "name": "Week -8",
+        "sales": 31,
+        "search": 9.5,
+        "permits": 1507
+      },
+      {
+        "name": "Week -7",
+        "sales": 31,
+        "search": 10.1,
+        "permits": 1496
+      },
+      {
+        "name": "Week -6",
+        "sales": 29,
+        "search": 12.6,
+        "permits": 1598
+      },
+      {
+        "name": "Week -5",
+        "sales": 36,
+        "search": 10.8,
+        "permits": 1955
+      },
+      {
+        "name": "Week -4",
+        "sales": 33,
+        "search": 7.9,
+        "permits": 1897
+      },
+      {
+        "name": "Week -3",
+        "sales": 37,
+        "search": 6.2,
+        "permits": 1798
+      },
+      {
+        "name": "Week -2",
+        "sales": 30,
+        "search": 10.0,
+        "permits": 2028
+      },
+      {
+        "name": "Week -1",
+        "sales": 31,
+        "search": 13.5,
+        "permits": 2011
+      },
+      {
+        "name": "Current",
+        "sales": 38,
+        "search": 10.3,
+        "permits": 2596
+      }
+    ],
+    "PB-BED-02": [
+      {
+        "name": "Week -11",
+        "sales": 57,
+        "search": 34.2,
+        "permits": 1266
+      },
+      {
+        "name": "Week -10",
+        "sales": 57,
+        "search": 24.9,
+        "permits": 1368
+      },
+      {
+        "name": "Week -9",
+        "sales": 78,
+        "search": 26.6,
+        "permits": 1443
+      },
+      {
+        "name": "Week -8",
+        "sales": 82,
+        "search": 29.7,
+        "permits": 1502
+      },
+      {
+        "name": "Week -7",
+        "sales": 88,
+        "search": 53.8,
+        "permits": 1517
+      },
+      {
+        "name": "Week -6",
+        "sales": 79,
+        "search": 68.5,
+        "permits": 1551
+      },
+      {
+        "name": "Week -5",
+        "sales": 177,
+        "search": 48.5,
+        "permits": 1732
+      },
+      {
+        "name": "Week -4",
+        "sales": 192,
+        "search": 50.4,
+        "permits": 1910
+      },
+      {
+        "name": "Week -3",
+        "sales": 149,
+        "search": 59.0,
+        "permits": 1754
+      },
+      {
+        "name": "Week -2",
+        "sales": 155,
+        "search": 58.4,
+        "permits": 2031
+      },
+      {
+        "name": "Week -1",
+        "sales": 173,
+        "search": 63.6,
+        "permits": 1971
+      },
+      {
+        "name": "Current",
+        "sales": 179,
+        "search": 54.5,
+        "permits": 2370
+      }
+    ],
+    "PB-BED-03": [
+      {
+        "name": "Week -11",
+        "sales": 48,
+        "search": 28.3,
+        "permits": 2006
+      },
+      {
+        "name": "Week -10",
+        "sales": 48,
+        "search": 32.6,
+        "permits": 2392
+      },
+      {
+        "name": "Week -9",
+        "sales": 52,
+        "search": 36.0,
+        "permits": 2439
+      },
+      {
+        "name": "Week -8",
+        "sales": 50,
+        "search": 36.5,
+        "permits": 2562
+      },
+      {
+        "name": "Week -7",
+        "sales": 54,
+        "search": 44.0,
+        "permits": 2643
+      },
+      {
+        "name": "Week -6",
+        "sales": 55,
+        "search": 34.1,
+        "permits": 2656
+      },
+      {
+        "name": "Week -5",
+        "sales": 73,
+        "search": 33.4,
+        "permits": 2971
+      },
+      {
+        "name": "Week -4",
+        "sales": 63,
+        "search": 42.3,
+        "permits": 3090
+      },
+      {
+        "name": "Week -3",
+        "sales": 64,
+        "search": 35.3,
+        "permits": 3067
+      },
+      {
+        "name": "Week -2",
+        "sales": 62,
+        "search": 50.1,
+        "permits": 3453
+      },
+      {
+        "name": "Week -1",
+        "sales": 67,
+        "search": 37.8,
+        "permits": 3221
+      },
+      {
+        "name": "Current",
+        "sales": 74,
+        "search": 45.9,
+        "permits": 4308
+      }
+    ],
+    "PB-BED-04": [
+      {
+        "name": "Week -11",
+        "sales": 149,
+        "search": 31.3,
+        "permits": 1115
+      },
+      {
+        "name": "Week -10",
+        "sales": 163,
+        "search": 31.0,
+        "permits": 1120
+      },
+      {
+        "name": "Week -9",
+        "sales": 186,
+        "search": 29.4,
+        "permits": 1263
+      },
+      {
+        "name": "Week -8",
+        "sales": 186,
+        "search": 40.9,
+        "permits": 1155
+      },
+      {
+        "name": "Week -7",
+        "sales": 176,
+        "search": 34.6,
+        "permits": 1256
+      },
+      {
+        "name": "Week -6",
+        "sales": 191,
+        "search": 38.9,
+        "permits": 1094
+      },
+      {
+        "name": "Week -5",
+        "sales": 203,
+        "search": 42.4,
+        "permits": 1419
+      },
+      {
+        "name": "Week -4",
+        "sales": 197,
+        "search": 31.6,
+        "permits": 1573
+      },
+      {
+        "name": "Week -3",
+        "sales": 188,
+        "search": 33.4,
+        "permits": 1566
+      },
+      {
+        "name": "Week -2",
+        "sales": 227,
+        "search": 42.1,
+        "permits": 1544
+      },
+      {
+        "name": "Week -1",
+        "sales": 193,
+        "search": 50.2,
+        "permits": 1568
+      },
+      {
+        "name": "Current",
+        "sales": 237,
+        "search": 47.4,
+        "permits": 1970
+      }
+    ],
+    "PB-BED-05": [
+      {
+        "name": "Week -11",
+        "sales": 182,
+        "search": 56.8,
+        "permits": 1506
+      },
+      {
+        "name": "Week -10",
+        "sales": 174,
+        "search": 64.2,
+        "permits": 1367
+      },
+      {
+        "name": "Week -9",
+        "sales": 156,
+        "search": 48.6,
+        "permits": 1460
+      },
+      {
+        "name": "Week -8",
+        "sales": 192,
+        "search": 40.0,
+        "permits": 1566
+      },
+      {
+        "name": "Week -7",
+        "sales": 159,
+        "search": 61.7,
+        "permits": 1545
+      },
+      {
+        "name": "Week -6",
+        "sales": 143,
+        "search": 65.5,
+        "permits": 1399
+      },
+      {
+        "name": "Week -5",
+        "sales": 209,
+        "search": 56.5,
+        "permits": 1904
+      },
+      {
+        "name": "Week -4",
+        "sales": 213,
+        "search": 62.1,
+        "permits": 1839
+      },
+      {
+        "name": "Week -3",
+        "sales": 197,
+        "search": 79.8,
+        "permits": 1984
+      },
+      {
+        "name": "Week -2",
+        "sales": 193,
+        "search": 77.6,
+        "permits": 1841
+      },
+      {
+        "name": "Week -1",
+        "sales": 223,
+        "search": 71.7,
+        "permits": 1798
+      },
+      {
+        "name": "Current",
+        "sales": 221,
+        "search": 70.6,
+        "permits": 2033
+      }
+    ],
+    "PB-BED-FRAME-33": [
+      {
+        "name": "Week -11",
+        "sales": 30,
+        "search": 15.1,
+        "permits": 2759
+      },
+      {
+        "name": "Week -10",
+        "sales": 27,
+        "search": 11.6,
+        "permits": 3056
+      },
+      {
+        "name": "Week -9",
+        "sales": 30,
+        "search": 14.6,
+        "permits": 3379
+      },
+      {
+        "name": "Week -8",
+        "sales": 29,
+        "search": 13.3,
+        "permits": 4273
+      },
+      {
+        "name": "Week -7",
+        "sales": 30,
+        "search": 11.4,
+        "permits": 4286
+      },
+      {
+        "name": "Week -6",
+        "sales": 32,
+        "search": 8.9,
+        "permits": 4079
+      },
+      {
+        "name": "Week -5",
+        "sales": 30,
+        "search": 11.8,
+        "permits": 5333
+      },
+      {
+        "name": "Week -4",
+        "sales": 36,
+        "search": 13.4,
+        "permits": 5409
+      },
+      {
+        "name": "Week -3",
+        "sales": 29,
+        "search": 10.0,
+        "permits": 5604
+      },
+      {
+        "name": "Week -2",
+        "sales": 35,
+        "search": 15.4,
+        "permits": 5486
+      },
+      {
+        "name": "Week -1",
+        "sales": 38,
+        "search": 19.4,
+        "permits": 5857
+      },
+      {
+        "name": "Current",
+        "sales": 43,
+        "search": 23.4,
+        "permits": 6592
+      }
+    ],
+    "PB-BLANKET-42": [
+      {
+        "name": "Week -11",
+        "sales": 101,
+        "search": 11.9,
+        "permits": 1024
+      },
+      {
+        "name": "Week -10",
+        "sales": 100,
+        "search": 10.3,
+        "permits": 1089
+      },
+      {
+        "name": "Week -9",
+        "sales": 101,
+        "search": 10.5,
+        "permits": 1147
+      },
+      {
+        "name": "Week -8",
+        "sales": 99,
+        "search": 10.1,
+        "permits": 1151
+      },
+      {
+        "name": "Week -7",
+        "sales": 99,
+        "search": 10.0,
+        "permits": 1280
+      },
+      {
+        "name": "Week -6",
+        "sales": 109,
+        "search": 7.6,
+        "permits": 1181
+      },
+      {
+        "name": "Week -5",
+        "sales": 123,
+        "search": 24.3,
+        "permits": 1645
+      },
+      {
+        "name": "Week -4",
+        "sales": 121,
+        "search": 49.3,
+        "permits": 1593
+      },
+      {
+        "name": "Week -3",
+        "sales": 259,
+        "search": 89,
+        "permits": 1561
+      },
+      {
+        "name": "Week -2",
+        "sales": 435,
+        "search": 82,
+        "permits": 1747
+      },
+      {
+        "name": "Week -1",
+        "sales": 662,
+        "search": 71,
+        "permits": 1620
+      },
+      {
+        "name": "Current",
+        "sales": 523,
+        "search": 58,
+        "permits": 1807
+      }
+    ],
+    "PB-DEC-01": [
+      {
+        "name": "Week -11",
+        "sales": 80,
+        "search": 37.8,
+        "permits": 3151
+      },
+      {
+        "name": "Week -10",
+        "sales": 83,
+        "search": 41.9,
+        "permits": 3193
+      },
+      {
+        "name": "Week -9",
+        "sales": 100,
+        "search": 24.6,
+        "permits": 3879
+      },
+      {
+        "name": "Week -8",
+        "sales": 94,
+        "search": 27.3,
+        "permits": 3756
+      },
+      {
+        "name": "Week -7",
+        "sales": 92,
+        "search": 47.1,
+        "permits": 3436
+      },
+      {
+        "name": "Week -6",
+        "sales": 96,
+        "search": 38.5,
+        "permits": 3410
+      },
+      {
+        "name": "Week -5",
+        "sales": 121,
+        "search": 36.7,
+        "permits": 4936
+      },
+      {
+        "name": "Week -4",
+        "sales": 116,
+        "search": 35.1,
+        "permits": 4517
+      },
+      {
+        "name": "Week -3",
+        "sales": 120,
+        "search": 42.3,
+        "permits": 4726
+      },
+      {
+        "name": "Week -2",
+        "sales": 119,
+        "search": 44.3,
+        "permits": 4771
+      },
+      {
+        "name": "Week -1",
+        "sales": 116,
+        "search": 51.5,
+        "permits": 4839
+      },
+      {
+        "name": "Current",
+        "sales": 128,
+        "search": 41.0,
+        "permits": 6307
+      }
+    ],
+    "PB-DEC-02": [
+      {
+        "name": "Week -11",
+        "sales": 183,
+        "search": 59.9,
+        "permits": 1310
+      },
+      {
+        "name": "Week -10",
+        "sales": 186,
+        "search": 59.3,
+        "permits": 1315
+      },
+      {
+        "name": "Week -9",
+        "sales": 208,
+        "search": 52.5,
+        "permits": 1488
+      },
+      {
+        "name": "Week -8",
+        "sales": 212,
+        "search": 65.4,
+        "permits": 1468
+      },
+      {
+        "name": "Week -7",
+        "sales": 190,
+        "search": 49.3,
+        "permits": 1414
+      },
+      {
+        "name": "Week -6",
+        "sales": 218,
+        "search": 72.2,
+        "permits": 1461
+      },
+      {
+        "name": "Week -5",
+        "sales": 185,
+        "search": 72.1,
+        "permits": 1972
+      },
+      {
+        "name": "Week -4",
+        "sales": 244,
+        "search": 56.4,
+        "permits": 1960
+      },
+      {
+        "name": "Week -3",
+        "sales": 274,
+        "search": 39.1,
+        "permits": 1871
+      },
+      {
+        "name": "Week -2",
+        "sales": 220,
+        "search": 77.2,
+        "permits": 1736
+      },
+      {
+        "name": "Week -1",
+        "sales": 188,
+        "search": 66.6,
+        "permits": 1930
+      },
+      {
+        "name": "Current",
+        "sales": 261,
+        "search": 79.9,
+        "permits": 2437
+      }
+    ],
+    "PB-DEC-03": [
+      {
+        "name": "Week -11",
+        "sales": 77,
+        "search": 13.5,
+        "permits": 1398
+      },
+      {
+        "name": "Week -10",
+        "sales": 63,
+        "search": 23.2,
+        "permits": 1474
+      },
+      {
+        "name": "Week -9",
+        "sales": 74,
+        "search": 23.4,
+        "permits": 1516
+      },
+      {
+        "name": "Week -8",
+        "sales": 83,
+        "search": 23.1,
+        "permits": 1593
+      },
+      {
+        "name": "Week -7",
+        "sales": 69,
+        "search": 23.2,
+        "permits": 1487
+      },
+      {
+        "name": "Week -6",
+        "sales": 67,
+        "search": 30.6,
+        "permits": 1599
+      },
+      {
+        "name": "Week -5",
+        "sales": 76,
+        "search": 19.8,
+        "permits": 1921
+      },
+      {
+        "name": "Week -4",
+        "sales": 87,
+        "search": 31.7,
+        "permits": 1870
+      },
+      {
+        "name": "Week -3",
+        "sales": 74,
+        "search": 26.5,
+        "permits": 1932
+      },
+      {
+        "name": "Week -2",
+        "sales": 82,
+        "search": 35.9,
+        "permits": 1923
+      },
+      {
+        "name": "Week -1",
+        "sales": 78,
+        "search": 31.1,
+        "permits": 1799
+      },
+      {
+        "name": "Current",
+        "sales": 82,
+        "search": 29.6,
+        "permits": 2283
+      }
+    ],
+    "PB-DEC-04": [
+      {
+        "name": "Week -11",
+        "sales": 25,
+        "search": 12.0,
+        "permits": 1401
+      },
+      {
+        "name": "Week -10",
+        "sales": 24,
+        "search": 13.3,
+        "permits": 1496
+      },
+      {
+        "name": "Week -9",
+        "sales": 25,
+        "search": 10.4,
+        "permits": 1549
+      },
+      {
+        "name": "Week -8",
+        "sales": 24,
+        "search": 8.9,
+        "permits": 1418
+      },
+      {
+        "name": "Week -7",
+        "sales": 26,
+        "search": 9.9,
+        "permits": 1446
+      },
+      {
+        "name": "Week -6",
+        "sales": 23,
+        "search": 9.4,
+        "permits": 1477
+      },
+      {
+        "name": "Week -5",
+        "sales": 26,
+        "search": 7.2,
+        "permits": 1944
+      },
+      {
+        "name": "Week -4",
+        "sales": 26,
+        "search": 10.1,
+        "permits": 1956
+      },
+      {
+        "name": "Week -3",
+        "sales": 25,
+        "search": 10.3,
+        "permits": 1689
+      },
+      {
+        "name": "Week -2",
+        "sales": 28,
+        "search": 8.0,
+        "permits": 1973
+      },
+      {
+        "name": "Week -1",
+        "sales": 27,
+        "search": 8.7,
+        "permits": 2024
+      },
+      {
+        "name": "Current",
+        "sales": 29,
+        "search": 9.6,
+        "permits": 2261
+      }
+    ],
+    "PB-DEC-05": [
+      {
+        "name": "Week -11",
+        "sales": 88,
+        "search": 46.3,
+        "permits": 1289
+      },
+      {
+        "name": "Week -10",
+        "sales": 88,
+        "search": 44.4,
+        "permits": 1423
+      },
+      {
+        "name": "Week -9",
+        "sales": 93,
+        "search": 38.1,
+        "permits": 1251
+      },
+      {
+        "name": "Week -8",
+        "sales": 103,
+        "search": 41.0,
+        "permits": 1286
+      },
+      {
+        "name": "Week -7",
+        "sales": 97,
+        "search": 31.3,
+        "permits": 1391
+      },
+      {
+        "name": "Week -6",
+        "sales": 105,
+        "search": 32.4,
+        "permits": 1278
+      },
+      {
+        "name": "Week -5",
+        "sales": 113,
+        "search": 54.0,
+        "permits": 1757
+      },
+      {
+        "name": "Week -4",
+        "sales": 96,
+        "search": 49.9,
+        "permits": 1854
+      },
+      {
+        "name": "Week -3",
+        "sales": 130,
+        "search": 49.4,
+        "permits": 1823
+      },
+      {
+        "name": "Week -2",
+        "sales": 121,
+        "search": 42.5,
+        "permits": 1731
+      },
+      {
+        "name": "Week -1",
+        "sales": 113,
+        "search": 35.5,
+        "permits": 1867
+      },
+      {
+        "name": "Current",
+        "sales": 106,
+        "search": 37.7,
+        "permits": 2363
+      }
+    ],
+    "PB-FUR-01": [
+      {
+        "name": "Week -11",
+        "sales": 17,
+        "search": 13.0,
+        "permits": 1877
+      },
+      {
+        "name": "Week -10",
+        "sales": 18,
+        "search": 9.8,
+        "permits": 2009
+      },
+      {
+        "name": "Week -9",
+        "sales": 19,
+        "search": 12.2,
+        "permits": 2083
+      },
+      {
+        "name": "Week -8",
+        "sales": 16,
+        "search": 7.2,
+        "permits": 2160
+      },
+      {
+        "name": "Week -7",
+        "sales": 20,
+        "search": 9.3,
+        "permits": 2005
+      },
+      {
+        "name": "Week -6",
+        "sales": 18,
+        "search": 12.5,
+        "permits": 2167
+      },
+      {
+        "name": "Week -5",
+        "sales": 22,
+        "search": 12.9,
+        "permits": 2443
+      },
+      {
+        "name": "Week -4",
+        "sales": 20,
+        "search": 6.9,
+        "permits": 2685
+      },
+      {
+        "name": "Week -3",
+        "sales": 25,
+        "search": 10.9,
+        "permits": 2916
+      },
+      {
+        "name": "Week -2",
+        "sales": 18,
+        "search": 11.1,
+        "permits": 2823
+      },
+      {
+        "name": "Week -1",
+        "sales": 19,
+        "search": 15.1,
+        "permits": 2743
+      },
+      {
+        "name": "Current",
+        "sales": 22,
+        "search": 12.2,
+        "permits": 3373
+      }
+    ],
+    "PB-FUR-02": [
+      {
+        "name": "Week -11",
+        "sales": 44,
+        "search": 44.9,
+        "permits": 2538
+      },
+      {
+        "name": "Week -10",
+        "sales": 49,
+        "search": 39.9,
+        "permits": 2675
+      },
+      {
+        "name": "Week -9",
+        "sales": 48,
+        "search": 42.8,
+        "permits": 3140
+      },
+      {
+        "name": "Week -8",
+        "sales": 41,
+        "search": 41.9,
+        "permits": 3082
+      },
+      {
+        "name": "Week -7",
+        "sales": 49,
+        "search": 50.5,
+        "permits": 2867
+      },
+      {
+        "name": "Week -6",
+        "sales": 41,
+        "search": 51.7,
+        "permits": 2959
+      },
+      {
+        "name": "Week -5",
+        "sales": 54,
+        "search": 47.6,
+        "permits": 4136
+      },
+      {
+        "name": "Week -4",
+        "sales": 53,
+        "search": 52.4,
+        "permits": 3903
+      },
+      {
+        "name": "Week -3",
+        "sales": 49,
+        "search": 46.8,
+        "permits": 4023
+      },
+      {
+        "name": "Week -2",
+        "sales": 50,
+        "search": 46.8,
+        "permits": 3857
+      },
+      {
+        "name": "Week -1",
+        "sales": 53,
+        "search": 52.3,
+        "permits": 4159
+      },
+      {
+        "name": "Current",
+        "sales": 53,
+        "search": 53.8,
+        "permits": 5029
+      }
+    ],
+    "PB-FUR-03": [
+      {
+        "name": "Week -11",
+        "sales": 18,
+        "search": 41.1,
+        "permits": 3399
+      },
+      {
+        "name": "Week -10",
+        "sales": 16,
+        "search": 29.1,
+        "permits": 3426
+      },
+      {
+        "name": "Week -9",
+        "sales": 21,
+        "search": 36.3,
+        "permits": 3693
+      },
+      {
+        "name": "Week -8",
+        "sales": 18,
+        "search": 19.8,
+        "permits": 3711
+      },
+      {
+        "name": "Week -7",
+        "sales": 19,
+        "search": 31.1,
+        "permits": 3494
+      },
+      {
+        "name": "Week -6",
+        "sales": 21,
+        "search": 34.7,
+        "permits": 3718
+      },
+      {
+        "name": "Week -5",
+        "sales": 21,
+        "search": 39.4,
+        "permits": 4260
+      },
+      {
+        "name": "Week -4",
+        "sales": 21,
+        "search": 33.9,
+        "permits": 4751
+      },
+      {
+        "name": "Week -3",
+        "sales": 22,
+        "search": 36.3,
+        "permits": 4811
+      },
+      {
+        "name": "Week -2",
+        "sales": 20,
+        "search": 37.5,
+        "permits": 5124
+      },
+      {
+        "name": "Week -1",
+        "sales": 23,
+        "search": 35.8,
+        "permits": 4861
+      },
+      {
+        "name": "Current",
+        "sales": 25,
+        "search": 49.3,
+        "permits": 5237
+      }
+    ],
+    "PB-FUR-04": [
+      {
+        "name": "Week -11",
+        "sales": 27,
+        "search": 34.9,
+        "permits": 3199
+      },
+      {
+        "name": "Week -10",
+        "sales": 31,
+        "search": 41.4,
+        "permits": 3573
+      },
+      {
+        "name": "Week -9",
+        "sales": 31,
+        "search": 35.3,
+        "permits": 3874
+      },
+      {
+        "name": "Week -8",
+        "sales": 36,
+        "search": 42.2,
+        "permits": 3836
+      },
+      {
+        "name": "Week -7",
+        "sales": 33,
+        "search": 42.4,
+        "permits": 3911
+      },
+      {
+        "name": "Week -6",
+        "sales": 34,
+        "search": 32.4,
+        "permits": 3469
+      },
+      {
+        "name": "Week -5",
+        "sales": 38,
+        "search": 37.1,
+        "permits": 4726
+      },
+      {
+        "name": "Week -4",
+        "sales": 38,
+        "search": 28.2,
+        "permits": 4650
+      },
+      {
+        "name": "Week -3",
+        "sales": 34,
+        "search": 28.7,
+        "permits": 5328
+      },
+      {
+        "name": "Week -2",
+        "sales": 38,
+        "search": 38.0,
+        "permits": 5095
+      },
+      {
+        "name": "Week -1",
+        "sales": 39,
+        "search": 35.6,
+        "permits": 4791
+      },
+      {
+        "name": "Current",
+        "sales": 42,
+        "search": 52.1,
+        "permits": 6265
+      }
+    ],
+    "PB-FUR-05": [
+      {
+        "name": "Week -11",
+        "sales": 29,
+        "search": 45.5,
+        "permits": 1194
+      },
+      {
+        "name": "Week -10",
+        "sales": 12,
+        "search": 34.1,
+        "permits": 1013
+      },
+      {
+        "name": "Week -9",
+        "sales": 32,
+        "search": 42.5,
+        "permits": 1124
+      },
+      {
+        "name": "Week -8",
+        "sales": 21,
+        "search": 33.0,
+        "permits": 1278
+      },
+      {
+        "name": "Week -7",
+        "sales": 33,
+        "search": 39.7,
+        "permits": 1165
+      },
+      {
+        "name": "Week -6",
+        "sales": 28,
+        "search": 32.7,
+        "permits": 1216
+      },
+      {
+        "name": "Week -5",
+        "sales": 35,
+        "search": 38.1,
+        "permits": 1661
+      },
+      {
+        "name": "Week -4",
+        "sales": 24,
+        "search": 31.7,
+        "permits": 1391
+      },
+      {
+        "name": "Week -3",
+        "sales": 34,
+        "search": 40.5,
+        "permits": 1602
+      },
+      {
+        "name": "Week -2",
+        "sales": 23,
+        "search": 25.6,
+        "permits": 1557
+      },
+      {
+        "name": "Week -1",
+        "sales": 27,
+        "search": 24.0,
+        "permits": 1507
+      },
+      {
+        "name": "Current",
+        "sales": 20,
+        "search": 13.3,
+        "permits": 1825
+      }
+    ],
+    "PB-FUR-06": [
+      {
+        "name": "Week -11",
+        "sales": 24,
+        "search": 30.8,
+        "permits": 1138
+      },
+      {
+        "name": "Week -10",
+        "sales": 24,
+        "search": 26.6,
+        "permits": 1225
+      },
+      {
+        "name": "Week -9",
+        "sales": 25,
+        "search": 29.4,
+        "permits": 1278
+      },
+      {
+        "name": "Week -8",
+        "sales": 24,
+        "search": 35.4,
+        "permits": 1114
+      },
+      {
+        "name": "Week -7",
+        "sales": 21,
+        "search": 30.4,
+        "permits": 1076
+      },
+      {
+        "name": "Week -6",
+        "sales": 21,
+        "search": 41.5,
+        "permits": 1252
+      },
+      {
+        "name": "Week -5",
+        "sales": 26,
+        "search": 45.3,
+        "permits": 1672
+      },
+      {
+        "name": "Week -4",
+        "sales": 28,
+        "search": 35.7,
+        "permits": 1610
+      },
+      {
+        "name": "Week -3",
+        "sales": 32,
+        "search": 31.8,
+        "permits": 1697
+      },
+      {
+        "name": "Week -2",
+        "sales": 32,
+        "search": 40.3,
+        "permits": 1576
+      },
+      {
+        "name": "Week -1",
+        "sales": 24,
+        "search": 37.9,
+        "permits": 1592
+      },
+      {
+        "name": "Current",
+        "sales": 31,
+        "search": 45.2,
+        "permits": 1917
+      }
+    ],
+    "PB-LIG-01": [
+      {
+        "name": "Week -11",
+        "sales": 68,
+        "search": 42.7,
+        "permits": 1338
+      },
+      {
+        "name": "Week -10",
+        "sales": 59,
+        "search": 40.2,
+        "permits": 1404
+      },
+      {
+        "name": "Week -9",
+        "sales": 66,
+        "search": 45.3,
+        "permits": 1461
+      },
+      {
+        "name": "Week -8",
+        "sales": 69,
+        "search": 39.8,
+        "permits": 1365
+      },
+      {
+        "name": "Week -7",
+        "sales": 69,
+        "search": 51.4,
+        "permits": 1552
+      },
+      {
+        "name": "Week -6",
+        "sales": 71,
+        "search": 36.7,
+        "permits": 1487
+      },
+      {
+        "name": "Week -5",
+        "sales": 73,
+        "search": 47.9,
+        "permits": 2053
+      },
+      {
+        "name": "Week -4",
+        "sales": 79,
+        "search": 38.3,
+        "permits": 2062
+      },
+      {
+        "name": "Week -3",
+        "sales": 79,
+        "search": 52.5,
+        "permits": 1997
+      },
+      {
+        "name": "Week -2",
+        "sales": 67,
+        "search": 46.9,
+        "permits": 1967
+      },
+      {
+        "name": "Week -1",
+        "sales": 73,
+        "search": 54.1,
+        "permits": 2026
+      },
+      {
+        "name": "Current",
+        "sales": 76,
+        "search": 55.2,
+        "permits": 2261
+      }
+    ],
+    "PB-LIG-02": [
+      {
+        "name": "Week -11",
+        "sales": 36,
+        "search": 27.3,
+        "permits": 2337
+      },
+      {
+        "name": "Week -10",
+        "sales": 34,
+        "search": 29.4,
+        "permits": 2384
+      },
+      {
+        "name": "Week -9",
+        "sales": 42,
+        "search": 33.5,
+        "permits": 2189
+      },
+      {
+        "name": "Week -8",
+        "sales": 47,
+        "search": 24.8,
+        "permits": 2645
+      },
+      {
+        "name": "Week -7",
+        "sales": 48,
+        "search": 47.9,
+        "permits": 2419
+      },
+      {
+        "name": "Week -6",
+        "sales": 42,
+        "search": 54.3,
+        "permits": 2604
+      },
+      {
+        "name": "Week -5",
+        "sales": 86,
+        "search": 56.5,
+        "permits": 2787
+      },
+      {
+        "name": "Week -4",
+        "sales": 98,
+        "search": 49.6,
+        "permits": 3163
+      },
+      {
+        "name": "Week -3",
+        "sales": 108,
+        "search": 47.5,
+        "permits": 2928
+      },
+      {
+        "name": "Week -2",
+        "sales": 95,
+        "search": 73.5,
+        "permits": 3244
+      },
+      {
+        "name": "Week -1",
+        "sales": 92,
+        "search": 67.4,
+        "permits": 3322
+      },
+      {
+        "name": "Current",
+        "sales": 128,
+        "search": 67.9,
+        "permits": 4130
+      }
+    ],
+    "PB-LIG-03": [
+      {
+        "name": "Week -11",
+        "sales": 45,
+        "search": 34.2,
+        "permits": 2741
+      },
+      {
+        "name": "Week -10",
+        "sales": 49,
+        "search": 37.8,
+        "permits": 2769
+      },
+      {
+        "name": "Week -9",
+        "sales": 51,
+        "search": 31.1,
+        "permits": 2853
+      },
+      {
+        "name": "Week -8",
+        "sales": 47,
+        "search": 40.0,
+        "permits": 2785
+      },
+      {
+        "name": "Week -7",
+        "sales": 46,
+        "search": 38.7,
+        "permits": 2789
+      },
+      {
+        "name": "Week -6",
+        "sales": 52,
+        "search": 44.2,
+        "permits": 3001
+      },
+      {
+        "name": "Week -5",
+        "sales": 52,
+        "search": 47.4,
+        "permits": 3832
+      },
+      {
+        "name": "Week -4",
+        "sales": 57,
+        "search": 52.3,
+        "permits": 3731
+      },
+      {
+        "name": "Week -3",
+        "sales": 55,
+        "search": 44.4,
+        "permits": 3883
+      },
+      {
+        "name": "Week -2",
+        "sales": 64,
+        "search": 46.7,
+        "permits": 4054
+      },
+      {
+        "name": "Week -1",
+        "sales": 61,
+        "search": 45.5,
+        "permits": 3988
+      },
+      {
+        "name": "Current",
+        "sales": 62,
+        "search": 41.7,
+        "permits": 4343
+      }
+    ],
+    "PB-OUT-01": [
+      {
+        "name": "Week -11",
+        "sales": 6,
+        "search": 26.6,
+        "permits": 1118
+      },
+      {
+        "name": "Week -10",
+        "sales": 6,
+        "search": 16.4,
+        "permits": 996
+      },
+      {
+        "name": "Week -9",
+        "sales": 9,
+        "search": 30.8,
+        "permits": 1127
+      },
+      {
+        "name": "Week -8",
+        "sales": 8,
+        "search": 22.2,
+        "permits": 1287
+      },
+      {
+        "name": "Week -7",
+        "sales": 9,
+        "search": 54.6,
+        "permits": 1152
+      },
+      {
+        "name": "Week -6",
+        "sales": 7,
+        "search": 58.2,
+        "permits": 1148
+      },
+      {
+        "name": "Week -5",
+        "sales": 19,
+        "search": 58.7,
+        "permits": 1631
+      },
+      {
+        "name": "Week -4",
+        "sales": 19,
+        "search": 56.7,
+        "permits": 1581
+      },
+      {
+        "name": "Week -3",
+        "sales": 20,
+        "search": 55.6,
+        "permits": 1489
+      },
+      {
+        "name": "Week -2",
+        "sales": 19,
+        "search": 58.1,
+        "permits": 1586
+      },
+      {
+        "name": "Week -1",
+        "sales": 17,
+        "search": 69.0,
+        "permits": 1348
+      },
+      {
+        "name": "Current",
+        "sales": 21,
+        "search": 58.5,
+        "permits": 1942
+      }
+    ],
+    "PB-OUT-02": [
+      {
+        "name": "Week -11",
+        "sales": 6,
+        "search": 20.5,
+        "permits": 1450
+      },
+      {
+        "name": "Week -10",
+        "sales": 7,
+        "search": 24.3,
+        "permits": 1285
+      },
+      {
+        "name": "Week -9",
+        "sales": 9,
+        "search": 21.2,
+        "permits": 1464
+      },
+      {
+        "name": "Week -8",
+        "sales": 8,
+        "search": 19.4,
+        "permits": 1617
+      },
+      {
+        "name": "Week -7",
+        "sales": 10,
+        "search": 48.3,
+        "permits": 1462
+      },
+      {
+        "name": "Week -6",
+        "sales": 11,
+        "search": 49.2,
+        "permits": 1530
+      },
+      {
+        "name": "Week -5",
+        "sales": 22,
+        "search": 50.9,
+        "permits": 2045
+      },
+      {
+        "name": "Week -4",
+        "sales": 20,
+        "search": 49.9,
+        "permits": 2001
+      },
+      {
+        "name": "Week -3",
+        "sales": 20,
+        "search": 44.6,
+        "permits": 1871
+      },
+      {
+        "name": "Week -2",
+        "sales": 18,
+        "search": 66.2,
+        "permits": 1822
+      },
+      {
+        "name": "Week -1",
+        "sales": 20,
+        "search": 74.9,
+        "permits": 2100
+      },
+      {
+        "name": "Current",
+        "sales": 27,
+        "search": 76.9,
+        "permits": 2415
+      }
+    ],
+    "PB-PILLOW-71": [
+      {
+        "name": "Week -11",
+        "sales": 155,
+        "search": 71.8,
+        "permits": 2063
+      },
+      {
+        "name": "Week -10",
+        "sales": 154,
+        "search": 73.7,
+        "permits": 2021
+      },
+      {
+        "name": "Week -9",
+        "sales": 171,
+        "search": 75.6,
+        "permits": 2066
+      },
+      {
+        "name": "Week -8",
+        "sales": 194,
+        "search": 77.5,
+        "permits": 2072
+      },
+      {
+        "name": "Week -7",
+        "sales": 178,
+        "search": 75.4,
+        "permits": 2214
+      },
+      {
+        "name": "Week -6",
+        "sales": 185,
+        "search": 72.4,
+        "permits": 2018
+      },
+      {
+        "name": "Week -5",
+        "sales": 167,
+        "search": 59.1,
+        "permits": 2424
+      },
+      {
+        "name": "Week -4",
+        "sales": 144,
+        "search": 54.6,
+        "permits": 2872
+      },
+      {
+        "name": "Week -3",
+        "sales": 130,
+        "search": 50.1,
+        "permits": 2493
+      },
+      {
+        "name": "Week -2",
+        "sales": 139,
+        "search": 45.6,
+        "permits": 2802
+      },
+      {
+        "name": "Week -1",
+        "sales": 139,
+        "search": 41.1,
+        "permits": 2870
+      },
+      {
+        "name": "Current",
+        "sales": 138,
+        "search": 36.6,
+        "permits": 3148
+      }
+    ],
+    "PB-RUG-01": [
+      {
+        "name": "Week -11",
+        "sales": 53,
+        "search": 36.3,
+        "permits": 1866
+      },
+      {
+        "name": "Week -10",
+        "sales": 57,
+        "search": 48.0,
+        "permits": 1801
+      },
+      {
+        "name": "Week -9",
+        "sales": 44,
+        "search": 60.7,
+        "permits": 2176
+      },
+      {
+        "name": "Week -8",
+        "sales": 52,
+        "search": 59.1,
+        "permits": 2026
+      },
+      {
+        "name": "Week -7",
+        "sales": 61,
+        "search": 54.2,
+        "permits": 2195
+      },
+      {
+        "name": "Week -6",
+        "sales": 51,
+        "search": 51.6,
+        "permits": 2020
+      },
+      {
+        "name": "Week -5",
+        "sales": 56,
+        "search": 64.0,
+        "permits": 2889
+      },
+      {
+        "name": "Week -4",
+        "sales": 54,
+        "search": 60.7,
+        "permits": 2893
+      },
+      {
+        "name": "Week -3",
+        "sales": 61,
+        "search": 70.2,
+        "permits": 2563
+      },
+      {
+        "name": "Week -2",
+        "sales": 56,
+        "search": 54.4,
+        "permits": 2777
+      },
+      {
+        "name": "Week -1",
+        "sales": 65,
+        "search": 61.3,
+        "permits": 3037
+      },
+      {
+        "name": "Current",
+        "sales": 58,
+        "search": 70.3,
+        "permits": 3497
+      }
+    ],
+    "PB-RUG-02": [
+      {
+        "name": "Week -11",
+        "sales": 43,
+        "search": 46.5,
+        "permits": 3162
+      },
+      {
+        "name": "Week -10",
+        "sales": 58,
+        "search": 56.9,
+        "permits": 3229
+      },
+      {
+        "name": "Week -9",
+        "sales": 49,
+        "search": 52.4,
+        "permits": 4085
+      },
+      {
+        "name": "Week -8",
+        "sales": 49,
+        "search": 50.0,
+        "permits": 3226
+      },
+      {
+        "name": "Week -7",
+        "sales": 53,
+        "search": 54.3,
+        "permits": 3762
+      },
+      {
+        "name": "Week -6",
+        "sales": 52,
+        "search": 63.7,
+        "permits": 3926
+      },
+      {
+        "name": "Week -5",
+        "sales": 50,
+        "search": 64.5,
+        "permits": 4610
+      },
+      {
+        "name": "Week -4",
+        "sales": 59,
+        "search": 63.2,
+        "permits": 4769
+      },
+      {
+        "name": "Week -3",
+        "sales": 51,
+        "search": 72.0,
+        "permits": 5119
+      },
+      {
+        "name": "Week -2",
+        "sales": 59,
+        "search": 69.6,
+        "permits": 5082
+      },
+      {
+        "name": "Week -1",
+        "sales": 62,
+        "search": 58.9,
+        "permits": 4272
+      },
+      {
+        "name": "Current",
+        "sales": 56,
+        "search": 68.2,
+        "permits": 6192
+      }
+    ],
+    "PBK-BAT-01": [
+      {
+        "name": "Week -11",
+        "sales": 28,
+        "search": 36.6,
+        "permits": 3296
+      },
+      {
+        "name": "Week -10",
+        "sales": 35,
+        "search": 30.2,
+        "permits": 4009
+      },
+      {
+        "name": "Week -9",
+        "sales": 33,
+        "search": 37.6,
+        "permits": 3572
+      },
+      {
+        "name": "Week -8",
+        "sales": 30,
+        "search": 31.5,
+        "permits": 3649
+      },
+      {
+        "name": "Week -7",
+        "sales": 34,
+        "search": 33.4,
+        "permits": 3501
+      },
+      {
+        "name": "Week -6",
+        "sales": 32,
+        "search": 40.2,
+        "permits": 3945
+      },
+      {
+        "name": "Week -5",
+        "sales": 35,
+        "search": 43.0,
+        "permits": 4553
+      },
+      {
+        "name": "Week -4",
+        "sales": 37,
+        "search": 48.6,
+        "permits": 4769
+      },
+      {
+        "name": "Week -3",
+        "sales": 34,
+        "search": 39.2,
+        "permits": 5104
+      },
+      {
+        "name": "Week -2",
+        "sales": 35,
+        "search": 43.1,
+        "permits": 4678
+      },
+      {
+        "name": "Week -1",
+        "sales": 33,
+        "search": 34.6,
+        "permits": 4558
+      },
+      {
+        "name": "Current",
+        "sales": 36,
+        "search": 35.0,
+        "permits": 6451
+      }
+    ],
+    "PBK-BAT-02": [
+      {
+        "name": "Week -11",
+        "sales": 38,
+        "search": 8.9,
+        "permits": 1162
+      },
+      {
+        "name": "Week -10",
+        "sales": 34,
+        "search": 11.4,
+        "permits": 1363
+      },
+      {
+        "name": "Week -9",
+        "sales": 35,
+        "search": 13.4,
+        "permits": 1494
+      },
+      {
+        "name": "Week -8",
+        "sales": 37,
+        "search": 7.2,
+        "permits": 1428
+      },
+      {
+        "name": "Week -7",
+        "sales": 35,
+        "search": 9.4,
+        "permits": 1605
+      },
+      {
+        "name": "Week -6",
+        "sales": 34,
+        "search": 10.7,
+        "permits": 1524
+      },
+      {
+        "name": "Week -5",
+        "sales": 34,
+        "search": 9.5,
+        "permits": 2055
+      },
+      {
+        "name": "Week -4",
+        "sales": 34,
+        "search": 10.8,
+        "permits": 2012
+      },
+      {
+        "name": "Week -3",
+        "sales": 41,
+        "search": 8.5,
+        "permits": 2090
+      },
+      {
+        "name": "Week -2",
+        "sales": 39,
+        "search": 10.6,
+        "permits": 1863
+      },
+      {
+        "name": "Week -1",
+        "sales": 40,
+        "search": 8.0,
+        "permits": 1706
+      },
+      {
+        "name": "Current",
+        "sales": 43,
+        "search": 10.0,
+        "permits": 2017
+      }
+    ],
+    "PBK-BED-01": [
+      {
+        "name": "Week -11",
+        "sales": 72,
+        "search": 39.3,
+        "permits": 2410
+      },
+      {
+        "name": "Week -10",
+        "sales": 69,
+        "search": 36.3,
+        "permits": 2401
+      },
+      {
+        "name": "Week -9",
+        "sales": 63,
+        "search": 38.7,
+        "permits": 2490
+      },
+      {
+        "name": "Week -8",
+        "sales": 68,
+        "search": 37.3,
+        "permits": 2566
+      },
+      {
+        "name": "Week -7",
+        "sales": 66,
+        "search": 44.0,
+        "permits": 2376
+      },
+      {
+        "name": "Week -6",
+        "sales": 62,
+        "search": 50.4,
+        "permits": 2473
+      },
+      {
+        "name": "Week -5",
+        "sales": 70,
+        "search": 45.4,
+        "permits": 3274
+      },
+      {
+        "name": "Week -4",
+        "sales": 81,
+        "search": 53.6,
+        "permits": 3265
+      },
+      {
+        "name": "Week -3",
+        "sales": 82,
+        "search": 35.0,
+        "permits": 3231
+      },
+      {
+        "name": "Week -2",
+        "sales": 88,
+        "search": 42.4,
+        "permits": 3362
+      },
+      {
+        "name": "Week -1",
+        "sales": 72,
+        "search": 55.1,
+        "permits": 2966
+      },
+      {
+        "name": "Current",
+        "sales": 74,
+        "search": 45.5,
+        "permits": 4232
+      }
+    ],
+    "PBK-BED-02": [
+      {
+        "name": "Week -11",
+        "sales": 71,
+        "search": 42.4,
+        "permits": 1256
+      },
+      {
+        "name": "Week -10",
+        "sales": 66,
+        "search": 51.7,
+        "permits": 1269
+      },
+      {
+        "name": "Week -9",
+        "sales": 66,
+        "search": 46.4,
+        "permits": 1421
+      },
+      {
+        "name": "Week -8",
+        "sales": 70,
+        "search": 44.6,
+        "permits": 1218
+      },
+      {
+        "name": "Week -7",
+        "sales": 76,
+        "search": 49.9,
+        "permits": 1433
+      },
+      {
+        "name": "Week -6",
+        "sales": 72,
+        "search": 52.9,
+        "permits": 1202
+      },
+      {
+        "name": "Week -5",
+        "sales": 79,
+        "search": 51.5,
+        "permits": 1862
+      },
+      {
+        "name": "Week -4",
+        "sales": 80,
+        "search": 43.1,
+        "permits": 1751
+      },
+      {
+        "name": "Week -3",
+        "sales": 75,
+        "search": 46.7,
+        "permits": 1889
+      },
+      {
+        "name": "Week -2",
+        "sales": 74,
+        "search": 53.6,
+        "permits": 1826
+      },
+      {
+        "name": "Week -1",
+        "sales": 81,
+        "search": 58.2,
+        "permits": 1785
+      },
+      {
+        "name": "Current",
+        "sales": 90,
+        "search": 53.8,
+        "permits": 2200
+      }
+    ],
+    "PBK-BED-03": [
+      {
+        "name": "Week -11",
+        "sales": 54,
+        "search": 42.3,
+        "permits": 1268
+      },
+      {
+        "name": "Week -10",
+        "sales": 49,
+        "search": 42.7,
+        "permits": 1308
+      },
+      {
+        "name": "Week -9",
+        "sales": 54,
+        "search": 43.8,
+        "permits": 1361
+      },
+      {
+        "name": "Week -8",
+        "sales": 54,
+        "search": 39.5,
+        "permits": 1466
+      },
+      {
+        "name": "Week -7",
+        "sales": 54,
+        "search": 50.2,
+        "permits": 1309
+      },
+      {
+        "name": "Week -6",
+        "sales": 54,
+        "search": 57.9,
+        "permits": 1395
+      },
+      {
+        "name": "Week -5",
+        "sales": 57,
+        "search": 51.4,
+        "permits": 2009
+      },
+      {
+        "name": "Week -4",
+        "sales": 62,
+        "search": 49.3,
+        "permits": 1803
+      },
+      {
+        "name": "Week -3",
+        "sales": 59,
+        "search": 48.6,
+        "permits": 1657
+      },
+      {
+        "name": "Week -2",
+        "sales": 59,
+        "search": 50.5,
+        "permits": 1814
+      },
+      {
+        "name": "Week -1",
+        "sales": 62,
+        "search": 57.5,
+        "permits": 1845
+      },
+      {
+        "name": "Current",
+        "sales": 64,
+        "search": 50.4,
+        "permits": 2320
+      }
+    ],
+    "PBK-CRIB-12": [
+      {
+        "name": "Week -11",
+        "sales": 22,
+        "search": 15.9,
+        "permits": 1036
+      },
+      {
+        "name": "Week -10",
+        "sales": 23,
+        "search": 17.4,
+        "permits": 1333
+      },
+      {
+        "name": "Week -9",
+        "sales": 28,
+        "search": 18.9,
+        "permits": 1196
+      },
+      {
+        "name": "Week -8",
+        "sales": 27,
+        "search": 20.4,
+        "permits": 1251
+      },
+      {
+        "name": "Week -7",
+        "sales": 26,
+        "search": 21.9,
+        "permits": 1211
+      },
+      {
+        "name": "Week -6",
+        "sales": 27,
+        "search": 21.2,
+        "permits": 1106
+      },
+      {
+        "name": "Week -5",
+        "sales": 24,
+        "search": 24.2,
+        "permits": 2174
+      },
+      {
+        "name": "Week -4",
+        "sales": 30,
+        "search": 24.8,
+        "permits": 2182
+      },
+      {
+        "name": "Week -3",
+        "sales": 32,
+        "search": 25.0,
+        "permits": 2175
+      },
+      {
+        "name": "Week -2",
+        "sales": 27,
+        "search": 29.5,
+        "permits": 2287
+      },
+      {
+        "name": "Week -1",
+        "sales": 31,
+        "search": 31.3,
+        "permits": 2201
+      },
+      {
+        "name": "Current",
+        "sales": 33,
+        "search": 31.5,
+        "permits": 3083
+      }
+    ],
+    "PBK-DEC-01": [
+      {
+        "name": "Week -11",
+        "sales": 36,
+        "search": 33.9,
+        "permits": 2333
+      },
+      {
+        "name": "Week -10",
+        "sales": 45,
+        "search": 25.7,
+        "permits": 2439
+      },
+      {
+        "name": "Week -9",
+        "sales": 52,
+        "search": 33.9,
+        "permits": 2635
+      },
+      {
+        "name": "Week -8",
+        "sales": 46,
+        "search": 32.9,
+        "permits": 2443
+      },
+      {
+        "name": "Week -7",
+        "sales": 45,
+        "search": 39.1,
+        "permits": 2738
+      },
+      {
+        "name": "Week -6",
+        "sales": 47,
+        "search": 28.5,
+        "permits": 2760
+      },
+      {
+        "name": "Week -5",
+        "sales": 53,
+        "search": 31.2,
+        "permits": 2990
+      },
+      {
+        "name": "Week -4",
+        "sales": 58,
+        "search": 52.5,
+        "permits": 3308
+      },
+      {
+        "name": "Week -3",
+        "sales": 51,
+        "search": 33.9,
+        "permits": 3400
+      },
+      {
+        "name": "Week -2",
+        "sales": 54,
+        "search": 44.0,
+        "permits": 3508
+      },
+      {
+        "name": "Week -1",
+        "sales": 49,
+        "search": 42.8,
+        "permits": 3739
+      },
+      {
+        "name": "Current",
+        "sales": 63,
+        "search": 53.0,
+        "permits": 4337
+      }
+    ],
+    "PBK-DEC-02": [
+      {
+        "name": "Week -11",
+        "sales": 91,
+        "search": 46.8,
+        "permits": 2504
+      },
+      {
+        "name": "Week -10",
+        "sales": 94,
+        "search": 42.9,
+        "permits": 2704
+      },
+      {
+        "name": "Week -9",
+        "sales": 104,
+        "search": 32.1,
+        "permits": 2936
+      },
+      {
+        "name": "Week -8",
+        "sales": 108,
+        "search": 42.9,
+        "permits": 2929
+      },
+      {
+        "name": "Week -7",
+        "sales": 93,
+        "search": 55.6,
+        "permits": 2939
+      },
+      {
+        "name": "Week -6",
+        "sales": 95,
+        "search": 42.0,
+        "permits": 3271
+      },
+      {
+        "name": "Week -5",
+        "sales": 123,
+        "search": 37.2,
+        "permits": 3987
+      },
+      {
+        "name": "Week -4",
+        "sales": 106,
+        "search": 46.7,
+        "permits": 3819
+      },
+      {
+        "name": "Week -3",
+        "sales": 119,
+        "search": 40.2,
+        "permits": 3905
+      },
+      {
+        "name": "Week -2",
+        "sales": 102,
+        "search": 42.2,
+        "permits": 3756
+      },
+      {
+        "name": "Week -1",
+        "sales": 112,
+        "search": 32.0,
+        "permits": 3832
+      },
+      {
+        "name": "Current",
+        "sales": 102,
+        "search": 41.4,
+        "permits": 4761
+      }
+    ],
+    "PBK-DEC-03": [
+      {
+        "name": "Week -11",
+        "sales": 92,
+        "search": 42.6,
+        "permits": 3329
+      },
+      {
+        "name": "Week -10",
+        "sales": 96,
+        "search": 42.9,
+        "permits": 3082
+      },
+      {
+        "name": "Week -9",
+        "sales": 92,
+        "search": 47.5,
+        "permits": 3387
+      },
+      {
+        "name": "Week -8",
+        "sales": 93,
+        "search": 45.1,
+        "permits": 3169
+      },
+      {
+        "name": "Week -7",
+        "sales": 98,
+        "search": 44.8,
+        "permits": 3293
+      },
+      {
+        "name": "Week -6",
+        "sales": 104,
+        "search": 44.3,
+        "permits": 2917
+      },
+      {
+        "name": "Week -5",
+        "sales": 116,
+        "search": 42.6,
+        "permits": 4726
+      },
+      {
+        "name": "Week -4",
+        "sales": 102,
+        "search": 44.9,
+        "permits": 4032
+      },
+      {
+        "name": "Week -3",
+        "sales": 102,
+        "search": 43.9,
+        "permits": 3922
+      },
+      {
+        "name": "Week -2",
+        "sales": 115,
+        "search": 46.8,
+        "permits": 4372
+      },
+      {
+        "name": "Week -1",
+        "sales": 113,
+        "search": 44.2,
+        "permits": 4163
+      },
+      {
+        "name": "Current",
+        "sales": 111,
+        "search": 45.1,
+        "permits": 5165
+      }
+    ],
+    "PBK-FUR-01": [
+      {
+        "name": "Week -11",
+        "sales": 22,
+        "search": 45.8,
+        "permits": 1387
+      },
+      {
+        "name": "Week -10",
+        "sales": 24,
+        "search": 54.5,
+        "permits": 1372
+      },
+      {
+        "name": "Week -9",
+        "sales": 22,
+        "search": 55.5,
+        "permits": 1405
+      },
+      {
+        "name": "Week -8",
+        "sales": 23,
+        "search": 38.4,
+        "permits": 1454
+      },
+      {
+        "name": "Week -7",
+        "sales": 21,
+        "search": 44.1,
+        "permits": 1333
+      },
+      {
+        "name": "Week -6",
+        "sales": 22,
+        "search": 45.9,
+        "permits": 1363
+      },
+      {
+        "name": "Week -5",
+        "sales": 22,
+        "search": 41.2,
+        "permits": 2002
+      },
+      {
+        "name": "Week -4",
+        "sales": 22,
+        "search": 50.4,
+        "permits": 1830
+      },
+      {
+        "name": "Week -3",
+        "sales": 23,
+        "search": 50.3,
+        "permits": 2082
+      },
+      {
+        "name": "Week -2",
+        "sales": 24,
+        "search": 61.3,
+        "permits": 1831
+      },
+      {
+        "name": "Week -1",
+        "sales": 22,
+        "search": 59.6,
+        "permits": 1670
+      },
+      {
+        "name": "Current",
+        "sales": 25,
+        "search": 55.2,
+        "permits": 2299
+      }
+    ],
+    "PBK-FUR-02": [
+      {
+        "name": "Week -11",
+        "sales": 22,
+        "search": 40.0,
+        "permits": 3204
+      },
+      {
+        "name": "Week -10",
+        "sales": 22,
+        "search": 43.0,
+        "permits": 3010
+      },
+      {
+        "name": "Week -9",
+        "sales": 30,
+        "search": 56.3,
+        "permits": 2969
+      },
+      {
+        "name": "Week -8",
+        "sales": 24,
+        "search": 40.1,
+        "permits": 3340
+      },
+      {
+        "name": "Week -7",
+        "sales": 26,
+        "search": 44.4,
+        "permits": 3687
+      },
+      {
+        "name": "Week -6",
+        "sales": 23,
+        "search": 41.4,
+        "permits": 3434
+      },
+      {
+        "name": "Week -5",
+        "sales": 24,
+        "search": 52.1,
+        "permits": 4243
+      },
+      {
+        "name": "Week -4",
+        "sales": 32,
+        "search": 45.8,
+        "permits": 4185
+      },
+      {
+        "name": "Week -3",
+        "sales": 26,
+        "search": 42.1,
+        "permits": 4034
+      },
+      {
+        "name": "Week -2",
+        "sales": 28,
+        "search": 32.1,
+        "permits": 4675
+      },
+      {
+        "name": "Week -1",
+        "sales": 25,
+        "search": 45.4,
+        "permits": 3941
+      },
+      {
+        "name": "Current",
+        "sales": 25,
+        "search": 33.9,
+        "permits": 5639
+      }
+    ],
+    "PBK-FUR-03": [
+      {
+        "name": "Week -11",
+        "sales": 17,
+        "search": 39.3,
+        "permits": 3049
+      },
+      {
+        "name": "Week -10",
+        "sales": 18,
+        "search": 27.8,
+        "permits": 2937
+      },
+      {
+        "name": "Week -9",
+        "sales": 21,
+        "search": 32.6,
+        "permits": 3449
+      },
+      {
+        "name": "Week -8",
+        "sales": 15,
+        "search": 23.3,
+        "permits": 3293
+      },
+      {
+        "name": "Week -7",
+        "sales": 17,
+        "search": 31.3,
+        "permits": 3294
+      },
+      {
+        "name": "Week -6",
+        "sales": 15,
+        "search": 30.6,
+        "permits": 3336
+      },
+      {
+        "name": "Week -5",
+        "sales": 22,
+        "search": 47.2,
+        "permits": 4181
+      },
+      {
+        "name": "Week -4",
+        "sales": 18,
+        "search": 49.1,
+        "permits": 4273
+      },
+      {
+        "name": "Week -3",
+        "sales": 21,
+        "search": 45.0,
+        "permits": 4549
+      },
+      {
+        "name": "Week -2",
+        "sales": 24,
+        "search": 32.2,
+        "permits": 4452
+      },
+      {
+        "name": "Week -1",
+        "sales": 22,
+        "search": 40.0,
+        "permits": 4018
+      },
+      {
+        "name": "Current",
+        "sales": 19,
+        "search": 35.0,
+        "permits": 5229
+      }
+    ],
+    "RJ-BAT-01": [
+      {
+        "name": "Week -11",
+        "sales": 28,
+        "search": 27.8,
+        "permits": 2426
+      },
+      {
+        "name": "Week -10",
+        "sales": 27,
+        "search": 34.3,
+        "permits": 2110
+      },
+      {
+        "name": "Week -9",
+        "sales": 32,
+        "search": 24.0,
+        "permits": 2577
+      },
+      {
+        "name": "Week -8",
+        "sales": 30,
+        "search": 31.7,
+        "permits": 2733
+      },
+      {
+        "name": "Week -7",
+        "sales": 29,
+        "search": 34.4,
+        "permits": 2485
+      },
+      {
+        "name": "Week -6",
+        "sales": 28,
+        "search": 21.5,
+        "permits": 2438
+      },
+      {
+        "name": "Week -5",
+        "sales": 27,
+        "search": 25.3,
+        "permits": 3413
+      },
+      {
+        "name": "Week -4",
+        "sales": 34,
+        "search": 20.9,
+        "permits": 3470
+      },
+      {
+        "name": "Week -3",
+        "sales": 32,
+        "search": 31.6,
+        "permits": 3121
+      },
+      {
+        "name": "Week -2",
+        "sales": 29,
+        "search": 26.2,
+        "permits": 3201
+      },
+      {
+        "name": "Week -1",
+        "sales": 30,
+        "search": 23.8,
+        "permits": 3422
+      },
+      {
+        "name": "Current",
+        "sales": 33,
+        "search": 20.1,
+        "permits": 3852
+      }
+    ],
+    "RJ-BAT-02": [
+      {
+        "name": "Week -11",
+        "sales": 30,
+        "search": 41.5,
+        "permits": 2706
+      },
+      {
+        "name": "Week -10",
+        "sales": 30,
+        "search": 33.9,
+        "permits": 3188
+      },
+      {
+        "name": "Week -9",
+        "sales": 29,
+        "search": 42.8,
+        "permits": 3422
+      },
+      {
+        "name": "Week -8",
+        "sales": 31,
+        "search": 48.7,
+        "permits": 3153
+      },
+      {
+        "name": "Week -7",
+        "sales": 32,
+        "search": 34.0,
+        "permits": 3272
+      },
+      {
+        "name": "Week -6",
+        "sales": 30,
+        "search": 43.7,
+        "permits": 3321
+      },
+      {
+        "name": "Week -5",
+        "sales": 28,
+        "search": 40.9,
+        "permits": 4118
+      },
+      {
+        "name": "Week -4",
+        "sales": 31,
+        "search": 42.3,
+        "permits": 4380
+      },
+      {
+        "name": "Week -3",
+        "sales": 33,
+        "search": 46.1,
+        "permits": 4527
+      },
+      {
+        "name": "Week -2",
+        "sales": 34,
+        "search": 45.8,
+        "permits": 4470
+      },
+      {
+        "name": "Week -1",
+        "sales": 34,
+        "search": 44.1,
+        "permits": 4477
+      },
+      {
+        "name": "Current",
+        "sales": 36,
+        "search": 52.1,
+        "permits": 4989
+      }
+    ],
+    "RJ-BAT-03": [
+      {
+        "name": "Week -11",
+        "sales": 30,
+        "search": 35.9,
+        "permits": 2143
+      },
+      {
+        "name": "Week -10",
+        "sales": 21,
+        "search": 36.5,
+        "permits": 1844
+      },
+      {
+        "name": "Week -9",
+        "sales": 27,
+        "search": 43.2,
+        "permits": 2172
+      },
+      {
+        "name": "Week -8",
+        "sales": 31,
+        "search": 39.5,
+        "permits": 2043
+      },
+      {
+        "name": "Week -7",
+        "sales": 29,
+        "search": 41.0,
+        "permits": 1875
+      },
+      {
+        "name": "Week -6",
+        "sales": 28,
+        "search": 45.7,
+        "permits": 2251
+      },
+      {
+        "name": "Week -5",
+        "sales": 30,
+        "search": 43.1,
+        "permits": 2866
+      },
+      {
+        "name": "Week -4",
+        "sales": 34,
+        "search": 31.1,
+        "permits": 2631
+      },
+      {
+        "name": "Week -3",
+        "sales": 31,
+        "search": 49.5,
+        "permits": 2695
+      },
+      {
+        "name": "Week -2",
+        "sales": 26,
+        "search": 56.8,
+        "permits": 2902
+      },
+      {
+        "name": "Week -1",
+        "sales": 38,
+        "search": 47.5,
+        "permits": 3054
+      },
+      {
+        "name": "Current",
+        "sales": 39,
+        "search": 47.7,
+        "permits": 3640
+      }
+    ],
+    "RJ-FUR-01": [
+      {
+        "name": "Week -11",
+        "sales": 12,
+        "search": 42.3,
+        "permits": 1312
+      },
+      {
+        "name": "Week -10",
+        "sales": 15,
+        "search": 39.3,
+        "permits": 1407
+      },
+      {
+        "name": "Week -9",
+        "sales": 12,
+        "search": 44.9,
+        "permits": 1556
+      },
+      {
+        "name": "Week -8",
+        "sales": 14,
+        "search": 36.4,
+        "permits": 1496
+      },
+      {
+        "name": "Week -7",
+        "sales": 13,
+        "search": 39.0,
+        "permits": 1426
+      },
+      {
+        "name": "Week -6",
+        "sales": 13,
+        "search": 50.7,
+        "permits": 1504
+      },
+      {
+        "name": "Week -5",
+        "sales": 16,
+        "search": 35.8,
+        "permits": 1859
+      },
+      {
+        "name": "Week -4",
+        "sales": 18,
+        "search": 45.5,
+        "permits": 1918
+      },
+      {
+        "name": "Week -3",
+        "sales": 14,
+        "search": 41.1,
+        "permits": 1989
+      },
+      {
+        "name": "Week -2",
+        "sales": 15,
+        "search": 50.5,
+        "permits": 2018
+      },
+      {
+        "name": "Week -1",
+        "sales": 15,
+        "search": 46.2,
+        "permits": 1899
+      },
+      {
+        "name": "Current",
+        "sales": 18,
+        "search": 53.6,
+        "permits": 2467
+      }
+    ],
+    "RJ-FUR-02": [
+      {
+        "name": "Week -11",
+        "sales": 10,
+        "search": 26.7,
+        "permits": 3351
+      },
+      {
+        "name": "Week -10",
+        "sales": 10,
+        "search": 31.3,
+        "permits": 3231
+      },
+      {
+        "name": "Week -9",
+        "sales": 11,
+        "search": 26.0,
+        "permits": 3983
+      },
+      {
+        "name": "Week -8",
+        "sales": 13,
+        "search": 26.0,
+        "permits": 3841
+      },
+      {
+        "name": "Week -7",
+        "sales": 12,
+        "search": 30.2,
+        "permits": 3877
+      },
+      {
+        "name": "Week -6",
+        "sales": 12,
+        "search": 29.8,
+        "permits": 3884
+      },
+      {
+        "name": "Week -5",
+        "sales": 13,
+        "search": 34.0,
+        "permits": 4708
+      },
+      {
+        "name": "Week -4",
+        "sales": 12,
+        "search": 31.4,
+        "permits": 4774
+      },
+      {
+        "name": "Week -3",
+        "sales": 12,
+        "search": 20.0,
+        "permits": 4666
+      },
+      {
+        "name": "Week -2",
+        "sales": 13,
+        "search": 31.6,
+        "permits": 5035
+      },
+      {
+        "name": "Week -1",
+        "sales": 13,
+        "search": 22.9,
+        "permits": 5012
+      },
+      {
+        "name": "Current",
+        "sales": 13,
+        "search": 26.9,
+        "permits": 6155
+      }
+    ],
+    "RJ-FUR-03": [
+      {
+        "name": "Week -11",
+        "sales": 16,
+        "search": 31.5,
+        "permits": 1163
+      },
+      {
+        "name": "Week -10",
+        "sales": 14,
+        "search": 46.0,
+        "permits": 1093
+      },
+      {
+        "name": "Week -9",
+        "sales": 13,
+        "search": 45.5,
+        "permits": 1192
+      },
+      {
+        "name": "Week -8",
+        "sales": 15,
+        "search": 35.5,
+        "permits": 1134
+      },
+      {
+        "name": "Week -7",
+        "sales": 14,
+        "search": 44.7,
+        "permits": 1033
+      },
+      {
+        "name": "Week -6",
+        "sales": 15,
+        "search": 44.9,
+        "permits": 1212
+      },
+      {
+        "name": "Week -5",
+        "sales": 15,
+        "search": 50.8,
+        "permits": 1623
+      },
+      {
+        "name": "Week -4",
+        "sales": 16,
+        "search": 40.4,
+        "permits": 1603
+      },
+      {
+        "name": "Week -3",
+        "sales": 17,
+        "search": 38.8,
+        "permits": 1708
+      },
+      {
+        "name": "Week -2",
+        "sales": 16,
+        "search": 48.6,
+        "permits": 1599
+      },
+      {
+        "name": "Week -1",
+        "sales": 14,
+        "search": 44.1,
+        "permits": 1693
+      },
+      {
+        "name": "Current",
+        "sales": 17,
+        "search": 49.4,
+        "permits": 1801
+      }
+    ],
+    "RJ-LIG-01": [
+      {
+        "name": "Week -11",
+        "sales": 13,
+        "search": 32.5,
+        "permits": 1933
+      },
+      {
+        "name": "Week -10",
+        "sales": 11,
+        "search": 34.2,
+        "permits": 2091
+      },
+      {
+        "name": "Week -9",
+        "sales": 13,
+        "search": 37.1,
+        "permits": 2018
+      },
+      {
+        "name": "Week -8",
+        "sales": 13,
+        "search": 35.0,
+        "permits": 2158
+      },
+      {
+        "name": "Week -7",
+        "sales": 12,
+        "search": 36.4,
+        "permits": 2116
+      },
+      {
+        "name": "Week -6",
+        "sales": 13,
+        "search": 41.7,
+        "permits": 1922
+      },
+      {
+        "name": "Week -5",
+        "sales": 15,
+        "search": 37.5,
+        "permits": 2612
+      },
+      {
+        "name": "Week -4",
+        "sales": 14,
+        "search": 46.9,
+        "permits": 2677
+      },
+      {
+        "name": "Week -3",
+        "sales": 13,
+        "search": 43.8,
+        "permits": 2595
+      },
+      {
+        "name": "Week -2",
+        "sales": 16,
+        "search": 39.3,
+        "permits": 2842
+      },
+      {
+        "name": "Week -1",
+        "sales": 15,
+        "search": 38.8,
+        "permits": 2668
+      },
+      {
+        "name": "Current",
+        "sales": 16,
+        "search": 42.9,
+        "permits": 3158
+      }
+    ],
+    "RJ-LIG-02": [
+      {
+        "name": "Week -11",
+        "sales": 24,
+        "search": 64.7,
+        "permits": 2363
+      },
+      {
+        "name": "Week -10",
+        "sales": 25,
+        "search": 56.7,
+        "permits": 2445
+      },
+      {
+        "name": "Week -9",
+        "sales": 24,
+        "search": 60.0,
+        "permits": 2681
+      },
+      {
+        "name": "Week -8",
+        "sales": 23,
+        "search": 57.4,
+        "permits": 2708
+      },
+      {
+        "name": "Week -7",
+        "sales": 22,
+        "search": 49.1,
+        "permits": 2320
+      },
+      {
+        "name": "Week -6",
+        "sales": 23,
+        "search": 64.8,
+        "permits": 2637
+      },
+      {
+        "name": "Week -5",
+        "sales": 24,
+        "search": 77.2,
+        "permits": 3578
+      },
+      {
+        "name": "Week -4",
+        "sales": 27,
+        "search": 50.1,
+        "permits": 3290
+      },
+      {
+        "name": "Week -3",
+        "sales": 26,
+        "search": 68.8,
+        "permits": 3087
+      },
+      {
+        "name": "Week -2",
+        "sales": 24,
+        "search": 86.4,
+        "permits": 3320
+      },
+      {
+        "name": "Week -1",
+        "sales": 29,
+        "search": 99.3,
+        "permits": 3375
+      },
+      {
+        "name": "Current",
+        "sales": 31,
+        "search": 85.6,
+        "permits": 4492
+      }
+    ],
+    "RJ-LIG-03": [
+      {
+        "name": "Week -11",
+        "sales": 9,
+        "search": 32.7,
+        "permits": 3037
+      },
+      {
+        "name": "Week -10",
+        "sales": 7,
+        "search": 43.7,
+        "permits": 3016
+      },
+      {
+        "name": "Week -9",
+        "sales": 7,
+        "search": 37.7,
+        "permits": 3539
+      },
+      {
+        "name": "Week -8",
+        "sales": 8,
+        "search": 33.0,
+        "permits": 3292
+      },
+      {
+        "name": "Week -7",
+        "sales": 8,
+        "search": 40.1,
+        "permits": 3139
+      },
+      {
+        "name": "Week -6",
+        "sales": 7,
+        "search": 45.1,
+        "permits": 3110
+      },
+      {
+        "name": "Week -5",
+        "sales": 7,
+        "search": 40.3,
+        "permits": 4115
+      },
+      {
+        "name": "Week -4",
+        "sales": 9,
+        "search": 51.3,
+        "permits": 4362
+      },
+      {
+        "name": "Week -3",
+        "sales": 8,
+        "search": 32.1,
+        "permits": 4047
+      },
+      {
+        "name": "Week -2",
+        "sales": 8,
+        "search": 48.5,
+        "permits": 4627
+      },
+      {
+        "name": "Week -1",
+        "sales": 8,
+        "search": 43.9,
+        "permits": 4124
+      },
+      {
+        "name": "Current",
+        "sales": 9,
+        "search": 57.6,
+        "permits": 4837
+      }
+    ],
+    "RJ-LIG-04": [
+      {
+        "name": "Week -11",
+        "sales": 24,
+        "search": 47.2,
+        "permits": 3268
+      },
+      {
+        "name": "Week -10",
+        "sales": 25,
+        "search": 40.1,
+        "permits": 3560
+      },
+      {
+        "name": "Week -9",
+        "sales": 29,
+        "search": 39.0,
+        "permits": 3584
+      },
+      {
+        "name": "Week -8",
+        "sales": 25,
+        "search": 46.6,
+        "permits": 3680
+      },
+      {
+        "name": "Week -7",
+        "sales": 24,
+        "search": 44.1,
+        "permits": 3744
+      },
+      {
+        "name": "Week -6",
+        "sales": 25,
+        "search": 49.2,
+        "permits": 3907
+      },
+      {
+        "name": "Week -5",
+        "sales": 26,
+        "search": 37.1,
+        "permits": 4376
+      },
+      {
+        "name": "Week -4",
+        "sales": 29,
+        "search": 38.1,
+        "permits": 4750
+      },
+      {
+        "name": "Week -3",
+        "sales": 29,
+        "search": 55.9,
+        "permits": 4763
+      },
+      {
+        "name": "Week -2",
+        "sales": 26,
+        "search": 45.1,
+        "permits": 5258
+      },
+      {
+        "name": "Week -1",
+        "sales": 28,
+        "search": 49.8,
+        "permits": 4542
+      },
+      {
+        "name": "Current",
+        "sales": 31,
+        "search": 46.1,
+        "permits": 6020
+      }
+    ],
+    "RJ-LIG-05": [
+      {
+        "name": "Week -11",
+        "sales": 14,
+        "search": 34.6,
+        "permits": 2594
+      },
+      {
+        "name": "Week -10",
+        "sales": 11,
+        "search": 32.6,
+        "permits": 2489
+      },
+      {
+        "name": "Week -9",
+        "sales": 16,
+        "search": 28.9,
+        "permits": 2961
+      },
+      {
+        "name": "Week -8",
+        "sales": 14,
+        "search": 38.0,
+        "permits": 3315
+      },
+      {
+        "name": "Week -7",
+        "sales": 14,
+        "search": 40.7,
+        "permits": 2863
+      },
+      {
+        "name": "Week -6",
+        "sales": 14,
+        "search": 43.4,
+        "permits": 2699
+      },
+      {
+        "name": "Week -5",
+        "sales": 17,
+        "search": 28.2,
+        "permits": 3706
+      },
+      {
+        "name": "Week -4",
+        "sales": 17,
+        "search": 42.9,
+        "permits": 3852
+      },
+      {
+        "name": "Week -3",
+        "sales": 14,
+        "search": 28.9,
+        "permits": 3845
+      },
+      {
+        "name": "Week -2",
+        "sales": 18,
+        "search": 43.8,
+        "permits": 3600
+      },
+      {
+        "name": "Week -1",
+        "sales": 15,
+        "search": 44.1,
+        "permits": 3517
+      },
+      {
+        "name": "Current",
+        "sales": 18,
+        "search": 39.2,
+        "permits": 4622
+      }
+    ],
+    "WE-BED-01": [
+      {
+        "name": "Week -11",
+        "sales": 55,
+        "search": 22.9,
+        "permits": 1378
+      },
+      {
+        "name": "Week -10",
+        "sales": 55,
+        "search": 33.1,
+        "permits": 1154
+      },
+      {
+        "name": "Week -9",
+        "sales": 48,
+        "search": 31.6,
+        "permits": 1436
+      },
+      {
+        "name": "Week -8",
+        "sales": 58,
+        "search": 41.6,
+        "permits": 1567
+      },
+      {
+        "name": "Week -7",
+        "sales": 65,
+        "search": 31.3,
+        "permits": 1493
+      },
+      {
+        "name": "Week -6",
+        "sales": 61,
+        "search": 30.7,
+        "permits": 1392
+      },
+      {
+        "name": "Week -5",
+        "sales": 62,
+        "search": 50.5,
+        "permits": 1793
+      },
+      {
+        "name": "Week -4",
+        "sales": 73,
+        "search": 35.1,
+        "permits": 1894
+      },
+      {
+        "name": "Week -3",
+        "sales": 75,
+        "search": 33.8,
+        "permits": 1865
+      },
+      {
+        "name": "Week -2",
+        "sales": 66,
+        "search": 37.2,
+        "permits": 1853
+      },
+      {
+        "name": "Week -1",
+        "sales": 78,
+        "search": 40.2,
+        "permits": 2071
+      },
+      {
+        "name": "Current",
+        "sales": 75,
+        "search": 35.4,
+        "permits": 2608
+      }
+    ],
+    "WE-BED-02": [
+      {
+        "name": "Week -11",
+        "sales": 27,
+        "search": 11.9,
+        "permits": 3159
+      },
+      {
+        "name": "Week -10",
+        "sales": 27,
+        "search": 10.5,
+        "permits": 3479
+      },
+      {
+        "name": "Week -9",
+        "sales": 27,
+        "search": 9.1,
+        "permits": 3340
+      },
+      {
+        "name": "Week -8",
+        "sales": 28,
+        "search": 10.5,
+        "permits": 3764
+      },
+      {
+        "name": "Week -7",
+        "sales": 23,
+        "search": 11.4,
+        "permits": 3314
+      },
+      {
+        "name": "Week -6",
+        "sales": 28,
+        "search": 12.0,
+        "permits": 4041
+      },
+      {
+        "name": "Week -5",
+        "sales": 31,
+        "search": 12.0,
+        "permits": 4740
+      },
+      {
+        "name": "Week -4",
+        "sales": 30,
+        "search": 10.7,
+        "permits": 4734
+      },
+      {
+        "name": "Week -3",
+        "sales": 33,
+        "search": 11.0,
+        "permits": 4442
+      },
+      {
+        "name": "Week -2",
+        "sales": 29,
+        "search": 10.0,
+        "permits": 4614
+      },
+      {
+        "name": "Week -1",
+        "sales": 30,
+        "search": 11.9,
+        "permits": 4234
+      },
+      {
+        "name": "Current",
+        "sales": 28,
+        "search": 8.6,
+        "permits": 6007
+      }
+    ],
+    "WE-BED-03": [
+      {
+        "name": "Week -11",
+        "sales": 59,
+        "search": 20.6,
+        "permits": 2096
+      },
+      {
+        "name": "Week -10",
+        "sales": 49,
+        "search": 36.8,
+        "permits": 1972
+      },
+      {
+        "name": "Week -9",
+        "sales": 64,
+        "search": 30.7,
+        "permits": 2092
+      },
+      {
+        "name": "Week -8",
+        "sales": 59,
+        "search": 28.8,
+        "permits": 2135
+      },
+      {
+        "name": "Week -7",
+        "sales": 62,
+        "search": 30.6,
+        "permits": 1995
+      },
+      {
+        "name": "Week -6",
+        "sales": 56,
+        "search": 33.4,
+        "permits": 2183
+      },
+      {
+        "name": "Week -5",
+        "sales": 61,
+        "search": 43.6,
+        "permits": 2589
+      },
+      {
+        "name": "Week -4",
+        "sales": 63,
+        "search": 38.6,
+        "permits": 2836
+      },
+      {
+        "name": "Week -3",
+        "sales": 70,
+        "search": 40.9,
+        "permits": 2687
+      },
+      {
+        "name": "Week -2",
+        "sales": 67,
+        "search": 37.3,
+        "permits": 2879
+      },
+      {
+        "name": "Week -1",
+        "sales": 62,
+        "search": 33.1,
+        "permits": 2890
+      },
+      {
+        "name": "Current",
+        "sales": 69,
+        "search": 38.8,
+        "permits": 3325
+      }
+    ],
+    "WE-BED-04": [
+      {
+        "name": "Week -11",
+        "sales": 113,
+        "search": 75.2,
+        "permits": 2888
+      },
+      {
+        "name": "Week -10",
+        "sales": 121,
+        "search": 47.7,
+        "permits": 2782
+      },
+      {
+        "name": "Week -9",
+        "sales": 130,
+        "search": 58.6,
+        "permits": 2896
+      },
+      {
+        "name": "Week -8",
+        "sales": 122,
+        "search": 67.9,
+        "permits": 3172
+      },
+      {
+        "name": "Week -7",
+        "sales": 117,
+        "search": 85.2,
+        "permits": 2906
+      },
+      {
+        "name": "Week -6",
+        "sales": 117,
+        "search": 54.0,
+        "permits": 2864
+      },
+      {
+        "name": "Week -5",
+        "sales": 149,
+        "search": 64.9,
+        "permits": 3519
+      },
+      {
+        "name": "Week -4",
+        "sales": 122,
+        "search": 71.3,
+        "permits": 3587
+      },
+      {
+        "name": "Week -3",
+        "sales": 137,
+        "search": 59.1,
+        "permits": 4254
+      },
+      {
+        "name": "Week -2",
+        "sales": 122,
+        "search": 77.5,
+        "permits": 3917
+      },
+      {
+        "name": "Week -1",
+        "sales": 135,
+        "search": 84.2,
+        "permits": 3659
+      },
+      {
+        "name": "Current",
+        "sales": 154,
+        "search": 71.6,
+        "permits": 4333
+      }
+    ],
+    "WE-DEC-01": [
+      {
+        "name": "Week -11",
+        "sales": 153,
+        "search": 30.7,
+        "permits": 3593
+      },
+      {
+        "name": "Week -10",
+        "sales": 192,
+        "search": 37.7,
+        "permits": 3333
+      },
+      {
+        "name": "Week -9",
+        "sales": 183,
+        "search": 36.9,
+        "permits": 3652
+      },
+      {
+        "name": "Week -8",
+        "sales": 186,
+        "search": 48.9,
+        "permits": 4074
+      },
+      {
+        "name": "Week -7",
+        "sales": 166,
+        "search": 36.1,
+        "permits": 3684
+      },
+      {
+        "name": "Week -6",
+        "sales": 174,
+        "search": 48.6,
+        "permits": 3973
+      },
+      {
+        "name": "Week -5",
+        "sales": 176,
+        "search": 45.3,
+        "permits": 4817
+      },
+      {
+        "name": "Week -4",
+        "sales": 195,
+        "search": 50.8,
+        "permits": 4986
+      },
+      {
+        "name": "Week -3",
+        "sales": 189,
+        "search": 25.9,
+        "permits": 5119
+      },
+      {
+        "name": "Week -2",
+        "sales": 218,
+        "search": 50.1,
+        "permits": 4537
+      },
+      {
+        "name": "Week -1",
+        "sales": 165,
+        "search": 41.6,
+        "permits": 4908
+      },
+      {
+        "name": "Current",
+        "sales": 198,
+        "search": 43.8,
+        "permits": 6483
+      }
+    ],
+    "WE-DEC-02": [
+      {
+        "name": "Week -11",
+        "sales": 162,
+        "search": 38.5,
+        "permits": 2165
+      },
+      {
+        "name": "Week -10",
+        "sales": 202,
+        "search": 39.1,
+        "permits": 2186
+      },
+      {
+        "name": "Week -9",
+        "sales": 215,
+        "search": 37.9,
+        "permits": 2444
+      },
+      {
+        "name": "Week -8",
+        "sales": 186,
+        "search": 26.1,
+        "permits": 2296
+      },
+      {
+        "name": "Week -7",
+        "sales": 189,
+        "search": 46.1,
+        "permits": 2524
+      },
+      {
+        "name": "Week -6",
+        "sales": 142,
+        "search": 53.9,
+        "permits": 2761
+      },
+      {
+        "name": "Week -5",
+        "sales": 256,
+        "search": 29.6,
+        "permits": 3233
+      },
+      {
+        "name": "Week -4",
+        "sales": 254,
+        "search": 38.1,
+        "permits": 3416
+      },
+      {
+        "name": "Week -3",
+        "sales": 220,
+        "search": 49.9,
+        "permits": 3202
+      },
+      {
+        "name": "Week -2",
+        "sales": 232,
+        "search": 46.6,
+        "permits": 3369
+      },
+      {
+        "name": "Week -1",
+        "sales": 230,
+        "search": 36.2,
+        "permits": 3176
+      },
+      {
+        "name": "Current",
+        "sales": 221,
+        "search": 36.5,
+        "permits": 4313
+      }
+    ],
+    "WE-DEC-03": [
+      {
+        "name": "Week -11",
+        "sales": 185,
+        "search": 38.6,
+        "permits": 1221
+      },
+      {
+        "name": "Week -10",
+        "sales": 175,
+        "search": 42.5,
+        "permits": 1257
+      },
+      {
+        "name": "Week -9",
+        "sales": 188,
+        "search": 37.5,
+        "permits": 1269
+      },
+      {
+        "name": "Week -8",
+        "sales": 214,
+        "search": 37.1,
+        "permits": 1492
+      },
+      {
+        "name": "Week -7",
+        "sales": 175,
+        "search": 47.3,
+        "permits": 1398
+      },
+      {
+        "name": "Week -6",
+        "sales": 176,
+        "search": 52.5,
+        "permits": 1482
+      },
+      {
+        "name": "Week -5",
+        "sales": 202,
+        "search": 55.2,
+        "permits": 1718
+      },
+      {
+        "name": "Week -4",
+        "sales": 203,
+        "search": 52.1,
+        "permits": 1944
+      },
+      {
+        "name": "Week -3",
+        "sales": 241,
+        "search": 49.4,
+        "permits": 1718
+      },
+      {
+        "name": "Week -2",
+        "sales": 223,
+        "search": 53.3,
+        "permits": 2083
+      },
+      {
+        "name": "Week -1",
+        "sales": 222,
+        "search": 46.1,
+        "permits": 1943
+      },
+      {
+        "name": "Current",
+        "sales": 237,
+        "search": 47.2,
+        "permits": 2058
+      }
+    ],
+    "WE-DEC-04": [
+      {
+        "name": "Week -11",
+        "sales": 76,
+        "search": 31.6,
+        "permits": 2223
+      },
+      {
+        "name": "Week -10",
+        "sales": 73,
+        "search": 40.6,
+        "permits": 2565
+      },
+      {
+        "name": "Week -9",
+        "sales": 73,
+        "search": 41.5,
+        "permits": 2754
+      },
+      {
+        "name": "Week -8",
+        "sales": 70,
+        "search": 31.9,
+        "permits": 2443
+      },
+      {
+        "name": "Week -7",
+        "sales": 78,
+        "search": 40.4,
+        "permits": 2308
+      },
+      {
+        "name": "Week -6",
+        "sales": 61,
+        "search": 53.0,
+        "permits": 2512
+      },
+      {
+        "name": "Week -5",
+        "sales": 71,
+        "search": 44.8,
+        "permits": 3441
+      },
+      {
+        "name": "Week -4",
+        "sales": 82,
+        "search": 45.3,
+        "permits": 3285
+      },
+      {
+        "name": "Week -3",
+        "sales": 79,
+        "search": 45.9,
+        "permits": 3111
+      },
+      {
+        "name": "Week -2",
+        "sales": 70,
+        "search": 40.6,
+        "permits": 3710
+      },
+      {
+        "name": "Week -1",
+        "sales": 85,
+        "search": 42.3,
+        "permits": 3634
+      },
+      {
+        "name": "Current",
+        "sales": 86,
+        "search": 48.7,
+        "permits": 4716
+      }
+    ],
+    "WE-DEC-05": [
+      {
+        "name": "Week -11",
+        "sales": 113,
+        "search": 22.3,
+        "permits": 1376
+      },
+      {
+        "name": "Week -10",
+        "sales": 111,
+        "search": 30.9,
+        "permits": 1344
+      },
+      {
+        "name": "Week -9",
+        "sales": 116,
+        "search": 30.8,
+        "permits": 1516
+      },
+      {
+        "name": "Week -8",
+        "sales": 129,
+        "search": 42.7,
+        "permits": 1351
+      },
+      {
+        "name": "Week -7",
+        "sales": 112,
+        "search": 33.1,
+        "permits": 1424
+      },
+      {
+        "name": "Week -6",
+        "sales": 145,
+        "search": 31.0,
+        "permits": 1658
+      },
+      {
+        "name": "Week -5",
+        "sales": 141,
+        "search": 37.4,
+        "permits": 2033
+      },
+      {
+        "name": "Week -4",
+        "sales": 136,
+        "search": 34.5,
+        "permits": 1863
+      },
+      {
+        "name": "Week -3",
+        "sales": 142,
+        "search": 30.8,
+        "permits": 1994
+      },
+      {
+        "name": "Week -2",
+        "sales": 157,
+        "search": 35.7,
+        "permits": 1894
+      },
+      {
+        "name": "Week -1",
+        "sales": 142,
+        "search": 45.2,
+        "permits": 1821
+      },
+      {
+        "name": "Current",
+        "sales": 183,
+        "search": 46.6,
+        "permits": 2419
+      }
+    ],
+    "WE-FUR-01": [
+      {
+        "name": "Week -11",
+        "sales": 28,
+        "search": 50.0,
+        "permits": 2867
+      },
+      {
+        "name": "Week -10",
+        "sales": 30,
+        "search": 38.2,
+        "permits": 2991
+      },
+      {
+        "name": "Week -9",
+        "sales": 33,
+        "search": 49.4,
+        "permits": 3496
+      },
+      {
+        "name": "Week -8",
+        "sales": 27,
+        "search": 56.0,
+        "permits": 3238
+      },
+      {
+        "name": "Week -7",
+        "sales": 32,
+        "search": 40.5,
+        "permits": 3170
+      },
+      {
+        "name": "Week -6",
+        "sales": 33,
+        "search": 52.2,
+        "permits": 3171
+      },
+      {
+        "name": "Week -5",
+        "sales": 33,
+        "search": 51.9,
+        "permits": 4279
+      },
+      {
+        "name": "Week -4",
+        "sales": 34,
+        "search": 35.9,
+        "permits": 4301
+      },
+      {
+        "name": "Week -3",
+        "sales": 35,
+        "search": 53.7,
+        "permits": 4854
+      },
+      {
+        "name": "Week -2",
+        "sales": 33,
+        "search": 41.2,
+        "permits": 4248
+      },
+      {
+        "name": "Week -1",
+        "sales": 38,
+        "search": 40.5,
+        "permits": 3981
+      },
+      {
+        "name": "Current",
+        "sales": 33,
+        "search": 44.8,
+        "permits": 5474
+      }
+    ],
+    "WE-FUR-02": [
+      {
+        "name": "Week -11",
+        "sales": 26,
+        "search": 31.7,
+        "permits": 1379
+      },
+      {
+        "name": "Week -10",
+        "sales": 24,
+        "search": 38.1,
+        "permits": 1530
+      },
+      {
+        "name": "Week -9",
+        "sales": 27,
+        "search": 40.4,
+        "permits": 1530
+      },
+      {
+        "name": "Week -8",
+        "sales": 29,
+        "search": 33.3,
+        "permits": 1505
+      },
+      {
+        "name": "Week -7",
+        "sales": 27,
+        "search": 40.0,
+        "permits": 1628
+      },
+      {
+        "name": "Week -6",
+        "sales": 25,
+        "search": 41.1,
+        "permits": 1463
+      },
+      {
+        "name": "Week -5",
+        "sales": 34,
+        "search": 42.8,
+        "permits": 1910
+      },
+      {
+        "name": "Week -4",
+        "sales": 35,
+        "search": 40.9,
+        "permits": 1953
+      },
+      {
+        "name": "Week -3",
+        "sales": 34,
+        "search": 43.7,
+        "permits": 2048
+      },
+      {
+        "name": "Week -2",
+        "sales": 35,
+        "search": 57.3,
+        "permits": 1919
+      },
+      {
+        "name": "Week -1",
+        "sales": 37,
+        "search": 53.0,
+        "permits": 1897
+      },
+      {
+        "name": "Current",
+        "sales": 42,
+        "search": 49.2,
+        "permits": 2187
+      }
+    ],
+    "WE-FUR-03": [
+      {
+        "name": "Week -11",
+        "sales": 15,
+        "search": 23.2,
+        "permits": 3228
+      },
+      {
+        "name": "Week -10",
+        "sales": 15,
+        "search": 22.4,
+        "permits": 3257
+      },
+      {
+        "name": "Week -9",
+        "sales": 18,
+        "search": 24.8,
+        "permits": 3304
+      },
+      {
+        "name": "Week -8",
+        "sales": 19,
+        "search": 13.4,
+        "permits": 3694
+      },
+      {
+        "name": "Week -7",
+        "sales": 17,
+        "search": 27.6,
+        "permits": 3790
+      },
+      {
+        "name": "Week -6",
+        "sales": 17,
+        "search": 18.6,
+        "permits": 3668
+      },
+      {
+        "name": "Week -5",
+        "sales": 19,
+        "search": 19.3,
+        "permits": 4435
+      },
+      {
+        "name": "Week -4",
+        "sales": 15,
+        "search": 26.5,
+        "permits": 4940
+      },
+      {
+        "name": "Week -3",
+        "sales": 15,
+        "search": 23.2,
+        "permits": 5061
+      },
+      {
+        "name": "Week -2",
+        "sales": 20,
+        "search": 18.9,
+        "permits": 4893
+      },
+      {
+        "name": "Week -1",
+        "sales": 18,
+        "search": 24.1,
+        "permits": 4680
+      },
+      {
+        "name": "Current",
+        "sales": 19,
+        "search": 27.3,
+        "permits": 6086
+      }
+    ],
+    "WE-FUR-04": [
+      {
+        "name": "Week -11",
+        "sales": 47,
+        "search": 55.8,
+        "permits": 2481
+      },
+      {
+        "name": "Week -10",
+        "sales": 45,
+        "search": 75.7,
+        "permits": 2533
+      },
+      {
+        "name": "Week -9",
+        "sales": 47,
+        "search": 35.8,
+        "permits": 2679
+      },
+      {
+        "name": "Week -8",
+        "sales": 58,
+        "search": 53.5,
+        "permits": 2538
+      },
+      {
+        "name": "Week -7",
+        "sales": 51,
+        "search": 63.8,
+        "permits": 2326
+      },
+      {
+        "name": "Week -6",
+        "sales": 48,
+        "search": 65.4,
+        "permits": 2934
+      },
+      {
+        "name": "Week -5",
+        "sales": 60,
+        "search": 60.1,
+        "permits": 3534
+      },
+      {
+        "name": "Week -4",
+        "sales": 57,
+        "search": 67.2,
+        "permits": 3202
+      },
+      {
+        "name": "Week -3",
+        "sales": 51,
+        "search": 72.2,
+        "permits": 3418
+      },
+      {
+        "name": "Week -2",
+        "sales": 55,
+        "search": 77.3,
+        "permits": 3275
+      },
+      {
+        "name": "Week -1",
+        "sales": 70,
+        "search": 69.2,
+        "permits": 3395
+      },
+      {
+        "name": "Current",
+        "sales": 63,
+        "search": 81.4,
+        "permits": 4337
+      }
+    ],
+    "WE-FUR-05": [
+      {
+        "name": "Week -11",
+        "sales": 14,
+        "search": 27.4,
+        "permits": 2073
+      },
+      {
+        "name": "Week -10",
+        "sales": 13,
+        "search": 29.6,
+        "permits": 1921
+      },
+      {
+        "name": "Week -9",
+        "sales": 17,
+        "search": 25.3,
+        "permits": 2091
+      },
+      {
+        "name": "Week -8",
+        "sales": 15,
+        "search": 34.8,
+        "permits": 2014
+      },
+      {
+        "name": "Week -7",
+        "sales": 16,
+        "search": 36.2,
+        "permits": 2241
+      },
+      {
+        "name": "Week -6",
+        "sales": 17,
+        "search": 40.7,
+        "permits": 2115
+      },
+      {
+        "name": "Week -5",
+        "sales": 19,
+        "search": 24.6,
+        "permits": 2866
+      },
+      {
+        "name": "Week -4",
+        "sales": 18,
+        "search": 43.8,
+        "permits": 2600
+      },
+      {
+        "name": "Week -3",
+        "sales": 18,
+        "search": 32.5,
+        "permits": 2612
+      },
+      {
+        "name": "Week -2",
+        "sales": 20,
+        "search": 45.9,
+        "permits": 2983
+      },
+      {
+        "name": "Week -1",
+        "sales": 21,
+        "search": 51.6,
+        "permits": 2734
+      },
+      {
+        "name": "Current",
+        "sales": 21,
+        "search": 44.6,
+        "permits": 3456
+      }
+    ],
+    "WE-LAMP-19": [
+      {
+        "name": "Week -11",
+        "sales": 50,
+        "search": 20.2,
+        "permits": 1422
+      },
+      {
+        "name": "Week -10",
+        "sales": 56,
+        "search": 9.1,
+        "permits": 1487
+      },
+      {
+        "name": "Week -9",
+        "sales": 59,
+        "search": 17.5,
+        "permits": 1616
+      },
+      {
+        "name": "Week -8",
+        "sales": 54,
+        "search": 20.7,
+        "permits": 1358
+      },
+      {
+        "name": "Week -7",
+        "sales": 54,
+        "search": 17.0,
+        "permits": 1443
+      },
+      {
+        "name": "Week -6",
+        "sales": 60,
+        "search": 16.7,
+        "permits": 1482
+      },
+      {
+        "name": "Week -5",
+        "sales": 68,
+        "search": 19.3,
+        "permits": 1963
+      },
+      {
+        "name": "Week -4",
+        "sales": 67,
+        "search": 19.2,
+        "permits": 1872
+      },
+      {
+        "name": "Week -3",
+        "sales": 62,
+        "search": 21.1,
+        "permits": 1731
+      },
+      {
+        "name": "Week -2",
+        "sales": 71,
+        "search": 20.5,
+        "permits": 1823
+      },
+      {
+        "name": "Week -1",
+        "sales": 63,
+        "search": 20.9,
+        "permits": 1938
+      },
+      {
+        "name": "Current",
+        "sales": 74,
+        "search": 15.7,
+        "permits": 2077
+      }
+    ],
+    "WE-LIG-01": [
+      {
+        "name": "Week -11",
+        "sales": 47,
+        "search": 34.5,
+        "permits": 2251
+      },
+      {
+        "name": "Week -10",
+        "sales": 51,
+        "search": 32.3,
+        "permits": 2504
+      },
+      {
+        "name": "Week -9",
+        "sales": 47,
+        "search": 24.0,
+        "permits": 2430
+      },
+      {
+        "name": "Week -8",
+        "sales": 45,
+        "search": 37.1,
+        "permits": 2679
+      },
+      {
+        "name": "Week -7",
+        "sales": 47,
+        "search": 38.2,
+        "permits": 2495
+      },
+      {
+        "name": "Week -6",
+        "sales": 45,
+        "search": 41.7,
+        "permits": 2838
+      },
+      {
+        "name": "Week -5",
+        "sales": 51,
+        "search": 42.4,
+        "permits": 3346
+      },
+      {
+        "name": "Week -4",
+        "sales": 57,
+        "search": 43.5,
+        "permits": 3458
+      },
+      {
+        "name": "Week -3",
+        "sales": 57,
+        "search": 36.6,
+        "permits": 3315
+      },
+      {
+        "name": "Week -2",
+        "sales": 53,
+        "search": 63.9,
+        "permits": 3112
+      },
+      {
+        "name": "Week -1",
+        "sales": 62,
+        "search": 49.0,
+        "permits": 3501
+      },
+      {
+        "name": "Current",
+        "sales": 75,
+        "search": 46.7,
+        "permits": 4584
+      }
+    ],
+    "WE-LIG-02": [
+      {
+        "name": "Week -11",
+        "sales": 46,
+        "search": 43.2,
+        "permits": 1245
+      },
+      {
+        "name": "Week -10",
+        "sales": 52,
+        "search": 38.4,
+        "permits": 1296
+      },
+      {
+        "name": "Week -9",
+        "sales": 53,
+        "search": 37.0,
+        "permits": 1348
+      },
+      {
+        "name": "Week -8",
+        "sales": 51,
+        "search": 48.5,
+        "permits": 1433
+      },
+      {
+        "name": "Week -7",
+        "sales": 46,
+        "search": 38.4,
+        "permits": 1518
+      },
+      {
+        "name": "Week -6",
+        "sales": 57,
+        "search": 43.8,
+        "permits": 1390
+      },
+      {
+        "name": "Week -5",
+        "sales": 58,
+        "search": 50.0,
+        "permits": 1707
+      },
+      {
+        "name": "Week -4",
+        "sales": 53,
+        "search": 39.3,
+        "permits": 1958
+      },
+      {
+        "name": "Week -3",
+        "sales": 61,
+        "search": 45.3,
+        "permits": 1785
+      },
+      {
+        "name": "Week -2",
+        "sales": 56,
+        "search": 60.1,
+        "permits": 1806
+      },
+      {
+        "name": "Week -1",
+        "sales": 61,
+        "search": 45.3,
+        "permits": 1569
+      },
+      {
+        "name": "Current",
+        "sales": 68,
+        "search": 58.0,
+        "permits": 1982
+      }
+    ],
+    "WE-LIG-03": [
+      {
+        "name": "Week -11",
+        "sales": 23,
+        "search": 47.5,
+        "permits": 2410
+      },
+      {
+        "name": "Week -10",
+        "sales": 25,
+        "search": 39.2,
+        "permits": 2375
+      },
+      {
+        "name": "Week -9",
+        "sales": 36,
+        "search": 29.2,
+        "permits": 2547
+      },
+      {
+        "name": "Week -8",
+        "sales": 31,
+        "search": 39.6,
+        "permits": 2680
+      },
+      {
+        "name": "Week -7",
+        "sales": 26,
+        "search": 49.5,
+        "permits": 2460
+      },
+      {
+        "name": "Week -6",
+        "sales": 33,
+        "search": 39.6,
+        "permits": 2416
+      },
+      {
+        "name": "Week -5",
+        "sales": 44,
+        "search": 31.8,
+        "permits": 3315
+      },
+      {
+        "name": "Week -4",
+        "sales": 29,
+        "search": 49.1,
+        "permits": 4056
+      },
+      {
+        "name": "Week -3",
+        "sales": 24,
+        "search": 42.5,
+        "permits": 3308
+      },
+      {
+        "name": "Week -2",
+        "sales": 36,
+        "search": 44.5,
+        "permits": 3544
+      },
+      {
+        "name": "Week -1",
+        "sales": 36,
+        "search": 47.1,
+        "permits": 3716
+      },
+      {
+        "name": "Current",
+        "sales": 40,
+        "search": 45.7,
+        "permits": 4178
+      }
+    ],
+    "WE-RUG-01": [
+      {
+        "name": "Week -11",
+        "sales": 36,
+        "search": 42.5,
+        "permits": 2191
+      },
+      {
+        "name": "Week -10",
+        "sales": 32,
+        "search": 38.1,
+        "permits": 1958
+      },
+      {
+        "name": "Week -9",
+        "sales": 42,
+        "search": 36.6,
+        "permits": 2330
+      },
+      {
+        "name": "Week -8",
+        "sales": 32,
+        "search": 43.1,
+        "permits": 2176
+      },
+      {
+        "name": "Week -7",
+        "sales": 40,
+        "search": 48.9,
+        "permits": 2072
+      },
+      {
+        "name": "Week -6",
+        "sales": 35,
+        "search": 51.0,
+        "permits": 2162
+      },
+      {
+        "name": "Week -5",
+        "sales": 41,
+        "search": 42.2,
+        "permits": 2957
+      },
+      {
+        "name": "Week -4",
+        "sales": 44,
+        "search": 38.8,
+        "permits": 3083
+      },
+      {
+        "name": "Week -3",
+        "sales": 38,
+        "search": 45.7,
+        "permits": 2862
+      },
+      {
+        "name": "Week -2",
+        "sales": 39,
+        "search": 58.3,
+        "permits": 2695
+      },
+      {
+        "name": "Week -1",
+        "sales": 40,
+        "search": 52.9,
+        "permits": 2727
+      },
+      {
+        "name": "Current",
+        "sales": 48,
+        "search": 43.5,
+        "permits": 3522
+      }
+    ],
+    "WE-RUG-02": [
+      {
+        "name": "Week -11",
+        "sales": 10,
+        "search": 25.3,
+        "permits": 1351
+      },
+      {
+        "name": "Week -10",
+        "sales": 20,
+        "search": 50.5,
+        "permits": 1127
+      },
+      {
+        "name": "Week -9",
+        "sales": 14,
+        "search": 24.7,
+        "permits": 1439
+      },
+      {
+        "name": "Week -8",
+        "sales": 24,
+        "search": 6.0,
+        "permits": 1350
+      },
+      {
+        "name": "Week -7",
+        "sales": 13,
+        "search": 25.5,
+        "permits": 1226
+      },
+      {
+        "name": "Week -6",
+        "sales": 4,
+        "search": 48.5,
+        "permits": 1370
+      },
+      {
+        "name": "Week -5",
+        "sales": 19,
+        "search": 48.0,
+        "permits": 1956
+      },
+      {
+        "name": "Week -4",
+        "sales": 26,
+        "search": 58.4,
+        "permits": 1715
+      },
+      {
+        "name": "Week -3",
+        "sales": 23,
+        "search": 47.2,
+        "permits": 1794
+      },
+      {
+        "name": "Week -2",
+        "sales": 28,
+        "search": 31.1,
+        "permits": 1985
+      },
+      {
+        "name": "Week -1",
+        "sales": 26,
+        "search": 36.4,
+        "permits": 1963
+      },
+      {
+        "name": "Current",
+        "sales": 18,
+        "search": 37.5,
+        "permits": 2171
+      }
+    ],
+    "WS-DEC-01": [
+      {
+        "name": "Week -11",
+        "sales": 51,
+        "search": 43.6,
+        "permits": 3123
+      },
+      {
+        "name": "Week -10",
+        "sales": 44,
+        "search": 54.6,
+        "permits": 2973
+      },
+      {
+        "name": "Week -9",
+        "sales": 51,
+        "search": 29.6,
+        "permits": 3212
+      },
+      {
+        "name": "Week -8",
+        "sales": 54,
+        "search": 50.2,
+        "permits": 3142
+      },
+      {
+        "name": "Week -7",
+        "sales": 45,
+        "search": 51.1,
+        "permits": 3326
+      },
+      {
+        "name": "Week -6",
+        "sales": 55,
+        "search": 43.1,
+        "permits": 3194
+      },
+      {
+        "name": "Week -5",
+        "sales": 61,
+        "search": 43.1,
+        "permits": 4009
+      },
+      {
+        "name": "Week -4",
+        "sales": 51,
+        "search": 41.5,
+        "permits": 4339
+      },
+      {
+        "name": "Week -3",
+        "sales": 54,
+        "search": 43.1,
+        "permits": 4623
+      },
+      {
+        "name": "Week -2",
+        "sales": 56,
+        "search": 51.7,
+        "permits": 4116
+      },
+      {
+        "name": "Week -1",
+        "sales": 54,
+        "search": 48.6,
+        "permits": 4500
+      },
+      {
+        "name": "Current",
+        "sales": 59,
+        "search": 63.5,
+        "permits": 5463
+      }
+    ],
+    "WS-DEC-02": [
+      {
+        "name": "Week -11",
+        "sales": 46,
+        "search": 58.1,
+        "permits": 2925
+      },
+      {
+        "name": "Week -10",
+        "sales": 39,
+        "search": 40.9,
+        "permits": 2783
+      },
+      {
+        "name": "Week -9",
+        "sales": 49,
+        "search": 27.9,
+        "permits": 2909
+      },
+      {
+        "name": "Week -8",
+        "sales": 44,
+        "search": 36.6,
+        "permits": 3519
+      },
+      {
+        "name": "Week -7",
+        "sales": 34,
+        "search": 51.5,
+        "permits": 3541
+      },
+      {
+        "name": "Week -6",
+        "sales": 45,
+        "search": 55.5,
+        "permits": 3325
+      },
+      {
+        "name": "Week -5",
+        "sales": 55,
+        "search": 55.2,
+        "permits": 3912
+      },
+      {
+        "name": "Week -4",
+        "sales": 48,
+        "search": 34.9,
+        "permits": 4084
+      },
+      {
+        "name": "Week -3",
+        "sales": 50,
+        "search": 47.2,
+        "permits": 4074
+      },
+      {
+        "name": "Week -2",
+        "sales": 41,
+        "search": 55.5,
+        "permits": 4302
+      },
+      {
+        "name": "Week -1",
+        "sales": 52,
+        "search": 48.5,
+        "permits": 4474
+      },
+      {
+        "name": "Current",
+        "sales": 55,
+        "search": 58.8,
+        "permits": 5498
+      }
+    ],
+    "WS-DEC-03": [
+      {
+        "name": "Week -11",
+        "sales": 70,
+        "search": 34.9,
+        "permits": 1357
+      },
+      {
+        "name": "Week -10",
+        "sales": 79,
+        "search": 43.0,
+        "permits": 1198
+      },
+      {
+        "name": "Week -9",
+        "sales": 73,
+        "search": 27.4,
+        "permits": 1444
+      },
+      {
+        "name": "Week -8",
+        "sales": 76,
+        "search": 26.2,
+        "permits": 1413
+      },
+      {
+        "name": "Week -7",
+        "sales": 76,
+        "search": 33.6,
+        "permits": 1488
+      },
+      {
+        "name": "Week -6",
+        "sales": 82,
+        "search": 41.1,
+        "permits": 1590
+      },
+      {
+        "name": "Week -5",
+        "sales": 86,
+        "search": 43.7,
+        "permits": 1840
+      },
+      {
+        "name": "Week -4",
+        "sales": 105,
+        "search": 37.5,
+        "permits": 1905
+      },
+      {
+        "name": "Week -3",
+        "sales": 103,
+        "search": 37.8,
+        "permits": 1880
+      },
+      {
+        "name": "Week -2",
+        "sales": 88,
+        "search": 40.2,
+        "permits": 1735
+      },
+      {
+        "name": "Week -1",
+        "sales": 88,
+        "search": 43.7,
+        "permits": 1952
+      },
+      {
+        "name": "Current",
+        "sales": 94,
+        "search": 31.7,
+        "permits": 2538
+      }
+    ],
+    "WS-KIT-01": [
+      {
+        "name": "Week -11",
+        "sales": 87,
+        "search": 39.0,
+        "permits": 1316
+      },
+      {
+        "name": "Week -10",
+        "sales": 81,
+        "search": 32.4,
+        "permits": 1313
+      },
+      {
+        "name": "Week -9",
+        "sales": 121,
+        "search": 42.4,
+        "permits": 1484
+      },
+      {
+        "name": "Week -8",
+        "sales": 114,
+        "search": 30.9,
+        "permits": 1575
+      },
+      {
+        "name": "Week -7",
+        "sales": 116,
+        "search": 38.6,
+        "permits": 1532
+      },
+      {
+        "name": "Week -6",
+        "sales": 113,
+        "search": 41.8,
+        "permits": 1471
+      },
+      {
+        "name": "Week -5",
+        "sales": 131,
+        "search": 40.2,
+        "permits": 1821
+      },
+      {
+        "name": "Week -4",
+        "sales": 126,
+        "search": 33.3,
+        "permits": 1842
+      },
+      {
+        "name": "Week -3",
+        "sales": 119,
+        "search": 38.0,
+        "permits": 1780
+      },
+      {
+        "name": "Week -2",
+        "sales": 107,
+        "search": 33.5,
+        "permits": 1703
+      },
+      {
+        "name": "Week -1",
+        "sales": 146,
+        "search": 40.6,
+        "permits": 1778
+      },
+      {
+        "name": "Current",
+        "sales": 119,
+        "search": 39.6,
+        "permits": 2112
+      }
+    ],
+    "WS-KIT-02": [
+      {
+        "name": "Week -11",
+        "sales": 156,
+        "search": 24.2,
+        "permits": 1431
+      },
+      {
+        "name": "Week -10",
+        "sales": 139,
+        "search": 31.6,
+        "permits": 1303
+      },
+      {
+        "name": "Week -9",
+        "sales": 142,
+        "search": 22.2,
+        "permits": 1450
+      },
+      {
+        "name": "Week -8",
+        "sales": 129,
+        "search": 30.3,
+        "permits": 1415
+      },
+      {
+        "name": "Week -7",
+        "sales": 133,
+        "search": 26.0,
+        "permits": 1508
+      },
+      {
+        "name": "Week -6",
+        "sales": 133,
+        "search": 32.2,
+        "permits": 1406
+      },
+      {
+        "name": "Week -5",
+        "sales": 146,
+        "search": 26.4,
+        "permits": 1782
+      },
+      {
+        "name": "Week -4",
+        "sales": 152,
+        "search": 43.7,
+        "permits": 1844
+      },
+      {
+        "name": "Week -3",
+        "sales": 159,
+        "search": 34.1,
+        "permits": 1911
+      },
+      {
+        "name": "Week -2",
+        "sales": 165,
+        "search": 37.0,
+        "permits": 1713
+      },
+      {
+        "name": "Week -1",
+        "sales": 133,
+        "search": 42.3,
+        "permits": 1751
+      },
+      {
+        "name": "Current",
+        "sales": 147,
+        "search": 36.8,
+        "permits": 2314
+      }
+    ],
+    "WS-KIT-03": [
+      {
+        "name": "Week -11",
+        "sales": 133,
+        "search": 34.7,
+        "permits": 3117
+      },
+      {
+        "name": "Week -10",
+        "sales": 130,
+        "search": 36.2,
+        "permits": 2816
+      },
+      {
+        "name": "Week -9",
+        "sales": 112,
+        "search": 23.8,
+        "permits": 3040
+      },
+      {
+        "name": "Week -8",
+        "sales": 141,
+        "search": 29.7,
+        "permits": 3668
+      },
+      {
+        "name": "Week -7",
+        "sales": 130,
+        "search": 39.4,
+        "permits": 3253
+      },
+      {
+        "name": "Week -6",
+        "sales": 115,
+        "search": 31.0,
+        "permits": 3377
+      },
+      {
+        "name": "Week -5",
+        "sales": 139,
+        "search": 27.6,
+        "permits": 4186
+      },
+      {
+        "name": "Week -4",
+        "sales": 121,
+        "search": 39.2,
+        "permits": 3968
+      },
+      {
+        "name": "Week -3",
+        "sales": 133,
+        "search": 23.2,
+        "permits": 4254
+      },
+      {
+        "name": "Week -2",
+        "sales": 143,
+        "search": 40.3,
+        "permits": 3984
+      },
+      {
+        "name": "Week -1",
+        "sales": 134,
+        "search": 34.1,
+        "permits": 4437
+      },
+      {
+        "name": "Current",
+        "sales": 139,
+        "search": 33.7,
+        "permits": 5547
+      }
+    ],
+    "WS-KIT-04": [
+      {
+        "name": "Week -11",
+        "sales": 65,
+        "search": 9.1,
+        "permits": 2719
+      },
+      {
+        "name": "Week -10",
+        "sales": 61,
+        "search": 8.0,
+        "permits": 3200
+      },
+      {
+        "name": "Week -9",
+        "sales": 67,
+        "search": 8.4,
+        "permits": 3463
+      },
+      {
+        "name": "Week -8",
+        "sales": 64,
+        "search": 9.1,
+        "permits": 3373
+      },
+      {
+        "name": "Week -7",
+        "sales": 65,
+        "search": 8.2,
+        "permits": 2899
+      },
+      {
+        "name": "Week -6",
+        "sales": 65,
+        "search": 10.9,
+        "permits": 3220
+      },
+      {
+        "name": "Week -5",
+        "sales": 71,
+        "search": 8.6,
+        "permits": 4141
+      },
+      {
+        "name": "Week -4",
+        "sales": 70,
+        "search": 5.9,
+        "permits": 3974
+      },
+      {
+        "name": "Week -3",
+        "sales": 62,
+        "search": 6.1,
+        "permits": 4967
+      },
+      {
+        "name": "Week -2",
+        "sales": 58,
+        "search": 10.9,
+        "permits": 4427
+      },
+      {
+        "name": "Week -1",
+        "sales": 56,
+        "search": 8.6,
+        "permits": 4078
+      },
+      {
+        "name": "Current",
+        "sales": 69,
+        "search": 5.3,
+        "permits": 5469
+      }
+    ],
+    "WS-KIT-05": [
+      {
+        "name": "Week -11",
+        "sales": 51,
+        "search": 27.2,
+        "permits": 2974
+      },
+      {
+        "name": "Week -10",
+        "sales": 44,
+        "search": 31.1,
+        "permits": 2656
+      },
+      {
+        "name": "Week -9",
+        "sales": 42,
+        "search": 32.4,
+        "permits": 2997
+      },
+      {
+        "name": "Week -8",
+        "sales": 45,
+        "search": 31.7,
+        "permits": 2948
+      },
+      {
+        "name": "Week -7",
+        "sales": 55,
+        "search": 30.6,
+        "permits": 3088
+      },
+      {
+        "name": "Week -6",
+        "sales": 45,
+        "search": 31.2,
+        "permits": 3118
+      },
+      {
+        "name": "Week -5",
+        "sales": 42,
+        "search": 32.9,
+        "permits": 3977
+      },
+      {
+        "name": "Week -4",
+        "sales": 49,
+        "search": 27.7,
+        "permits": 4203
+      },
+      {
+        "name": "Week -3",
+        "sales": 55,
+        "search": 33.4,
+        "permits": 3959
+      },
+      {
+        "name": "Week -2",
+        "sales": 41,
+        "search": 34.6,
+        "permits": 3098
+      },
+      {
+        "name": "Week -1",
+        "sales": 57,
+        "search": 36.6,
+        "permits": 3852
+      },
+      {
+        "name": "Current",
+        "sales": 49,
+        "search": 32.8,
+        "permits": 5357
+      }
+    ],
+    "WS-KIT-06": [
+      {
+        "name": "Week -11",
+        "sales": 36,
+        "search": 19.4,
+        "permits": 1851
+      },
+      {
+        "name": "Week -10",
+        "sales": 31,
+        "search": 28.9,
+        "permits": 2033
+      },
+      {
+        "name": "Week -9",
+        "sales": 40,
+        "search": 20.8,
+        "permits": 2317
+      },
+      {
+        "name": "Week -8",
+        "sales": 42,
+        "search": 17.1,
+        "permits": 2299
+      },
+      {
+        "name": "Week -7",
+        "sales": 34,
+        "search": 49.6,
+        "permits": 1942
+      },
+      {
+        "name": "Week -6",
+        "sales": 37,
+        "search": 48.9,
+        "permits": 2120
+      },
+      {
+        "name": "Week -5",
+        "sales": 83,
+        "search": 48.9,
+        "permits": 2646
+      },
+      {
+        "name": "Week -4",
+        "sales": 93,
+        "search": 54.2,
+        "permits": 2568
+      },
+      {
+        "name": "Week -3",
+        "sales": 87,
+        "search": 66.5,
+        "permits": 2824
+      },
+      {
+        "name": "Week -2",
+        "sales": 90,
+        "search": 64.7,
+        "permits": 2591
+      },
+      {
+        "name": "Week -1",
+        "sales": 100,
+        "search": 60.0,
+        "permits": 2762
+      },
+      {
+        "name": "Current",
+        "sales": 112,
+        "search": 55.5,
+        "permits": 3429
+      }
+    ],
+    "WS-KIT-07": [
+      {
+        "name": "Week -11",
+        "sales": 122,
+        "search": 30.4,
+        "permits": 1215
+      },
+      {
+        "name": "Week -10",
+        "sales": 145,
+        "search": 26.0,
+        "permits": 1324
+      },
+      {
+        "name": "Week -9",
+        "sales": 156,
+        "search": 38.2,
+        "permits": 1392
+      },
+      {
+        "name": "Week -8",
+        "sales": 142,
+        "search": 32.9,
+        "permits": 1425
+      },
+      {
+        "name": "Week -7",
+        "sales": 157,
+        "search": 29.1,
+        "permits": 1325
+      },
+      {
+        "name": "Week -6",
+        "sales": 140,
+        "search": 32.6,
+        "permits": 1491
+      },
+      {
+        "name": "Week -5",
+        "sales": 128,
+        "search": 35.2,
+        "permits": 1742
+      },
+      {
+        "name": "Week -4",
+        "sales": 142,
+        "search": 41.2,
+        "permits": 1888
+      },
+      {
+        "name": "Week -3",
+        "sales": 143,
+        "search": 44.1,
+        "permits": 1748
+      },
+      {
+        "name": "Week -2",
+        "sales": 158,
+        "search": 26.6,
+        "permits": 1853
+      },
+      {
+        "name": "Week -1",
+        "sales": 171,
+        "search": 37.4,
+        "permits": 1894
+      },
+      {
+        "name": "Current",
+        "sales": 174,
+        "search": 36.2,
+        "permits": 2442
+      }
+    ],
+    "WS-MIXER-55": [
+      {
+        "name": "Week -11",
+        "sales": 75,
+        "search": 12.4,
+        "permits": 2290
+      },
+      {
+        "name": "Week -10",
+        "sales": 61,
+        "search": 6.6,
+        "permits": 2287
+      },
+      {
+        "name": "Week -9",
+        "sales": 59,
+        "search": 10.9,
+        "permits": 2329
+      },
+      {
+        "name": "Week -8",
+        "sales": 60,
+        "search": 17.6,
+        "permits": 2418
+      },
+      {
+        "name": "Week -7",
+        "sales": 65,
+        "search": 10.6,
+        "permits": 2524
+      },
+      {
+        "name": "Week -6",
+        "sales": 68,
+        "search": 14.8,
+        "permits": 2370
+      },
+      {
+        "name": "Week -5",
+        "sales": 73,
+        "search": 10.7,
+        "permits": 3666
+      },
+      {
+        "name": "Week -4",
+        "sales": 74,
+        "search": 7.9,
+        "permits": 3322
+      },
+      {
+        "name": "Week -3",
+        "sales": 67,
+        "search": 3.5,
+        "permits": 3326
+      },
+      {
+        "name": "Week -2",
+        "sales": 72,
+        "search": 9.0,
+        "permits": 2991
+      },
+      {
+        "name": "Week -1",
+        "sales": 71,
+        "search": 6.8,
+        "permits": 3518
+      },
+      {
+        "name": "Current",
+        "sales": 82,
+        "search": 16.5,
+        "permits": 4162
+      }
+    ],
+    "WS-OUT-01": [
+      {
+        "name": "Week -11",
+        "sales": 38,
+        "search": 23.1,
+        "permits": 2893
+      },
+      {
+        "name": "Week -10",
+        "sales": 32,
+        "search": 35.4,
+        "permits": 2801
+      },
+      {
+        "name": "Week -9",
+        "sales": 42,
+        "search": 34.7,
+        "permits": 2937
+      },
+      {
+        "name": "Week -8",
+        "sales": 40,
+        "search": 50.2,
+        "permits": 2954
+      },
+      {
+        "name": "Week -7",
+        "sales": 45,
+        "search": 61.9,
+        "permits": 3042
+      },
+      {
+        "name": "Week -6",
+        "sales": 50,
+        "search": 82.9,
+        "permits": 3445
+      },
+      {
+        "name": "Week -5",
+        "sales": 100,
+        "search": 78.6,
+        "permits": 4387
+      },
+      {
+        "name": "Week -4",
+        "sales": 107,
+        "search": 80.4,
+        "permits": 4847
+      },
+      {
+        "name": "Week -3",
+        "sales": 112,
+        "search": 61.7,
+        "permits": 4083
+      },
+      {
+        "name": "Week -2",
+        "sales": 108,
+        "search": 96.6,
+        "permits": 4154
+      },
+      {
+        "name": "Week -1",
+        "sales": 105,
+        "search": 100,
+        "permits": 4318
+      },
+      {
+        "name": "Current",
+        "sales": 131,
+        "search": 100,
+        "permits": 5479
+      }
+    ],
+    "WS-OUT-02": [
+      {
+        "name": "Week -11",
+        "sales": 22,
+        "search": 20.2,
+        "permits": 2765
+      },
+      {
+        "name": "Week -10",
+        "sales": 23,
+        "search": 21.3,
+        "permits": 2942
+      },
+      {
+        "name": "Week -9",
+        "sales": 27,
+        "search": 17.8,
+        "permits": 3398
+      },
+      {
+        "name": "Week -8",
+        "sales": 28,
+        "search": 23.7,
+        "permits": 3247
+      },
+      {
+        "name": "Week -7",
+        "sales": 29,
+        "search": 60.7,
+        "permits": 3223
+      },
+      {
+        "name": "Week -6",
+        "sales": 31,
+        "search": 53.7,
+        "permits": 3254
+      },
+      {
+        "name": "Week -5",
+        "sales": 69,
+        "search": 56.1,
+        "permits": 4222
+      },
+      {
+        "name": "Week -4",
+        "sales": 67,
+        "search": 62.9,
+        "permits": 4283
+      },
+      {
+        "name": "Week -3",
+        "sales": 65,
+        "search": 51.8,
+        "permits": 3968
+      },
+      {
+        "name": "Week -2",
+        "sales": 68,
+        "search": 67.4,
+        "permits": 4051
+      },
+      {
+        "name": "Week -1",
+        "sales": 64,
+        "search": 61.4,
+        "permits": 4043
+      },
+      {
+        "name": "Current",
+        "sales": 85,
+        "search": 70.3,
+        "permits": 5249
+      }
+    ]
+  }
+}
