@@ -36,7 +36,7 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
 
     async function loadHeatmap() {
       try {
-        const payload = await fetchRealEstateHeatmap({ limit: 100 });
+        const payload = await fetchRealEstateHeatmap({ limit: 45000, scope: 'national' });
         if (!cancelled) {
           setHeatmapPayload(payload);
           setHeatmapError('');
@@ -68,6 +68,7 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
 
   const heatDensityPoints = useMemo(() => {
     const points = [];
+    const largeDataset = clusterData.length > 1200;
 
     // Densify each scored region into many jittered weighted points.
     clusterData.forEach((cluster, clusterIndex) => {
@@ -80,8 +81,10 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
       const volume = Number(cluster.volume || 120);
       const riskWeight =
         cluster.risk === 'STOCKOUT_RISK' ? 1.35 : cluster.risk === 'OVERSTOCK_RISK' ? 1.05 : 1.15;
-      const spread = Math.max(0.12, Math.min(0.6, 0.08 + Math.log10(Math.max(volume, 10)) * 0.1));
-      const copies = Math.max(24, Math.min(150, Math.round(22 + demand * 0.35 + volume * 0.02)));
+      const spread = largeDataset
+        ? Math.max(0.02, Math.min(0.12, 0.02 + Math.log10(Math.max(volume, 10)) * 0.03))
+        : Math.max(0.12, Math.min(0.6, 0.08 + Math.log10(Math.max(volume, 10)) * 0.1));
+      const copies = largeDataset ? 1 : Math.max(24, Math.min(150, Math.round(22 + demand * 0.35 + volume * 0.02)));
 
       for (let i = 0; i < copies; i += 1) {
         const angle = pseudoRandom(clusterIndex + 1, i + 11) * Math.PI * 2;
@@ -98,7 +101,8 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
     });
 
     // Inject network-level points so dense store corridors become visible in the heat surface.
-    filteredStores.forEach((store, storeIndex) => {
+    if (!largeDataset) {
+      filteredStores.forEach((store, storeIndex) => {
       if (!Array.isArray(store.coordinates)) {
         return;
       }
@@ -130,7 +134,8 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
         weight: storeWeight,
         clusterId: nearest?.id || `store-${storeIndex}`,
       });
-    });
+      });
+    }
 
     return points;
   }, [clusterData, filteredStores]);

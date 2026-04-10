@@ -40,7 +40,7 @@ async function fetchHeatmapJson(url) {
   }
 }
 
-export async function fetchRealEstateHeatmap({ year, compareYear, limit = 30 } = {}) {
+export async function fetchRealEstateHeatmap({ year, compareYear, limit = 45000, scope = "national" } = {}) {
   const baseUrl = resolveBaseUrl();
   const scoredUrl = new URL("/api/signals/scored-real-estate-heatmap", baseUrl);
   const liveUrl = new URL("/api/signals/real-estate-heatmap", baseUrl);
@@ -54,6 +54,9 @@ export async function fetchRealEstateHeatmap({ year, compareYear, limit = 30 } =
   if (Number.isInteger(limit)) {
     scoredUrl.searchParams.set("limit", String(limit));
     liveUrl.searchParams.set("limit", String(limit));
+  }
+  if (scope) {
+    liveUrl.searchParams.set("scope", scope);
   }
 
   try {

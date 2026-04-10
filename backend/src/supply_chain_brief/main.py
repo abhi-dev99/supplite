@@ -9,7 +9,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from .housing_signals import build_fallback_heatmap, build_real_estate_heatmap, load_scored_heatmap_from_csv
+from .housing_signals import (
+    build_fallback_heatmap,
+    build_national_real_estate_heatmap,
+    build_real_estate_heatmap,
+    load_scored_heatmap_from_csv,
+)
 
 
 class BriefSKU(BaseModel):
@@ -197,24 +202,51 @@ def weekly_brief_post() -> BriefResponse:
 
 
 @app.get("/api/signals/real-estate-heatmap", response_model=RealEstateHeatmapResponse)
-def real_estate_heatmap(year: int | None = None, compare_year: int | None = None, limit: int = 30) -> RealEstateHeatmapResponse:
+def real_estate_heatmap(
+    year: int | None = None,
+    compare_year: int | None = None,
+    limit: int = 500,
+    scope: Literal["seed", "national"] = "seed",
+) -> RealEstateHeatmapResponse:
     target_year = year or (date.today().year - 2)
     baseline_year = compare_year or (target_year - 1)
-    requested_limit = max(1, min(limit, 100))
+    requested_limit = max(1, min(limit, 45000))
 
     api_key = os.getenv("CENSUS_API_KEY")
-    points, warnings = build_real_estate_heatmap(
-        year=target_year,
-        compare_year=baseline_year,
-        api_key=api_key,
-        limit=requested_limit,
-    )
+    resolved_year = target_year
+    resolved_compare_year = baseline_year
+
+    if scope == "national":
+        workspace_root = Path(__file__).resolve().parents[3]
+        centroid_cache_path = workspace_root / "data" / "zcta_centroids.csv"
+        points, warnings, resolved = build_national_real_estate_heatmap(
+            year=target_year,
+            compare_year=baseline_year,
+            api_key=api_key,
+            limit=requested_limit,
+            centroid_cache_path=centroid_cache_path,
+        )
+        resolved_year = resolved.year
+        resolved_compare_year = resolved.compare_year
+    else:
+        points, warnings = build_real_estate_heatmap(
+            year=target_year,
+            compare_year=baseline_year,
+            api_key=api_key,
+            limit=requested_limit,
+        )
 
     mode: Literal["live", "fallback"] = "live"
     notes = [
         "Primary source: Census ACS DP04 tenure fields with ACS5 enrichments.",
         "Geography: ZIP Code Tabulation Areas (ZCTAs), not USPS ZIP delivery routes.",
     ]
+    if scope == "national":
+        notes.append("National scope uses all available ZCTAs with Gazetteer centroids.")
+    if resolved_year != target_year or resolved_compare_year != baseline_year:
+        notes.append(
+            f"Requested years {target_year}/{baseline_year} were adjusted to available ACS years {resolved_year}/{resolved_compare_year}."
+        )
 
     if not points:
         points = build_fallback_heatmap(year=target_year, limit=requested_limit)
@@ -226,8 +258,8 @@ def real_estate_heatmap(year: int | None = None, compare_year: int | None = None
 
     return RealEstateHeatmapResponse(
         generated_at=datetime.now(timezone.utc),
-        year=target_year,
-        compare_year=baseline_year,
+        year=resolved_year,
+        compare_year=resolved_compare_year,
         point_count=len(points),
         mode=mode,
         notes=notes,
@@ -236,16 +268,17 @@ def real_estate_heatmap(year: int | None = None, compare_year: int | None = None
 
 
 @app.get("/api/signals/scored-real-estate-heatmap", response_model=RealEstateHeatmapResponse)
-def scored_real_estate_heatmap(limit: int = 40) -> RealEstateHeatmapResponse:
-    requested_limit = max(1, min(limit, 100))
+def scored_real_estate_heatmap(limit: int = 2000) -> RealEstateHeatmapResponse:
+    requested_limit = max(1, min(limit, 45000))
     workspace_root = Path(__file__).resolve().parents[3]
-    csv_path = workspace_root / "data" / "scored_real_estate_demand.csv"
+    full_csv_path = workspace_root / "data" / "scored_real_estate_demand_full.csv"
+    csv_path = full_csv_path if full_csv_path.exists() else workspace_root / "data" / "scored_real_estate_demand.csv"
 
     points, warnings = load_scored_heatmap_from_csv(csv_path=csv_path, limit=requested_limit)
     mode: Literal["live", "fallback"] = "live"
     notes = [
         "Primary source: scored model output from scored_real_estate_demand.csv.",
-        "Geography: ZIP Code Tabulation Areas (ZCTAs), mapped to curated seed coordinates.",
+        "Geography: ZIP Code Tabulation Areas (ZCTAs), using latitude/longitude from the scored CSV when available.",
     ]
 
     if not points:
