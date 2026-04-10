@@ -4,10 +4,21 @@ import { mockSkus } from '../data';
 import SciFiMap from '../components/SciFiMap';
 import BrandLogo from '../components/BrandLogo';
 
-export default function SkuRiskOverview({ theme }) {
+export default function SkuRiskOverview({ theme, selectedDC }) {
   const [activeTab, setActiveTab] = useState('ALL');
   const [isMapExpanded, setIsMapExpanded] = useState(false);
   const [isMapHovered, setIsMapHovered] = useState(false);
+  const [hoverTimer, setHoverTimer] = useState(null);
+
+  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
+
+  const handleSort = (key) => {
+    let direction = 'asc';
+    if (sortConfig.key === key && sortConfig.direction === 'asc') {
+      direction = 'desc';
+    }
+    setSortConfig({ key, direction });
+  };
 
   const getBadgeClass = (risk) => {
     switch (risk) {
@@ -18,15 +29,10 @@ export default function SkuRiskOverview({ theme }) {
     }
   };
 
-  const getSupplyWidth = (days) => {
-    const max = 120;
-    return `${Math.min((days / max) * 100, 100)}%`;
-  };
-
   const tabs = [
     { id: 'ALL', label: 'All Portfolio' },
-    { id: 'STOCKOUT_RISK', label: 'Critical Stockouts' },
-    { id: 'OVERSTOCK_RISK', label: 'Overstock Surplus' },
+    { id: 'STOCKOUT_RISK', label: 'Action Required' },
+    { id: 'OVERSTOCK_RISK', label: 'Excess Surplus' },
     { id: 'WATCH', label: 'Watchlist' }
   ];
 
@@ -35,64 +41,74 @@ export default function SkuRiskOverview({ theme }) {
     return sku.riskLevel === activeTab;
   });
 
+  const sortedSkus = [...filteredSkus].sort((a, b) => {
+    if (!sortConfig.key) return 0;
+    
+    let aVal = a[sortConfig.key];
+    let bVal = b[sortConfig.key];
+
+    if (sortConfig.key === 'stock') {
+      aVal = a.stock + a.onOrder;
+      bVal = b.stock + b.onOrder;
+    }
+
+    if (aVal < bVal) { return sortConfig.direction === 'asc' ? -1 : 1; }
+    if (aVal > bVal) { return sortConfig.direction === 'asc' ? 1 : -1; }
+    return 0;
+  });
+
   return (
     <>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+      <div className="animate-in" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
         
         {/* Header Section */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
           <div style={{ maxWidth: '600px' }}>
-            <h1 style={{ fontSize: '2.5rem', marginBottom: '12px', letterSpacing: '-0.02em', fontFamily: 'var(--font-serif)' }}>
-              Risk Overview
+            <h1 style={{ fontSize: '3rem', marginBottom: '12px', letterSpacing: '-0.02em' }}>
+              Intelligence Hub
             </h1>
-            <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.05rem', lineHeight: 1.5, margin: 0 }}>
-              Inventory exposure analysis across the primary product ecosystem. Strategic oversight for high-velocity SKUs.
+            <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.1rem', lineHeight: 1.5, margin: 0 }}>
+              AI-driven predictive oversight and algorithmic inventory actioning grid.
             </p>
           </div>
-          <div style={{ display: 'flex', gap: '12px' }}>
-            <button className="secondary-btn">Export Report</button>
-            <button className="action-btn">Initiate Simulation</button>
+          <div style={{ display: 'flex', gap: '16px' }}>
+            <button className="action-btn" style={{ background: 'transparent' }}>Export Report</button>
+            <button className="action-btn" style={{ background: 'var(--color-primary)', color: 'var(--color-primary-on)', border: 'none' }}>Initiate Auto-Order</button>
           </div>
         </div>
 
         {/* Hero Metrics Row */}
         <div style={{ display: 'flex', gap: '24px' }}>
-          
-          {/* Core Exposure Box */}
-          <div className="metric-card" style={{ flex: 1.5, display: 'flex', flexDirection: 'column', gap: '32px' }}>
-            <div>
-              <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '12px' }}>
-                Core Exposure Metric
+          {/* Key Stats Col */}
+          <div style={{ flex: 1.2, display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            <div className="metric-card glass-panel" style={{ flex: 1 }}>
+              <div className="metric-title">Critical Shortages Predicted</div>
+              <div className="metric-value" style={{ color: 'var(--color-stockout-text)' }}>
+                {mockSkus.filter(s => s.riskLevel === 'STOCKOUT_RISK').length} <span style={{ fontSize: '1rem', color: 'var(--color-text-secondary)' }}>Items</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
-                <div style={{ fontSize: '3.5rem', fontFamily: 'var(--font-serif)', fontWeight: 600, color: 'var(--color-text-primary)', lineHeight: 1 }}>
-                  $12.4M
-                </div>
-                <div style={{ color: 'var(--color-stockout-text)', fontWeight: 600, fontSize: '0.875rem' }}>
-                  ↗ +12.4% vs LY
-                </div>
-              </div>
+              <div className="metric-trend" style={{ color: 'var(--color-text-secondary)' }}>Requires immediate action inside 60-day window.</div>
             </div>
             
-            <div style={{ display: 'flex', gap: '48px' }}>
-              <div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Critical Stockouts</div>
-                <div style={{ fontSize: '1.25rem', fontWeight: 600 }}>14 SKUs</div>
+            <div style={{ display: 'flex', gap: '24px', flex: 1 }}>
+              <div className="metric-card glass-panel" style={{ flex: 1, padding: '24px' }}>
+                 <div className="metric-title" style={{ fontSize: '0.65rem' }}>Node Capital Exposure</div>
+                 <div className="metric-value" style={{ fontSize: '1.75rem' }}>
+                   {selectedDC === 'ALL' ? '$12.4M' : '$1.1M'}
+                 </div>
+                 <div className="metric-trend" style={{ color: 'var(--color-stockout-text)' }}>↗ +12.4% vs LY</div>
               </div>
-              <div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Overstock Surplus</div>
-                <div style={{ fontSize: '1.25rem', fontWeight: 600 }}>$4.1M</div>
-              </div>
-              <div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)', marginBottom: '4px' }}>Active Signals</div>
-                <div style={{ fontSize: '1.25rem', fontWeight: 600 }}>128</div>
+
+              <div className="metric-card glass-panel" style={{ flex: 1, padding: '24px' }}>
+                 <div className="metric-title" style={{ fontSize: '0.65rem' }}>Trajectory Shifts</div>
+                 <div className="metric-value" style={{ fontSize: '1.75rem' }}>{mockSkus.filter(s => s.anomalyFlag).length}</div>
+                 <div className="metric-trend" style={{ color: 'var(--color-text-secondary)' }}>Anomalies flagged</div>
               </div>
             </div>
           </div>
 
-          {/* Sci-Fi Map Box */}
+          {/* Sci-Fi Map Col */}
           <div 
-            className="metric-card" 
+            className="metric-card glass-panel" 
             style={{ 
               flex: 1, 
               display: 'flex', 
@@ -100,134 +116,154 @@ export default function SkuRiskOverview({ theme }) {
               padding: '16px',
               position: 'relative'
             }}
-            onMouseEnter={() => setIsMapHovered(true)}
-            onMouseLeave={() => setIsMapHovered(false)}
+            onMouseEnter={() => {
+              setIsMapHovered(true);
+              const timer = setTimeout(() => setIsMapExpanded(true), 400);
+              setHoverTimer(timer);
+            }}
+            onMouseLeave={() => {
+              setIsMapHovered(false);
+              if (hoverTimer) clearTimeout(hoverTimer);
+            }}
           >
-            <div style={{ padding: '0 8px', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '16px' }}>
-              North American Logistics Grid
-            </div>
-            <div style={{ position: 'relative', flex: 1, borderRadius: '8px', overflow: 'hidden' }}>
-              <SciFiMap theme={theme} />
-              <div style={{
-                position: 'absolute',
-                top: 0, left: 0, right: 0, bottom: 0,
-                backgroundColor: 'rgba(0,0,0,0.5)',
-                display: isMapHovered ? 'flex' : 'none',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-                zIndex: 10
-              }} onClick={() => setIsMapExpanded(true)}>
-                 <div style={{ 
-                   backgroundColor: 'var(--color-primary)', 
-                   color: 'var(--color-primary-on)', 
-                   padding: '12px 24px', 
-                   borderRadius: '4px',
+            <div style={{ padding: '0 8px', fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-secondary)', marginBottom: '16px', display: 'flex', justifyContent: 'space-between' }}>
+              <span>North American Logistics Grid</span>
+              <button 
+                onClick={() => setIsMapExpanded(true)}
+                style={{
+                   background: 'transparent', 
+                   color: 'var(--color-text-secondary)',
+                   border: 'none',
+                   fontSize: '0.65rem',
+                   fontWeight: 600,
                    display: 'flex',
                    alignItems: 'center',
-                   gap: '8px',
-                   fontWeight: 600
-                 }}>
-                    <Maximize2 size={18} /> Expand Immersive View
-                 </div>
-              </div>
+                   gap: '4px',
+                   cursor: 'pointer',
+                   opacity: isMapHovered ? 1 : 0,
+                   transition: 'opacity 0.2s',
+                   textTransform: 'uppercase'
+                }}>
+                Hover to Expand <Maximize2 size={12} style={{ marginLeft: '4px'}} />
+              </button>
+            </div>
+            <div style={{ position: 'relative', flex: 1, borderRadius: '8px', overflow: 'hidden' }}>
+              <SciFiMap theme={theme} selectedDC={selectedDC} />
             </div>
           </div>
         </div>
 
-        {/* Table Section */}
-        <div className="table-container">
-          <div style={{ padding: '24px', borderBottom: '1px solid var(--color-background)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            
-            <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
+        {/* Dynamic Data Grid Section */}
+        <div className="glass-panel" style={{ borderRadius: '16px', padding: '24px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          
+          {/* Controls */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: '32px' }}>
               {tabs.map(tab => (
-                <button 
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
+                <button key={tab.id} onClick={() => setActiveTab(tab.id)}
                   style={{
-                    fontSize: '0.875rem',
-                    fontWeight: 600,
-                    padding: '8px 0',
+                    fontSize: '0.875rem', fontWeight: 600, paddingBottom: '8px',
                     color: activeTab === tab.id ? 'var(--color-text-primary)' : 'var(--color-text-secondary)',
                     borderBottom: activeTab === tab.id ? '2px solid var(--color-text-primary)' : '2px solid transparent',
                     transition: 'all 0.2s'
-                  }}
-                >
+                  }}>
                   {tab.label}
                 </button>
               ))}
             </div>
             
-            <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-              <div style={{ 
-                display: 'flex', alignItems: 'center', backgroundColor: 'var(--color-surface)', 
-                padding: '6px 12px', borderRadius: '6px', gap: '8px', width: '200px'
-              }}>
-                <Search size={14} color="var(--color-text-secondary)" />
-                <input 
-                  type="text" 
-                  placeholder="Search portfolio..." 
-                  style={{ border: 'none', background: 'transparent', outline: 'none', fontSize: '0.875rem', width: '100%', color: 'var(--color-text-primary)' }}
-                />
-              </div>
-              <button style={{ padding: '8px', color: 'var(--color-text-secondary)' }}>
-                <Filter size={18} />
-              </button>
+            <div style={{ padding: '10px 16px', background: 'var(--color-background)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <Search size={16} color="var(--color-text-secondary)" />
+              <input type="text" placeholder="Search catalog..." style={{ border: 'none', background: 'transparent', outline: 'none', color: 'var(--color-text-primary)', fontSize: '0.875rem' }} />
             </div>
           </div>
           
-          <table>
-            <thead>
-              <tr>
-                <th>SKU ID</th>
-                <th>Product Name</th>
-                <th>Brand</th>
-                <th>Stock</th>
-                <th>Supply</th>
-                <th>Risk Status</th>
-                <th>Primary Signal</th>
-                <th style={{ textAlign: 'right' }}>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {filteredSkus.map(sku => (
-                <tr key={sku.id} className="table-row-hover">
-                  <td style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>{sku.id}</td>
-                  <td style={{ maxWidth: '200px' }}>
-                    <div style={{ fontWeight: 600, fontSize: '0.875rem' }}>{sku.name}</div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>Category: {sku.category}</div>
-                  </td>
-                  <td><BrandLogo brand={sku.brand} /></td>
-                  <td>{sku.stock.toLocaleString()}</td>
-                  <td>
-                    <div style={{ fontWeight: 600 }}>{sku.daysOfSupply}</div>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-secondary)' }}>Days</div>
-                  </td>
-                  <td>
-                    <span className={getBadgeClass(sku.riskLevel)}>
-                      {sku.riskLevel.replace('_', ' ')}
-                    </span>
-                  </td>
-                  <td style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>{sku.signal}</td>
-                  <td style={{ textAlign: 'right' }}>
-                     <div style={{ fontWeight: 600, fontSize: '0.875rem', cursor: 'pointer', color: 'var(--color-primary)' }}>{sku.action}</div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          {/* List Headers */}
+          <div className="data-row-container">
+            <div className="data-row-header">
+              <div className="data-row-header-item" onClick={() => handleSort('name')}>
+                Product Identity {sortConfig.key === 'name' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+              </div>
+              <div className="data-row-header-item" onClick={() => handleSort('stock')}>
+                Current Stock {sortConfig.key === 'stock' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+              </div>
+              <div className="data-row-header-item" onClick={() => handleSort('daysOfSupply')}>
+                Runway {sortConfig.key === 'daysOfSupply' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+              </div>
+              <div className="data-row-header-item" onClick={() => handleSort('mlForecast60d')}>
+                60D Demand {sortConfig.key === 'mlForecast60d' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+              </div>
+              <div className="data-row-header-item" onClick={() => handleSort('riskLevel')}>
+                Action Status {sortConfig.key === 'riskLevel' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
+              </div>
+              <div style={{ marginLeft: '16px' }}>AI Reasoning</div>
+            </div>
+
+            {/* List Rows */}
+            {sortedSkus.map((sku, idx) => (
+              <div key={sku.id} className="data-row glass-panel" style={{ animationDelay: `${idx * 0.05}s` }}>
+                
+                {/* Product Col */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                   <div style={{ opacity: 0.8 }}><BrandLogo brand={sku.brand} /></div>
+                   <div>
+                     <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--color-text-primary)' }}>{sku.name}</div>
+                     <div className="text-sub">{sku.id} • {sku.category}</div>
+                   </div>
+                </div>
+
+                {/* Stock Col */}
+                <div>
+                  <div style={{ fontWeight: 600, fontSize: '1rem' }}>
+                    {selectedDC === 'ALL' ? (sku.stock + sku.onOrder).toLocaleString() : Math.floor((sku.stock + sku.onOrder) / 11).toLocaleString()}
+                  </div>
+                  <div className="text-sub">Physical + Pipeline</div>
+                </div>
+
+                {/* Runway Col */}
+                <div style={{ paddingRight: '24px' }}>
+                  <div style={{ fontWeight: 600 }}>{sku.daysOfSupply} Days</div>
+                  <div className="runway-bar-bg">
+                    <div className="runway-bar-fill" style={{ 
+                      width: `${Math.min((sku.daysOfSupply / 120) * 100, 100)}%`,
+                      background: sku.daysOfSupply < sku.leadTimeDays ? 'var(--color-stockout-text)' : 'var(--color-ok-text)'
+                    }}></div>
+                  </div>
+                </div>
+
+                {/* Forecast Col */}
+                <div>
+                   <div style={{ fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                     {selectedDC === 'ALL' ? (sku.mlForecast60d?.toLocaleString() || 0) : Math.floor((sku.mlForecast60d || 0) / 11).toLocaleString()} units
+                   </div>
+                   <div className="text-sub">
+                     {sku.anomalyFlag ? <span style={{ color: '#ef4444' }}>🚨 SPIKING</span> : 'Stable Flightpath'}
+                   </div>
+                </div>
+
+                {/* Status Col */}
+                <div>
+                  <span className={getBadgeClass(sku.riskLevel)}>
+                    {sku.riskLevel.replace('STOCKOUT_RISK', 'ORDER NOW').replace('OVERSTOCK_RISK', 'HALT ORDERS').replace('_', ' ')}
+                  </span>
+                </div>
+
+                {/* Reasoning Col */}
+                <div style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', lineHeight: 1.5, marginLeft: '16px' }}>
+                  {sku.mlReasoning || "Demand remains strictly aligned with historical moving averages."}
+                </div>
+
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Fullscreen Map Modal */}
       {isMapExpanded && (
         <div style={{
-          position: 'fixed',
-          top: 0, left: 0, right: 0, bottom: 0,
-          backgroundColor: '#000',
-          zIndex: 9999,
-          display: 'flex'
+          position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+          backgroundColor: '#000', zIndex: 9999, display: 'flex'
         }}>
           <button 
             onClick={() => setIsMapExpanded(false)}
@@ -237,9 +273,9 @@ export default function SkuRiskOverview({ theme }) {
           </button>
           <div style={{ position: 'absolute', top: '32px', left: '32px', zIndex: 10000, color: 'var(--color-text-primary)' }}>
             <h1 style={{ fontSize: '2.5rem', margin: 0, fontFamily: 'var(--font-serif)' }}>Immersive Logistics Grid</h1>
-            <p style={{ opacity: 0.7, margin: 0 }}>Showing 2,500 active transit nodes across NA down to ZIP level resolution.</p>
+            <p style={{ opacity: 0.7, margin: 0 }}>Showing active transit nodes across NA down to ZIP level resolution.</p>
           </div>
-          <SciFiMap isFullscreen={true} theme={theme} />
+          <SciFiMap isFullscreen={true} theme={theme} selectedDC={selectedDC} />
         </div>
       )}
     </>

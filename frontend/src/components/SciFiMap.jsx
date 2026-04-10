@@ -1,17 +1,19 @@
 import { useEffect, useMemo, useState } from 'react';
 import DeckGL from '@deck.gl/react';
-import { ScatterplotLayer, GeoJsonLayer } from '@deck.gl/layers';
+import { ScatterplotLayer, GeoJsonLayer, TextLayer } from '@deck.gl/layers';
 import { ContourLayer, HeatmapLayer } from '@deck.gl/aggregation-layers';
 import { geoClusters, wsStores, distributionCenters } from '../data';
 import { Search } from 'lucide-react';
+import stateLabels from '../stateLabels.json';
 import { fetchRealEstateHeatmap } from '../api/realEstateApi';
 
 const INITIAL_VIEW_STATE = {
-  longitude: -98.0,
-  latitude: 38.0,
-  zoom: 3.5,
+  longitude: -96.0,
+  latitude: 39.0,
+  zoom: 3.2,
+  minZoom: 2.5,
   maxZoom: 16,
-  pitch: 50,
+  pitch: 45,
   bearing: -10
 };
 
@@ -20,7 +22,7 @@ function pseudoRandom(seed, step) {
   return value - Math.floor(value);
 }
 
-export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
+export default function SciFiMap({ isFullscreen = false, theme = 'dark', selectedDC = 'ALL' }) {
   const [hoverInfo, setHoverInfo] = useState(null);
   const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);
   const [searchQuery, setSearchQuery] = useState('');
@@ -31,7 +33,17 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
   const [showDcRadius, setShowDcRadius] = useState(false);
   const isDark = theme === 'dark';
 
+  const [usStatesGeoJson, setUsStatesGeoJson] = useState(null);
+
   useEffect(() => {
+    fetch('/us_states.json')
+      .then(res => res.json())
+      .then(data => {
+        data.features = data.features.filter(f => !['Alaska', 'Hawaii', 'Puerto Rico'].includes(f.properties.name));
+        setUsStatesGeoJson(data);
+      })
+      .catch(err => console.error("Could not load US states mapping:", err));
+
     let cancelled = false;
 
     async function loadHeatmap() {
@@ -54,11 +66,51 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
     };
   }, []);
 
-  const clusterData = useMemo(() => {
-    if (heatmapPayload?.points?.length) {
-      return heatmapPayload.points;
+  // Animate map to selected DC location
+  useEffect(() => {
+    if (selectedDC !== 'ALL') {
+      const dc = distributionCenters.find(d => d.name === selectedDC);
+      if (dc && dc.coordinates) {
+        setViewState((prev) => ({
+          ...prev,
+          longitude: dc.coordinates[0],
+          latitude: dc.coordinates[1],
+          zoom: 6.5,
+          transitionDuration: 1500
+        }));
+      }
+    } else {
+      setViewState((prev) => ({
+        ...prev,
+        longitude: INITIAL_VIEW_STATE.longitude,
+        latitude: INITIAL_VIEW_STATE.latitude,
+        zoom: INITIAL_VIEW_STATE.zoom,
+        transitionDuration: 1500
+      }));
     }
-    return geoClusters;
+  }, [selectedDC]);
+
+  const clusterData = useMemo(() => {
+    // The user ONLY wants data around the 10-11 ML modeled metro areas (DCs). Let's filter visually!
+    const activeDcNodes = distributionCenters.filter(dc => 
+      ['City of Industry DC', 'Braselton DC', 'Dallas DC', 'Litchfield Park DC', 'Oakland, CA', 'Lakeland, FL', 'Denver, CO', 'South Brunswick DC'].includes(dc.name)
+    );
+
+    const baseData = heatmapPayload?.points?.length ? heatmapPayload.points : geoClusters;
+    
+    // Filter base data to only points within ~3.0 degrees (approx 200 miles) of our active modeled metros
+    return baseData.filter(point => {
+       const [lng, lat] = point.position || point.coordinates || [];
+       if (!Number.isFinite(lng) || !Number.isFinite(lat)) return false;
+       
+       for (const dc of activeDcNodes) {
+          const [dcLng, dcLat] = dc.coordinates || [];
+          if (Math.hypot(lng - dcLng, lat - dcLat) <= 4.0) {
+             return true;
+          }
+       }
+       return false;
+    });
   }, [heatmapPayload]);
 
   const filteredStores = useMemo(
@@ -153,14 +205,12 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
   
   const layers = useMemo(() => {
     const activeLayers = [
-      // Base geometry for map context.
+      // Base geometry for map context (can keep the fallback just in case or remove if the new one handles the outline).
       new GeoJsonLayer({
         id: 'na-geometry',
         data: '/na_map.json',
-        stroked: true,
+        stroked: false,
         filled: true,
-        lineWidthMinPixels: 1,
-        getLineColor: isDark ? [30, 255, 255, 40] : [0, 80, 150, 40],
         getFillColor: isDark ? [10, 15, 25, 200] : [240, 245, 250, 255],
       }),
     ];
@@ -287,6 +337,37 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
         })
       );
     }
+    
+    // Add State Divisions & Labels ON TOP of all heatmap renders
+    if (usStatesGeoJson) {
+      activeLayers.push(
+        new GeoJsonLayer({
+          id: 'usa-state-lines',
+          data: usStatesGeoJson,
+          stroked: true,
+          filled: false,
+          lineWidthMinPixels: 1,
+          getLineColor: isDark ? [255, 255, 255, 80] : [0, 0, 0, 40],
+        })
+      );
+    }
+
+    activeLayers.push(
+      new TextLayer({
+        id: 'usa-state-labels',
+        data: stateLabels.filter((l) => l.name !== 'Alaska' && l.name !== 'Hawaii' && l.name !== 'Puerto Rico'),
+        pickable: false,
+        getPosition: (d) => d.coordinates,
+        getText: (d) => d.name,
+        getSize: 12,
+        getColor: isDark ? [255, 255, 255, 140] : [0, 0, 0, 180],
+        getAngle: 0,
+        getTextAnchor: 'middle',
+        getAlignmentBaseline: 'center',
+        fontFamily: 'var(--font-sans)',
+        fontWeight: 'bold',
+      })
+    );
 
     return activeLayers;
   }, [clusterData, filteredStores, heatDensityPoints, isDark, isFullscreen, showDcRadius, showHeatmap, showStores]);
@@ -335,11 +416,26 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
     </button>
   );
 
+  const handleViewStateChange = ({ viewState }) => {
+    // Restrict pan/zoom bounding box to Continental US
+    const minLng = -128, maxLng = -65;
+    const minLat = 24, maxLat = 50;
+
+    let lng = Math.max(minLng, Math.min(maxLng, viewState.longitude));
+    let lat = Math.max(minLat, Math.min(maxLat, viewState.latitude));
+
+    setViewState({
+      ...viewState,
+      longitude: lng,
+      latitude: lat
+    });
+  };
+
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%', backgroundColor: isDark ? '#020202' : '#f0f5fa', borderRadius: isFullscreen ? '0' : '8px', overflow: 'hidden' }}>
       <DeckGL
         viewState={viewState}
-        onViewStateChange={({ viewState }) => setViewState(viewState)}
+        onViewStateChange={handleViewStateChange}
         controller={{ dragRotate: true, dragPan: true, touchRotate: true, doubleClickZoom: true, keyboard: true }}
         layers={layers}
       />

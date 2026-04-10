@@ -7,9 +7,62 @@ data_dir = Path(__file__).resolve().parent.parent / "data" / "new"
 with open(data_dir / "frontend_data.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
+# --- INJECT ML PREDICTIONS ---
+with open(data_dir / "predictions.json", "r", encoding="utf-8") as f:
+    preds = json.load(f)
+
+# Aggregate ML predictions globally per SKU
+ml_sku_map = {}
+for p in preds:
+    sku = p["sku_id"]
+    if sku not in ml_sku_map:
+        ml_sku_map[sku] = {
+            "mlForecast60d": 0,
+            "anomalyFlag": False,
+            "riskLevel": "OK",
+            "mlReasoning": "Stable demand.",
+            "riskScore": 0  # Score for sorting severity
+        }
+    
+    # Sum global forecast
+    ml_sku_map[sku]["mlForecast60d"] += p["forecast_60d"]
+    
+    # Any anomaly makes the global SKU an anomaly
+    if p["anomaly_flag"] == 1:
+        ml_sku_map[sku]["anomalyFlag"] = True
+
+    # Risk ranking: STOCKOUT (4) > OVERSTOCK (3) > WATCH (2) > OK (1)
+    def risk_to_score(level):
+        if level == "STOCKOUT_RISK": return 4
+        if level == "OVERSTOCK_RISK": return 3
+        if level == "WATCH": return 2
+        return 1
+
+    current_score = ml_sku_map[sku]["riskScore"]
+    new_score = risk_to_score(p["risk_level"])
+    
+    if new_score > current_score:
+        ml_sku_map[sku]["riskScore"] = new_score
+        ml_sku_map[sku]["riskLevel"] = p["risk_level"]
+        ml_sku_map[sku]["mlReasoning"] = f"{p['metro']} Metro: {p['risk_reasoning']}"
+
+# Map back into skuTable
+for sku in data["skuTable"]:
+    ml_data = ml_sku_map.get(sku["id"])
+    if ml_data:
+        sku["riskLevel"] = ml_data["riskLevel"] # Override mock risk
+        sku["mlForecast60d"] = ml_data["mlForecast60d"]
+        sku["anomalyFlag"] = ml_data["anomalyFlag"]
+        sku["mlReasoning"] = ml_data["mlReasoning"]
+    else:
+        # Fallbacks
+        sku["mlForecast60d"] = 0
+        sku["anomalyFlag"] = False
+        sku["mlReasoning"] = "No ML Data"
+
 lines = []
-lines.append("// Auto-generated from src/generate_synthetic_data_v2.py")
-lines.append("// 30 SKUs across 5 WSI brands, 11 metro cities, 365 days of daily data")
+lines.append("// Auto-generated from src/build_frontend_data.py")
+lines.append("// Contains ML Predictions injected from predictions.json")
 lines.append("")
 lines.append("export const mockSkus = " + json.dumps(data["skuTable"], indent=2) + ";")
 lines.append("")

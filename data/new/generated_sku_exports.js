@@ -1,5 +1,5 @@
-// Auto-generated from src/generate_synthetic_data_v2.py
-// 30 SKUs across 5 WSI brands, 11 metro cities, 365 days of daily data
+// Auto-generated from src/build_frontend_data.py
+// Contains ML Predictions injected from predictions.json
 
 export const mockSkus = [
   {
@@ -14,7 +14,10 @@ export const mockSkus = [
     "riskLevel": "STOCKOUT_RISK",
     "signal": "Search spike +35%",
     "action": "Expedite supplementary order",
-    "price": 89.0
+    "price": 89.0,
+    "mlForecast60d": 18857,
+    "anomalyFlag": false,
+    "mlReasoning": "Los Angeles Metro: Days of supply (28) < lead time (70.0d). Forecast shortfall: 1694 units over 60d."
   },
   {
     "id": "PB-PILLOW-71",
@@ -25,10 +28,13 @@ export const mockSkus = [
     "onOrder": 6696,
     "daysOfSupply": 154,
     "leadTimeDays": 56,
-    "riskLevel": "OVERSTOCK_RISK",
+    "riskLevel": "OK",
     "signal": "Demand declining, excess inventory",
     "action": "Pause replenishment; evaluate markdown",
-    "price": 65.0
+    "price": 65.0,
+    "mlForecast60d": 14053,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=34.8). Supply coverage: 120d vs 56.0d lead time."
   },
   {
     "id": "PB-BED-FRAME-33",
@@ -39,10 +45,13 @@ export const mockSkus = [
     "onOrder": 2092,
     "daysOfSupply": 140,
     "leadTimeDays": 68,
-    "riskLevel": "WATCH",
+    "riskLevel": "OK",
     "signal": "Housing permits +34% in Phoenix",
     "action": "Pre-position to Litchfield Park DC",
-    "price": 1899.0
+    "price": 1899.0,
+    "mlForecast60d": 4784,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=39.9). Supply coverage: 127d vs 68.0d lead time."
   },
   {
     "id": "PB-SOFA-88",
@@ -53,10 +62,13 @@ export const mockSkus = [
     "onOrder": 2087,
     "daysOfSupply": 180,
     "leadTimeDays": 84,
-    "riskLevel": "WATCH",
+    "riskLevel": "OK",
     "signal": "Multi-signal convergence detected",
     "action": "Increase order quantity 20%",
-    "price": 3499.0
+    "price": 3499.0,
+    "mlForecast60d": 3288,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=41.6). Supply coverage: 189d vs 84.0d lead time."
   },
   {
     "id": "PB-QUILT-15",
@@ -67,10 +79,13 @@ export const mockSkus = [
     "onOrder": 2580,
     "daysOfSupply": 224,
     "leadTimeDays": 56,
-    "riskLevel": "OVERSTOCK_RISK",
+    "riskLevel": "OK",
     "signal": "Post-holiday demand decline",
     "action": "Cancel pending orders; markdown 15%",
-    "price": 299.0
+    "price": 299.0,
+    "mlForecast60d": 5696,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=33.9). Supply coverage: 224d vs 56.0d lead time."
   },
   {
     "id": "PB-MIRROR-22",
@@ -84,7 +99,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 449.0
+    "price": 449.0,
+    "mlForecast60d": 9111,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=38.0). Supply coverage: 154d vs 63.0d lead time."
   },
   {
     "id": "PB-DINSET-09",
@@ -98,7 +116,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 2299.0
+    "price": 2299.0,
+    "mlForecast60d": 3179,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=36.9). Supply coverage: 128d vs 77.0d lead time."
   },
   {
     "id": "PB-RUG-44",
@@ -112,7 +133,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 1299.0
+    "price": 1299.0,
+    "mlForecast60d": 2405,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=37.1). Supply coverage: 123d vs 70.0d lead time."
   },
   {
     "id": "PB-LAMP-61",
@@ -126,7 +150,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 189.0
+    "price": 189.0,
+    "mlForecast60d": 9170,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=37.6). Supply coverage: 102d vs 42.0d lead time."
   },
   {
     "id": "PB-CANDLE-77",
@@ -140,7 +167,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 79.0
+    "price": 79.0,
+    "mlForecast60d": 11913,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=38.7). Supply coverage: 78d vs 35.0d lead time."
   },
   {
     "id": "PB-PLANTER-30",
@@ -154,7 +184,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 129.0
+    "price": 129.0,
+    "mlForecast60d": 6606,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=41.9). Supply coverage: 98d vs 42.0d lead time."
   },
   {
     "id": "PB-THROW-55",
@@ -168,7 +201,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 249.0
+    "price": 249.0,
+    "mlForecast60d": 6464,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=37.0). Supply coverage: 150d vs 56.0d lead time."
   },
   {
     "id": "WE-LAMP-19",
@@ -182,7 +218,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 399.0
+    "price": 399.0,
+    "mlForecast60d": 6586,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=37.3). Supply coverage: 80d vs 49.0d lead time."
   },
   {
     "id": "WE-SOFA-23",
@@ -196,7 +235,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 1899.0
+    "price": 1899.0,
+    "mlForecast60d": 3224,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=39.1). Supply coverage: 104d vs 70.0d lead time."
   },
   {
     "id": "WE-RUG-15",
@@ -207,10 +249,13 @@ export const mockSkus = [
     "onOrder": 1215,
     "daysOfSupply": 168,
     "leadTimeDays": 42,
-    "riskLevel": "OVERSTOCK_RISK",
+    "riskLevel": "WATCH",
     "signal": "Post-holiday demand decline",
     "action": "Cancel pending orders; markdown 15%",
-    "price": 299.0
+    "price": 299.0,
+    "mlForecast60d": 3892,
+    "anomalyFlag": true,
+    "mlReasoning": "Denver Metro: Velocity anomaly detected (composite=37.4). Monitoring for trend confirmation."
   },
   {
     "id": "WE-SHELF-31",
@@ -224,7 +269,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 149.0
+    "price": 149.0,
+    "mlForecast60d": 11049,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=38.0). Supply coverage: 59d vs 35.0d lead time."
   },
   {
     "id": "WE-DUVET-40",
@@ -238,7 +286,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 199.0
+    "price": 199.0,
+    "mlForecast60d": 8623,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=39.0). Supply coverage: 116d vs 49.0d lead time."
   },
   {
     "id": "WE-CHAIR-52",
@@ -252,7 +303,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 799.0
+    "price": 799.0,
+    "mlForecast60d": 4090,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=36.4). Supply coverage: 124d vs 63.0d lead time."
   },
   {
     "id": "WE-PLNTR-18",
@@ -266,7 +320,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 89.0
+    "price": 89.0,
+    "mlForecast60d": 12850,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=41.6). Supply coverage: 46d vs 28.0d lead time."
   },
   {
     "id": "WE-CLOCK-66",
@@ -280,7 +337,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 129.0
+    "price": 129.0,
+    "mlForecast60d": 8298,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=39.2). Supply coverage: 50d vs 35.0d lead time."
   },
   {
     "id": "WS-MIXER-05",
@@ -294,7 +354,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 449.0
+    "price": 449.0,
+    "mlForecast60d": 8671,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=35.4). Supply coverage: 96d vs 49.0d lead time."
   },
   {
     "id": "WS-KNIFE-60",
@@ -308,7 +371,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 349.0
+    "price": 349.0,
+    "mlForecast60d": 4458,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=38.8). Supply coverage: 81d vs 42.0d lead time."
   },
   {
     "id": "WS-DUTCH-64",
@@ -322,7 +388,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 399.0
+    "price": 399.0,
+    "mlForecast60d": 5338,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=36.9). Supply coverage: 102d vs 42.0d lead time."
   },
   {
     "id": "WS-WINE-65",
@@ -336,7 +405,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 129.0
+    "price": 129.0,
+    "mlForecast60d": 10012,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=36.7). Supply coverage: 53d vs 35.0d lead time."
   },
   {
     "id": "WS-BOARD-68",
@@ -347,10 +419,13 @@ export const mockSkus = [
     "onOrder": 446,
     "daysOfSupply": 58,
     "leadTimeDays": 28,
-    "riskLevel": "WATCH",
+    "riskLevel": "OVERSTOCK_RISK",
     "signal": "Sudden demand collapse",
     "action": "Halt all replenishment",
-    "price": 89.0
+    "price": 89.0,
+    "mlForecast60d": 4364,
+    "anomalyFlag": true,
+    "mlReasoning": "Atlanta Metro: Days of supply (98) = 3.5x lead time. Demand declining -26.5% MoM. Excess: ~-22 units."
   },
   {
     "id": "PBK-CRIB-12",
@@ -361,10 +436,13 @@ export const mockSkus = [
     "onOrder": 919,
     "daysOfSupply": 117,
     "leadTimeDays": 56,
-    "riskLevel": "WATCH",
+    "riskLevel": "OK",
     "signal": "Housing permits +34% in Denver",
     "action": "Pre-position to Denver Hub",
-    "price": 699.0
+    "price": 699.0,
+    "mlForecast60d": 2903,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=37.6). Supply coverage: 104d vs 56.0d lead time."
   },
   {
     "id": "PBK-BUNK-22",
@@ -375,10 +453,13 @@ export const mockSkus = [
     "onOrder": 52,
     "daysOfSupply": 122,
     "leadTimeDays": 63,
-    "riskLevel": "STOCKOUT_RISK",
+    "riskLevel": "OVERSTOCK_RISK",
     "signal": "Sudden demand collapse",
     "action": "Halt all replenishment",
-    "price": 1299.0
+    "price": 1299.0,
+    "mlForecast60d": 1128,
+    "anomalyFlag": true,
+    "mlReasoning": "Phoenix Metro: Days of supply (220) = 3.5x lead time. Demand declining -77.8% MoM. Excess: ~-74 units."
   },
   {
     "id": "PBK-QUILT-08",
@@ -392,7 +473,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 149.0
+    "price": 149.0,
+    "mlForecast60d": 6752,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=37.4). Supply coverage: 107d vs 42.0d lead time."
   },
   {
     "id": "RJ-PENDANT-11",
@@ -406,7 +490,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 329.0
+    "price": 329.0,
+    "mlForecast60d": 6583,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=38.6). Supply coverage: 96d vs 49.0d lead time."
   },
   {
     "id": "RJ-SCONCE-04",
@@ -420,7 +507,10 @@ export const mockSkus = [
     "riskLevel": "OK",
     "signal": "Stable demand pattern",
     "action": "Maintain current replenishment",
-    "price": 249.0
+    "price": 249.0,
+    "mlForecast60d": 5931,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=36.1). Supply coverage: 82d vs 42.0d lead time."
   }
 ];
 
