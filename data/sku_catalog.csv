@@ -1,0 +1,31 @@
+sku_id,product_name,brand,category,price,lead_time_days,scenario_type,scenario_label
+PB-BLANKET-42,"Throw Blanket, Cognac",Pottery Barn,Bedding,89,70,A,viral_spike
+PB-PILLOW-71,"Decorative Pillow, Sage",Pottery Barn,Decor,65,56,B,silent_overstock
+PB-BED-33,"Bedroom Set, King",Pottery Barn,Furniture,1899,68,C,housing_leading
+PB-SOFA-88,"Sectional Sofa, Ivory",Pottery Barn,Furniture,3499,84,F,multi_signal
+PB-DUVET-12,Linen Duvet Cover,Pottery Barn,Bedding,249,49,R,random
+PB-DINING-14,Farmhouse Dining Table,Pottery Barn,Furniture,1699,70,R,random
+PB-MIRROR-16,Arched Wall Mirror,Pottery Barn,Decor,399,42,R,random
+PB-CANDLE-18,Hearth Candle Set,Pottery Barn,Decor,79,28,R,random
+PB-LAMP-20,Tripod Floor Lamp,Pottery Barn,Lighting,349,56,R,random
+PB-BOOK-22,Modular Bookcase,Pottery Barn,Furniture,899,63,R,random
+PB-PATIO-24,Teak Patio Set,Pottery Barn,Outdoor,2499,84,R,random
+PB-QUILT-26,Handstitched Quilt,Pottery Barn,Bedding,199,42,R,random
+WE-LAMP-19,"Table Lamp, Brass",West Elm,Lighting,179,42,D,steady_ok
+WE-RUG-15,"Area Rug, Geometric",West Elm,Decor,299,42,G,post_peak_overstock
+WE-SOFA-28,Mid-Century Sofa,West Elm,Furniture,1799,70,R,random
+WE-DESK-30,"Standing Desk, Walnut",West Elm,Furniture,699,49,R,random
+WE-ART-32,Gallery Art Print,West Elm,Decor,149,28,R,random
+WE-PENDANT-34,Sculptural Pendant,West Elm,Lighting,249,42,R,random
+WE-BENCH-36,Entryway Storage Bench,West Elm,Furniture,599,49,R,random
+WE-THROW-38,Velvet Throw Pillow,West Elm,Decor,45,21,R,random
+WS-MIXER-05,"Stand Mixer, Red",Williams Sonoma,Kitchen,449,49,E,seasonal_surge
+WS-KNIFE-40,Chef Knife Set,Williams Sonoma,Kitchen,349,35,R,random
+WS-COPPER-42,Copper Cookware Set,Williams Sonoma,Kitchen,899,56,R,random
+WS-DUTCH-44,"Dutch Oven, Cast Iron",Williams Sonoma,Kitchen,299,42,R,random
+WS-WINE-46,Crystal Wine Glass Set,Williams Sonoma,Entertaining,129,28,R,random
+PBK-BUNK-22,"Bunk Bed, White",Pottery Barn Kids,Furniture,1299,56,H,sudden_collapse
+PBK-CRIB-48,"Convertible Crib, Natural",Pottery Barn Kids,Furniture,799,49,R,random
+RJ-PENDANT-11,"Industrial Pendant, Black",Rejuvenation,Lighting,329,42,I,slow_burn
+RJ-VANITY-50,Bathroom Vanity Light,Rejuvenation,Lighting,219,35,R,random
+MG-TOTE-07,"Monogram Tote, Navy",Mark & Graham,Accessories,129,35,J,flash_pan

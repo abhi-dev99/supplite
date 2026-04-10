@@ -1,0 +1,12 @@
+metro,median_income,income_tier,income_factor,dc_name,dc_lat,dc_lon,base_permits_monthly
+San Francisco,125105,Premium,1.0,Tracy DC,37.7385,-121.4201,250
+Seattle,109389,High,0.912,Tracy DC,37.7385,-121.4201,400
+Denver,106878,High,0.891,Denver Hub,39.7392,-104.9848,600
+New York,100022,High,0.834,South Brunswick DC,40.3818,-74.5317,300
+Los Angeles,95821,Mid,0.799,City of Industry DC,34.0182,-117.9593,500
+Dallas,91207,Mid,0.76,Dallas DC,32.7762,-96.7968,1100
+Chicago,89918,Mid,0.749,Olive Branch DC,34.9617,-89.8295,350
+Atlanta,89691,Mid,0.747,Braselton DC,34.1092,-83.7626,900
+Phoenix,89610,Mid,0.747,Litchfield Park DC,33.4933,-112.3581,1200
+Houston,64813,Lower,0.54,Dallas DC,32.7762,-96.7968,1000
+Miami,62462,Lower,0.521,Pompano Beach Hub,26.2378,-80.1247,500
