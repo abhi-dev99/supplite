@@ -139,6 +139,63 @@ class TimelineOptionsResponse(BaseModel):
     sku_options: list[TimelineOption]
 
 
+class SimulationOption(BaseModel):
+    sku_id: str
+    product_name: str
+    category: str
+    metro: str
+    dc: str
+
+
+class SimulationOptionsResponse(BaseModel):
+    generated_at: datetime
+    sku_options: list[SimulationOption]
+
+
+class SimulationPoint(BaseModel):
+    date: str
+    demand_units: int
+    inventory_baseline: int
+    inventory_early: int
+    fulfilled_baseline: int
+    fulfilled_early: int
+    lost_baseline: int
+    lost_early: int
+    cumulative_revenue_baseline: float
+    cumulative_revenue_early: float
+    cumulative_profit_baseline: float
+    cumulative_profit_early: float
+
+
+class SimulationSummary(BaseModel):
+    horizon_days: int
+    event_date: str
+    baseline_lag_days: int
+    earlier_by_days: int
+    baseline_lost_units: int
+    early_lost_units: int
+    units_saved: int
+    revenue_uplift_usd: float
+    profit_uplift_usd: float
+    baseline_service_level_pct: float
+    early_service_level_pct: float
+    replenishment_units: int
+    lead_time_days: int
+
+
+class SimulationResponse(BaseModel):
+    generated_at: datetime
+    sku_id: str
+    product_name: str
+    category: str
+    metro: str
+    dc: str
+    price: float
+    margin_rate: float
+    points: list[SimulationPoint]
+    summary: SimulationSummary
+
+
 app = FastAPI(title="Supply Chain Brief Backend", version="0.1.0")
 
 # Load local env files for backend runtime configuration without committing secrets.
@@ -408,6 +465,288 @@ def _build_signal_timeline(sku_id: str, period_days: int) -> TimelineResponse:
             sales_delta=sales_delta,
             search_delta=search_delta,
         ),
+    )
+
+
+def _normalize_horizon_days(horizon_days: int) -> int:
+    return max(14, min(int(horizon_days), 120))
+
+
+def _normalize_margin_rate(margin_rate: float) -> float:
+    return max(0.05, min(float(margin_rate), 0.9))
+
+
+def _normalize_baseline_lag_days(baseline_lag_days: int) -> int:
+    return max(1, min(int(baseline_lag_days), 30))
+
+
+def _normalize_earlier_by_days(earlier_by_days: int, baseline_lag_days: int) -> int:
+    normalized = max(1, min(int(earlier_by_days), 30))
+    return min(normalized, max(1, baseline_lag_days - 1))
+
+
+def _build_simulation_options(dc: str = "ALL") -> list[SimulationOption]:
+    inventory_rows = _read_csv_rows(_data_file("sku_inventory.csv"))
+    selected_dc = (dc or "ALL").strip()
+
+    options: list[SimulationOption] = []
+    for row in inventory_rows:
+        dc_name = (row.get("dc") or "").strip()
+        if selected_dc != "ALL" and dc_name != selected_dc:
+            continue
+        sku_id = (row.get("sku_id") or "").strip()
+        if not sku_id:
+            continue
+        options.append(
+            SimulationOption(
+                sku_id=sku_id,
+                product_name=(row.get("product_name") or "Unknown Product").strip(),
+                category=(row.get("category") or "Unknown").strip(),
+                metro=(row.get("metro") or "Unknown").strip(),
+                dc=dc_name or "Unknown",
+            )
+        )
+
+    options.sort(key=lambda item: (item.sku_id, item.metro, item.dc))
+    return options
+
+
+def _resolve_inventory_row(sku_id: str, metro: str | None = None) -> dict[str, str] | None:
+    inventory_rows = _read_csv_rows(_data_file("sku_inventory.csv"))
+    normalized_sku = sku_id.strip().upper()
+    normalized_metro = (metro or "").strip().lower()
+
+    candidates = [
+        row
+        for row in inventory_rows
+        if (row.get("sku_id") or "").strip().upper() == normalized_sku
+    ]
+    if not candidates:
+        return None
+
+    if normalized_metro:
+        for row in candidates:
+            if (row.get("metro") or "").strip().lower() == normalized_metro:
+                return row
+
+    candidates.sort(key=lambda row: _safe_float(row.get("surge_score")), reverse=True)
+    return candidates[0]
+
+
+def _event_index_from_signals(rows: list[tuple[date, dict[str, str]]]) -> int:
+    if not rows:
+        return 0
+
+    for idx, (_, row) in enumerate(rows):
+        if _safe_float(row.get("search_velocity_7d")) >= 15.0 and _safe_float(row.get("sales_velocity_7d")) >= 8.0:
+            return idx
+
+    scored = [
+        (
+            idx,
+            _safe_float(row.get("search_velocity_7d")) * 0.6
+            + _safe_float(row.get("sales_velocity_7d")) * 0.4
+            + max(0.0, _safe_float(row.get("composite_score")) - 55.0) * 0.2,
+        )
+        for idx, (_, row) in enumerate(rows)
+    ]
+    scored.sort(key=lambda item: item[1], reverse=True)
+    return scored[0][0] if scored else 0
+
+
+def _simulate_stock_path(
+    *,
+    demand_series: list[tuple[date, int]],
+    initial_stock: int,
+    replenishment_units: int,
+    arrival_day_index: int,
+    price: float,
+    margin_rate: float,
+) -> list[dict[str, int | float | str]]:
+    stock = max(0, int(initial_stock))
+    cumulative_revenue = 0.0
+    cumulative_profit = 0.0
+    output: list[dict[str, int | float | str]] = []
+
+    for idx, (day, demand_units) in enumerate(demand_series):
+        if idx == arrival_day_index:
+            stock += max(0, int(replenishment_units))
+
+        demand = max(0, int(demand_units))
+        fulfilled = min(stock, demand)
+        lost = max(0, demand - fulfilled)
+        stock = max(0, stock - fulfilled)
+
+        cumulative_revenue += fulfilled * price
+        cumulative_profit += fulfilled * price * margin_rate
+
+        output.append(
+            {
+                "date": day.isoformat(),
+                "demand_units": demand,
+                "inventory": stock,
+                "fulfilled": fulfilled,
+                "lost": lost,
+                "cumulative_revenue": round(cumulative_revenue, 2),
+                "cumulative_profit": round(cumulative_profit, 2),
+            }
+        )
+
+    return output
+
+
+def _build_early_catch_simulation(
+    *,
+    sku_id: str,
+    metro: str | None,
+    horizon_days: int,
+    baseline_lag_days: int,
+    earlier_by_days: int,
+    margin_rate: float,
+) -> SimulationResponse:
+    normalized_sku = (sku_id or "").strip().upper()
+    if not normalized_sku:
+        raise ValueError("sku_id is required")
+
+    normalized_horizon = _normalize_horizon_days(horizon_days)
+    normalized_lag = _normalize_baseline_lag_days(baseline_lag_days)
+    normalized_earlier = _normalize_earlier_by_days(earlier_by_days, normalized_lag)
+    normalized_margin = _normalize_margin_rate(margin_rate)
+
+    inventory_row = _resolve_inventory_row(normalized_sku, metro=metro)
+    if inventory_row is None:
+        raise ValueError(f"No inventory row found for sku_id '{normalized_sku}'")
+
+    chosen_metro = (metro or inventory_row.get("metro") or "").strip()
+    signal_rows = _read_csv_rows(_data_file("sku_daily_signals.csv"))
+    filtered = [
+        row
+        for row in signal_rows
+        if (row.get("sku_id") or "").strip().upper() == normalized_sku
+        and (not chosen_metro or (row.get("metro") or "").strip() == chosen_metro)
+    ]
+    if not filtered and chosen_metro:
+        filtered = [
+            row
+            for row in signal_rows
+            if (row.get("sku_id") or "").strip().upper() == normalized_sku
+        ]
+
+    dated_rows: list[tuple[date, dict[str, str]]] = []
+    for row in filtered:
+        parsed = _parse_iso_date(row.get("date"))
+        if parsed is not None:
+            dated_rows.append((parsed, row))
+
+    if not dated_rows:
+        raise ValueError(f"No signal rows found for sku_id '{normalized_sku}'")
+
+    dated_rows.sort(key=lambda item: item[0])
+    event_idx = _event_index_from_signals(dated_rows)
+
+    event_idx = min(event_idx, max(0, len(dated_rows) - 1))
+    event_date = dated_rows[event_idx][0]
+
+    last_known_date = dated_rows[-1][0]
+    last_known_units = max(1, _safe_int(dated_rows[-1][1].get("units_sold")))
+
+    demand_series: list[tuple[date, int]] = []
+    for day_offset in range(normalized_horizon):
+        row_idx = event_idx + day_offset
+        if row_idx < len(dated_rows):
+            row_date, row = dated_rows[row_idx]
+            demand_series.append((row_date, max(0, _safe_int(row.get("units_sold")))))
+        else:
+            projected_date = last_known_date + timedelta(days=row_idx - len(dated_rows) + 1)
+            demand_series.append((projected_date, last_known_units))
+
+    initial_stock = max(0, _safe_int(inventory_row.get("stock_on_hand")))
+    lead_time_days = max(1, _safe_int(inventory_row.get("lead_time_days")))
+    avg_daily_sales = max(1.0, _safe_float(inventory_row.get("avg_daily_sales")))
+    forecast_demand_60d = max(1, _safe_int(inventory_row.get("forecast_demand_60d")))
+    replenishment_units = max(
+        int(round(avg_daily_sales * lead_time_days * 0.8)),
+        int(round(forecast_demand_60d * 0.35)),
+        1,
+    )
+
+    late_arrival_idx = normalized_lag + lead_time_days
+    early_arrival_idx = max(0, normalized_lag - normalized_earlier) + lead_time_days
+
+    baseline_path = _simulate_stock_path(
+        demand_series=demand_series,
+        initial_stock=initial_stock,
+        replenishment_units=replenishment_units,
+        arrival_day_index=late_arrival_idx,
+        price=max(0.0, _safe_float(inventory_row.get("price"))),
+        margin_rate=normalized_margin,
+    )
+    early_path = _simulate_stock_path(
+        demand_series=demand_series,
+        initial_stock=initial_stock,
+        replenishment_units=replenishment_units,
+        arrival_day_index=early_arrival_idx,
+        price=max(0.0, _safe_float(inventory_row.get("price"))),
+        margin_rate=normalized_margin,
+    )
+
+    points: list[SimulationPoint] = []
+    for idx in range(normalized_horizon):
+        base = baseline_path[idx]
+        early = early_path[idx]
+        points.append(
+            SimulationPoint(
+                date=str(base["date"]),
+                demand_units=int(base["demand_units"]),
+                inventory_baseline=int(base["inventory"]),
+                inventory_early=int(early["inventory"]),
+                fulfilled_baseline=int(base["fulfilled"]),
+                fulfilled_early=int(early["fulfilled"]),
+                lost_baseline=int(base["lost"]),
+                lost_early=int(early["lost"]),
+                cumulative_revenue_baseline=float(base["cumulative_revenue"]),
+                cumulative_revenue_early=float(early["cumulative_revenue"]),
+                cumulative_profit_baseline=float(base["cumulative_profit"]),
+                cumulative_profit_early=float(early["cumulative_profit"]),
+            )
+        )
+
+    baseline_lost_units = int(sum(int(point["lost"]) for point in baseline_path))
+    early_lost_units = int(sum(int(point["lost"]) for point in early_path))
+    total_demand_units = int(sum(max(0, demand) for _, demand in demand_series))
+    units_saved = max(0, baseline_lost_units - early_lost_units)
+    baseline_revenue = float(baseline_path[-1]["cumulative_revenue"]) if baseline_path else 0.0
+    early_revenue = float(early_path[-1]["cumulative_revenue"]) if early_path else 0.0
+    baseline_profit = float(baseline_path[-1]["cumulative_profit"]) if baseline_path else 0.0
+    early_profit = float(early_path[-1]["cumulative_profit"]) if early_path else 0.0
+
+    summary = SimulationSummary(
+        horizon_days=normalized_horizon,
+        event_date=event_date.isoformat(),
+        baseline_lag_days=normalized_lag,
+        earlier_by_days=normalized_earlier,
+        baseline_lost_units=baseline_lost_units,
+        early_lost_units=early_lost_units,
+        units_saved=units_saved,
+        revenue_uplift_usd=round(max(0.0, early_revenue - baseline_revenue), 2),
+        profit_uplift_usd=round(max(0.0, early_profit - baseline_profit), 2),
+        baseline_service_level_pct=round((1.0 - (baseline_lost_units / max(total_demand_units, 1))) * 100.0, 2),
+        early_service_level_pct=round((1.0 - (early_lost_units / max(total_demand_units, 1))) * 100.0, 2),
+        replenishment_units=replenishment_units,
+        lead_time_days=lead_time_days,
+    )
+
+    return SimulationResponse(
+        generated_at=datetime.now(timezone.utc),
+        sku_id=normalized_sku,
+        product_name=(inventory_row.get("product_name") or "Unknown Product").strip(),
+        category=(inventory_row.get("category") or "Unknown").strip(),
+        metro=(inventory_row.get("metro") or chosen_metro or "Unknown").strip(),
+        dc=(inventory_row.get("dc") or "Unknown").strip(),
+        price=round(max(0.0, _safe_float(inventory_row.get("price"))), 2),
+        margin_rate=normalized_margin,
+        points=points,
+        summary=summary,
     )
 
 
@@ -913,3 +1252,30 @@ def signal_timeline(
     period_days: int = 30,
 ) -> TimelineResponse:
     return _build_signal_timeline(sku_id=sku_id, period_days=period_days)
+
+
+@app.get("/api/simulations/options", response_model=SimulationOptionsResponse)
+def simulation_options(dc: str = "ALL") -> SimulationOptionsResponse:
+    return SimulationOptionsResponse(
+        generated_at=datetime.now(timezone.utc),
+        sku_options=_build_simulation_options(dc=dc),
+    )
+
+
+@app.get("/api/simulations/early-catch", response_model=SimulationResponse)
+def simulation_early_catch(
+    sku_id: str,
+    metro: str | None = None,
+    horizon_days: int = 60,
+    baseline_lag_days: int = 10,
+    earlier_by_days: int = 5,
+    margin_rate: float = 0.42,
+) -> SimulationResponse:
+    return _build_early_catch_simulation(
+        sku_id=sku_id,
+        metro=metro,
+        horizon_days=horizon_days,
+        baseline_lag_days=baseline_lag_days,
+        earlier_by_days=earlier_by_days,
+        margin_rate=margin_rate,
+    )
