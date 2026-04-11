@@ -1,17 +1,23 @@
 import { useEffect, useMemo, useState } from 'react';
 import DeckGL from '@deck.gl/react';
-import { ScatterplotLayer, GeoJsonLayer } from '@deck.gl/layers';
+import { ScatterplotLayer, GeoJsonLayer, TextLayer } from '@deck.gl/layers';
 import { ContourLayer, HeatmapLayer } from '@deck.gl/aggregation-layers';
 import { geoClusters, wsStores, distributionCenters } from '../data';
 import { Search } from 'lucide-react';
+import stateLabels from '../stateLabels.json';
 import { fetchRealEstateHeatmap } from '../api/realEstateApi';
 
+function toArray(value) {
+  return Array.isArray(value) ? value : [];
+}
+
 const INITIAL_VIEW_STATE = {
-  longitude: -98.0,
-  latitude: 38.0,
-  zoom: 3.5,
+  longitude: -96.0,
+  latitude: 39.0,
+  zoom: 3.2,
+  minZoom: 2.5,
   maxZoom: 16,
-  pitch: 50,
+  pitch: 45,
   bearing: -10
 };
 
@@ -20,7 +26,7 @@ function pseudoRandom(seed, step) {
   return value - Math.floor(value);
 }
 
-export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
+export default function SciFiMap({ isFullscreen = false, theme = 'dark', selectedDC = 'ALL' }) {
   const [hoverInfo, setHoverInfo] = useState(null);
   const [viewState, setViewState] = useState(INITIAL_VIEW_STATE);
   const [searchQuery, setSearchQuery] = useState('');
@@ -29,9 +35,20 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
   const [showHeatmap, setShowHeatmap] = useState(true);
   const [showStores, setShowStores] = useState(true);
   const [showDcRadius, setShowDcRadius] = useState(false);
+  const [showIntelHub, setShowIntelHub] = useState(false);
   const isDark = theme === 'dark';
 
+  const [usStatesGeoJson, setUsStatesGeoJson] = useState(null);
+
   useEffect(() => {
+    fetch('/us_states.json')
+      .then(res => res.json())
+      .then(data => {
+        data.features = data.features.filter(f => !['Alaska', 'Hawaii', 'Puerto Rico'].includes(f.properties.name));
+        setUsStatesGeoJson(data);
+      })
+      .catch(err => console.error("Could not load US states mapping:", err));
+
     let cancelled = false;
 
     async function loadHeatmap() {
@@ -54,15 +71,62 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
     };
   }, []);
 
-  const clusterData = useMemo(() => {
-    if (heatmapPayload?.points?.length) {
-      return heatmapPayload.points;
+  // Animate map to selected DC location
+  useEffect(() => {
+    const allDistributionCenters = toArray(distributionCenters);
+
+    if (selectedDC !== 'ALL') {
+      const dc = allDistributionCenters.find((d) => d?.name === selectedDC);
+      if (dc && dc.coordinates) {
+        setViewState((prev) => ({
+          ...prev,
+          longitude: dc.coordinates[0],
+          latitude: dc.coordinates[1],
+          zoom: 6.5,
+          transitionDuration: 1500
+        }));
+      }
+    } else {
+      setViewState((prev) => ({
+        ...prev,
+        longitude: INITIAL_VIEW_STATE.longitude,
+        latitude: INITIAL_VIEW_STATE.latitude,
+        zoom: INITIAL_VIEW_STATE.zoom,
+        transitionDuration: 1500
+      }));
     }
-    return geoClusters;
+  }, [selectedDC]);
+
+  const clusterData = useMemo(() => {
+    // The user ONLY wants data around the 10-11 ML modeled metro areas (DCs). Let's filter visually!
+    const allDistributionCenters = toArray(distributionCenters);
+    const activeDcNodes = allDistributionCenters.filter((dc) => 
+      ['City of Industry DC', 'Braselton DC', 'Dallas DC', 'Litchfield Park DC', 'Oakland, CA', 'Lakeland, FL', 'Denver, CO', 'South Brunswick DC'].includes(dc.name)
+    );
+
+    const livePoints = toArray(heatmapPayload?.points);
+    const baseData = livePoints.length ? livePoints : toArray(geoClusters);
+    
+    // Filter base data to only points within ~3.0 degrees (approx 200 miles) of our active modeled metros
+    return baseData.filter((point) => {
+       const [lng, lat] = point.position || point.coordinates || [];
+       if (!Number.isFinite(lng) || !Number.isFinite(lat)) return false;
+       
+       for (const dc of activeDcNodes) {
+          const [dcLng, dcLat] = dc.coordinates || [];
+          if (Math.hypot(lng - dcLng, lat - dcLat) <= 4.0) {
+             return true;
+          }
+       }
+       return false;
+    });
   }, [heatmapPayload]);
 
   const filteredStores = useMemo(
-    () => wsStores.filter((store) => store.name.toLowerCase().includes(searchQuery.toLowerCase())),
+    () => toArray(wsStores).filter((store) => {
+      const name = typeof store?.name === 'string' ? store.name : '';
+      return name.toLowerCase().includes(searchQuery.toLowerCase());
+    }),
     [searchQuery]
   );
 
@@ -79,12 +143,20 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
 
       const demand = Number(cluster.demand_index || 100);
       const volume = Number(cluster.volume || 120);
+      const income = Number(cluster.median_income || 60000);
+      
       const riskWeight =
         cluster.risk === 'STOCKOUT_RISK' ? 1.35 : cluster.risk === 'OVERSTOCK_RISK' ? 1.05 : 1.15;
+      
+      // Affluence Surcharge: Correlation with WSI Brand Value Drivers
+      const affluenceSurcharge = income > 150000 ? 1.3 : (income > 100000 ? 1.15 : 1.0);
+      const compositeWeight = Math.max(2, demand * riskWeight * affluenceSurcharge);
+
       const spread = largeDataset
         ? Math.max(0.02, Math.min(0.12, 0.02 + Math.log10(Math.max(volume, 10)) * 0.03))
-        : Math.max(0.12, Math.min(0.6, 0.08 + Math.log10(Math.max(volume, 10)) * 0.1));
-      const copies = largeDataset ? 1 : Math.max(24, Math.min(150, Math.round(22 + demand * 0.35 + volume * 0.02)));
+        : Math.max(0.15, Math.min(0.7, 0.1 + Math.log10(Math.max(volume, 10)) * 0.12));
+      
+      const copies = largeDataset ? 1 : Math.max(18, Math.min(130, Math.round(15 + demand * 0.4 + volume * 0.015)));
 
       for (let i = 0; i < copies; i += 1) {
         const angle = pseudoRandom(clusterIndex + 1, i + 11) * Math.PI * 2;
@@ -94,8 +166,9 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
 
         points.push({
           position: [lng + lngOffset, lat + latOffset],
-          weight: Math.max(2, demand * riskWeight),
+          weight: compositeWeight,
           clusterId: cluster.id,
+          isHighIncome: income > 150000
         });
       }
     });
@@ -153,14 +226,12 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
   
   const layers = useMemo(() => {
     const activeLayers = [
-      // Base geometry for map context.
+      // Base geometry for map context
       new GeoJsonLayer({
         id: 'na-geometry',
         data: '/na_map.json',
-        stroked: true,
+        stroked: false,
         filled: true,
-        lineWidthMinPixels: 1,
-        getLineColor: isDark ? [30, 255, 255, 40] : [0, 80, 150, 40],
         getFillColor: isDark ? [10, 15, 25, 200] : [240, 245, 250, 255],
       }),
     ];
@@ -209,15 +280,16 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
           filled: true,
           radiusScale: 5000,
           radiusMinPixels: 2,
-          radiusMaxPixels: 7,
-          opacity: 0.65,
+          radiusMaxPixels: 8,
+          opacity: 0.75,
           getPosition: (d) => d.position,
           getFillColor: (d) => {
             if (d.risk === 'STOCKOUT_RISK') return [255, 80, 64, 220];
             if (d.risk === 'OVERSTOCK_RISK') return [255, 186, 58, 200];
             return [56, 173, 255, 190];
           },
-          getLineColor: [255, 255, 255, 130],
+          getLineColor: (d) => (d.median_income > 160000) ? [74, 222, 128, 255] : [255, 255, 255, 130],
+          getLineWidth: (d) => (d.median_income > 160000) ? 200 : 80,
           onHover: (info) => setHoverInfo(info),
         })
       );
@@ -227,7 +299,7 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
       activeLayers.push(
         new ScatterplotLayer({
           id: 'dc-territory-rings',
-          data: distributionCenters,
+          data: toArray(distributionCenters),
           pickable: false,
           opacity: isDark ? 0.15 : 0.08,
           stroked: true,
@@ -246,7 +318,7 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
     activeLayers.push(
       new ScatterplotLayer({
         id: 'infrastructure-nodes',
-        data: distributionCenters,
+        data: toArray(distributionCenters),
         pickable: true,
         opacity: 1,
         stroked: true,
@@ -282,14 +354,44 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
           radiusMinPixels: 2,
           radiusMaxPixels: 6,
           getPosition: (d) => d.coordinates,
-          getFillColor: isDark ? [0, 255, 200, 255] : [0, 150, 150, 255],
+          getFillColor: isDark ? [0, 255, 200, 255] : [14, 116, 144, 255],
           onHover: (info) => setHoverInfo(info),
         })
       );
     }
+    
+    if (usStatesGeoJson) {
+      activeLayers.push(
+        new GeoJsonLayer({
+          id: 'usa-state-lines',
+          data: usStatesGeoJson,
+          stroked: true,
+          filled: false,
+          lineWidthMinPixels: 1,
+          getLineColor: isDark ? [255, 255, 255, 80] : [0, 0, 0, 40],
+        })
+      );
+    }
+
+    activeLayers.push(
+      new TextLayer({
+        id: 'usa-state-labels',
+        data: toArray(stateLabels).filter((l) => l.name !== 'Alaska' && l.name !== 'Hawaii' && l.name !== 'Puerto Rico'),
+        pickable: false,
+        getPosition: (d) => d.coordinates,
+        getText: (d) => d.name,
+        getSize: 22,
+        getColor: isDark ? [255, 255, 255, 110] : [15, 23, 42, 160],
+        getAngle: 0,
+        getTextAnchor: 'middle',
+        getAlignmentBaseline: 'center',
+        fontFamily: 'var(--font-serif)',
+        fontWeight: 'bold',
+      })
+    );
 
     return activeLayers;
-  }, [clusterData, filteredStores, heatDensityPoints, isDark, isFullscreen, showDcRadius, showHeatmap, showStores]);
+  }, [clusterData, filteredStores, heatDensityPoints, isDark, isFullscreen, showDcRadius, showHeatmap, showStores, usStatesGeoJson]);
 
   const getLabelForType = (type) => {
       switch(type) {
@@ -335,11 +437,25 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
     </button>
   );
 
+  const handleViewStateChange = ({ viewState }) => {
+    const minLng = -128, maxLng = -65;
+    const minLat = 24, maxLat = 50;
+
+    let lng = Math.max(minLng, Math.min(maxLng, viewState.longitude));
+    let lat = Math.max(minLat, Math.min(maxLat, viewState.latitude));
+
+    setViewState({
+      ...viewState,
+      longitude: lng,
+      latitude: lat
+    });
+  };
+
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%', backgroundColor: isDark ? '#020202' : '#f0f5fa', borderRadius: isFullscreen ? '0' : '8px', overflow: 'hidden' }}>
       <DeckGL
         viewState={viewState}
-        onViewStateChange={({ viewState }) => setViewState(viewState)}
+        onViewStateChange={handleViewStateChange}
         controller={{ dragRotate: true, dragPan: true, touchRotate: true, doubleClickZoom: true, keyboard: true }}
         layers={layers}
       />
@@ -383,37 +499,11 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
         <ToggleChip label="DC Radius" value={showDcRadius} onToggle={() => setShowDcRadius((prev) => !prev)} />
         </div>
 
-      {/* Map Legend HUD */}
-      <div style={{
-          position: 'absolute', bottom: '24px', left: '24px', zIndex: 10,
-          backgroundColor: hudSurface,
-          padding: '12px', borderRadius: '8px', color: hudText,
-          border: `1px solid ${hudBorder}`,
-          backdropFilter: 'blur(10px)', fontSize: '0.74rem', display: 'flex', flexDirection: 'column', gap: '6px',
-          maxWidth: '220px'
-      }}>
-          <div style={{ fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Map Layers</div>
-          <div style={{ color: hudTextMuted }}>Use toggles to focus one signal at a time.</div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#00ffff' }}/> Store marker</div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#fff', border: '2px solid #28a0ff' }}/> DC node</div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}><div style={{ width: '10px', height: '8px', borderRadius: '2px', backgroundColor: '#ffb52e' }}/> Heat intensity</div>
-      </div>
-
-      <div style={{
-          position: 'absolute', bottom: '24px', right: '24px', zIndex: 10,
-          backgroundColor: hudSurface,
-          padding: '8px 16px', borderRadius: '4px', color: hudTextMuted,
-          border: `1px solid ${hudBorder}`,
-          backdropFilter: 'blur(10px)', fontSize: '0.75rem',
-      }}>
-          <strong>Ctrl+Drag</strong> or <strong>Right-Click+Drag</strong> to Rotate 3D
-      </div>
-      
       {/* Sci-Fi Tooltip HUD */}
       {hoverInfo && hoverInfo.object && (
         <div style={{
           position: 'absolute',
-          zIndex: 15,
+          zIndex: 100,
           pointerEvents: 'none',
           left: hoverInfo.x,
           top: hoverInfo.y,
@@ -429,7 +519,7 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
           fontFamily: 'var(--font-sans)',
           backdropFilter: 'blur(10px)'
         }}>
-          {hoverInfo.layer.id === 'dc-nodes' || hoverInfo.layer.id === 'infrastructure-nodes' || hoverInfo.object.type === 'STORE' ? (
+          {hoverInfo.layer.id === 'infrastructure-nodes' || hoverInfo.object.type === 'STORE' ? (
              <>
                <div style={{ fontWeight: 600, borderBottom: `1px solid ${getLabelColor(hoverInfo.object.type)}40`, paddingBottom: '12px', marginBottom: '12px', fontSize: '0.875rem', color: getLabelColor(hoverInfo.object.type) }}>
                  {getLabelForType(hoverInfo.object.type)}
@@ -467,11 +557,13 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
                  <div style={{ color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)' }}>Affected Volume:</div>
                  <div>{hoverInfo.object.volume.toLocaleString()} Units</div>
 
-                 <div style={{ color: 'rgba(255,255,255,0.5)' }}>Demand Index:</div>
-                 <div>{hoverInfo.object.demand_index ?? 'n/a'}</div>
+                 <div style={{ color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)' }}>Demand Index:</div>
+                 <div style={{ fontWeight: 600 }}>{hoverInfo.object.demand_index ?? 'n/a'}</div>
 
-                 <div style={{ color: 'rgba(255,255,255,0.5)' }}>Renter Share:</div>
-                 <div>{hoverInfo.object.renter_share_pct != null ? `${hoverInfo.object.renter_share_pct}%` : 'n/a'}</div>
+                 <div style={{ color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)' }}>Median Income:</div>
+                 <div style={{ color: (hoverInfo.object.median_income > 160000) ? '#4ade80' : 'inherit', fontWeight: 600 }}>
+                   ${hoverInfo.object.median_income?.toLocaleString() ?? 'n/a'}
+                 </div>
                  
                  <div style={{ color: isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)' }}>Forecast Delay:</div>
                  <div>{hoverInfo.object.delay}</div>
@@ -481,22 +573,93 @@ export default function SciFiMap({ isFullscreen = false, theme = 'dark' }) {
         </div>
       )}
 
-      <div style={{
-        position: 'absolute',
-        right: '12px',
-        bottom: '12px',
-        zIndex: 20,
-        pointerEvents: 'none',
-        backgroundColor: hudSurface,
-        color: hudText,
-        border: `1px solid ${hudBorder}`,
-        borderRadius: '6px',
-        padding: '6px 10px',
-        fontSize: '0.7rem',
-        letterSpacing: '0.02em'
-      }}>
-        {showHeatmap ? `${heatmapLabel} • ${heatDensityPoints.length.toLocaleString()} points` : 'Heatmap hidden'}
-        {heatmapError ? ` • ${heatmapError}` : ''}
+      {/* Unified Intelligence Hub Menu */}
+      <div 
+        style={{
+          position: 'absolute', bottom: '24px', left: '24px', zIndex: 110,
+        }}
+        onMouseEnter={() => setShowIntelHub(true)}
+        onMouseLeave={() => setShowIntelHub(false)}
+      >
+        <button style={{
+          backgroundColor: hudSurface,
+          color: hudText,
+          padding: '12px 22px',
+          borderRadius: '30px',
+          border: `1px solid ${hudBorder}`,
+          backdropFilter: 'blur(15px)',
+          fontSize: '0.9rem',
+          fontWeight: 600,
+          boxShadow: '0 10px 40px rgba(0,0,0,0.3)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
+          transition: 'all 0.3s ease',
+          pointerEvents: 'auto'
+        }}>
+          <span style={{ fontSize: '1.4rem' }}>⚡</span>
+          Intelligence Hub
+        </button>
+
+        {showIntelHub && (
+          <div style={{
+            position: 'absolute', bottom: '100%', left: 0, marginBottom: '14px',
+            backgroundColor: hudSurface,
+            color: hudText,
+            width: '340px',
+            borderRadius: '16px',
+            border: `1px solid ${hudBorder}`,
+            backdropFilter: 'blur(20px)',
+            padding: '24px',
+            boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
+            display: 'flex', flexDirection: 'column', gap: '20px',
+            pointerEvents: 'auto'
+          }}>
+            <div style={{ borderBottom: `1px solid ${hudBorder}`, paddingBottom: '12px' }}>
+              <div style={{ fontWeight: 700, fontSize: '1.1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ opacity: 0.8 }}>ⓘ</span> Data Methodology
+              </div>
+              <div style={{ fontSize: '0.8rem', color: hudTextMuted, marginTop: '4px' }}>
+                Composite Risk & Opportunity Analysis v4.6
+              </div>
+            </div>
+
+            <section>
+              <div style={{ fontWeight: 600, fontSize: '0.85rem', marginBottom: '8px', textTransform: 'uppercase', opacity: 0.6 }}>Logic Definitions</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.8rem', lineHeight: 1.4 }}>
+                <div><strong>Demand Intensity:</strong> Real-time velocity of search trends & permits.</div>
+                <div><strong>Affluence Correlation:</strong> median income {'>'} $110k adds 25% weight surcharge. High affluence nodes marked with <span style={{ color: '#4ade80' }}>green boundaries</span>.</div>
+                <div><strong>Logistics Risk:</strong> Factoring distance from Hub centers.</div>
+              </div>
+            </section>
+
+            <section style={{ borderTop: `1px solid ${hudBorder}`, paddingTop: '16px' }}>
+              <div style={{ fontWeight: 600, fontSize: '0.85rem', marginBottom: '8px', textTransform: 'uppercase', opacity: 0.6 }}>Legend</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.8rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: isDark ? '#00ffff' : '#0e7490' }}/> 
+                  <span>Store Node (Current Supply)</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#fff', border: '2px solid #28a0ff' }}/> 
+                  <span>Regional Hub / DC</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <div style={{ width: '12px', height: '10px', borderRadius: '2px', backgroundColor: '#ffb52e' }}/> 
+                  <span>Signal Heatmap Intensity</span>
+                </div>
+              </div>
+            </section>
+
+            <div style={{ fontSize: '0.75rem', opacity: 0.6, fontStyle: 'italic', borderTop: `1px solid ${hudBorder}`, paddingTop: '10px' }}>
+              Ctrl+Drag to rotate perspective. Geo-fenced to Continental US.
+            </div>
+            
+            <div style={{ color: hudTextMuted, fontSize: '0.75rem', fontWeight: 500 }}>
+              {showHeatmap ? `${heatmapLabel} • ${heatDensityPoints.length.toLocaleString()} active signals` : 'Heatmap Layer Deactivated'}
+            </div>
+          </div>
+        )}
       </div>
       
       {/* Vignette Overlay */}

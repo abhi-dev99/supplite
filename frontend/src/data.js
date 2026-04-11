@@ -1,61 +1,2816 @@
+// Auto-generated from src/build_frontend_data.py
+// Contains ML Predictions injected from predictions.json
+
 export const mockSkus = [
   {
-    id: "PB-BLANKET-42",
-    name: "Pottery Barn Throw Blanket Cognac",
-    brand: "Pottery Barn",
-    category: "Bedding",
-    stock: 6200,
-    daysOfSupply: 34,
-    riskLevel: "STOCKOUT_RISK",
-    signal: "Search spike +840%",
-    action: "Expedite Order"
+    "id": "PB-BLANKET-42",
+    "name": "Pottery Barn Throw Blanket, Cognac",
+    "brand": "Pottery Barn",
+    "category": "Bedding",
+    "stock": 32042,
+    "onOrder": 7012,
+    "daysOfSupply": 131,
+    "leadTimeDays": 70,
+    "riskLevel": "STOCKOUT_RISK",
+    "signal": "Search spike +35%",
+    "action": "Expedite supplementary order",
+    "price": 89.0,
+    "mlForecast60d": 18857,
+    "anomalyFlag": false,
+    "mlReasoning": "Los Angeles Metro: Days of supply (28) < lead time (70.0d). Forecast shortfall: 1694 units over 60d."
   },
   {
-    id: "PB-PILLOW-71",
-    name: "Decorative Pillow Sage",
-    brand: "Pottery Barn",
-    category: "Decor",
-    stock: 4200,
-    daysOfSupply: 89,
-    riskLevel: "OVERSTOCK_RISK",
-    signal: "Search decline -23%",
-    action: "Markdown Variant"
+    "id": "PB-PILLOW-71",
+    "name": "Pottery Barn Decorative Pillow, Sage Green",
+    "brand": "Pottery Barn",
+    "category": "Decor",
+    "stock": 25140,
+    "onOrder": 6696,
+    "daysOfSupply": 154,
+    "leadTimeDays": 56,
+    "riskLevel": "OK",
+    "signal": "Demand declining, excess inventory",
+    "action": "Pause replenishment; evaluate markdown",
+    "price": 65.0,
+    "mlForecast60d": 14053,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=34.8). Supply coverage: 120d vs 56.0d lead time."
   },
   {
-    id: "PB-BED-FRAME-33",
-    name: "Bedroom Set King",
-    brand: "Pottery Barn",
-    category: "Furniture",
-    stock: 800,
-    daysOfSupply: 65,
-    riskLevel: "WATCH",
-    signal: "Housing permits +34%",
-    action: "Pre-position 400"
+    "id": "PB-BED-FRAME-33",
+    "name": "Pottery Barn Bedroom Set, King",
+    "brand": "Pottery Barn",
+    "category": "Furniture",
+    "stock": 7600,
+    "onOrder": 2092,
+    "daysOfSupply": 140,
+    "leadTimeDays": 68,
+    "riskLevel": "OK",
+    "signal": "Housing permits +34% in Phoenix",
+    "action": "Pre-position to Litchfield Park DC",
+    "price": 1899.0,
+    "mlForecast60d": 4784,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=39.9). Supply coverage: 127d vs 68.0d lead time."
   },
   {
-    id: "WE-LAMP-19",
-    name: "West Elm Table Lamp",
-    brand: "West Elm",
-    category: "Lighting",
-    stock: 890,
-    daysOfSupply: 65,
-    riskLevel: "OK",
-    signal: "Baseline",
-    action: "None"
+    "id": "PB-SOFA-88",
+    "name": "Pottery Barn Sectional Sofa, Ivory",
+    "brand": "Pottery Barn",
+    "category": "Furniture",
+    "stock": 6680,
+    "onOrder": 2087,
+    "daysOfSupply": 180,
+    "leadTimeDays": 84,
+    "riskLevel": "OK",
+    "signal": "Multi-signal convergence detected",
+    "action": "Increase order quantity 20%",
+    "price": 3499.0,
+    "mlForecast60d": 3288,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=41.6). Supply coverage: 189d vs 84.0d lead time."
+  },
+  {
+    "id": "PB-QUILT-15",
+    "name": "Pottery Barn Handstitched Quilt, Ivory",
+    "brand": "Pottery Barn",
+    "category": "Bedding",
+    "stock": 18070,
+    "onOrder": 2580,
+    "daysOfSupply": 224,
+    "leadTimeDays": 56,
+    "riskLevel": "OK",
+    "signal": "Post-holiday demand decline",
+    "action": "Cancel pending orders; markdown 15%",
+    "price": 299.0,
+    "mlForecast60d": 5696,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=33.9). Supply coverage: 224d vs 56.0d lead time."
+  },
+  {
+    "id": "PB-MIRROR-22",
+    "name": "Pottery Barn Oversized Wall Mirror, Gold",
+    "brand": "Pottery Barn",
+    "category": "Decor",
+    "stock": 15607,
+    "onOrder": 3978,
+    "daysOfSupply": 142,
+    "leadTimeDays": 63,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 449.0,
+    "mlForecast60d": 9111,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=38.0). Supply coverage: 154d vs 63.0d lead time."
+  },
+  {
+    "id": "PB-DINSET-09",
+    "name": "Pottery Barn Farmhouse Dining Table, Oak",
+    "brand": "Pottery Barn",
+    "category": "Furniture",
+    "stock": 5003,
+    "onOrder": 1883,
+    "daysOfSupply": 151,
+    "leadTimeDays": 77,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 2299.0,
+    "mlForecast60d": 3179,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=36.9). Supply coverage: 128d vs 77.0d lead time."
+  },
+  {
+    "id": "PB-RUG-44",
+    "name": "Pottery Barn Hand-Knotted Area Rug, 8x10",
+    "brand": "Pottery Barn",
+    "category": "Decor",
+    "stock": 4015,
+    "onOrder": 963,
+    "daysOfSupply": 141,
+    "leadTimeDays": 70,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 1299.0,
+    "mlForecast60d": 2405,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=37.1). Supply coverage: 123d vs 70.0d lead time."
+  },
+  {
+    "id": "PB-LAMP-61",
+    "name": "Pottery Barn Ceramic Table Lamp, White",
+    "brand": "Pottery Barn",
+    "category": "Lighting",
+    "stock": 9924,
+    "onOrder": 2590,
+    "daysOfSupply": 88,
+    "leadTimeDays": 42,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 189.0,
+    "mlForecast60d": 9170,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=37.6). Supply coverage: 102d vs 42.0d lead time."
+  },
+  {
+    "id": "PB-CANDLE-77",
+    "name": "Pottery Barn Luxury Candle Set, Cedar",
+    "brand": "Pottery Barn",
+    "category": "Decor",
+    "stock": 11068,
+    "onOrder": 3085,
+    "daysOfSupply": 77,
+    "leadTimeDays": 35,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 79.0,
+    "mlForecast60d": 11913,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=38.7). Supply coverage: 78d vs 35.0d lead time."
+  },
+  {
+    "id": "PB-PLANTER-30",
+    "name": "Pottery Barn Indoor Planter, Terracotta",
+    "brand": "Pottery Barn",
+    "category": "Outdoor",
+    "stock": 10646,
+    "onOrder": 2374,
+    "daysOfSupply": 89,
+    "leadTimeDays": 42,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 129.0,
+    "mlForecast60d": 6606,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=41.9). Supply coverage: 98d vs 42.0d lead time."
+  },
+  {
+    "id": "PB-THROW-55",
+    "name": "Pottery Barn Cashmere Throw, Oatmeal",
+    "brand": "Pottery Barn",
+    "category": "Bedding",
+    "stock": 8304,
+    "onOrder": 2692,
+    "daysOfSupply": 113,
+    "leadTimeDays": 56,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 249.0,
+    "mlForecast60d": 6464,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=37.0). Supply coverage: 150d vs 56.0d lead time."
+  },
+  {
+    "id": "WE-LAMP-19",
+    "name": "West Elm Arc Floor Lamp, Brass",
+    "brand": "West Elm",
+    "category": "Lighting",
+    "stock": 7771,
+    "onOrder": 2005,
+    "daysOfSupply": 102,
+    "leadTimeDays": 49,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 399.0,
+    "mlForecast60d": 6586,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=37.3). Supply coverage: 80d vs 49.0d lead time."
+  },
+  {
+    "id": "WE-SOFA-23",
+    "name": "West Elm Mid-Century Sofa, Velvet Blue",
+    "brand": "West Elm",
+    "category": "Furniture",
+    "stock": 4814,
+    "onOrder": 1435,
+    "daysOfSupply": 138,
+    "leadTimeDays": 70,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 1899.0,
+    "mlForecast60d": 3224,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=39.1). Supply coverage: 104d vs 70.0d lead time."
+  },
+  {
+    "id": "WE-RUG-15",
+    "name": "West Elm Geometric Area Rug, 6x9",
+    "brand": "West Elm",
+    "category": "Decor",
+    "stock": 8498,
+    "onOrder": 1215,
+    "daysOfSupply": 168,
+    "leadTimeDays": 42,
+    "riskLevel": "WATCH",
+    "signal": "Post-holiday demand decline",
+    "action": "Cancel pending orders; markdown 15%",
+    "price": 299.0,
+    "mlForecast60d": 3892,
+    "anomalyFlag": true,
+    "mlReasoning": "Denver Metro: Velocity anomaly detected (composite=37.4). Monitoring for trend confirmation."
+  },
+  {
+    "id": "WE-SHELF-31",
+    "name": "West Elm Floating Wall Shelf, Walnut",
+    "brand": "West Elm",
+    "category": "Furniture",
+    "stock": 10507,
+    "onOrder": 2230,
+    "daysOfSupply": 68,
+    "leadTimeDays": 35,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 149.0,
+    "mlForecast60d": 11049,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=38.0). Supply coverage: 59d vs 35.0d lead time."
+  },
+  {
+    "id": "WE-DUVET-40",
+    "name": "West Elm Linen Duvet Cover, Sand",
+    "brand": "West Elm",
+    "category": "Bedding",
+    "stock": 10812,
+    "onOrder": 2423,
+    "daysOfSupply": 99,
+    "leadTimeDays": 49,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 199.0,
+    "mlForecast60d": 8623,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=39.0). Supply coverage: 116d vs 49.0d lead time."
+  },
+  {
+    "id": "WE-CHAIR-52",
+    "name": "West Elm Accent Chair, Boucle",
+    "brand": "West Elm",
+    "category": "Furniture",
+    "stock": 6494,
+    "onOrder": 1784,
+    "daysOfSupply": 139,
+    "leadTimeDays": 63,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 799.0,
+    "mlForecast60d": 4090,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=36.4). Supply coverage: 124d vs 63.0d lead time."
+  },
+  {
+    "id": "WE-PLNTR-18",
+    "name": "West Elm Ceramic Planter Set, Speckled",
+    "brand": "West Elm",
+    "category": "Outdoor",
+    "stock": 11999,
+    "onOrder": 3772,
+    "daysOfSupply": 55,
+    "leadTimeDays": 28,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 89.0,
+    "mlForecast60d": 12850,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=41.6). Supply coverage: 46d vs 28.0d lead time."
+  },
+  {
+    "id": "WE-CLOCK-66",
+    "name": "West Elm Oversized Wall Clock, Black",
+    "brand": "West Elm",
+    "category": "Decor",
+    "stock": 7257,
+    "onOrder": 1988,
+    "daysOfSupply": 71,
+    "leadTimeDays": 35,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 129.0,
+    "mlForecast60d": 8298,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=39.2). Supply coverage: 50d vs 35.0d lead time."
+  },
+  {
+    "id": "WS-MIXER-05",
+    "name": "Williams Sonoma Stand Mixer, Heritage Red",
+    "brand": "Williams Sonoma",
+    "category": "Kitchen",
+    "stock": 8602,
+    "onOrder": 2056,
+    "daysOfSupply": 87,
+    "leadTimeDays": 49,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 449.0,
+    "mlForecast60d": 8671,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=35.4). Supply coverage: 96d vs 49.0d lead time."
+  },
+  {
+    "id": "WS-KNIFE-60",
+    "name": "Williams Sonoma Chef Knife Set, Damascus",
+    "brand": "Williams Sonoma",
+    "category": "Kitchen",
+    "stock": 3794,
+    "onOrder": 1171,
+    "daysOfSupply": 87,
+    "leadTimeDays": 42,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 349.0,
+    "mlForecast60d": 4458,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=38.8). Supply coverage: 81d vs 42.0d lead time."
+  },
+  {
+    "id": "WS-DUTCH-64",
+    "name": "Williams Sonoma Dutch Oven, Le Creuset Blue",
+    "brand": "Williams Sonoma",
+    "category": "Kitchen",
+    "stock": 4878,
+    "onOrder": 1415,
+    "daysOfSupply": 82,
+    "leadTimeDays": 42,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 399.0,
+    "mlForecast60d": 5338,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=36.9). Supply coverage: 102d vs 42.0d lead time."
+  },
+  {
+    "id": "WS-WINE-65",
+    "name": "Williams Sonoma Crystal Wine Glass Set",
+    "brand": "Williams Sonoma",
+    "category": "Entertaining",
+    "stock": 8966,
+    "onOrder": 2109,
+    "daysOfSupply": 71,
+    "leadTimeDays": 35,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 129.0,
+    "mlForecast60d": 10012,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=36.7). Supply coverage: 53d vs 35.0d lead time."
+  },
+  {
+    "id": "WS-BOARD-68",
+    "name": "Williams Sonoma Artisan Cheese Board, Olive",
+    "brand": "Williams Sonoma",
+    "category": "Entertaining",
+    "stock": 1304,
+    "onOrder": 446,
+    "daysOfSupply": 58,
+    "leadTimeDays": 28,
+    "riskLevel": "OVERSTOCK_RISK",
+    "signal": "Sudden demand collapse",
+    "action": "Halt all replenishment",
+    "price": 89.0,
+    "mlForecast60d": 4364,
+    "anomalyFlag": true,
+    "mlReasoning": "Atlanta Metro: Days of supply (98) = 3.5x lead time. Demand declining -26.5% MoM. Excess: ~-22 units."
+  },
+  {
+    "id": "PBK-CRIB-12",
+    "name": "Pottery Barn Kids Convertible Crib, White",
+    "brand": "Pottery Barn Kids",
+    "category": "Furniture",
+    "stock": 4098,
+    "onOrder": 919,
+    "daysOfSupply": 117,
+    "leadTimeDays": 56,
+    "riskLevel": "OK",
+    "signal": "Housing permits +34% in Denver",
+    "action": "Pre-position to Denver Hub",
+    "price": 699.0,
+    "mlForecast60d": 2903,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=37.6). Supply coverage: 104d vs 56.0d lead time."
+  },
+  {
+    "id": "PBK-BUNK-22",
+    "name": "Pottery Barn Kids Bunk Bed, Natural Wood",
+    "brand": "Pottery Barn Kids",
+    "category": "Furniture",
+    "stock": 167,
+    "onOrder": 52,
+    "daysOfSupply": 122,
+    "leadTimeDays": 63,
+    "riskLevel": "OVERSTOCK_RISK",
+    "signal": "Sudden demand collapse",
+    "action": "Halt all replenishment",
+    "price": 1299.0,
+    "mlForecast60d": 1128,
+    "anomalyFlag": true,
+    "mlReasoning": "Phoenix Metro: Days of supply (220) = 3.5x lead time. Demand declining -77.8% MoM. Excess: ~-74 units."
+  },
+  {
+    "id": "PBK-QUILT-08",
+    "name": "Pottery Barn Kids Kids Quilt Set, Rainbow",
+    "brand": "Pottery Barn Kids",
+    "category": "Bedding",
+    "stock": 6441,
+    "onOrder": 2062,
+    "daysOfSupply": 86,
+    "leadTimeDays": 42,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 149.0,
+    "mlForecast60d": 6752,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=37.4). Supply coverage: 107d vs 42.0d lead time."
+  },
+  {
+    "id": "RJ-PENDANT-11",
+    "name": "Rejuvenation Industrial Pendant, Matte Black",
+    "brand": "Rejuvenation",
+    "category": "Lighting",
+    "stock": 7966,
+    "onOrder": 2133,
+    "daysOfSupply": 106,
+    "leadTimeDays": 49,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 329.0,
+    "mlForecast60d": 6583,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=38.6). Supply coverage: 96d vs 49.0d lead time."
+  },
+  {
+    "id": "RJ-SCONCE-04",
+    "name": "Rejuvenation Brass Wall Sconce, Pair",
+    "brand": "Rejuvenation",
+    "category": "Lighting",
+    "stock": 5395,
+    "onOrder": 1682,
+    "daysOfSupply": 84,
+    "leadTimeDays": 42,
+    "riskLevel": "OK",
+    "signal": "Stable demand pattern",
+    "action": "Maintain current replenishment",
+    "price": 249.0,
+    "mlForecast60d": 5931,
+    "anomalyFlag": false,
+    "mlReasoning": "Atlanta Metro: Stable demand (composite=36.1). Supply coverage: 82d vs 42.0d lead time."
   }
 ];
 
 export const mockChartData = [
-  { name: 'Week -8', sales: 120, search: 12, permits: 100 },
-  { name: 'Week -7', sales: 118, search: 11, permits: 102 },
-  { name: 'Week -6', sales: 122, search: 13, permits: 105 },
-  { name: 'Week -5', sales: 119, search: 10, permits: 101 },
-  { name: 'Week -4', sales: 125, search: 14, permits: 110 },
-  { name: 'Week -3', sales: 130, search: 15, permits: 115 },
-  { name: 'Week -2', sales: 128, search: 22, permits: 114 },
-  { name: 'Week -1', sales: 160, search: 45, permits: 120 },
-  { name: 'Week 0', sales: 412, search: 89, permits: 121 },
+  {
+    "name": "W-11",
+    "sales": 209,
+    "search": 14.2,
+    "permits": 2363
+  },
+  {
+    "name": "W-10",
+    "sales": 230,
+    "search": 16.0,
+    "permits": 2363
+  },
+  {
+    "name": "W-9",
+    "sales": 224,
+    "search": 14.7,
+    "permits": 2530
+  },
+  {
+    "name": "W-8",
+    "sales": 253,
+    "search": 16.1,
+    "permits": 2558
+  },
+  {
+    "name": "W-7",
+    "sales": 283,
+    "search": 51.8,
+    "permits": 2558
+  },
+  {
+    "name": "W-6",
+    "sales": 473,
+    "search": 61.0,
+    "permits": 2558
+  },
+  {
+    "name": "W-5",
+    "sales": 931,
+    "search": 42.8,
+    "permits": 3202
+  },
+  {
+    "name": "W-4",
+    "sales": 762,
+    "search": 25.3,
+    "permits": 3309
+  },
+  {
+    "name": "W-3",
+    "sales": 492,
+    "search": 19.9,
+    "permits": 3309
+  },
+  {
+    "name": "W-2",
+    "sales": 335,
+    "search": 20.2,
+    "permits": 3309
+  },
+  {
+    "name": "W-1",
+    "sales": 301,
+    "search": 21.9,
+    "permits": 3702
+  },
+  {
+    "name": "Current",
+    "sales": 289,
+    "search": 21.4,
+    "permits": 4226
+  }
 ];
+
+export const allChartData = {
+  "PB-BLANKET-42": [
+    {
+      "name": "W-11",
+      "sales": 209,
+      "search": 14.2,
+      "permits": 2363
+    },
+    {
+      "name": "W-10",
+      "sales": 230,
+      "search": 16.0,
+      "permits": 2363
+    },
+    {
+      "name": "W-9",
+      "sales": 224,
+      "search": 14.7,
+      "permits": 2530
+    },
+    {
+      "name": "W-8",
+      "sales": 253,
+      "search": 16.1,
+      "permits": 2558
+    },
+    {
+      "name": "W-7",
+      "sales": 283,
+      "search": 51.8,
+      "permits": 2558
+    },
+    {
+      "name": "W-6",
+      "sales": 473,
+      "search": 61.0,
+      "permits": 2558
+    },
+    {
+      "name": "W-5",
+      "sales": 931,
+      "search": 42.8,
+      "permits": 3202
+    },
+    {
+      "name": "W-4",
+      "sales": 762,
+      "search": 25.3,
+      "permits": 3309
+    },
+    {
+      "name": "W-3",
+      "sales": 492,
+      "search": 19.9,
+      "permits": 3309
+    },
+    {
+      "name": "W-2",
+      "sales": 335,
+      "search": 20.2,
+      "permits": 3309
+    },
+    {
+      "name": "W-1",
+      "sales": 301,
+      "search": 21.9,
+      "permits": 3702
+    },
+    {
+      "name": "Current",
+      "sales": 289,
+      "search": 21.4,
+      "permits": 4226
+    }
+  ],
+  "PB-PILLOW-71": [
+    {
+      "name": "W-11",
+      "sales": 311,
+      "search": 18.7,
+      "permits": 2894
+    },
+    {
+      "name": "W-10",
+      "sales": 286,
+      "search": 18.2,
+      "permits": 2894
+    },
+    {
+      "name": "W-9",
+      "sales": 306,
+      "search": 16.0,
+      "permits": 3033
+    },
+    {
+      "name": "W-8",
+      "sales": 295,
+      "search": 16.3,
+      "permits": 3056
+    },
+    {
+      "name": "W-7",
+      "sales": 285,
+      "search": 13.1,
+      "permits": 3056
+    },
+    {
+      "name": "W-6",
+      "sales": 268,
+      "search": 21.8,
+      "permits": 3056
+    },
+    {
+      "name": "W-5",
+      "sales": 282,
+      "search": 16.0,
+      "permits": 3732
+    },
+    {
+      "name": "W-4",
+      "sales": 284,
+      "search": 16.6,
+      "permits": 3845
+    },
+    {
+      "name": "W-3",
+      "sales": 264,
+      "search": 15.8,
+      "permits": 3845
+    },
+    {
+      "name": "W-2",
+      "sales": 262,
+      "search": 20.8,
+      "permits": 3845
+    },
+    {
+      "name": "W-1",
+      "sales": 283,
+      "search": 17.2,
+      "permits": 4333
+    },
+    {
+      "name": "Current",
+      "sales": 283,
+      "search": 16.4,
+      "permits": 4983
+    }
+  ],
+  "PB-BED-FRAME-33": [
+    {
+      "name": "W-11",
+      "sales": 29,
+      "search": 23.2,
+      "permits": 5214
+    },
+    {
+      "name": "W-10",
+      "sales": 33,
+      "search": 22.4,
+      "permits": 5214
+    },
+    {
+      "name": "W-9",
+      "sales": 32,
+      "search": 23.3,
+      "permits": 5525
+    },
+    {
+      "name": "W-8",
+      "sales": 35,
+      "search": 28.5,
+      "permits": 5577
+    },
+    {
+      "name": "W-7",
+      "sales": 38,
+      "search": 27.6,
+      "permits": 5577
+    },
+    {
+      "name": "W-6",
+      "sales": 34,
+      "search": 31.0,
+      "permits": 5577
+    },
+    {
+      "name": "W-5",
+      "sales": 46,
+      "search": 38.4,
+      "permits": 7155
+    },
+    {
+      "name": "W-4",
+      "sales": 53,
+      "search": 34.7,
+      "permits": 7418
+    },
+    {
+      "name": "W-3",
+      "sales": 49,
+      "search": 42.0,
+      "permits": 7418
+    },
+    {
+      "name": "W-2",
+      "sales": 54,
+      "search": 35.6,
+      "permits": 7418
+    },
+    {
+      "name": "W-1",
+      "sales": 58,
+      "search": 38.6,
+      "permits": 7873
+    },
+    {
+      "name": "Current",
+      "sales": 58,
+      "search": 40.4,
+      "permits": 8480
+    }
+  ],
+  "PB-SOFA-88": [
+    {
+      "name": "W-11",
+      "sales": 46,
+      "search": 28.4,
+      "permits": 1242
+    },
+    {
+      "name": "W-10",
+      "sales": 50,
+      "search": 27.6,
+      "permits": 1242
+    },
+    {
+      "name": "W-9",
+      "sales": 50,
+      "search": 34.7,
+      "permits": 1296
+    },
+    {
+      "name": "W-8",
+      "sales": 57,
+      "search": 35.3,
+      "permits": 1305
+    },
+    {
+      "name": "W-7",
+      "sales": 64,
+      "search": 38.9,
+      "permits": 1305
+    },
+    {
+      "name": "W-6",
+      "sales": 61,
+      "search": 39.0,
+      "permits": 1305
+    },
+    {
+      "name": "W-5",
+      "sales": 76,
+      "search": 45.2,
+      "permits": 1650
+    },
+    {
+      "name": "W-4",
+      "sales": 74,
+      "search": 45.0,
+      "permits": 1707
+    },
+    {
+      "name": "W-3",
+      "sales": 78,
+      "search": 42.1,
+      "permits": 1707
+    },
+    {
+      "name": "W-2",
+      "sales": 80,
+      "search": 47.3,
+      "permits": 1707
+    },
+    {
+      "name": "W-1",
+      "sales": 77,
+      "search": 47.9,
+      "permits": 1897
+    },
+    {
+      "name": "Current",
+      "sales": 84,
+      "search": 44.8,
+      "permits": 2150
+    }
+  ],
+  "PB-QUILT-15": [
+    {
+      "name": "W-11",
+      "sales": 83,
+      "search": 9.9,
+      "permits": 2199
+    },
+    {
+      "name": "W-10",
+      "sales": 85,
+      "search": 15.1,
+      "permits": 2199
+    },
+    {
+      "name": "W-9",
+      "sales": 79,
+      "search": 14.3,
+      "permits": 2152
+    },
+    {
+      "name": "W-8",
+      "sales": 84,
+      "search": 14.7,
+      "permits": 2144
+    },
+    {
+      "name": "W-7",
+      "sales": 88,
+      "search": 18.1,
+      "permits": 2144
+    },
+    {
+      "name": "W-6",
+      "sales": 81,
+      "search": 11.9,
+      "permits": 2144
+    },
+    {
+      "name": "W-5",
+      "sales": 85,
+      "search": 13.2,
+      "permits": 2867
+    },
+    {
+      "name": "W-4",
+      "sales": 80,
+      "search": 14.1,
+      "permits": 2988
+    },
+    {
+      "name": "W-3",
+      "sales": 82,
+      "search": 13.3,
+      "permits": 2988
+    },
+    {
+      "name": "W-2",
+      "sales": 75,
+      "search": 12.6,
+      "permits": 2988
+    },
+    {
+      "name": "W-1",
+      "sales": 82,
+      "search": 12.4,
+      "permits": 3341
+    },
+    {
+      "name": "Current",
+      "sales": 76,
+      "search": 11.8,
+      "permits": 3811
+    }
+  ],
+  "PB-MIRROR-22": [
+    {
+      "name": "W-11",
+      "sales": 86,
+      "search": 23.2,
+      "permits": 3967
+    },
+    {
+      "name": "W-10",
+      "sales": 84,
+      "search": 26.1,
+      "permits": 3967
+    },
+    {
+      "name": "W-9",
+      "sales": 83,
+      "search": 24.4,
+      "permits": 4295
+    },
+    {
+      "name": "W-8",
+      "sales": 89,
+      "search": 23.3,
+      "permits": 4350
+    },
+    {
+      "name": "W-7",
+      "sales": 84,
+      "search": 25.1,
+      "permits": 4350
+    },
+    {
+      "name": "W-6",
+      "sales": 89,
+      "search": 28.5,
+      "permits": 4350
+    },
+    {
+      "name": "W-5",
+      "sales": 97,
+      "search": 23.7,
+      "permits": 5923
+    },
+    {
+      "name": "W-4",
+      "sales": 94,
+      "search": 28.0,
+      "permits": 6185
+    },
+    {
+      "name": "W-3",
+      "sales": 95,
+      "search": 31.5,
+      "permits": 6185
+    },
+    {
+      "name": "W-2",
+      "sales": 98,
+      "search": 32.1,
+      "permits": 6185
+    },
+    {
+      "name": "W-1",
+      "sales": 115,
+      "search": 33.1,
+      "permits": 6645
+    },
+    {
+      "name": "Current",
+      "sales": 122,
+      "search": 38.4,
+      "permits": 7258
+    }
+  ],
+  "PB-DINSET-09": [
+    {
+      "name": "W-11",
+      "sales": 30,
+      "search": 23.1,
+      "permits": 2178
+    },
+    {
+      "name": "W-10",
+      "sales": 28,
+      "search": 24.7,
+      "permits": 2178
+    },
+    {
+      "name": "W-9",
+      "sales": 30,
+      "search": 24.6,
+      "permits": 2420
+    },
+    {
+      "name": "W-8",
+      "sales": 32,
+      "search": 25.8,
+      "permits": 2460
+    },
+    {
+      "name": "W-7",
+      "sales": 34,
+      "search": 28.5,
+      "permits": 2460
+    },
+    {
+      "name": "W-6",
+      "sales": 30,
+      "search": 26.5,
+      "permits": 2460
+    },
+    {
+      "name": "W-5",
+      "sales": 33,
+      "search": 28.8,
+      "permits": 2876
+    },
+    {
+      "name": "W-4",
+      "sales": 35,
+      "search": 24.2,
+      "permits": 2945
+    },
+    {
+      "name": "W-3",
+      "sales": 36,
+      "search": 25.8,
+      "permits": 2945
+    },
+    {
+      "name": "W-2",
+      "sales": 33,
+      "search": 22.7,
+      "permits": 2945
+    },
+    {
+      "name": "W-1",
+      "sales": 35,
+      "search": 23.8,
+      "permits": 3256
+    },
+    {
+      "name": "Current",
+      "sales": 33,
+      "search": 22.6,
+      "permits": 3670
+    }
+  ],
+  "PB-RUG-44": [
+    {
+      "name": "W-11",
+      "sales": 24,
+      "search": 24.5,
+      "permits": 1631
+    },
+    {
+      "name": "W-10",
+      "sales": 26,
+      "search": 23.0,
+      "permits": 1631
+    },
+    {
+      "name": "W-9",
+      "sales": 24,
+      "search": 22.1,
+      "permits": 1564
+    },
+    {
+      "name": "W-8",
+      "sales": 25,
+      "search": 23.0,
+      "permits": 1553
+    },
+    {
+      "name": "W-7",
+      "sales": 23,
+      "search": 24.7,
+      "permits": 1553
+    },
+    {
+      "name": "W-6",
+      "sales": 27,
+      "search": 25.0,
+      "permits": 1553
+    },
+    {
+      "name": "W-5",
+      "sales": 25,
+      "search": 27.5,
+      "permits": 2251
+    },
+    {
+      "name": "W-4",
+      "sales": 30,
+      "search": 27.5,
+      "permits": 2367
+    },
+    {
+      "name": "W-3",
+      "sales": 30,
+      "search": 26.9,
+      "permits": 2367
+    },
+    {
+      "name": "W-2",
+      "sales": 28,
+      "search": 32.4,
+      "permits": 2367
+    },
+    {
+      "name": "W-1",
+      "sales": 32,
+      "search": 27.3,
+      "permits": 2562
+    },
+    {
+      "name": "Current",
+      "sales": 32,
+      "search": 33.5,
+      "permits": 2822
+    }
+  ],
+  "PB-LAMP-61": [
+    {
+      "name": "W-11",
+      "sales": 83,
+      "search": 23.3,
+      "permits": 3309
+    },
+    {
+      "name": "W-10",
+      "sales": 82,
+      "search": 25.5,
+      "permits": 3309
+    },
+    {
+      "name": "W-9",
+      "sales": 84,
+      "search": 21.8,
+      "permits": 3962
+    },
+    {
+      "name": "W-8",
+      "sales": 85,
+      "search": 25.5,
+      "permits": 4071
+    },
+    {
+      "name": "W-7",
+      "sales": 84,
+      "search": 20.9,
+      "permits": 4071
+    },
+    {
+      "name": "W-6",
+      "sales": 80,
+      "search": 29.3,
+      "permits": 4071
+    },
+    {
+      "name": "W-5",
+      "sales": 92,
+      "search": 23.5,
+      "permits": 4937
+    },
+    {
+      "name": "W-4",
+      "sales": 96,
+      "search": 30.4,
+      "permits": 5081
+    },
+    {
+      "name": "W-3",
+      "sales": 98,
+      "search": 24.2,
+      "permits": 5081
+    },
+    {
+      "name": "W-2",
+      "sales": 92,
+      "search": 26.8,
+      "permits": 5081
+    },
+    {
+      "name": "W-1",
+      "sales": 93,
+      "search": 28.3,
+      "permits": 5894
+    },
+    {
+      "name": "Current",
+      "sales": 103,
+      "search": 23.7,
+      "permits": 6977
+    }
+  ],
+  "PB-CANDLE-77": [
+    {
+      "name": "W-11",
+      "sales": 194,
+      "search": 14.0,
+      "permits": 2894
+    },
+    {
+      "name": "W-10",
+      "sales": 191,
+      "search": 16.2,
+      "permits": 2894
+    },
+    {
+      "name": "W-9",
+      "sales": 193,
+      "search": 19.9,
+      "permits": 3033
+    },
+    {
+      "name": "W-8",
+      "sales": 186,
+      "search": 13.7,
+      "permits": 3056
+    },
+    {
+      "name": "W-7",
+      "sales": 192,
+      "search": 17.7,
+      "permits": 3056
+    },
+    {
+      "name": "W-6",
+      "sales": 196,
+      "search": 15.5,
+      "permits": 3056
+    },
+    {
+      "name": "W-5",
+      "sales": 211,
+      "search": 18.0,
+      "permits": 3732
+    },
+    {
+      "name": "W-4",
+      "sales": 223,
+      "search": 16.2,
+      "permits": 3845
+    },
+    {
+      "name": "W-3",
+      "sales": 213,
+      "search": 14.4,
+      "permits": 3845
+    },
+    {
+      "name": "W-2",
+      "sales": 213,
+      "search": 21.4,
+      "permits": 3845
+    },
+    {
+      "name": "W-1",
+      "sales": 252,
+      "search": 19.6,
+      "permits": 4333
+    },
+    {
+      "name": "Current",
+      "sales": 277,
+      "search": 15.5,
+      "permits": 4983
+    }
+  ],
+  "PB-PLANTER-30": [
+    {
+      "name": "W-11",
+      "sales": 31,
+      "search": 17.6,
+      "permits": 2976
+    },
+    {
+      "name": "W-10",
+      "sales": 30,
+      "search": 22.9,
+      "permits": 2976
+    },
+    {
+      "name": "W-9",
+      "sales": 39,
+      "search": 22.1,
+      "permits": 3086
+    },
+    {
+      "name": "W-8",
+      "sales": 41,
+      "search": 25.0,
+      "permits": 3104
+    },
+    {
+      "name": "W-7",
+      "sales": 43,
+      "search": 31.5,
+      "permits": 3104
+    },
+    {
+      "name": "W-6",
+      "sales": 39,
+      "search": 50.2,
+      "permits": 3104
+    },
+    {
+      "name": "W-5",
+      "sales": 86,
+      "search": 50.2,
+      "permits": 4210
+    },
+    {
+      "name": "W-4",
+      "sales": 89,
+      "search": 56.1,
+      "permits": 4394
+    },
+    {
+      "name": "W-3",
+      "sales": 93,
+      "search": 49.3,
+      "permits": 4394
+    },
+    {
+      "name": "W-2",
+      "sales": 91,
+      "search": 58.2,
+      "permits": 4394
+    },
+    {
+      "name": "W-1",
+      "sales": 97,
+      "search": 55.5,
+      "permits": 4961
+    },
+    {
+      "name": "Current",
+      "sales": 105,
+      "search": 61.2,
+      "permits": 5717
+    }
+  ],
+  "PB-THROW-55": [
+    {
+      "name": "W-11",
+      "sales": 88,
+      "search": 23.6,
+      "permits": 1660
+    },
+    {
+      "name": "W-10",
+      "sales": 89,
+      "search": 21.8,
+      "permits": 1660
+    },
+    {
+      "name": "W-9",
+      "sales": 92,
+      "search": 27.1,
+      "permits": 1830
+    },
+    {
+      "name": "W-8",
+      "sales": 95,
+      "search": 23.8,
+      "permits": 1858
+    },
+    {
+      "name": "W-7",
+      "sales": 98,
+      "search": 25.0,
+      "permits": 1858
+    },
+    {
+      "name": "W-6",
+      "sales": 88,
+      "search": 25.3,
+      "permits": 1858
+    },
+    {
+      "name": "W-5",
+      "sales": 96,
+      "search": 26.1,
+      "permits": 2351
+    },
+    {
+      "name": "W-4",
+      "sales": 98,
+      "search": 28.5,
+      "permits": 2433
+    },
+    {
+      "name": "W-3",
+      "sales": 103,
+      "search": 25.9,
+      "permits": 2433
+    },
+    {
+      "name": "W-2",
+      "sales": 101,
+      "search": 25.8,
+      "permits": 2433
+    },
+    {
+      "name": "W-1",
+      "sales": 105,
+      "search": 27.4,
+      "permits": 2619
+    },
+    {
+      "name": "Current",
+      "sales": 109,
+      "search": 28.7,
+      "permits": 2868
+    }
+  ],
+  "WE-LAMP-19": [
+    {
+      "name": "W-11",
+      "sales": 69,
+      "search": 25.2,
+      "permits": 2199
+    },
+    {
+      "name": "W-10",
+      "sales": 69,
+      "search": 23.4,
+      "permits": 2199
+    },
+    {
+      "name": "W-9",
+      "sales": 75,
+      "search": 23.7,
+      "permits": 2152
+    },
+    {
+      "name": "W-8",
+      "sales": 74,
+      "search": 21.4,
+      "permits": 2144
+    },
+    {
+      "name": "W-7",
+      "sales": 71,
+      "search": 25.1,
+      "permits": 2144
+    },
+    {
+      "name": "W-6",
+      "sales": 70,
+      "search": 26.1,
+      "permits": 2144
+    },
+    {
+      "name": "W-5",
+      "sales": 77,
+      "search": 23.7,
+      "permits": 2867
+    },
+    {
+      "name": "W-4",
+      "sales": 76,
+      "search": 29.9,
+      "permits": 2988
+    },
+    {
+      "name": "W-3",
+      "sales": 87,
+      "search": 28.0,
+      "permits": 2988
+    },
+    {
+      "name": "W-2",
+      "sales": 83,
+      "search": 28.9,
+      "permits": 2988
+    },
+    {
+      "name": "W-1",
+      "sales": 84,
+      "search": 21.7,
+      "permits": 3341
+    },
+    {
+      "name": "Current",
+      "sales": 83,
+      "search": 24.0,
+      "permits": 3811
+    }
+  ],
+  "WE-SOFA-23": [
+    {
+      "name": "W-11",
+      "sales": 41,
+      "search": 28.4,
+      "permits": 2363
+    },
+    {
+      "name": "W-10",
+      "sales": 40,
+      "search": 28.9,
+      "permits": 2363
+    },
+    {
+      "name": "W-9",
+      "sales": 42,
+      "search": 28.9,
+      "permits": 2530
+    },
+    {
+      "name": "W-8",
+      "sales": 41,
+      "search": 31.5,
+      "permits": 2558
+    },
+    {
+      "name": "W-7",
+      "sales": 42,
+      "search": 32.1,
+      "permits": 2558
+    },
+    {
+      "name": "W-6",
+      "sales": 41,
+      "search": 26.9,
+      "permits": 2558
+    },
+    {
+      "name": "W-5",
+      "sales": 45,
+      "search": 29.5,
+      "permits": 3202
+    },
+    {
+      "name": "W-4",
+      "sales": 46,
+      "search": 30.4,
+      "permits": 3309
+    },
+    {
+      "name": "W-3",
+      "sales": 45,
+      "search": 30.6,
+      "permits": 3309
+    },
+    {
+      "name": "W-2",
+      "sales": 42,
+      "search": 28.5,
+      "permits": 3309
+    },
+    {
+      "name": "W-1",
+      "sales": 45,
+      "search": 31.6,
+      "permits": 3702
+    },
+    {
+      "name": "Current",
+      "sales": 47,
+      "search": 26.1,
+      "permits": 4226
+    }
+  ],
+  "WE-RUG-15": [
+    {
+      "name": "W-11",
+      "sales": 49,
+      "search": 10.5,
+      "permits": 2178
+    },
+    {
+      "name": "W-10",
+      "sales": 45,
+      "search": 17.9,
+      "permits": 2178
+    },
+    {
+      "name": "W-9",
+      "sales": 45,
+      "search": 12.9,
+      "permits": 2420
+    },
+    {
+      "name": "W-8",
+      "sales": 42,
+      "search": 8.5,
+      "permits": 2460
+    },
+    {
+      "name": "W-7",
+      "sales": 44,
+      "search": 12.0,
+      "permits": 2460
+    },
+    {
+      "name": "W-6",
+      "sales": 42,
+      "search": 10.1,
+      "permits": 2460
+    },
+    {
+      "name": "W-5",
+      "sales": 45,
+      "search": 12.6,
+      "permits": 2876
+    },
+    {
+      "name": "W-4",
+      "sales": 44,
+      "search": 14.2,
+      "permits": 2945
+    },
+    {
+      "name": "W-3",
+      "sales": 44,
+      "search": 10.0,
+      "permits": 2945
+    },
+    {
+      "name": "W-2",
+      "sales": 42,
+      "search": 11.2,
+      "permits": 2945
+    },
+    {
+      "name": "W-1",
+      "sales": 50,
+      "search": 7.9,
+      "permits": 3256
+    },
+    {
+      "name": "Current",
+      "sales": 44,
+      "search": 11.7,
+      "permits": 3670
+    }
+  ],
+  "WE-SHELF-31": [
+    {
+      "name": "W-11",
+      "sales": 122,
+      "search": 23.1,
+      "permits": 1631
+    },
+    {
+      "name": "W-10",
+      "sales": 124,
+      "search": 25.7,
+      "permits": 1631
+    },
+    {
+      "name": "W-9",
+      "sales": 135,
+      "search": 30.7,
+      "permits": 1564
+    },
+    {
+      "name": "W-8",
+      "sales": 145,
+      "search": 28.5,
+      "permits": 1553
+    },
+    {
+      "name": "W-7",
+      "sales": 151,
+      "search": 24.5,
+      "permits": 1553
+    },
+    {
+      "name": "W-6",
+      "sales": 123,
+      "search": 25.7,
+      "permits": 1553
+    },
+    {
+      "name": "W-5",
+      "sales": 141,
+      "search": 31.0,
+      "permits": 2251
+    },
+    {
+      "name": "W-4",
+      "sales": 147,
+      "search": 29.4,
+      "permits": 2367
+    },
+    {
+      "name": "W-3",
+      "sales": 145,
+      "search": 29.2,
+      "permits": 2367
+    },
+    {
+      "name": "W-2",
+      "sales": 152,
+      "search": 27.2,
+      "permits": 2367
+    },
+    {
+      "name": "W-1",
+      "sales": 157,
+      "search": 27.4,
+      "permits": 2562
+    },
+    {
+      "name": "Current",
+      "sales": 153,
+      "search": 25.5,
+      "permits": 2822
+    }
+  ],
+  "WE-DUVET-40": [
+    {
+      "name": "W-11",
+      "sales": 145,
+      "search": 24.3,
+      "permits": 1242
+    },
+    {
+      "name": "W-10",
+      "sales": 146,
+      "search": 27.4,
+      "permits": 1242
+    },
+    {
+      "name": "W-9",
+      "sales": 141,
+      "search": 29.3,
+      "permits": 1296
+    },
+    {
+      "name": "W-8",
+      "sales": 147,
+      "search": 24.6,
+      "permits": 1305
+    },
+    {
+      "name": "W-7",
+      "sales": 163,
+      "search": 22.5,
+      "permits": 1305
+    },
+    {
+      "name": "W-6",
+      "sales": 130,
+      "search": 30.5,
+      "permits": 1305
+    },
+    {
+      "name": "W-5",
+      "sales": 156,
+      "search": 30.8,
+      "permits": 1650
+    },
+    {
+      "name": "W-4",
+      "sales": 160,
+      "search": 26.5,
+      "permits": 1707
+    },
+    {
+      "name": "W-3",
+      "sales": 158,
+      "search": 28.0,
+      "permits": 1707
+    },
+    {
+      "name": "W-2",
+      "sales": 155,
+      "search": 31.1,
+      "permits": 1707
+    },
+    {
+      "name": "W-1",
+      "sales": 157,
+      "search": 29.1,
+      "permits": 1897
+    },
+    {
+      "name": "Current",
+      "sales": 164,
+      "search": 29.4,
+      "permits": 2150
+    }
+  ],
+  "WE-CHAIR-52": [
+    {
+      "name": "W-11",
+      "sales": 76,
+      "search": 22.8,
+      "permits": 2894
+    },
+    {
+      "name": "W-10",
+      "sales": 73,
+      "search": 24.0,
+      "permits": 2894
+    },
+    {
+      "name": "W-9",
+      "sales": 76,
+      "search": 24.5,
+      "permits": 3033
+    },
+    {
+      "name": "W-8",
+      "sales": 77,
+      "search": 20.8,
+      "permits": 3056
+    },
+    {
+      "name": "W-7",
+      "sales": 82,
+      "search": 19.6,
+      "permits": 3056
+    },
+    {
+      "name": "W-6",
+      "sales": 80,
+      "search": 23.1,
+      "permits": 3056
+    },
+    {
+      "name": "W-5",
+      "sales": 84,
+      "search": 27.8,
+      "permits": 3732
+    },
+    {
+      "name": "W-4",
+      "sales": 91,
+      "search": 23.0,
+      "permits": 3845
+    },
+    {
+      "name": "W-3",
+      "sales": 84,
+      "search": 26.5,
+      "permits": 3845
+    },
+    {
+      "name": "W-2",
+      "sales": 85,
+      "search": 28.7,
+      "permits": 3845
+    },
+    {
+      "name": "W-1",
+      "sales": 87,
+      "search": 27.7,
+      "permits": 4333
+    },
+    {
+      "name": "Current",
+      "sales": 96,
+      "search": 27.8,
+      "permits": 4983
+    }
+  ],
+  "WE-PLNTR-18": [
+    {
+      "name": "W-11",
+      "sales": 14,
+      "search": 6.1,
+      "permits": 2976
+    },
+    {
+      "name": "W-10",
+      "sales": 15,
+      "search": 12.8,
+      "permits": 2976
+    },
+    {
+      "name": "W-9",
+      "sales": 41,
+      "search": 6.1,
+      "permits": 3086
+    },
+    {
+      "name": "W-8",
+      "sales": 42,
+      "search": 8.0,
+      "permits": 3104
+    },
+    {
+      "name": "W-7",
+      "sales": 41,
+      "search": 20.0,
+      "permits": 3104
+    },
+    {
+      "name": "W-6",
+      "sales": 46,
+      "search": 33.2,
+      "permits": 3104
+    },
+    {
+      "name": "W-5",
+      "sales": 154,
+      "search": 34.2,
+      "permits": 4210
+    },
+    {
+      "name": "W-4",
+      "sales": 164,
+      "search": 34.4,
+      "permits": 4394
+    },
+    {
+      "name": "W-3",
+      "sales": 183,
+      "search": 38.5,
+      "permits": 4394
+    },
+    {
+      "name": "W-2",
+      "sales": 178,
+      "search": 45.2,
+      "permits": 4394
+    },
+    {
+      "name": "W-1",
+      "sales": 189,
+      "search": 36.1,
+      "permits": 4961
+    },
+    {
+      "name": "Current",
+      "sales": 220,
+      "search": 40.9,
+      "permits": 5717
+    }
+  ],
+  "WE-CLOCK-66": [
+    {
+      "name": "W-11",
+      "sales": 75,
+      "search": 22.4,
+      "permits": 5214
+    },
+    {
+      "name": "W-10",
+      "sales": 75,
+      "search": 21.8,
+      "permits": 5214
+    },
+    {
+      "name": "W-9",
+      "sales": 83,
+      "search": 23.4,
+      "permits": 5525
+    },
+    {
+      "name": "W-8",
+      "sales": 78,
+      "search": 20.6,
+      "permits": 5577
+    },
+    {
+      "name": "W-7",
+      "sales": 83,
+      "search": 26.3,
+      "permits": 5577
+    },
+    {
+      "name": "W-6",
+      "sales": 84,
+      "search": 25.9,
+      "permits": 5577
+    },
+    {
+      "name": "W-5",
+      "sales": 92,
+      "search": 22.9,
+      "permits": 7155
+    },
+    {
+      "name": "W-4",
+      "sales": 95,
+      "search": 25.7,
+      "permits": 7418
+    },
+    {
+      "name": "W-3",
+      "sales": 92,
+      "search": 27.5,
+      "permits": 7418
+    },
+    {
+      "name": "W-2",
+      "sales": 91,
+      "search": 32.0,
+      "permits": 7418
+    },
+    {
+      "name": "W-1",
+      "sales": 113,
+      "search": 30.6,
+      "permits": 7873
+    },
+    {
+      "name": "Current",
+      "sales": 112,
+      "search": 24.2,
+      "permits": 8480
+    }
+  ],
+  "WS-MIXER-05": [
+    {
+      "name": "W-11",
+      "sales": 74,
+      "search": 8.3,
+      "permits": 3967
+    },
+    {
+      "name": "W-10",
+      "sales": 72,
+      "search": 7.1,
+      "permits": 3967
+    },
+    {
+      "name": "W-9",
+      "sales": 74,
+      "search": 9.5,
+      "permits": 4295
+    },
+    {
+      "name": "W-8",
+      "sales": 78,
+      "search": 5.6,
+      "permits": 4350
+    },
+    {
+      "name": "W-7",
+      "sales": 80,
+      "search": 7.2,
+      "permits": 4350
+    },
+    {
+      "name": "W-6",
+      "sales": 76,
+      "search": 13.4,
+      "permits": 4350
+    },
+    {
+      "name": "W-5",
+      "sales": 86,
+      "search": 8.7,
+      "permits": 5923
+    },
+    {
+      "name": "W-4",
+      "sales": 88,
+      "search": 8.9,
+      "permits": 6185
+    },
+    {
+      "name": "W-3",
+      "sales": 81,
+      "search": 9.9,
+      "permits": 6185
+    },
+    {
+      "name": "W-2",
+      "sales": 87,
+      "search": 13.6,
+      "permits": 6185
+    },
+    {
+      "name": "W-1",
+      "sales": 116,
+      "search": 12.9,
+      "permits": 6645
+    },
+    {
+      "name": "Current",
+      "sales": 105,
+      "search": 9.7,
+      "permits": 7258
+    }
+  ],
+  "WS-KNIFE-60": [
+    {
+      "name": "W-11",
+      "sales": 54,
+      "search": 10.9,
+      "permits": 1242
+    },
+    {
+      "name": "W-10",
+      "sales": 54,
+      "search": 8.1,
+      "permits": 1242
+    },
+    {
+      "name": "W-9",
+      "sales": 60,
+      "search": 11.2,
+      "permits": 1296
+    },
+    {
+      "name": "W-8",
+      "sales": 55,
+      "search": 11.7,
+      "permits": 1305
+    },
+    {
+      "name": "W-7",
+      "sales": 57,
+      "search": 13.6,
+      "permits": 1305
+    },
+    {
+      "name": "W-6",
+      "sales": 58,
+      "search": 10.0,
+      "permits": 1305
+    },
+    {
+      "name": "W-5",
+      "sales": 60,
+      "search": 11.4,
+      "permits": 1650
+    },
+    {
+      "name": "W-4",
+      "sales": 59,
+      "search": 13.1,
+      "permits": 1707
+    },
+    {
+      "name": "W-3",
+      "sales": 61,
+      "search": 9.8,
+      "permits": 1707
+    },
+    {
+      "name": "W-2",
+      "sales": 61,
+      "search": 17.8,
+      "permits": 1707
+    },
+    {
+      "name": "W-1",
+      "sales": 77,
+      "search": 13.8,
+      "permits": 1897
+    },
+    {
+      "name": "Current",
+      "sales": 84,
+      "search": 11.9,
+      "permits": 2150
+    }
+  ],
+  "WS-DUTCH-64": [
+    {
+      "name": "W-11",
+      "sales": 70,
+      "search": 18.9,
+      "permits": 1660
+    },
+    {
+      "name": "W-10",
+      "sales": 71,
+      "search": 17.0,
+      "permits": 1660
+    },
+    {
+      "name": "W-9",
+      "sales": 76,
+      "search": 24.2,
+      "permits": 1830
+    },
+    {
+      "name": "W-8",
+      "sales": 74,
+      "search": 21.7,
+      "permits": 1858
+    },
+    {
+      "name": "W-7",
+      "sales": 72,
+      "search": 23.0,
+      "permits": 1858
+    },
+    {
+      "name": "W-6",
+      "sales": 75,
+      "search": 21.4,
+      "permits": 1858
+    },
+    {
+      "name": "W-5",
+      "sales": 77,
+      "search": 21.1,
+      "permits": 2351
+    },
+    {
+      "name": "W-4",
+      "sales": 79,
+      "search": 23.2,
+      "permits": 2433
+    },
+    {
+      "name": "W-3",
+      "sales": 76,
+      "search": 22.0,
+      "permits": 2433
+    },
+    {
+      "name": "W-2",
+      "sales": 78,
+      "search": 21.8,
+      "permits": 2433
+    },
+    {
+      "name": "W-1",
+      "sales": 85,
+      "search": 24.6,
+      "permits": 2619
+    },
+    {
+      "name": "Current",
+      "sales": 88,
+      "search": 22.3,
+      "permits": 2868
+    }
+  ],
+  "WS-WINE-65": [
+    {
+      "name": "W-11",
+      "sales": 105,
+      "search": 20.2,
+      "permits": 3309
+    },
+    {
+      "name": "W-10",
+      "sales": 99,
+      "search": 19.1,
+      "permits": 3309
+    },
+    {
+      "name": "W-9",
+      "sales": 100,
+      "search": 19.8,
+      "permits": 3962
+    },
+    {
+      "name": "W-8",
+      "sales": 100,
+      "search": 17.4,
+      "permits": 4071
+    },
+    {
+      "name": "W-7",
+      "sales": 100,
+      "search": 19.7,
+      "permits": 4071
+    },
+    {
+      "name": "W-6",
+      "sales": 106,
+      "search": 18.4,
+      "permits": 4071
+    },
+    {
+      "name": "W-5",
+      "sales": 114,
+      "search": 19.7,
+      "permits": 4937
+    },
+    {
+      "name": "W-4",
+      "sales": 111,
+      "search": 19.1,
+      "permits": 5081
+    },
+    {
+      "name": "W-3",
+      "sales": 106,
+      "search": 24.9,
+      "permits": 5081
+    },
+    {
+      "name": "W-2",
+      "sales": 106,
+      "search": 25.2,
+      "permits": 5081
+    },
+    {
+      "name": "W-1",
+      "sales": 124,
+      "search": 19.3,
+      "permits": 5894
+    },
+    {
+      "name": "Current",
+      "sales": 124,
+      "search": 23.5,
+      "permits": 6977
+    }
+  ],
+  "WS-BOARD-68": [
+    {
+      "name": "W-11",
+      "sales": 142,
+      "search": 18.6,
+      "permits": 2178
+    },
+    {
+      "name": "W-10",
+      "sales": 150,
+      "search": 18.7,
+      "permits": 2178
+    },
+    {
+      "name": "W-9",
+      "sales": 149,
+      "search": 8.8,
+      "permits": 2420
+    },
+    {
+      "name": "W-8",
+      "sales": 108,
+      "search": 4.6,
+      "permits": 2460
+    },
+    {
+      "name": "W-7",
+      "sales": 46,
+      "search": 2.3,
+      "permits": 2460
+    },
+    {
+      "name": "W-6",
+      "sales": 18,
+      "search": 2.3,
+      "permits": 2460
+    },
+    {
+      "name": "W-5",
+      "sales": 23,
+      "search": 6.6,
+      "permits": 2876
+    },
+    {
+      "name": "W-4",
+      "sales": 23,
+      "search": 0.4,
+      "permits": 2945
+    },
+    {
+      "name": "W-3",
+      "sales": 23,
+      "search": 3.4,
+      "permits": 2945
+    },
+    {
+      "name": "W-2",
+      "sales": 24,
+      "search": 2.9,
+      "permits": 2945
+    },
+    {
+      "name": "W-1",
+      "sales": 25,
+      "search": 4.4,
+      "permits": 3256
+    },
+    {
+      "name": "Current",
+      "sales": 32,
+      "search": 2.5,
+      "permits": 3670
+    }
+  ],
+  "PBK-CRIB-12": [
+    {
+      "name": "W-11",
+      "sales": 24,
+      "search": 21.2,
+      "permits": 1631
+    },
+    {
+      "name": "W-10",
+      "sales": 26,
+      "search": 19.1,
+      "permits": 1631
+    },
+    {
+      "name": "W-9",
+      "sales": 25,
+      "search": 26.7,
+      "permits": 1564
+    },
+    {
+      "name": "W-8",
+      "sales": 24,
+      "search": 26.2,
+      "permits": 1553
+    },
+    {
+      "name": "W-7",
+      "sales": 30,
+      "search": 29.5,
+      "permits": 1553
+    },
+    {
+      "name": "W-6",
+      "sales": 30,
+      "search": 33.6,
+      "permits": 1553
+    },
+    {
+      "name": "W-5",
+      "sales": 38,
+      "search": 37.0,
+      "permits": 2251
+    },
+    {
+      "name": "W-4",
+      "sales": 38,
+      "search": 36.4,
+      "permits": 2367
+    },
+    {
+      "name": "W-3",
+      "sales": 39,
+      "search": 37.5,
+      "permits": 2367
+    },
+    {
+      "name": "W-2",
+      "sales": 42,
+      "search": 41.3,
+      "permits": 2367
+    },
+    {
+      "name": "W-1",
+      "sales": 43,
+      "search": 33.9,
+      "permits": 2562
+    },
+    {
+      "name": "Current",
+      "sales": 45,
+      "search": 35.5,
+      "permits": 2822
+    }
+  ],
+  "PBK-BUNK-22": [
+    {
+      "name": "W-11",
+      "sales": 13,
+      "search": 22.5,
+      "permits": 5214
+    },
+    {
+      "name": "W-10",
+      "sales": 13,
+      "search": 23.1,
+      "permits": 5214
+    },
+    {
+      "name": "W-9",
+      "sales": 14,
+      "search": 10.3,
+      "permits": 5525
+    },
+    {
+      "name": "W-8",
+      "sales": 9,
+      "search": 3.0,
+      "permits": 5577
+    },
+    {
+      "name": "W-7",
+      "sales": 4,
+      "search": 4.6,
+      "permits": 5577
+    },
+    {
+      "name": "W-6",
+      "sales": 0,
+      "search": 4.2,
+      "permits": 5577
+    },
+    {
+      "name": "W-5",
+      "sales": 0,
+      "search": 4.8,
+      "permits": 7155
+    },
+    {
+      "name": "W-4",
+      "sales": 1,
+      "search": 0.1,
+      "permits": 7418
+    },
+    {
+      "name": "W-3",
+      "sales": 1,
+      "search": 1.8,
+      "permits": 7418
+    },
+    {
+      "name": "W-2",
+      "sales": 0,
+      "search": 1.4,
+      "permits": 7418
+    },
+    {
+      "name": "W-1",
+      "sales": 0,
+      "search": 3.7,
+      "permits": 7873
+    },
+    {
+      "name": "Current",
+      "sales": 1,
+      "search": 0.8,
+      "permits": 8480
+    }
+  ],
+  "PBK-QUILT-08": [
+    {
+      "name": "W-11",
+      "sales": 73,
+      "search": 22.7,
+      "permits": 3967
+    },
+    {
+      "name": "W-10",
+      "sales": 74,
+      "search": 28.2,
+      "permits": 3967
+    },
+    {
+      "name": "W-9",
+      "sales": 74,
+      "search": 30.6,
+      "permits": 4295
+    },
+    {
+      "name": "W-8",
+      "sales": 69,
+      "search": 27.0,
+      "permits": 4350
+    },
+    {
+      "name": "W-7",
+      "sales": 82,
+      "search": 25.9,
+      "permits": 4350
+    },
+    {
+      "name": "W-6",
+      "sales": 74,
+      "search": 27.2,
+      "permits": 4350
+    },
+    {
+      "name": "W-5",
+      "sales": 78,
+      "search": 31.3,
+      "permits": 5923
+    },
+    {
+      "name": "W-4",
+      "sales": 85,
+      "search": 26.2,
+      "permits": 6185
+    },
+    {
+      "name": "W-3",
+      "sales": 81,
+      "search": 30.3,
+      "permits": 6185
+    },
+    {
+      "name": "W-2",
+      "sales": 80,
+      "search": 27.2,
+      "permits": 6185
+    },
+    {
+      "name": "W-1",
+      "sales": 87,
+      "search": 29.9,
+      "permits": 6645
+    },
+    {
+      "name": "Current",
+      "sales": 87,
+      "search": 27.8,
+      "permits": 7258
+    }
+  ],
+  "RJ-PENDANT-11": [
+    {
+      "name": "W-11",
+      "sales": 82,
+      "search": 28.2,
+      "permits": 1660
+    },
+    {
+      "name": "W-10",
+      "sales": 84,
+      "search": 25.1,
+      "permits": 1660
+    },
+    {
+      "name": "W-9",
+      "sales": 85,
+      "search": 28.1,
+      "permits": 1830
+    },
+    {
+      "name": "W-8",
+      "sales": 81,
+      "search": 23.0,
+      "permits": 1858
+    },
+    {
+      "name": "W-7",
+      "sales": 85,
+      "search": 31.9,
+      "permits": 1858
+    },
+    {
+      "name": "W-6",
+      "sales": 88,
+      "search": 26.8,
+      "permits": 1858
+    },
+    {
+      "name": "W-5",
+      "sales": 92,
+      "search": 30.0,
+      "permits": 2351
+    },
+    {
+      "name": "W-4",
+      "sales": 97,
+      "search": 30.6,
+      "permits": 2433
+    },
+    {
+      "name": "W-3",
+      "sales": 102,
+      "search": 31.2,
+      "permits": 2433
+    },
+    {
+      "name": "W-2",
+      "sales": 104,
+      "search": 30.6,
+      "permits": 2433
+    },
+    {
+      "name": "W-1",
+      "sales": 99,
+      "search": 31.5,
+      "permits": 2619
+    },
+    {
+      "name": "Current",
+      "sales": 104,
+      "search": 31.5,
+      "permits": 2868
+    }
+  ],
+  "RJ-SCONCE-04": [
+    {
+      "name": "W-11",
+      "sales": 79,
+      "search": 22.0,
+      "permits": 2363
+    },
+    {
+      "name": "W-10",
+      "sales": 72,
+      "search": 21.4,
+      "permits": 2363
+    },
+    {
+      "name": "W-9",
+      "sales": 78,
+      "search": 21.4,
+      "permits": 2530
+    },
+    {
+      "name": "W-8",
+      "sales": 75,
+      "search": 25.8,
+      "permits": 2558
+    },
+    {
+      "name": "W-7",
+      "sales": 76,
+      "search": 21.9,
+      "permits": 2558
+    },
+    {
+      "name": "W-6",
+      "sales": 83,
+      "search": 24.6,
+      "permits": 2558
+    },
+    {
+      "name": "W-5",
+      "sales": 91,
+      "search": 27.0,
+      "permits": 3202
+    },
+    {
+      "name": "W-4",
+      "sales": 91,
+      "search": 26.1,
+      "permits": 3309
+    },
+    {
+      "name": "W-3",
+      "sales": 85,
+      "search": 23.4,
+      "permits": 3309
+    },
+    {
+      "name": "W-2",
+      "sales": 87,
+      "search": 24.7,
+      "permits": 3309
+    },
+    {
+      "name": "W-1",
+      "sales": 89,
+      "search": 24.3,
+      "permits": 3702
+    },
+    {
+      "name": "Current",
+      "sales": 90,
+      "search": 24.4,
+      "permits": 4226
+    }
+  ]
+};
 
 export const geoClusters = Array.from({ length: 1800 }).map(() => {
   // Center roughly around massive logistics hubs/metros

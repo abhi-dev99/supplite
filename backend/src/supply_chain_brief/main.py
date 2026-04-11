@@ -4,7 +4,7 @@ import csv
 import json
 import os
 import time
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from threading import Lock
 from typing import Any, Literal
@@ -102,6 +102,43 @@ class RealEstateHeatmapResponse(BaseModel):
     points: list[RealEstateHeatmapPoint]
 
 
+class TimelinePoint(BaseModel):
+    date: str
+    sales_velocity_7d: float
+    search_velocity_7d: float
+    units_sold: int
+    surge_score: float
+
+
+class TimelineSummary(BaseModel):
+    point_count: int
+    metro_count: int
+    sales_delta: float
+    search_delta: float
+
+
+class TimelineResponse(BaseModel):
+    generated_at: datetime
+    sku_id: str
+    product_name: str
+    category: str
+    period_days: int
+    points: list[TimelinePoint]
+    summary: TimelineSummary
+
+
+class TimelineOption(BaseModel):
+    sku_id: str
+    product_name: str
+    category: str
+
+
+class TimelineOptionsResponse(BaseModel):
+    generated_at: datetime
+    period_options: list[int]
+    sku_options: list[TimelineOption]
+
+
 app = FastAPI(title="Supply Chain Brief Backend", version="0.1.0")
 
 # Load local env files for backend runtime configuration without committing secrets.
@@ -179,6 +216,15 @@ def _read_csv_rows(path: Path) -> list[dict[str, str]]:
         return [dict(row) for row in reader]
 
 
+def _parse_iso_date(value: str | None) -> date | None:
+    if not value:
+        return None
+    try:
+        return date.fromisoformat(str(value)[:10])
+    except ValueError:
+        return None
+
+
 def _to_brief_sku(row: dict[str, str]) -> BriefSKU:
     return BriefSKU(
         sku_id=row.get("sku_id", "UNKNOWN"),
@@ -230,6 +276,139 @@ def _latest_signal_drivers(metro: str, sku_ids: set[str], limit: int = 14) -> li
 
     drivers.sort(key=lambda item: abs(_safe_float(item.get("search_velocity_7d"))) + abs(_safe_float(item.get("sales_velocity_7d"))), reverse=True)
     return drivers[:limit]
+
+
+def _timeline_period_options() -> list[int]:
+    return [14, 30, 60, 90, 180]
+
+
+def _normalize_period_days(period_days: int) -> int:
+    options = _timeline_period_options()
+    if period_days in options:
+        return period_days
+    if period_days < min(options):
+        return min(options)
+    if period_days > max(options):
+        return max(options)
+    return min(options, key=lambda option: abs(option - period_days))
+
+
+def _build_timeline_options() -> list[TimelineOption]:
+    inventory_rows = _read_csv_rows(_data_file("sku_inventory.csv"))
+    catalog_rows = _read_csv_rows(_data_file("sku_catalog.csv"))
+
+    catalog_by_sku: dict[str, dict[str, str]] = {}
+    for row in catalog_rows:
+        sku_id = (row.get("sku_id") or "").strip()
+        if sku_id:
+            catalog_by_sku[sku_id] = row
+
+    options_by_sku: dict[str, TimelineOption] = {}
+    for row in inventory_rows:
+        sku_id = (row.get("sku_id") or "").strip()
+        if not sku_id:
+            continue
+        catalog = catalog_by_sku.get(sku_id, {})
+        product_name = (row.get("product_name") or catalog.get("product_name") or "Unknown Product").strip()
+        category = (row.get("category") or catalog.get("category") or "Unknown").strip()
+        if sku_id not in options_by_sku:
+            options_by_sku[sku_id] = TimelineOption(
+                sku_id=sku_id,
+                product_name=product_name,
+                category=category,
+            )
+
+    return sorted(options_by_sku.values(), key=lambda item: item.sku_id)
+
+
+def _build_signal_timeline(sku_id: str, period_days: int) -> TimelineResponse:
+    normalized_sku = sku_id.strip().upper()
+    normalized_period = _normalize_period_days(period_days)
+
+    if not normalized_sku:
+        raise ValueError("sku_id is required")
+
+    signal_rows = _read_csv_rows(_data_file("sku_daily_signals.csv"))
+    filtered_rows = [row for row in signal_rows if (row.get("sku_id") or "").strip().upper() == normalized_sku]
+    if not filtered_rows:
+        raise ValueError(f"No daily signal rows found for sku_id '{normalized_sku}'")
+
+    dated_rows: list[tuple[date, dict[str, str]]] = []
+    for row in filtered_rows:
+        parsed_date = _parse_iso_date(row.get("date"))
+        if parsed_date is not None:
+            dated_rows.append((parsed_date, row))
+
+    if not dated_rows:
+        raise ValueError(f"No valid dated signal rows found for sku_id '{normalized_sku}'")
+
+    latest_date = max(item[0] for item in dated_rows)
+    cutoff_date = latest_date - timedelta(days=normalized_period - 1)
+
+    daily_aggregate: dict[str, dict[str, Any]] = {}
+    metros: set[str] = set()
+    for row_date, row in dated_rows:
+        if row_date < cutoff_date:
+            continue
+        day_key = row_date.isoformat()
+        bucket = daily_aggregate.setdefault(
+            day_key,
+            {
+                "sales_values": [],
+                "search_values": [],
+                "units_sold": 0,
+                "surge_values": [],
+            },
+        )
+        bucket["sales_values"].append(_safe_float(row.get("sales_velocity_7d")))
+        bucket["search_values"].append(_safe_float(row.get("search_velocity_7d")))
+        bucket["units_sold"] += _safe_int(row.get("units_sold"))
+        bucket["surge_values"].append(_safe_float(row.get("surge_score")))
+        metro_name = (row.get("metro") or "").strip()
+        if metro_name:
+            metros.add(metro_name)
+
+    points: list[TimelinePoint] = []
+    for day_key in sorted(daily_aggregate.keys()):
+        bucket = daily_aggregate[day_key]
+        sales_values = bucket["sales_values"]
+        search_values = bucket["search_values"]
+        surge_values = bucket["surge_values"]
+        points.append(
+            TimelinePoint(
+                date=day_key,
+                sales_velocity_7d=round(sum(sales_values) / max(len(sales_values), 1), 2),
+                search_velocity_7d=round(sum(search_values) / max(len(search_values), 1), 2),
+                units_sold=int(bucket["units_sold"]),
+                surge_score=round(sum(surge_values) / max(len(surge_values), 1), 2),
+            )
+        )
+
+    sales_delta = 0.0
+    search_delta = 0.0
+    if len(points) >= 2:
+        sales_delta = round(points[-1].sales_velocity_7d - points[0].sales_velocity_7d, 2)
+        search_delta = round(points[-1].search_velocity_7d - points[0].search_velocity_7d, 2)
+
+    inventory_rows = _read_csv_rows(_data_file("sku_inventory.csv"))
+    sku_inventory_rows = [row for row in inventory_rows if (row.get("sku_id") or "").strip().upper() == normalized_sku]
+    product_name = sku_inventory_rows[0].get("product_name", "Unknown Product") if sku_inventory_rows else "Unknown Product"
+    category = sku_inventory_rows[0].get("category", "Unknown") if sku_inventory_rows else "Unknown"
+
+    return TimelineResponse(
+        generated_at=datetime.now(timezone.utc),
+        sku_id=normalized_sku,
+        product_name=product_name,
+        category=category,
+        period_days=normalized_period,
+        points=points,
+        summary=TimelineSummary(
+            point_count=len(points),
+            metro_count=len(metros),
+            sales_delta=sales_delta,
+            search_delta=search_delta,
+        ),
+    )
 
 
 def _build_city_context(metro: str) -> BriefContext:
@@ -318,15 +497,15 @@ def _compose_structured_brief(context: BriefContext) -> str:
 
 
 def _gemini_model_candidates() -> list[str]:
-    primary = (os.getenv("GEMINI_MODEL") or "gemini-1.5-flash").strip()
-    fallbacks_raw = (os.getenv("GEMINI_MODEL_FALLBACKS") or "gemini-flash-latest,gemini-2.0-flash").strip()
+    primary = (os.getenv("GEMINI_MODEL") or "gemini-flash-latest").strip()
+    fallbacks_raw = (os.getenv("GEMINI_MODEL_FALLBACKS") or "gemini-2.0-flash,gemini-1.5-flash").strip()
     fallbacks = [part.strip() for part in fallbacks_raw.split(",") if part.strip()]
 
     models: list[str] = []
     for model in [primary, *fallbacks]:
         if model and model not in models:
             models.append(model)
-    return models or ["gemini-1.5-flash"]
+    return models or ["gemini-flash-latest"]
 
 
 def _gemini_generate(prompt: str) -> tuple[str, str]:
@@ -341,7 +520,7 @@ def _gemini_generate(prompt: str) -> tuple[str, str]:
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
                 "temperature": 0.2,
-                "maxOutputTokens": 4096,
+                "maxOutputTokens": 8192,
             },
         }
 
@@ -354,7 +533,7 @@ def _gemini_generate(prompt: str) -> tuple[str, str]:
 
         for attempt in range(3):
             try:
-                with urlopen(request, timeout=45) as response:  # noqa: S310 - fixed trusted endpoint
+                with urlopen(request, timeout=90) as response:  # noqa: S310 - fixed trusted endpoint
                     data = json.loads(response.read().decode("utf-8"))
                 candidates = data.get("candidates") or []
                 if not candidates:
@@ -405,7 +584,7 @@ def _ollama_generate(prompt: str) -> str:
         headers={"Content-Type": "application/json"},
         method="POST",
     )
-    with urlopen(request, timeout=50) as response:  # noqa: S310 - local endpoint
+    with urlopen(request, timeout=90) as response:  # noqa: S310 - local endpoint
         data = json.loads(response.read().decode("utf-8"))
     text = (data.get("response") or "").strip()
     if not text:
@@ -451,6 +630,8 @@ def _llm_prompt(context: BriefContext) -> str:
         "- Use section headings, subheadings, bullet points, and MANY markdown tables.\n"
         "- Minimum target length: 1,500 words. Preferred 1,800-2,500 words when data allows.\n"
         "- Every recommendation must include rationale, expected impact, risk, and timing.\n"
+        "- Complete every section fully and do not end mid-sentence or mid-bullet.\n"
+        "- Finish with a clear closing paragraph that wraps up the whole dossier.\n"
         "- Never fabricate SKUs, metrics, trends, or DC names outside supplied data.\n\n"
         "MANDATORY SECTIONS (all required):\n"
         "1) Executive Situation Room: strategic narrative, biggest upside/downside, this-week posture.\n"
@@ -715,3 +896,20 @@ def scored_real_estate_heatmap(limit: int = 2000) -> RealEstateHeatmapResponse:
         notes=notes,
         points=[RealEstateHeatmapPoint(**point) for point in points],
     )
+
+
+@app.get("/api/signals/timeline/options", response_model=TimelineOptionsResponse)
+def signal_timeline_options() -> TimelineOptionsResponse:
+    return TimelineOptionsResponse(
+        generated_at=datetime.now(timezone.utc),
+        period_options=_timeline_period_options(),
+        sku_options=_build_timeline_options(),
+    )
+
+
+@app.get("/api/signals/timeline", response_model=TimelineResponse)
+def signal_timeline(
+    sku_id: str,
+    period_days: int = 30,
+) -> TimelineResponse:
+    return _build_signal_timeline(sku_id=sku_id, period_days=period_days)

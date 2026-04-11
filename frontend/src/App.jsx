@@ -4,11 +4,14 @@ import SkuRiskOverview from './views/SkuRiskOverview';
 import SignalTimeline from './views/SignalTimeline';
 import BuyerBrief from './views/BuyerBrief';
 import Simulation from './views/Simulation';
+import { distributionCenters } from './data';
 import './App.css';
 
 function App() {
   const [currentView, setCurrentView] = useState('overview');
   const [theme, setTheme] = useState('light');
+  const [selectedDC, setSelectedDC] = useState('ALL');
+  const [selectedTimelineSku, setSelectedTimelineSku] = useState('PB-BLANKET-42');
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -20,17 +23,49 @@ function App() {
 
   const renderView = () => {
     switch (currentView) {
-      case 'overview': return <SkuRiskOverview theme={theme} />;
-      case 'timeline': return <SignalTimeline theme={theme} />;
-      case 'brief': return <BuyerBrief theme={theme} />;
-      case 'simulation': return <Simulation theme={theme} />;
-      default: return <SkuRiskOverview theme={theme} />;
+      case 'overview':
+        return (
+          <SkuRiskOverview
+            theme={theme}
+            selectedDC={selectedDC}
+            setCurrentView={setCurrentView}
+            setSelectedTimelineSku={setSelectedTimelineSku}
+          />
+        );
+      case 'timeline':
+        return (
+          <SignalTimeline
+            theme={theme}
+            selectedDC={selectedDC}
+            selectedSku={selectedTimelineSku}
+            setSelectedSku={setSelectedTimelineSku}
+          />
+        );
+      case 'brief': return <BuyerBrief theme={theme} selectedDC={selectedDC} />;
+      case 'simulation': return <Simulation theme={theme} selectedDC={selectedDC} />;
+      default:
+        return (
+          <SkuRiskOverview
+            theme={theme}
+            selectedDC={selectedDC}
+            setCurrentView={setCurrentView}
+            setSelectedTimelineSku={setSelectedTimelineSku}
+          />
+        );
     }
   };
 
   return (
     <div className="app-layout">
-      <Sidebar currentView={currentView} setCurrentView={setCurrentView} theme={theme} toggleTheme={toggleTheme} />
+      <Sidebar 
+        currentView={currentView} 
+        setCurrentView={setCurrentView} 
+        theme={theme} 
+        toggleTheme={toggleTheme}
+        distributionCenters={distributionCenters}
+        selectedDC={selectedDC}
+        setSelectedDC={setSelectedDC}
+      />
       <main className="main-content">
         <div className="scrollable-area">
           {renderView()}
