@@ -1,14 +1,23 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Search, Maximize2, X, BookOpenText } from 'lucide-react';
 import { mockSkus } from '../data';
 import SciFiMap from '../components/SciFiMap';
 import BrandLogo from '../components/BrandLogo';
+import { fetchSkuBios } from '../api/skuBioApi';
 
 export default function SkuRiskOverview({ theme, selectedDC, setCurrentView, setSelectedTimelineSku, setSelectedCatalogSku }) {
   const [activeTab, setActiveTab] = useState('ALL');
+  const [searchQuery, setSearchQuery] = useState('');
   const [isMapExpanded, setIsMapExpanded] = useState(false);
   const [isMapHovered, setIsMapHovered] = useState(false);
   const [hoverTimer, setHoverTimer] = useState(null);
+  const [hubMetrics, setHubMetrics] = useState({
+    loading: true,
+    capitalExposure: 0,
+    trajectoryShifts: 0,
+    recordCount: 0,
+    source: 'generated-data',
+  });
 
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
 
@@ -36,7 +45,234 @@ export default function SkuRiskOverview({ theme, selectedDC, setCurrentView, set
     { id: 'WATCH', label: 'Watchlist' }
   ];
 
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadHubMetrics() {
+      setHubMetrics((prev) => ({ ...prev, loading: true }));
+      try {
+        const payload = await fetchSkuBios({ dc: selectedDC || 'ALL', limit: 2500 });
+        if (cancelled) {
+          return;
+        }
+
+        const records = Array.isArray(payload?.records) ? payload.records : [];
+        const capitalExposure = records.reduce((sum, row) => {
+          const stock = Number(row.stock_on_hand || 0);
+          const onOrder = Number(row.on_order || 0);
+          const price = Number(row.price || 0);
+          return sum + ((stock + onOrder) * price);
+        }, 0);
+
+        const trajectoryShifts = records.filter((row) => {
+          const sales7d = Math.abs(Number(row.sales_velocity_7d || 0));
+          const search7d = Math.abs(Number(row.search_velocity_7d || 0));
+          const trend = String(row.trend_label || '').toLowerCase();
+          const surgeFlag = String(row.surge_flag || '').toUpperCase();
+          return (
+            trend === 'surging'
+            || trend === 'accelerating'
+            || trend === 'cooling'
+            || surgeFlag === 'VIRAL'
+            || surgeFlag === 'SPIKE'
+            || sales7d >= 15
+            || search7d >= 20
+          );
+        }).length;
+
+        setHubMetrics({
+          loading: false,
+          capitalExposure,
+          trajectoryShifts,
+          recordCount: records.length,
+          source: 'generated-data',
+        });
+      } catch {
+        if (cancelled) {
+          return;
+        }
+        const fallbackCapital = mockSkus.reduce((sum, sku) => sum + ((Number(sku.stock || 0) + Number(sku.onOrder || 0)) * Number(sku.price || 0)), 0);
+        const fallbackShifts = mockSkus.filter((sku) => sku.anomalyFlag).length;
+        setHubMetrics({
+          loading: false,
+          capitalExposure: fallbackCapital,
+          trajectoryShifts: fallbackShifts,
+          recordCount: mockSkus.length,
+          source: 'frontend-fallback',
+        });
+      }
+    }
+
+    loadHubMetrics();
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedDC]);
+
+  const formatCompactCurrency = (value) => {
+    const num = Number(value || 0);
+    if (Math.abs(num) >= 1_000_000_000) {
+      return `$${(num / 1_000_000_000).toFixed(1)}B`;
+    }
+    if (Math.abs(num) >= 1_000_000) {
+      return `$${(num / 1_000_000).toFixed(1)}M`;
+    }
+    if (Math.abs(num) >= 1_000) {
+      return `$${(num / 1_000).toFixed(1)}K`;
+    }
+    return `$${num.toFixed(0)}`;
+  };
+
+  const escapeMd = (value) => String(value ?? '').replace(/\|/g, '\\|').replace(/\n/g, ' ');
+
+  const markdownTable = (headers, rows) => {
+    const headerRow = `| ${headers.join(' | ')} |`;
+    const dividerRow = `| ${headers.map(() => '---').join(' | ')} |`;
+    const body = rows.map((row) => `| ${row.map((cell) => escapeMd(cell)).join(' | ')} |`).join('\n');
+    return [headerRow, dividerRow, body].filter(Boolean).join('\n');
+  };
+
+  const downloadFile = (fileName, content, mimeType) => {
+    const blob = new Blob([content], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = fileName;
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+    URL.revokeObjectURL(url);
+  };
+
+  const handleExportReport = () => {
+    const riskCounts = {
+      STOCKOUT_RISK: sortedSkus.filter((item) => item.riskLevel === 'STOCKOUT_RISK').length,
+      OVERSTOCK_RISK: sortedSkus.filter((item) => item.riskLevel === 'OVERSTOCK_RISK').length,
+      WATCH: sortedSkus.filter((item) => item.riskLevel === 'WATCH').length,
+      OK: sortedSkus.filter((item) => item.riskLevel === 'OK').length,
+    };
+
+    const totalInventoryValue = sortedSkus.reduce((sum, item) => sum + ((item.stock + item.onOrder) * (item.price || 0)), 0);
+    const avgDaysOfSupply = sortedSkus.length
+      ? (sortedSkus.reduce((sum, item) => sum + Number(item.daysOfSupply || 0), 0) / sortedSkus.length).toFixed(1)
+      : '0.0';
+
+    const topCritical = [...sortedSkus]
+      .filter((item) => item.riskLevel === 'STOCKOUT_RISK')
+      .sort((a, b) => (Number(b.mlForecast60d || 0) - Number(a.mlForecast60d || 0)))
+      .slice(0, 10);
+
+    const kpiTable = markdownTable(
+      ['Metric', 'Value'],
+      [
+        ['Node Scope', selectedDC],
+        ['Active Portfolio Filter', activeTab],
+        ['Search Filter', searchQuery || 'None'],
+        ['Rows In Report', String(sortedSkus.length)],
+        ['Critical Shortages Predicted', String(riskCounts.STOCKOUT_RISK)],
+        ['Trajectory Shifts (Anomalies)', String(sortedSkus.filter((s) => s.anomalyFlag).length)],
+        ['Estimated Inventory Value (On Hand + On Order)', `$${Math.round(totalInventoryValue).toLocaleString()}`],
+        ['Average Days of Supply', `${avgDaysOfSupply} days`],
+      ],
+    );
+
+    const riskTable = markdownTable(
+      ['Risk Bucket', 'Count'],
+      [
+        ['STOCKOUT_RISK', String(riskCounts.STOCKOUT_RISK)],
+        ['OVERSTOCK_RISK', String(riskCounts.OVERSTOCK_RISK)],
+        ['WATCH', String(riskCounts.WATCH)],
+        ['OK', String(riskCounts.OK)],
+      ],
+    );
+
+    const criticalTable = markdownTable(
+      ['SKU', 'Product', 'Brand', 'Category', 'Stock+Pipeline', 'DOS', 'Lead Time', 'Forecast 60D', 'Signal', 'Action'],
+      topCritical.map((item) => [
+        item.id,
+        item.name,
+        item.brand,
+        item.category,
+        (item.stock + item.onOrder).toLocaleString(),
+        String(item.daysOfSupply),
+        String(item.leadTimeDays),
+        (item.mlForecast60d || 0).toLocaleString(),
+        item.signal,
+        item.action,
+      ]),
+    );
+
+    const fullTable = markdownTable(
+      ['SKU', 'Product', 'Brand', 'Category', 'Risk', 'Stock', 'On Order', 'DOS', 'Lead Time', 'Forecast 60D', 'Price', 'Signal', 'Action', 'AI Reasoning'],
+      sortedSkus.map((item) => [
+        item.id,
+        item.name,
+        item.brand,
+        item.category,
+        item.riskLevel,
+        String(item.stock),
+        String(item.onOrder),
+        String(item.daysOfSupply),
+        String(item.leadTimeDays),
+        String(item.mlForecast60d || 0),
+        String(item.price || 0),
+        item.signal || '',
+        item.action || '',
+        item.mlReasoning || '',
+      ]),
+    );
+
+    const generatedAt = new Date().toISOString();
+    const report = [
+      '# Intelligence Hub Report',
+      '',
+      `- Generated At: ${generatedAt}`,
+      `- Node Scope: ${selectedDC}`,
+      `- Portfolio Filter: ${activeTab}`,
+      `- Search Filter: ${searchQuery || 'None'}`,
+      `- Sort: ${sortConfig.key ? `${sortConfig.key} (${sortConfig.direction})` : 'Default'}`,
+      '',
+      '## KPI Snapshot',
+      '',
+      kpiTable,
+      '',
+      '## Risk Distribution',
+      '',
+      riskTable,
+      '',
+      '## Top Critical SKUs (Stockout Risk)',
+      '',
+      criticalTable,
+      '',
+      '## Full SKU Intelligence Table',
+      '',
+      fullTable,
+      '',
+      '## Methodology Notes',
+      '',
+      '- Report is exported from live Intelligence Hub state (current filters, search, and sorting).',
+      '- Values are sourced from generated SKU dataset and include signal/action/reasoning text for every row.',
+      '- This export is data-first and audit-friendly (not print/screenshot output).',
+      '',
+    ].join('\n');
+
+    const fileScope = String(selectedDC || 'ALL').replace(/\s+/g, '_').toLowerCase();
+    const fileStamp = generatedAt.replace(/[:.]/g, '-');
+    downloadFile(`intelligence_hub_report_${fileScope}_${fileStamp}.md`, report, 'text/markdown;charset=utf-8');
+  };
+
   const filteredSkus = mockSkus.filter(sku => {
+    const text = searchQuery.trim().toLowerCase();
+    const matchesSearch = !text
+      || sku.id.toLowerCase().includes(text)
+      || sku.name.toLowerCase().includes(text)
+      || sku.brand.toLowerCase().includes(text)
+      || sku.category.toLowerCase().includes(text)
+      || (sku.signal || '').toLowerCase().includes(text);
+
+    if (!matchesSearch) {
+      return false;
+    }
     if (activeTab === 'ALL') return true;
     return sku.riskLevel === activeTab;
   });
@@ -72,7 +308,7 @@ export default function SkuRiskOverview({ theme, selectedDC, setCurrentView, set
             </p>
           </div>
           <div style={{ display: 'flex', gap: '16px' }}>
-            <button className="action-btn" style={{ background: 'transparent' }}>Export Report</button>
+            <button className="export-report-btn" onClick={handleExportReport} disabled={sortedSkus.length === 0}>Export Report</button>
             <button className="action-btn" style={{ background: 'var(--color-primary)', color: 'var(--color-primary-on)', border: 'none' }}>Initiate Auto-Order</button>
           </div>
         </div>
@@ -93,15 +329,19 @@ export default function SkuRiskOverview({ theme, selectedDC, setCurrentView, set
               <div className="metric-card glass-panel" style={{ flex: 1, padding: '24px' }}>
                  <div className="metric-title" style={{ fontSize: '0.65rem' }}>Node Capital Exposure</div>
                  <div className="metric-value" style={{ fontSize: '1.75rem' }}>
-                   {selectedDC === 'ALL' ? '$12.4M' : '$1.1M'}
+                   {hubMetrics.loading ? '...' : formatCompactCurrency(hubMetrics.capitalExposure)}
                  </div>
-                 <div className="metric-trend" style={{ color: 'var(--color-stockout-text)' }}>↗ +12.4% vs LY</div>
+                 <div className="metric-trend" style={{ color: 'var(--color-text-secondary)' }}>
+                   {hubMetrics.loading ? 'Computing from generated data...' : `${hubMetrics.recordCount.toLocaleString()} records in scope`}
+                 </div>
               </div>
 
               <div className="metric-card glass-panel" style={{ flex: 1, padding: '24px' }}>
                  <div className="metric-title" style={{ fontSize: '0.65rem' }}>Trajectory Shifts</div>
-                 <div className="metric-value" style={{ fontSize: '1.75rem' }}>{mockSkus.filter(s => s.anomalyFlag).length}</div>
-                 <div className="metric-trend" style={{ color: 'var(--color-text-secondary)' }}>Anomalies flagged</div>
+                 <div className="metric-value" style={{ fontSize: '1.75rem' }}>{hubMetrics.loading ? '...' : hubMetrics.trajectoryShifts}</div>
+                 <div className="metric-trend" style={{ color: 'var(--color-text-secondary)' }}>
+                   {hubMetrics.source === 'frontend-fallback' ? 'Fallback anomaly rule (frontend data)' : 'Signal regime shifts detected'}
+                 </div>
               </div>
             </div>
           </div>
@@ -174,7 +414,7 @@ export default function SkuRiskOverview({ theme, selectedDC, setCurrentView, set
             
             <div style={{ padding: '10px 16px', background: 'var(--color-background)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
               <Search size={16} color="var(--color-text-secondary)" />
-              <input type="text" placeholder="Search catalog..." style={{ border: 'none', background: 'transparent', outline: 'none', color: 'var(--color-text-primary)', fontSize: '0.875rem' }} />
+              <input value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} type="text" placeholder="Search catalog..." style={{ border: 'none', background: 'transparent', outline: 'none', color: 'var(--color-text-primary)', fontSize: '0.875rem' }} />
             </div>
           </div>
           
@@ -196,7 +436,7 @@ export default function SkuRiskOverview({ theme, selectedDC, setCurrentView, set
               <div className="data-row-header-item" onClick={() => handleSort('riskLevel')}>
                 Action Status {sortConfig.key === 'riskLevel' && (sortConfig.direction === 'asc' ? '↑' : '↓')}
               </div>
-              <div style={{ marginLeft: '16px' }}>AI Reasoning</div>
+              <div>AI Reasoning</div>
             </div>
 
             {/* List Rows */}
@@ -216,10 +456,10 @@ export default function SkuRiskOverview({ theme, selectedDC, setCurrentView, set
               >
                 
                 {/* Product Col */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <div className="hub-product-cell">
                    <div style={{ opacity: 0.8 }}><BrandLogo brand={sku.brand} /></div>
                    <div>
-                     <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--color-text-primary)' }}>{sku.name}</div>
+                     <div className="hub-product-name" style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--color-text-primary)' }}>{sku.name}</div>
                      <div className="text-sub">{sku.id} • {sku.category}</div>
                    </div>
                    <button
@@ -252,16 +492,16 @@ export default function SkuRiskOverview({ theme, selectedDC, setCurrentView, set
                 </div>
 
                 {/* Stock Col */}
-                <div>
-                  <div style={{ fontWeight: 600, fontSize: '1rem' }}>
+                <div className="hub-metric-cell">
+                  <div className="hub-metric-value" style={{ fontWeight: 600, fontSize: '1rem' }}>
                     {selectedDC === 'ALL' ? (sku.stock + sku.onOrder).toLocaleString() : Math.floor((sku.stock + sku.onOrder) / 11).toLocaleString()}
                   </div>
                   <div className="text-sub">Physical + Pipeline</div>
                 </div>
 
                 {/* Runway Col */}
-                <div style={{ paddingRight: '24px' }}>
-                  <div style={{ fontWeight: 600 }}>{sku.daysOfSupply} Days</div>
+                <div className="hub-metric-cell" style={{ paddingRight: '24px' }}>
+                  <div className="hub-metric-value" style={{ fontWeight: 600 }}>{sku.daysOfSupply} Days</div>
                   <div className="runway-bar-bg">
                     <div className="runway-bar-fill" style={{ 
                       width: `${Math.min((sku.daysOfSupply / 120) * 100, 100)}%`,
@@ -271,8 +511,8 @@ export default function SkuRiskOverview({ theme, selectedDC, setCurrentView, set
                 </div>
 
                 {/* Forecast Col */}
-                <div>
-                   <div style={{ fontWeight: 600, color: 'var(--color-text-primary)' }}>
+                <div className="hub-metric-cell">
+                   <div className="hub-metric-value" style={{ fontWeight: 600, color: 'var(--color-text-primary)' }}>
                      {selectedDC === 'ALL' ? (sku.mlForecast60d?.toLocaleString() || 0) : Math.floor((sku.mlForecast60d || 0) / 11).toLocaleString()} units
                    </div>
                    <div className="text-sub">
@@ -288,7 +528,7 @@ export default function SkuRiskOverview({ theme, selectedDC, setCurrentView, set
                 </div>
 
                 {/* Reasoning Col */}
-                <div style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', lineHeight: 1.5, marginLeft: '16px' }}>
+                <div className="hub-reasoning" style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>
                   {sku.mlReasoning || "Demand remains strictly aligned with historical moving averages."}
                 </div>
 
