@@ -13,6 +13,7 @@ function App() {
   const [theme, setTheme] = useState('light');
   const [selectedDC, setSelectedDC] = useState('ALL');
   const [selectedTimelineSku, setSelectedTimelineSku] = useState('PB-BLANKET-42');
+  const [selectedCatalogSku, setSelectedCatalogSku] = useState('PB-BLANKET-42');
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -31,6 +32,7 @@ function App() {
             selectedDC={selectedDC}
             setCurrentView={setCurrentView}
             setSelectedTimelineSku={setSelectedTimelineSku}
+            setSelectedCatalogSku={setSelectedCatalogSku}
           />
         );
       case 'timeline':
@@ -44,7 +46,7 @@ function App() {
         );
       case 'brief': return <BuyerBrief theme={theme} selectedDC={selectedDC} />;
       case 'simulation': return <Simulation theme={theme} selectedDC={selectedDC} />;
-      case 'catalog': return <SkuBio selectedDC={selectedDC} />;
+      case 'catalog': return <SkuBio selectedDC={selectedDC} selectedSku={selectedCatalogSku} setSelectedSku={setSelectedCatalogSku} />;
       default:
         return (
           <SkuRiskOverview
@@ -52,6 +54,7 @@ function App() {
             selectedDC={selectedDC}
             setCurrentView={setCurrentView}
             setSelectedTimelineSku={setSelectedTimelineSku}
+            setSelectedCatalogSku={setSelectedCatalogSku}
           />
         );
     }

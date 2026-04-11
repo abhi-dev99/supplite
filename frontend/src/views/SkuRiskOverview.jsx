@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { Filter, Search, Maximize2, X } from 'lucide-react';
+import { Search, Maximize2, X, BookOpenText } from 'lucide-react';
 import { mockSkus } from '../data';
 import SciFiMap from '../components/SciFiMap';
 import BrandLogo from '../components/BrandLogo';
 
-export default function SkuRiskOverview({ theme, selectedDC, setCurrentView, setSelectedTimelineSku }) {
+export default function SkuRiskOverview({ theme, selectedDC, setCurrentView, setSelectedTimelineSku, setSelectedCatalogSku }) {
   const [activeTab, setActiveTab] = useState('ALL');
   const [isMapExpanded, setIsMapExpanded] = useState(false);
   const [isMapHovered, setIsMapHovered] = useState(false);
@@ -222,6 +222,33 @@ export default function SkuRiskOverview({ theme, selectedDC, setCurrentView, set
                      <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--color-text-primary)' }}>{sku.name}</div>
                      <div className="text-sub">{sku.id} • {sku.category}</div>
                    </div>
+                   <button
+                     onClick={(event) => {
+                       event.stopPropagation();
+                       if (typeof setSelectedCatalogSku === 'function') {
+                         setSelectedCatalogSku(sku.id);
+                       }
+                       if (typeof setCurrentView === 'function') {
+                         setCurrentView('catalog');
+                       }
+                     }}
+                     style={{
+                       marginLeft: '8px',
+                       border: '1px solid var(--color-surface-hover)',
+                       background: 'var(--color-surface-floating)',
+                       color: 'var(--color-text-secondary)',
+                       borderRadius: '6px',
+                       padding: '5px 8px',
+                       display: 'inline-flex',
+                       alignItems: 'center',
+                       gap: '6px',
+                       fontSize: '0.7rem',
+                       cursor: 'pointer',
+                     }}
+                     title="Open SKU Atlas profile"
+                   >
+                     <BookOpenText size={12} /> Atlas
+                   </button>
                 </div>
 
                 {/* Stock Col */}
