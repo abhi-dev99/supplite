@@ -196,6 +196,41 @@ class SimulationResponse(BaseModel):
     summary: SimulationSummary
 
 
+class SkuBioRecord(BaseModel):
+    sku_id: str
+    product_name: str
+    brand: str
+    category: str
+    metro: str
+    dc: str
+    risk_level: str
+    price: float
+    stock_on_hand: int
+    on_order: int
+    days_of_supply: float
+    lead_time_days: int
+    avg_daily_sales: float
+    forecast_demand_60d: int
+    surge_score: float
+    surge_flag: str
+    trend_label: str
+    primary_signal: str
+    recommended_action: str
+    scenario_type: str
+    latest_signal_date: str
+    sales_velocity_7d: float
+    search_velocity_7d: float
+    permit_velocity_30d: float
+    composite_score: float
+
+
+class SkuBioResponse(BaseModel):
+    generated_at: datetime
+    dc_scope: str
+    count: int
+    records: list[SkuBioRecord]
+
+
 app = FastAPI(title="Supply Chain Brief Backend", version="0.1.0")
 
 # Load local env files for backend runtime configuration without committing secrets.
@@ -750,6 +785,99 @@ def _build_early_catch_simulation(
     )
 
 
+def _trend_label(*, sales_velocity_7d: float, search_velocity_7d: float, surge_flag: str) -> str:
+    normalized_flag = (surge_flag or "").strip().upper()
+    if normalized_flag in {"VIRAL", "SPIKE"}:
+        return "Surging"
+    if sales_velocity_7d >= 12.0 and search_velocity_7d >= 12.0:
+        return "Accelerating"
+    if sales_velocity_7d <= -6.0 and search_velocity_7d <= -6.0:
+        return "Cooling"
+    if search_velocity_7d >= 10.0 and sales_velocity_7d < 6.0:
+        return "Search-led Upside"
+    return "Stable"
+
+
+def _build_sku_bio_records(dc: str = "ALL", limit: int = 1500) -> list[SkuBioRecord]:
+    inventory_rows = _read_csv_rows(_data_file("sku_inventory.csv"))
+    signal_rows = _read_csv_rows(_data_file("sku_daily_signals.csv"))
+
+    selected_dc = (dc or "ALL").strip()
+    max_rows = max(1, min(int(limit), 5000))
+
+    latest_signal_by_key: dict[tuple[str, str], dict[str, str]] = {}
+    for row in signal_rows:
+        sku_id = (row.get("sku_id") or "").strip().upper()
+        metro = (row.get("metro") or "").strip()
+        signal_date = (row.get("date") or "").strip()
+        if not sku_id or not metro or not signal_date:
+            continue
+        key = (sku_id, metro)
+        existing = latest_signal_by_key.get(key)
+        if existing is None or signal_date > (existing.get("date") or ""):
+            latest_signal_by_key[key] = row
+
+    records: list[SkuBioRecord] = []
+    for row in inventory_rows:
+        dc_name = (row.get("dc") or "").strip()
+        if selected_dc != "ALL" and dc_name != selected_dc:
+            continue
+
+        sku_id = (row.get("sku_id") or "").strip().upper()
+        metro = (row.get("metro") or "").strip()
+        latest_signal = latest_signal_by_key.get((sku_id, metro), {})
+
+        sales_velocity_7d = round(_safe_float(latest_signal.get("sales_velocity_7d")), 2)
+        search_velocity_7d = round(_safe_float(latest_signal.get("search_velocity_7d")), 2)
+        permit_velocity_30d = round(_safe_float(latest_signal.get("permit_velocity_30d")), 2)
+        composite_score = round(_safe_float(latest_signal.get("composite_score")), 2)
+        surge_flag = (row.get("surge_flag") or "").strip() or "STEADY"
+
+        records.append(
+            SkuBioRecord(
+                sku_id=sku_id or "UNKNOWN",
+                product_name=(row.get("product_name") or "Unknown Product").strip(),
+                brand=(row.get("brand") or "Unknown").strip(),
+                category=(row.get("category") or "Unknown").strip(),
+                metro=metro or "Unknown",
+                dc=dc_name or "Unknown",
+                risk_level=(row.get("risk_level") or "OK").strip(),
+                price=round(_safe_float(row.get("price")), 2),
+                stock_on_hand=_safe_int(row.get("stock_on_hand")),
+                on_order=_safe_int(row.get("on_order")),
+                days_of_supply=round(_safe_float(row.get("days_of_supply")), 1),
+                lead_time_days=max(1, _safe_int(row.get("lead_time_days"))),
+                avg_daily_sales=round(_safe_float(row.get("avg_daily_sales")), 2),
+                forecast_demand_60d=_safe_int(row.get("forecast_demand_60d")),
+                surge_score=round(_safe_float(row.get("surge_score")), 2),
+                surge_flag=surge_flag,
+                trend_label=_trend_label(
+                    sales_velocity_7d=sales_velocity_7d,
+                    search_velocity_7d=search_velocity_7d,
+                    surge_flag=surge_flag,
+                ),
+                primary_signal=(row.get("primary_signal") or "").strip(),
+                recommended_action=(row.get("recommended_action") or "").strip(),
+                scenario_type=(row.get("scenario_type") or "").strip(),
+                latest_signal_date=(latest_signal.get("date") or "").strip(),
+                sales_velocity_7d=sales_velocity_7d,
+                search_velocity_7d=search_velocity_7d,
+                permit_velocity_30d=permit_velocity_30d,
+                composite_score=composite_score,
+            )
+        )
+
+    records.sort(
+        key=lambda item: (
+            0 if item.risk_level == "STOCKOUT_RISK" else 1,
+            -item.surge_score,
+            item.sku_id,
+            item.metro,
+        )
+    )
+    return records[:max_rows]
+
+
 def _build_city_context(metro: str) -> BriefContext:
     normalized_metro = metro.strip()
     if normalized_metro not in SUPPORTED_METROS:
@@ -1278,4 +1406,18 @@ def simulation_early_catch(
         baseline_lag_days=baseline_lag_days,
         earlier_by_days=earlier_by_days,
         margin_rate=margin_rate,
+    )
+
+
+@app.get("/api/skus/bios", response_model=SkuBioResponse)
+def sku_bios(
+    dc: str = "ALL",
+    limit: int = 1500,
+) -> SkuBioResponse:
+    records = _build_sku_bio_records(dc=dc, limit=limit)
+    return SkuBioResponse(
+        generated_at=datetime.now(timezone.utc),
+        dc_scope=dc,
+        count=len(records),
+        records=records,
     )

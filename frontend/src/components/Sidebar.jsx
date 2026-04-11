@@ -1,5 +1,4 @@
-import { LayoutDashboard, TrendingUp, FileText, SplitSquareHorizontal, Sun, Moon, MapPin } from 'lucide-react';
-import { useMemo } from 'react';
+import { LayoutDashboard, TrendingUp, FileText, SplitSquareHorizontal, Sun, Moon, MapPin, BookOpenText } from 'lucide-react';
 
 export default function Sidebar({ currentView, setCurrentView, theme, toggleTheme, distributionCenters, selectedDC, setSelectedDC }) {
   const navItems = [
@@ -7,6 +6,7 @@ export default function Sidebar({ currentView, setCurrentView, theme, toggleThem
     { id: 'timeline', label: 'Signal Timeline', icon: TrendingUp },
     { id: 'brief', label: 'Buyer Brief', icon: FileText },
     { id: 'simulation', label: 'Simulation', icon: SplitSquareHorizontal },
+    { id: 'catalog', label: 'SKU Atlas', icon: BookOpenText },
   ];
 
   return (
@@ -20,7 +20,7 @@ export default function Sidebar({ currentView, setCurrentView, theme, toggleThem
       height: '100%'
     }}>
       <h2 style={{ fontSize: '1.25rem', marginBottom: '32px', color: 'var(--color-text-primary)' }}>
-        Demand Intelligence
+        Supply Sense
       </h2>
 
       <div style={{ marginBottom: '32px' }}>
@@ -85,19 +85,10 @@ export default function Sidebar({ currentView, setCurrentView, theme, toggleThem
         marginTop: 'auto',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-end',
         paddingTop: '24px',
         borderTop: '2px solid var(--color-background)'
       }}>
-        <div style={{
-          fontSize: '0.75rem',
-          color: 'var(--color-text-secondary)'
-        }}>
-          <div style={{ fontWeight: 600, color: 'var(--color-text-primary)', marginBottom: '4px' }}>Data Freshness</div>
-          <div>Signals updated: </div>
-          <div>April 09, 2026</div>
-        </div>
-        
         <button 
           onClick={toggleTheme}
           style={{

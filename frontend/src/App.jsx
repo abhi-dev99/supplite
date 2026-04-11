@@ -4,6 +4,7 @@ import SkuRiskOverview from './views/SkuRiskOverview';
 import SignalTimeline from './views/SignalTimeline';
 import BuyerBrief from './views/BuyerBrief';
 import Simulation from './views/Simulation';
+import SkuBio from './views/SkuBio';
 import { distributionCenters } from './data';
 import './App.css';
 
@@ -43,6 +44,7 @@ function App() {
         );
       case 'brief': return <BuyerBrief theme={theme} selectedDC={selectedDC} />;
       case 'simulation': return <Simulation theme={theme} selectedDC={selectedDC} />;
+      case 'catalog': return <SkuBio selectedDC={selectedDC} />;
       default:
         return (
           <SkuRiskOverview
